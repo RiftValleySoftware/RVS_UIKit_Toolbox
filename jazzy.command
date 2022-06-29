@@ -11,5 +11,5 @@ jazzy   --github_url https://github.com/RiftValleySoftware/RVS_UIKit_Toolbox\
         --module RVS_UIKit_Toolbox\
         --exclude=/*/main.swift \
         --copyright [©2022\ The\ Great\ Rift\ Valley\ Software\ Company]\(https://riftvalleysoftware.com\)
-cp icon.png docs/icon.png
+cp ./img/* docs/img
 cd "${CWD}"
