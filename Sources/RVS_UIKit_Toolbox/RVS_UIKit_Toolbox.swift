@@ -30,56 +30,13 @@ import LocalAuthentication
 /* ###################################################################################################################################### */
 /**
  */
-extension UIViewController {
-    /* ################################################################## */
-    /**
-     Returns true, if we are in Dark Mode.
-     */
-    var isDarkMode: Bool { .dark == traitCollection.userInterfaceStyle }
-    
-    /* ################################################################## */
-    /**
-     Returns true, if we are in High Contrast Mode.
-     */
-    var isHighContrastMode: Bool { UIAccessibility.isDarkerSystemColorsEnabled }
-    
-    /* ################################################################## */
-    /**
-     Returns true, if we are in Reduced Transparency Mode.
-     */
-    var isReducedTransparencyMode: Bool { UIAccessibility.isReduceTransparencyEnabled }
-    
-    /* ################################################################## */
-    /**
-     This returns the first responder, wherever it is in our hierarchy.
-     */
-    var currentFirstResponder: UIResponder? { view.currentFirstResponder }
-    
-    /* ################################################################## */
-    /**
-     Returns the previous ViewController in a navigation stack.
-     Nil, if at root, or not in a navigation stack.
-     Inspired by [this SO answer](https://stackoverflow.com/a/42916780/879365).
-     */
-    var previousViewController: UIViewController? {
-        guard let viewControllers = navigationController?.viewControllers,
-              1 < viewControllers.count  else { return nil }
-        
-        return viewControllers[viewControllers.count - 2]
-    }
-    
-    /* ################################################################## */
-    /**
-     Returns the X/Y aspect of the screen (window). It will return 0, if it cannot determine the aspect.
-     */
-    var screenAspect: CGFloat { (view?.window?.bounds.size.width ?? 0) / (view?.window?.bounds.size.height ?? 1) }
-    
+public extension UIViewController {
     /* ################################################################## */
     /**
      This will be the string we use to describe the biometric type.
      It will either be nil (no biometrics), .touchID (Touch ID), or .faceID (Face ID).
      */
-    var biometricType: LABiometryType? {
+    class var biometricType: LABiometryType? {
         let authenticationContext = LAContext()
         var error: NSError?
         
@@ -92,13 +49,75 @@ extension UIViewController {
         
         return bioType
     }
+    
+    /* ################################################################## */
+    /**
+     Returns true, if we are in High Contrast Mode.
+     */
+    class var isHighContrastMode: Bool { UIAccessibility.isDarkerSystemColorsEnabled }
+    
+    /* ################################################################## */
+    /**
+     Returns true, if we are in Reduced Transparency Mode.
+     */
+    class var isReducedTransparencyMode: Bool { UIAccessibility.isReduceTransparencyEnabled }
+
+    /* ################################################################## */
+    /**
+     Returns true, if we are in Dark Mode.
+     */
+    var isDarkMode: Bool { .dark == traitCollection.userInterfaceStyle }
+    
+    /* ################################################################## */
+    /**
+     Returns true, if we are in High Contrast Mode.
+     */
+    var isHighContrastMode: Bool { Self.isHighContrastMode }
+    
+    /* ################################################################## */
+    /**
+     Returns true, if we are in Reduced Transparency Mode.
+     */
+    var isReducedTransparencyMode: Bool { Self.isReducedTransparencyMode }
+
+    /* ################################################################## */
+    /**
+     This will be the string we use to describe the biometric type.
+     It will either be nil (no biometrics), .touchID (Touch ID), or .faceID (Face ID).
+     */
+    var biometricType: LABiometryType? { Self.biometricType }
+
+    /* ################################################################## */
+    /**
+     This returns the first responder, wherever it is in our hierarchy.
+     */
+    var currentFirstResponder: UIResponder? { view?.currentFirstResponder }
+    
+    /* ################################################################## */
+    /**
+     Returns the X/Y aspect of the screen (window). It will return 0, if it cannot determine the aspect.
+     */
+    var screenAspect: CGFloat { view?.screenAspect ?? 0 }
 
     /* ################################################################## */
     /**
      This puts away any open keyboards.
      */
     func resignAllFirstResponders() {
-        view.resignAllFirstResponders()
+        view?.resignAllFirstResponders()
+    }
+
+    /* ################################################################## */
+    /**
+     Returns the previous ViewController in a navigation stack.
+     Nil, if at root, or not in a navigation stack.
+     Inspired by [this SO answer](https://stackoverflow.com/a/42916780/879365).
+     */
+    var previousViewController: UIViewController? {
+        guard let viewControllers = navigationController?.viewControllers,
+              1 < viewControllers.count  else { return nil }
+        
+        return viewControllers[viewControllers.count - 2]
     }
 }
 
@@ -107,7 +126,7 @@ extension UIViewController {
 /* ###################################################################################################################################### */
 /**
  */
-extension UIView {
+public extension UIView {
     /* ################################################################## */
     /**
      This gives us access to the corner radius, so we can give the view rounded corners.
@@ -151,13 +170,13 @@ extension UIView {
             setNeedsDisplay()
         }
     }
-
+    
     /* ################################################################## */
     /**
-     Returns true, if we are in Dark Mode.
+     Returns the X/Y aspect of the screen (window). It will return 0, if it cannot determine the aspect.
      */
-    var isDarkMode: Bool { .dark == traitCollection.userInterfaceStyle }
-    
+    var screenAspect: CGFloat { (window?.bounds.size.width ?? 0) / (window?.bounds.size.height ?? 1) }
+
     /* ################################################################## */
     /**
      This returns the first responder, wherever it is in our hierarchy.
@@ -233,7 +252,7 @@ extension UIView {
 /* ###################################################################################################################################### */
 /**
  */
-extension UIImage {
+public extension UIImage {
     /* ################################################################## */
     /**
      This is a "cascading" image fetcher. It first, ses if there is an asset with the name given, then, it looks in the SFSymbols, finally, returning the SFSymbols.nosign, if none found.
@@ -355,14 +374,14 @@ extension UIImage {
 /* ###################################################################################################################################### */
 /**
  */
-extension UIColor {
+public extension UIColor {
     /* ################################################################## */
     /**
      [This comes fairly directly from this Hacking With Swift tutorial](https://www.hackingwithswift.com/example-code/uicolor/how-to-convert-a-hex-color-to-a-uicolor)
      - parameter hex: The hex number, as a String "#RRGGBB[AA]"
      - returns: The color, from the hex string.
      */
-    public convenience init?(hex inHexNumber: String) {
+    convenience init?(hex inHexNumber: String) {
         let r, g, b, a: CGFloat
         
         var hexString = inHexNumber.uppercased()
