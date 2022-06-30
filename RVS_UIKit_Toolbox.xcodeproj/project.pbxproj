@@ -10,7 +10,7 @@
 		D43965C0286C992100727E6A /* RVS_UIKit_Toolbox.swift in Sources */ = {isa = PBXBuildFile; fileRef = D43965BF286C992100727E6A /* RVS_UIKit_Toolbox.swift */; };
 		D43965D0286C999A00727E6A /* RVS_UIKit_Toolbox_TestHarness_AppSceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D43965CF286C999A00727E6A /* RVS_UIKit_Toolbox_TestHarness_AppSceneDelegate.swift */; };
 		D43965D4286C999A00727E6A /* RVS_UIKit_Toolbox_TestHarness_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D43965D3286C999A00727E6A /* RVS_UIKit_Toolbox_TestHarness_ViewController.swift */; };
-		D43965D7286C999A00727E6A /* RVS_UIKit_Toolbox_TestHarness_AppSceneDelegate_Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D43965D5286C999A00727E6A /* RVS_UIKit_Toolbox_TestHarness_AppSceneDelegate_Main.storyboard */; };
+		D43965D7286C999A00727E6A /* RVS_UIKit_Toolbox_TestHarness_Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D43965D5286C999A00727E6A /* RVS_UIKit_Toolbox_TestHarness_Main.storyboard */; };
 		D43965D9286C999B00727E6A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D43965D8286C999B00727E6A /* Assets.xcassets */; };
 		D43965DC286C999B00727E6A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D43965DA286C999B00727E6A /* LaunchScreen.storyboard */; };
 		D43965F0286CA15100727E6A /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = D43965EE286CA15100727E6A /* Localizable.strings */; };
@@ -22,7 +22,7 @@
 		D43965CD286C999A00727E6A /* RVS_UIKit_Toolbox_TestHarness.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RVS_UIKit_Toolbox_TestHarness.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D43965CF286C999A00727E6A /* RVS_UIKit_Toolbox_TestHarness_AppSceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RVS_UIKit_Toolbox_TestHarness_AppSceneDelegate.swift; sourceTree = "<group>"; };
 		D43965D3286C999A00727E6A /* RVS_UIKit_Toolbox_TestHarness_ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RVS_UIKit_Toolbox_TestHarness_ViewController.swift; sourceTree = "<group>"; };
-		D43965D6286C999A00727E6A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/RVS_UIKit_Toolbox_TestHarness_AppSceneDelegate_Main.storyboard; sourceTree = "<group>"; };
+		D43965D6286C999A00727E6A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/RVS_UIKit_Toolbox_TestHarness_Main.storyboard; sourceTree = "<group>"; };
 		D43965D8286C999B00727E6A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D43965DB286C999B00727E6A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D43965DD286C999B00727E6A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -108,7 +108,7 @@
 		D43965E2286C99E200727E6A /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				D43965D5286C999A00727E6A /* RVS_UIKit_Toolbox_TestHarness_AppSceneDelegate_Main.storyboard */,
+				D43965D5286C999A00727E6A /* RVS_UIKit_Toolbox_TestHarness_Main.storyboard */,
 				D43965D8286C999B00727E6A /* Assets.xcassets */,
 				D43965DA286C999B00727E6A /* LaunchScreen.storyboard */,
 				D43965EE286CA15100727E6A /* Localizable.strings */,
@@ -206,7 +206,7 @@
 				D43965DC286C999B00727E6A /* LaunchScreen.storyboard in Resources */,
 				D43965F0286CA15100727E6A /* Localizable.strings in Resources */,
 				D43965D9286C999B00727E6A /* Assets.xcassets in Resources */,
-				D43965D7286C999A00727E6A /* RVS_UIKit_Toolbox_TestHarness_AppSceneDelegate_Main.storyboard in Resources */,
+				D43965D7286C999A00727E6A /* RVS_UIKit_Toolbox_TestHarness_Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -272,12 +272,12 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		D43965D5286C999A00727E6A /* RVS_UIKit_Toolbox_TestHarness_AppSceneDelegate_Main.storyboard */ = {
+		D43965D5286C999A00727E6A /* RVS_UIKit_Toolbox_TestHarness_Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				D43965D6286C999A00727E6A /* Base */,
 			);
-			name = RVS_UIKit_Toolbox_TestHarness_AppSceneDelegate_Main.storyboard;
+			name = RVS_UIKit_Toolbox_TestHarness_Main.storyboard;
 			sourceTree = "<group>";
 		};
 		D43965DA286C999B00727E6A /* LaunchScreen.storyboard */ = {
@@ -452,9 +452,10 @@
 				DEVELOPMENT_TEAM = KSAUGZFWP2;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Tests/RVS_UIKit_Toolbox_TestHarness/Meta/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.developer-tools";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = RVS_UIKit_Toolbox_TestHarness_AppSceneDelegate_Main;
+				INFOPLIST_KEY_UIMainStoryboardFile = RVS_UIKit_Toolbox_TestHarness_Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
@@ -483,9 +484,10 @@
 				DEVELOPMENT_TEAM = KSAUGZFWP2;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Tests/RVS_UIKit_Toolbox_TestHarness/Meta/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.developer-tools";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = RVS_UIKit_Toolbox_TestHarness_AppSceneDelegate_Main;
+				INFOPLIST_KEY_UIMainStoryboardFile = RVS_UIKit_Toolbox_TestHarness_Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;

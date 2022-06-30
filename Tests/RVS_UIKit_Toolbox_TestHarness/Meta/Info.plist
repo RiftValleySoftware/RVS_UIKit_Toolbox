@@ -16,7 +16,7 @@
 					<key>UISceneDelegateClassName</key>
 					<string>$(PRODUCT_MODULE_NAME).RVS_UIKit_Toolbox_TestHarness_AppSceneDelegate</string>
 					<key>UISceneStoryboardFile</key>
-					<string>RVS_UIKit_Toolbox_TestHarness_AppSceneDelegate_Main</string>
+					<string>RVS_UIKit_Toolbox_TestHarness_Main</string>
 				</dict>
 			</array>
 		</dict>
