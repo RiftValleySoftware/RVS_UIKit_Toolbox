@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>UIViewController Extension Reference</title>
+    <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
+    <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
+    <meta charset="utf-8">
+    <script src="../js/jquery.min.js" defer></script>
+    <script src="../js/jazzy.js" defer></script>
+    
+    <script src="../js/lunr.min.js" defer></script>
+    <script src="../js/typeahead.jquery.js" defer></script>
+    <script src="../js/jazzy.search.js" defer></script>
+  </head>
+  <body>
+
+    <a name="//apple_ref/swift/Extension/UIViewController" class="dashAnchor"></a>
+
+    <a title="UIViewController Extension Reference"></a>
+
+    <header class="header">
+      <p class="header-col header-col--primary">
+        <a class="header-link" href="../index.html">
+          RVS_UIKit_Toolbox Docs
+        </a>
+         (100% documented)
+      </p>
+    
+      <div class="header-col--secondary">
+        <form role="search" action="../search.json">
+          <input type="text" placeholder="Search documentation" data-typeahead>
+        </form>
+      </div>
+    
+        <p class="header-col header-col--secondary">
+          <a class="header-link" href="https://github.com/RiftValleySoftware/RVS_UIKit_Toolbox">
+            <img class="header-icon" src="../img/gh.png" alt="GitHub"/>
+            View on GitHub
+          </a>
+        </p>
+    
+    </header>
+
+    <p class="breadcrumbs">
+      <a class="breadcrumb" href="../index.html">RVS_UIKit_Toolbox Reference</a>
+      <img class="carat" src="../img/carat.png" alt=""/>
+      UIViewController Extension Reference
+    </p>
+
+    <div class="content-wrapper">
+      <nav class="navigation">
+        <ul class="nav-groups">
+          <li class="nav-group-name">
+            <a class="nav-group-name-link" href="../Extensions.html">Extensions</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Extensions/UIColor.html">UIColor</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Extensions/UIImage.html">UIImage</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Extensions/UIView.html">UIView</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Extensions/UIViewController.html">UIViewController</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <article class="main-content">
+
+        <section class="section">
+          <div class="section-content top-matter">
+            <h1>UIViewController</h1>
+              <div class="declaration">
+                <div class="language">
+                  
+                  <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">extension</span> <span class="kt">UIViewController</span></code></pre>
+
+                </div>
+              </div>
+            <p>A set of various extensions of the UIViewController class.
+These provide utilities for determining running state of the device, biometric support, and some responder stuff.</p>
+
+          </div>
+        </section>
+
+        <section class="section">
+          <div class="section-content">
+            <div class="task-group">
+              <ul class="item-container">
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:So16UIViewControllerC17RVS_UIKit_ToolboxE13biometricTypeSo010LABiometryG0VSgvpZ"></a>
+                    <a name="//apple_ref/swift/Variable/biometricType" class="dashAnchor"></a>
+                    <a class="token" href="#/s:So16UIViewControllerC17RVS_UIKit_ToolboxE13biometricTypeSo010LABiometryG0VSgvpZ">biometricType</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>This will be the string we use to describe the biometric type.
+It will either be nil (no biometrics), .touchID (Touch ID), or .faceID (Face ID).</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">class</span> <span class="k">var</span> <span class="nv">biometricType</span><span class="p">:</span> <span class="kt">LABiometryType</span><span class="p">?</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:So16UIViewControllerC17RVS_UIKit_ToolboxE18isHighContrastModeSbvpZ"></a>
+                    <a name="//apple_ref/swift/Variable/isHighContrastMode" class="dashAnchor"></a>
+                    <a class="token" href="#/s:So16UIViewControllerC17RVS_UIKit_ToolboxE18isHighContrastModeSbvpZ">isHighContrastMode</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Returns true, if we are in High Contrast Mode.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">class</span> <span class="k">var</span> <span class="nv">isHighContrastMode</span><span class="p">:</span> <span class="kt">Bool</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:So16UIViewControllerC17RVS_UIKit_ToolboxE25isReducedTransparencyModeSbvpZ"></a>
+                    <a name="//apple_ref/swift/Variable/isReducedTransparencyMode" class="dashAnchor"></a>
+                    <a class="token" href="#/s:So16UIViewControllerC17RVS_UIKit_ToolboxE25isReducedTransparencyModeSbvpZ">isReducedTransparencyMode</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Returns true, if we are in Reduced Transparency Mode.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">class</span> <span class="k">var</span> <span class="nv">isReducedTransparencyMode</span><span class="p">:</span> <span class="kt">Bool</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:So16UIViewControllerC17RVS_UIKit_ToolboxE10isDarkModeSbvp"></a>
+                    <a name="//apple_ref/swift/Property/isDarkMode" class="dashAnchor"></a>
+                    <a class="token" href="#/s:So16UIViewControllerC17RVS_UIKit_ToolboxE10isDarkModeSbvp">isDarkMode</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Returns true, if we are in Dark Mode.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">isDarkMode</span><span class="p">:</span> <span class="kt">Bool</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:So16UIViewControllerC17RVS_UIKit_ToolboxE18isHighContrastModeSbvp"></a>
+                    <a name="//apple_ref/swift/Property/isHighContrastMode" class="dashAnchor"></a>
+                    <a class="token" href="#/s:So16UIViewControllerC17RVS_UIKit_ToolboxE18isHighContrastModeSbvp">isHighContrastMode</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Returns true, if we are in High Contrast Mode.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">isHighContrastMode</span><span class="p">:</span> <span class="kt">Bool</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:So16UIViewControllerC17RVS_UIKit_ToolboxE25isReducedTransparencyModeSbvp"></a>
+                    <a name="//apple_ref/swift/Property/isReducedTransparencyMode" class="dashAnchor"></a>
+                    <a class="token" href="#/s:So16UIViewControllerC17RVS_UIKit_ToolboxE25isReducedTransparencyModeSbvp">isReducedTransparencyMode</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Returns true, if we are in Reduced Transparency Mode.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">isReducedTransparencyMode</span><span class="p">:</span> <span class="kt">Bool</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:So16UIViewControllerC17RVS_UIKit_ToolboxE13biometricTypeSo010LABiometryG0VSgvp"></a>
+                    <a name="//apple_ref/swift/Property/biometricType" class="dashAnchor"></a>
+                    <a class="token" href="#/s:So16UIViewControllerC17RVS_UIKit_ToolboxE13biometricTypeSo010LABiometryG0VSgvp">biometricType</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>This will be the string we use to describe the biometric type.
+It will either be nil (no biometrics), .touchID (Touch ID), or .faceID (Face ID).</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">biometricType</span><span class="p">:</span> <span class="kt">LABiometryType</span><span class="p">?</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:So16UIViewControllerC17RVS_UIKit_ToolboxE12screenAspect12CoreGraphics7CGFloatVvp"></a>
+                    <a name="//apple_ref/swift/Property/screenAspect" class="dashAnchor"></a>
+                    <a class="token" href="#/s:So16UIViewControllerC17RVS_UIKit_ToolboxE12screenAspect12CoreGraphics7CGFloatVvp">screenAspect</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Returns the X/Y aspect of the screen (window). It will return 0, if it cannot determine the aspect.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">screenAspect</span><span class="p">:</span> <span class="kt">CGFloat</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:So16UIViewControllerC17RVS_UIKit_ToolboxE21currentFirstResponderSo11UIResponderCSgvp"></a>
+                    <a name="//apple_ref/swift/Property/currentFirstResponder" class="dashAnchor"></a>
+                    <a class="token" href="#/s:So16UIViewControllerC17RVS_UIKit_ToolboxE21currentFirstResponderSo11UIResponderCSgvp">currentFirstResponder</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>This returns the first responder, wherever it is in our hierarchy.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">currentFirstResponder</span><span class="p">:</span> <span class="kt">UIResponder</span><span class="p">?</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:So16UIViewControllerC17RVS_UIKit_ToolboxE24resignAllFirstRespondersyyF"></a>
+                    <a name="//apple_ref/swift/Method/resignAllFirstResponders()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:So16UIViewControllerC17RVS_UIKit_ToolboxE24resignAllFirstRespondersyyF">resignAllFirstResponders()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>This puts away any open keyboards.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">resignAllFirstResponders</span><span class="p">()</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:So16UIViewControllerC17RVS_UIKit_ToolboxE012previousViewB0ABSgvp"></a>
+                    <a name="//apple_ref/swift/Property/previousViewController" class="dashAnchor"></a>
+                    <a class="token" href="#/s:So16UIViewControllerC17RVS_UIKit_ToolboxE012previousViewB0ABSgvp">previousViewController</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Returns the previous ViewController in a navigation stack.
+Nil, if at root, or not in a navigation stack.
+Inspired by <a href="https://stackoverflow.com/a/42916780/879365">this SO answer</a>.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">previousViewController</span><span class="p">:</span> <span class="kt">UIViewController</span><span class="p">?</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+      </article>
+    </div>
+    <section class="footer">
+      <p><a class="link" href="https://riftvalleysoftware.com" target="_blank" rel="external noopener">©2022 The Great Rift Valley Software Company</a></p>
+      <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external noopener">jazzy ♪♫ v0.14.2</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external noopener">Realm</a> project.</p>
+    </section>
+  </body>
+</html>

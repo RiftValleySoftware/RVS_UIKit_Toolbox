@@ -29,6 +29,8 @@ import LocalAuthentication
 // MARK: - UIViewController Extension -
 /* ###################################################################################################################################### */
 /**
+ A set of various extensions of the UIViewController class.
+ These provide utilities for determining running state of the device, biometric support, and some responder stuff.
  */
 public extension UIViewController {
     /* ################################################################## */
@@ -86,18 +88,18 @@ public extension UIViewController {
      It will either be nil (no biometrics), .touchID (Touch ID), or .faceID (Face ID).
      */
     var biometricType: LABiometryType? { Self.biometricType }
-
-    /* ################################################################## */
-    /**
-     This returns the first responder, wherever it is in our hierarchy.
-     */
-    var currentFirstResponder: UIResponder? { view?.currentFirstResponder }
     
     /* ################################################################## */
     /**
      Returns the X/Y aspect of the screen (window). It will return 0, if it cannot determine the aspect.
      */
     var screenAspect: CGFloat { view?.screenAspect ?? 0 }
+
+    /* ################################################################## */
+    /**
+     This returns the first responder, wherever it is in our hierarchy.
+     */
+    var currentFirstResponder: UIResponder? { view?.currentFirstResponder }
 
     /* ################################################################## */
     /**
@@ -125,6 +127,8 @@ public extension UIViewController {
 // MARK: - UIView Extension -
 /* ###################################################################################################################################### */
 /**
+ A set of extensions to the UIView class.
+ It has a few "informational" computed properties, and some other simple tools for things like auto layout.
  */
 public extension UIView {
     /* ################################################################## */
@@ -251,6 +255,8 @@ public extension UIView {
 // MARK: - UIImage Extension -
 /* ###################################################################################################################################### */
 /**
+ A set of extensions for UIImage.
+ This mostly has resizing stuff, but also a bit of pixel-level inspection.
  */
 public extension UIImage {
     /* ################################################################## */
@@ -373,6 +379,8 @@ public extension UIImage {
 // MARK: - UIColor Extension -
 /* ###################################################################################################################################### */
 /**
+ A set of UIColor extensions.
+ This mostly has ways of inspecting the color.
  */
 public extension UIColor {
     /* ################################################################## */
