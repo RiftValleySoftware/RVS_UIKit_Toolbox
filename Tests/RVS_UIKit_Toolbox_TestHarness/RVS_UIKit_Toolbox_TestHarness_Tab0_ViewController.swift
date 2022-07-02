@@ -19,5 +19,22 @@ CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFT
 
 The Great Rift Valley Software Company: https://riftvalleysoftware.com
 */
-"SLUG-TAB-0-TITLE"                                      =   "UIViewController";
-"SLUG-TAB-1-TITLE"                                      =   "UIView";
+
+import UIKit
+import RVS_Generic_Swift_Toolbox
+
+/* ###################################################################################################################################### */
+// MARK: - Main Test Harness View Controller -
+/* ###################################################################################################################################### */
+/**
+ This controls the UIViewController Test tab.
+ */
+class RVS_UIKit_Toolbox_TestHarness_Tab0_ViewController: RVS_UIKit_Toolbox_TestHarness_Base_Tabs_ViewController {
+    /* ################################################################## */
+    /**
+     Called when the view Hierarchy has been loaded.
+     */
+    override func viewDidLoad() {
+        super.viewDidLoad()
+    }
+}

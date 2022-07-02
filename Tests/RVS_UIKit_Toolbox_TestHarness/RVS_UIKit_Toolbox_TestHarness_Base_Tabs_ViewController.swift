@@ -19,5 +19,23 @@ CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFT
 
 The Great Rift Valley Software Company: https://riftvalleysoftware.com
 */
-"SLUG-TAB-0-TITLE"                                      =   "UIViewController";
-"SLUG-TAB-1-TITLE"                                      =   "UIView";
+
+import UIKit
+import RVS_Generic_Swift_Toolbox
+
+/* ###################################################################################################################################### */
+// MARK: - Main Test Harness View Controller -
+/* ###################################################################################################################################### */
+/**
+ This is a base class for view controllers in the tabbed section of the app.
+ */
+class RVS_UIKit_Toolbox_TestHarness_Base_Tabs_ViewController: UIViewController {
+    /* ################################################################## */
+    /**
+     Called when the view Hierarchy has been loaded.
+     */
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        tabBarItem?.title = tabBarItem?.title?.localizedVariant
+    }
+}

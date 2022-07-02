@@ -21,14 +21,15 @@ The Great Rift Valley Software Company: https://riftvalleysoftware.com
 */
 
 import UIKit
+import RVS_Generic_Swift_Toolbox
 
 /* ###################################################################################################################################### */
 // MARK: - Main Test Harness View Controller -
 /* ###################################################################################################################################### */
 /**
- This controls the main screen of the test harness app.
+ This controls the UIView Test tab.
  */
-class RVS_UIKit_Toolbox_TestHarness_ViewController: UIViewController {
+class RVS_UIKit_Toolbox_TestHarness_Tab1_ViewController: RVS_UIKit_Toolbox_TestHarness_Base_Tabs_ViewController {
     /* ################################################################## */
     /**
      Called when the view Hierarchy has been loaded.
