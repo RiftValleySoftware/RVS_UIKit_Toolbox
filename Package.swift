@@ -26,18 +26,11 @@ import PackageDescription
 
 let package = Package(
     name: "RVS_UIKit_Toolbox",
-    platforms: [
-        .iOS(.v13),
-        .tvOS(.v13),
-        .macOS(.v10_14),
-        .watchOS(.v6)
-    ],
+    platforms: [.iOS(.v14)],
     products: [
         .library(
             name: "RVS_UIKit_Toolbox",
             targets: ["RVS_UIKit_Toolbox"])
     ],
-    targets: [
-        .target(name: "RVS_UIKit_Toolbox")
-    ]
+    targets: [.target(name: "RVS_UIKit_Toolbox")]
 )

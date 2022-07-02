@@ -19,6 +19,7 @@ CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFT
 
 The Great Rift Valley Software Company: https://riftvalleysoftware.com
 */
-"SLUG-TAB-0-TITLE"                                      =   "UIViewController";
-"SLUG-TAB-1-TITLE"                                      =   "UIView";
-"SLUG-TAB-2-TITLE"                                      =   "UIImage";
+"SLUG-TAB-0-TITLE"                                      =   "Tab Bar";
+"SLUG-TAB-1-TITLE"                                      =   "View Controller";
+"SLUG-TAB-2-TITLE"                                      =   "View";
+"SLUG-TAB-3-TITLE"                                      =   "Image";

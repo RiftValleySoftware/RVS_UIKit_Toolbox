@@ -34,7 +34,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1293" y="-395"/>
+            <point key="canvasLocation" x="-1080" y="-169"/>
         </scene>
         <!--SLUG-TAB-1-TITLE-->
         <scene sceneID="nwT-OL-gyH">
@@ -61,7 +61,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bbi-Fo-kLE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1294" y="321"/>
+            <point key="canvasLocation" x="-94" y="-169"/>
         </scene>
         <!--Kit Toolbox Test Harness Tab Bar Controller-->
         <scene sceneID="fvR-Ri-Lb4">
@@ -77,11 +77,12 @@
                         <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="ikt-Bx-b9U"/>
                         <segue destination="4d7-Gj-a9m" kind="relationship" relationship="viewControllers" id="BuC-5y-37n"/>
                         <segue destination="2R3-ro-6eP" kind="relationship" relationship="viewControllers" id="d9E-RV-StO"/>
+                        <segue destination="L0M-tb-1Ck" kind="relationship" relationship="viewControllers" id="dUg-I5-uQx"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Hc5-Yi-BBq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="535" y="321"/>
+            <point key="canvasLocation" x="461" y="-898"/>
         </scene>
         <!--SLUG-TAB-2-TITLE-->
         <scene sceneID="sLp-Lj-zSZ">
@@ -108,12 +109,40 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UwH-t8-POH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1293" y="1049"/>
+            <point key="canvasLocation" x="984" y="-169"/>
+        </scene>
+        <!--SLUG-TAB-3-TITLE-->
+        <scene sceneID="KwZ-Yp-blH">
+            <objects>
+                <viewController id="L0M-tb-1Ck" customClass="RVS_UIKit_Toolbox_TestHarness_Tab3_ViewController" customModule="RVS_UIKit_Toolbox_TestHarness" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="NCd-bY-piB">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background-gradient" translatesAutoresizingMaskIntoConstraints="NO" id="azO-1v-U6l">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                            </imageView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="bfK-Ro-f0x"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="azO-1v-U6l" firstAttribute="top" secondItem="NCd-bY-piB" secondAttribute="top" id="1au-gg-s0M"/>
+                            <constraint firstAttribute="trailing" secondItem="azO-1v-U6l" secondAttribute="trailing" id="smF-6p-LDJ"/>
+                            <constraint firstAttribute="bottom" secondItem="azO-1v-U6l" secondAttribute="bottom" id="wnp-04-6l6"/>
+                            <constraint firstItem="azO-1v-U6l" firstAttribute="leading" secondItem="NCd-bY-piB" secondAttribute="leading" id="yxP-V1-9uA"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="SLUG-TAB-3-TITLE" image="hexagon.fill" catalog="system" id="ahE-G2-zub"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="TvF-sc-LgG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1954" y="-169"/>
         </scene>
     </scenes>
     <resources>
         <image name="background-gradient" width="1" height="1000"/>
         <image name="circle.fill" catalog="system" width="128" height="121"/>
+        <image name="hexagon.fill" catalog="system" width="128" height="124"/>
         <image name="square.fill" catalog="system" width="128" height="114"/>
         <image name="triangle.fill" catalog="system" width="128" height="112"/>
         <systemColor name="labelColor">

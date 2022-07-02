@@ -24,10 +24,10 @@ import UIKit
 import RVS_Generic_Swift_Toolbox
 
 /* ###################################################################################################################################### */
-// MARK: - UIImage Extension Test Harness View Controller -
+// MARK: - UIView Extension Test Harness View Controller -
 /* ###################################################################################################################################### */
 /**
- This controls the UIImage Test tab.
+ This controls the UIView Test tab.
  */
 class RVS_UIKit_Toolbox_TestHarness_Tab2_ViewController: RVS_UIKit_Toolbox_TestHarness_Base_Tabs_ViewController {
     /* ################################################################## */
