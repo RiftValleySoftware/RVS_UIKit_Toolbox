@@ -23,3 +23,6 @@ The Great Rift Valley Software Company: https://riftvalleysoftware.com
 "SLUG-TAB-1-TITLE"                                      =   "View Controller";
 "SLUG-TAB-2-TITLE"                                      =   "View";
 "SLUG-TAB-3-TITLE"                                      =   "Image";
+
+"SLUG-NORMAL-COLOR-SWITCH-LABEL"                        =   "Normal Color:";
+"SLUG-SELECTED-COLOR-SWITCH-LABEL"                      =   "Selected Color:";

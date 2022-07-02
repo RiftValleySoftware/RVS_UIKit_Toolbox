@@ -35,7 +35,7 @@ public extension UITabBarController {
     /* ################################################################## */
     /**
      This allows us to set specific colors for the normal, selected, and background attributes of the tab bar.
-     All parameters are optional.
+     All parameters are optional. If not provided, default values for the current theme are used.
      - parameters:
         - normal: The color to use for an unselected, enabled tab item.
         - selected: The color to use for a selected tab item.
@@ -43,47 +43,67 @@ public extension UITabBarController {
         - focused: The color to use for a focused tab item.
         - background: The background color to use for the bar.
      */
-    func setColorsTo(normal inNormalColor: UIColor? = nil, selected inSelectedColor: UIColor? = nil, disabled inDisabledColor: UIColor? = nil, focused inFocusedColor: UIColor? = nil, background inBackgroundColor: UIColor? = nil) {
-        let normalTextAttributes: [NSAttributedString.Key: Any] = [NSAttributedString.Key.foregroundColor: inNormalColor]
-        let selectedTextAttributes: [NSAttributedString.Key: Any] = [NSAttributedString.Key.foregroundColor: inSelectedColor]
-        let disabledTextAttributes: [NSAttributedString.Key: Any] = [NSAttributedString.Key.foregroundColor: inDisabledColor]
-        let focusedTextAttributes: [NSAttributedString.Key: Any] = [NSAttributedString.Key.foregroundColor: inFocusedColor]
+    func setColorsTo(normal inNormalColor: UIColor? = nil,
+                     selected inSelectedColor: UIColor? = nil,
+                     disabled inDisabledColor: UIColor? = nil,
+                     focused inFocusedColor: UIColor? = nil,
+                     background inBackgroundColor: UIColor? = nil) {
 
         let appearance = UITabBarAppearance()
 
-        appearance.backgroundColor = inBackgroundColor
+        appearance.configureWithOpaqueBackground()
+        
+        if let backgroundColor = inBackgroundColor {
+            tabBar.backgroundColor = backgroundColor
+            tabBar.barTintColor = backgroundColor
+            appearance.backgroundColor = backgroundColor
+        }
 
-        appearance.stackedLayoutAppearance.normal.iconColor = inNormalColor
-        appearance.stackedLayoutAppearance.normal.titleTextAttributes = normalTextAttributes
-        appearance.stackedLayoutAppearance.selected.iconColor = inSelectedColor
-        appearance.stackedLayoutAppearance.selected.titleTextAttributes = selectedTextAttributes
-        appearance.stackedLayoutAppearance.disabled.iconColor = inDisabledColor
-        appearance.stackedLayoutAppearance.disabled.titleTextAttributes = disabledTextAttributes
-        appearance.stackedLayoutAppearance.focused.iconColor = inFocusedColor
-        appearance.stackedLayoutAppearance.focused.titleTextAttributes = focusedTextAttributes
+        if let normalColor = inNormalColor {
+            appearance.stackedLayoutAppearance.normal.iconColor = normalColor
+            appearance.inlineLayoutAppearance.normal.iconColor = normalColor
+            appearance.compactInlineLayoutAppearance.normal.iconColor = normalColor
+            let normalTextAttributes: [NSAttributedString.Key: Any] = [NSAttributedString.Key.foregroundColor: normalColor]
+            appearance.stackedLayoutAppearance.normal.titleTextAttributes = normalTextAttributes
+            appearance.inlineLayoutAppearance.normal.titleTextAttributes = normalTextAttributes
+            appearance.compactInlineLayoutAppearance.normal.titleTextAttributes = normalTextAttributes
+        }
         
-        appearance.inlineLayoutAppearance.normal.iconColor = inNormalColor
-        appearance.inlineLayoutAppearance.normal.titleTextAttributes = normalTextAttributes
-        appearance.inlineLayoutAppearance.selected.iconColor = inSelectedColor
-        appearance.inlineLayoutAppearance.selected.titleTextAttributes = selectedTextAttributes
-        appearance.inlineLayoutAppearance.disabled.iconColor = inDisabledColor
-        appearance.inlineLayoutAppearance.disabled.titleTextAttributes = disabledTextAttributes
-        appearance.inlineLayoutAppearance.focused.iconColor = inFocusedColor
-        appearance.inlineLayoutAppearance.focused.titleTextAttributes = focusedTextAttributes
+        if let selectedColor = inSelectedColor {
+            appearance.stackedLayoutAppearance.selected.iconColor = selectedColor
+            appearance.inlineLayoutAppearance.selected.iconColor = selectedColor
+            appearance.compactInlineLayoutAppearance.selected.iconColor = selectedColor
+            let selectedTextAttributes: [NSAttributedString.Key: Any] = [NSAttributedString.Key.foregroundColor: selectedColor]
+            appearance.stackedLayoutAppearance.selected.titleTextAttributes = selectedTextAttributes
+            appearance.inlineLayoutAppearance.selected.titleTextAttributes = selectedTextAttributes
+            appearance.compactInlineLayoutAppearance.selected.titleTextAttributes = selectedTextAttributes
+        }
         
-        appearance.compactInlineLayoutAppearance.normal.iconColor = inNormalColor
-        appearance.compactInlineLayoutAppearance.normal.titleTextAttributes = normalTextAttributes
-        appearance.compactInlineLayoutAppearance.selected.iconColor = inSelectedColor
-        appearance.compactInlineLayoutAppearance.selected.titleTextAttributes = selectedTextAttributes
-        appearance.compactInlineLayoutAppearance.disabled.iconColor = inDisabledColor
-        appearance.compactInlineLayoutAppearance.disabled.titleTextAttributes = disabledTextAttributes
-        appearance.compactInlineLayoutAppearance.focused.iconColor = inFocusedColor
-        appearance.compactInlineLayoutAppearance.focused.titleTextAttributes = focusedTextAttributes
+        if let disabledColor = inDisabledColor {
+            appearance.stackedLayoutAppearance.disabled.iconColor = disabledColor
+            appearance.compactInlineLayoutAppearance.disabled.iconColor = disabledColor
+            appearance.inlineLayoutAppearance.disabled.iconColor = disabledColor
+            let disabledTextAttributes: [NSAttributedString.Key: Any] = [NSAttributedString.Key.foregroundColor: disabledColor]
+            appearance.stackedLayoutAppearance.disabled.titleTextAttributes = disabledTextAttributes
+            appearance.inlineLayoutAppearance.disabled.titleTextAttributes = disabledTextAttributes
+            appearance.compactInlineLayoutAppearance.disabled.titleTextAttributes = disabledTextAttributes
+        }
+        
+        if let focusedColor = inFocusedColor {
+            appearance.stackedLayoutAppearance.focused.iconColor = focusedColor
+            appearance.inlineLayoutAppearance.focused.iconColor = focusedColor
+            appearance.compactInlineLayoutAppearance.focused.iconColor = focusedColor
+            let focusedTextAttributes: [NSAttributedString.Key: Any] = [NSAttributedString.Key.foregroundColor: focusedColor]
+            appearance.stackedLayoutAppearance.focused.titleTextAttributes = focusedTextAttributes
+            appearance.inlineLayoutAppearance.focused.titleTextAttributes = focusedTextAttributes
+            appearance.compactInlineLayoutAppearance.focused.titleTextAttributes = focusedTextAttributes
+        }
 
         tabBar.standardAppearance = appearance
-        
-        tabBar.backgroundColor = inBackgroundColor
-        tabBar.barTintColor = inBackgroundColor
+
+        if #available(iOS 15.0, *) {
+            tabBar.scrollEdgeAppearance = appearance
+        }
     }
 }
 

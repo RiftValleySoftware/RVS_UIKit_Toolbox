@@ -19,9 +19,26 @@
 		D43965F0286CA15100727E6A /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = D43965EE286CA15100727E6A /* Localizable.strings */; };
 		D4499DCA2870881A00D53B7A /* RVS_UIKit_Toolbox_TestHarness_Tab2_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4499DC92870881A00D53B7A /* RVS_UIKit_Toolbox_TestHarness_Tab2_ViewController.swift */; };
 		D4CD86AA2870CF2300AFD67E /* RVS_UIKit_Toolbox_TestHarness_TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4CD86A92870CF2300AFD67E /* RVS_UIKit_Toolbox_TestHarness_TabBarController.swift */; };
-		D4F653102870ECC2001AF462 /* RVS_UIKit_Toolbox in Frameworks */ = {isa = PBXBuildFile; productRef = D4F6530F2870ECC2001AF462 /* RVS_UIKit_Toolbox */; };
 		D4F653122870F4D5001AF462 /* RVS_UIKit_Toolbox_TestHarness_Tab3_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4F653112870F4D5001AF462 /* RVS_UIKit_Toolbox_TestHarness_Tab3_ViewController.swift */; };
+		D4F65315287103A4001AF462 /* libRVS_UIKit_Toolbox.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D43965BC286C992100727E6A /* libRVS_UIKit_Toolbox.a */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		D4F653132871037E001AF462 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D43965B4286C992100727E6A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D43965BB286C992100727E6A;
+			remoteInfo = RVS_UIKit_Toolbox;
+		};
+		D4F65316287103A4001AF462 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D43965B4286C992100727E6A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D43965BB286C992100727E6A;
+			remoteInfo = RVS_UIKit_Toolbox;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		D4353A0228707DD00098949F /* RVS_UIKit_Toolbox_TestHarness_Base_Tabs_ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RVS_UIKit_Toolbox_TestHarness_Base_Tabs_ViewController.swift; sourceTree = "<group>"; };
@@ -40,7 +57,6 @@
 		D43965EF286CA15100727E6A /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
 		D4499DC92870881A00D53B7A /* RVS_UIKit_Toolbox_TestHarness_Tab2_ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RVS_UIKit_Toolbox_TestHarness_Tab2_ViewController.swift; sourceTree = "<group>"; };
 		D4CD86A92870CF2300AFD67E /* RVS_UIKit_Toolbox_TestHarness_TabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RVS_UIKit_Toolbox_TestHarness_TabBarController.swift; sourceTree = "<group>"; };
-		D4F6530D2870ECA0001AF462 /* RVS_UIKit_Toolbox */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = RVS_UIKit_Toolbox; sourceTree = "<group>"; };
 		D4F653112870F4D5001AF462 /* RVS_UIKit_Toolbox_TestHarness_Tab3_ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RVS_UIKit_Toolbox_TestHarness_Tab3_ViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -49,8 +65,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D4F65315287103A4001AF462 /* libRVS_UIKit_Toolbox.a in Frameworks */,
 				D4353A0128707D680098949F /* RVS_Generic_Swift_Toolbox in Frameworks */,
-				D4F653102870ECC2001AF462 /* RVS_UIKit_Toolbox in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -60,12 +76,10 @@
 		D43965B3286C992100727E6A = {
 			isa = PBXGroup;
 			children = (
-				D4F6530C2870ECA0001AF462 /* Packages */,
 				D43965C6286C993D00727E6A /* Sources */,
 				D43965C7286C995700727E6A /* Tests */,
 				D43965E9286C9C6300727E6A /* Meta */,
 				D43965BD286C992100727E6A /* Products */,
-				D4F6530E2870ECC2001AF462 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -146,21 +160,6 @@
 			path = Meta;
 			sourceTree = "<group>";
 		};
-		D4F6530C2870ECA0001AF462 /* Packages */ = {
-			isa = PBXGroup;
-			children = (
-				D4F6530D2870ECA0001AF462 /* RVS_UIKit_Toolbox */,
-			);
-			name = Packages;
-			sourceTree = "<group>";
-		};
-		D4F6530E2870ECC2001AF462 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -192,11 +191,12 @@
 			buildRules = (
 			);
 			dependencies = (
+				D4F653142871037E001AF462 /* PBXTargetDependency */,
+				D4F65317287103A4001AF462 /* PBXTargetDependency */,
 			);
 			name = RVS_UIKit_Toolbox_TestHarness;
 			packageProductDependencies = (
 				D4353A0028707D680098949F /* RVS_Generic_Swift_Toolbox */,
-				D4F6530F2870ECC2001AF462 /* RVS_UIKit_Toolbox */,
 			);
 			productName = RVS_UIKit_Toolbox_TestHarness;
 			productReference = D43965CD286C999A00727E6A /* RVS_UIKit_Toolbox_TestHarness.app */;
@@ -320,6 +320,19 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		D4F653142871037E001AF462 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D43965BB286C992100727E6A /* RVS_UIKit_Toolbox */;
+			targetProxy = D4F653132871037E001AF462 /* PBXContainerItemProxy */;
+		};
+		D4F65317287103A4001AF462 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D43965BB286C992100727E6A /* RVS_UIKit_Toolbox */;
+			targetProxy = D4F65316287103A4001AF462 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin PBXVariantGroup section */
 		D43965D5286C999A00727E6A /* RVS_UIKit_Toolbox_TestHarness_Main.storyboard */ = {
 			isa = PBXVariantGroup;
@@ -399,7 +412,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -454,7 +467,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -602,10 +615,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = D43539FF28707D680098949F /* XCRemoteSwiftPackageReference "RVS_Generic_Swift_Toolbox" */;
 			productName = RVS_Generic_Swift_Toolbox;
-		};
-		D4F6530F2870ECC2001AF462 /* RVS_UIKit_Toolbox */ = {
-			isa = XCSwiftPackageProductDependency;
-			productName = RVS_UIKit_Toolbox;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

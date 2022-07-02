@@ -32,9 +32,86 @@ import RVS_Generic_Swift_Toolbox
 class RVS_UIKit_Toolbox_TestHarness_Tab0_ViewController: RVS_UIKit_Toolbox_TestHarness_Base_Tabs_ViewController {
     /* ################################################################## */
     /**
+     */
+    @IBOutlet weak var normalColorSwitchLabel: UILabel?
+    
+    /* ################################################################## */
+    /**
+     */
+    @IBOutlet weak var normalColorSegmentedSwitch: UISegmentedControl?
+    
+    /* ################################################################## */
+    /**
+     */
+    @IBOutlet weak var selectedColorSwitchLabel: UILabel?
+    
+    /* ################################################################## */
+    /**
+     */
+    @IBOutlet weak var selectedColorSegmentedSwitch: UISegmentedControl?
+}
+
+/* ###################################################################################################################################### */
+// MARK: Instance Methods
+/* ###################################################################################################################################### */
+extension RVS_UIKit_Toolbox_TestHarness_Tab0_ViewController {
+    /* ################################################################## */
+    /**
+     Sets the tab bar to the colors selected in the switches.
+     */
+    func setTabBarColors() {
+        var normalColor: UIColor?
+        var selectedColor: UIColor?
+
+        if let index = normalColorSegmentedSwitch?.selectedSegmentIndex {
+            normalColor = UIColor(named: "Tint-\(index)")
+        }
+        
+        if let index = selectedColorSegmentedSwitch?.selectedSegmentIndex {
+            selectedColor = UIColor(named: "Tint-\(index)")
+        }
+        
+        tabBarController?.setColorsTo(normal: normalColor, selected: selectedColor)
+    }
+}
+
+/* ###################################################################################################################################### */
+// MARK: Base Class Overrides
+/* ###################################################################################################################################### */
+extension RVS_UIKit_Toolbox_TestHarness_Tab0_ViewController {
+    /* ################################################################## */
+    /**
      Called when the view Hierarchy has been loaded.
      */
     override func viewDidLoad() {
         super.viewDidLoad()
+        normalColorSwitchLabel?.text = normalColorSwitchLabel?.text?.localizedVariant
+        for index in 0..<(normalColorSegmentedSwitch?.numberOfSegments ?? 0) {
+            if let color = UIColor(named: "Tint-\(index)"),
+               let image = UIImage(systemName: "square.fill")?.withTintColor(color) {
+                normalColorSegmentedSwitch?.setImage(image.withRenderingMode(.alwaysOriginal), forSegmentAt: index)
+            }
+        }
+        selectedColorSwitchLabel?.text = selectedColorSwitchLabel?.text?.localizedVariant
+        for index in 0..<(selectedColorSegmentedSwitch?.numberOfSegments ?? 0) {
+            if let color = UIColor(named: "Tint-\(index)"),
+               let image = UIImage(systemName: "square.fill")?.withTintColor(color) {
+                selectedColorSegmentedSwitch?.setImage(image.withRenderingMode(.alwaysOriginal), forSegmentAt: index)
+            }
+        }
+        
+        setTabBarColors()
+    }
+}
+
+/* ###################################################################################################################################### */
+// MARK: Callbacks
+/* ###################################################################################################################################### */
+extension RVS_UIKit_Toolbox_TestHarness_Tab0_ViewController {
+    /* ################################################################## */
+    /**
+     */
+    @IBAction func colorSwitchChanged(_: Any) {
+        setTabBarColors()
     }
 }
