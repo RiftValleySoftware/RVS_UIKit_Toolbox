@@ -63,10 +63,10 @@
             </objects>
             <point key="canvasLocation" x="1294" y="321"/>
         </scene>
-        <!--Tab Bar Controller-->
+        <!--Kit Toolbox Test Harness Tab Bar Controller-->
         <scene sceneID="fvR-Ri-Lb4">
             <objects>
-                <tabBarController id="YcN-eF-k7Q" sceneMemberID="viewController">
+                <tabBarController id="YcN-eF-k7Q" customClass="RVS_UIKit_Toolbox_TestHarness_TabBarController" customModule="RVS_UIKit_Toolbox_TestHarness" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="L8w-Ry-YZK">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
