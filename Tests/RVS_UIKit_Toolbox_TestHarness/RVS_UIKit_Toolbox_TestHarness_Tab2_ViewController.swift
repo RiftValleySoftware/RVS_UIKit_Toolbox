@@ -24,12 +24,12 @@ import UIKit
 import RVS_Generic_Swift_Toolbox
 
 /* ###################################################################################################################################### */
-// MARK: - UIView Extension Test Harness View Controller -
+// MARK: - UIImage Extension Test Harness View Controller -
 /* ###################################################################################################################################### */
 /**
- This controls the UIView Test tab.
+ This controls the UIImage Test tab.
  */
-class RVS_UIKit_Toolbox_TestHarness_Tab1_ViewController: RVS_UIKit_Toolbox_TestHarness_Base_Tabs_ViewController {
+class RVS_UIKit_Toolbox_TestHarness_Tab2_ViewController: RVS_UIKit_Toolbox_TestHarness_Base_Tabs_ViewController {
     /* ################################################################## */
     /**
      Called when the view Hierarchy has been loaded.

@@ -24,7 +24,7 @@ import UIKit
 import RVS_Generic_Swift_Toolbox
 
 /* ###################################################################################################################################### */
-// MARK: - Main Test Harness View Controller -
+// MARK: - UIViewController Extension Test Harness View Controller -
 /* ###################################################################################################################################### */
 /**
  This controls the UIViewController Test tab.

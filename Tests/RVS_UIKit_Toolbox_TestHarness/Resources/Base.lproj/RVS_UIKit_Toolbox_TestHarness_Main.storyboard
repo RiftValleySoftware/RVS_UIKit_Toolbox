@@ -34,7 +34,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1292.753623188406" y="-350.22321428571428"/>
+            <point key="canvasLocation" x="1293" y="-395"/>
         </scene>
         <!--SLUG-TAB-1-TITLE-->
         <scene sceneID="nwT-OL-gyH">
@@ -71,21 +71,54 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="selectedImageTintColor" systemColor="labelColor"/>
                     </tabBar>
                     <connections>
                         <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="ikt-Bx-b9U"/>
                         <segue destination="4d7-Gj-a9m" kind="relationship" relationship="viewControllers" id="BuC-5y-37n"/>
+                        <segue destination="2R3-ro-6eP" kind="relationship" relationship="viewControllers" id="d9E-RV-StO"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Hc5-Yi-BBq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="405" y="17"/>
+            <point key="canvasLocation" x="535" y="321"/>
+        </scene>
+        <!--SLUG-TAB-2-TITLE-->
+        <scene sceneID="sLp-Lj-zSZ">
+            <objects>
+                <viewController id="2R3-ro-6eP" customClass="RVS_UIKit_Toolbox_TestHarness_Tab2_ViewController" customModule="RVS_UIKit_Toolbox_TestHarness" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="AyR-KQ-80a">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background-gradient" translatesAutoresizingMaskIntoConstraints="NO" id="9KH-1Y-1MY">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                            </imageView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="iBU-Ic-NgP"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="9KH-1Y-1MY" secondAttribute="bottom" id="P7E-1G-mFq"/>
+                            <constraint firstItem="9KH-1Y-1MY" firstAttribute="leading" secondItem="AyR-KQ-80a" secondAttribute="leading" id="U7e-HP-ERV"/>
+                            <constraint firstItem="9KH-1Y-1MY" firstAttribute="top" secondItem="AyR-KQ-80a" secondAttribute="top" id="cMx-rb-7Bi"/>
+                            <constraint firstAttribute="trailing" secondItem="9KH-1Y-1MY" secondAttribute="trailing" id="xDU-HD-5Ac"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="SLUG-TAB-2-TITLE" image="triangle.fill" catalog="system" id="rbD-9w-Tzi"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="UwH-t8-POH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1293" y="1049"/>
         </scene>
     </scenes>
     <resources>
         <image name="background-gradient" width="1" height="1000"/>
         <image name="circle.fill" catalog="system" width="128" height="121"/>
         <image name="square.fill" catalog="system" width="128" height="114"/>
+        <image name="triangle.fill" catalog="system" width="128" height="112"/>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
