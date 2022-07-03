@@ -60,6 +60,9 @@
                 <a class="nav-group-task-link" href="../Extensions/UIImage.html">UIImage</a>
               </li>
               <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Extensions/UITabBarController.html">UITabBarController</a>
+              </li>
+              <li class="nav-group-task">
                 <a class="nav-group-task-link" href="../Extensions/UIView.html">UIView</a>
               </li>
               <li class="nav-group-task">
@@ -94,9 +97,9 @@ These provide utilities for determining running state of the device, biometric s
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:So16UIViewControllerC17RVS_UIKit_ToolboxE13biometricTypeSo010LABiometryG0VSgvpZ"></a>
+                    <a name="/s:So16UIViewControllerC17RVS_UIKit_ToolboxE13biometricTypeSo010LABiometryG0VvpZ"></a>
                     <a name="//apple_ref/swift/Variable/biometricType" class="dashAnchor"></a>
-                    <a class="token" href="#/s:So16UIViewControllerC17RVS_UIKit_ToolboxE13biometricTypeSo010LABiometryG0VSgvpZ">biometricType</a>
+                    <a class="token" href="#/s:So16UIViewControllerC17RVS_UIKit_ToolboxE13biometricTypeSo010LABiometryG0VvpZ">biometricType</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -104,15 +107,22 @@ These provide utilities for determining running state of the device, biometric s
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>This will be the string we use to describe the biometric type.
-It will either be nil (no biometrics), .touchID (Touch ID), or .faceID (Face ID).</p>
+                        <p>Get the biometric authentication type.</p>
+
+<p>Possible Values:</p>
+
+<ul>
+<li>.none (no biometrics)</li>
+<li>.touchID (Touch ID)</li>
+<li>.faceID (Face ID)</li>
+</ul>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">class</span> <span class="k">var</span> <span class="nv">biometricType</span><span class="p">:</span> <span class="kt">LABiometryType</span><span class="p">?</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">class</span> <span class="k">var</span> <span class="nv">biometricType</span><span class="p">:</span> <span class="kt">LABiometryType</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
 
                         </div>
                       </div>
@@ -167,6 +177,33 @@ It will either be nil (no biometrics), .touchID (Touch ID), or .faceID (Face ID)
                         <div class="language">
                           <p class="aside-title">Swift</p>
                           <pre class="highlight swift"><code><span class="kd">class</span> <span class="k">var</span> <span class="nv">isReducedTransparencyMode</span><span class="p">:</span> <span class="kt">Bool</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:So16UIViewControllerC17RVS_UIKit_ToolboxE18isVoiceOverRunningSbvpZ"></a>
+                    <a name="//apple_ref/swift/Variable/isVoiceOverRunning" class="dashAnchor"></a>
+                    <a class="token" href="#/s:So16UIViewControllerC17RVS_UIKit_ToolboxE18isVoiceOverRunningSbvpZ">isVoiceOverRunning</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Returns true, if voiceover mode is on.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">class</span> <span class="k">var</span> <span class="nv">isVoiceOverRunning</span><span class="p">:</span> <span class="kt">Bool</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
 
                         </div>
                       </div>
@@ -257,9 +294,9 @@ It will either be nil (no biometrics), .touchID (Touch ID), or .faceID (Face ID)
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:So16UIViewControllerC17RVS_UIKit_ToolboxE13biometricTypeSo010LABiometryG0VSgvp"></a>
-                    <a name="//apple_ref/swift/Property/biometricType" class="dashAnchor"></a>
-                    <a class="token" href="#/s:So16UIViewControllerC17RVS_UIKit_ToolboxE13biometricTypeSo010LABiometryG0VSgvp">biometricType</a>
+                    <a name="/s:So16UIViewControllerC17RVS_UIKit_ToolboxE18isVoiceOverRunningSbvp"></a>
+                    <a name="//apple_ref/swift/Property/isVoiceOverRunning" class="dashAnchor"></a>
+                    <a class="token" href="#/s:So16UIViewControllerC17RVS_UIKit_ToolboxE18isVoiceOverRunningSbvp">isVoiceOverRunning</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -267,15 +304,49 @@ It will either be nil (no biometrics), .touchID (Touch ID), or .faceID (Face ID)
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>This will be the string we use to describe the biometric type.
-It will either be nil (no biometrics), .touchID (Touch ID), or .faceID (Face ID).</p>
+                        <p>Returns true, if voiceover mode is on.</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">biometricType</span><span class="p">:</span> <span class="kt">LABiometryType</span><span class="p">?</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
+                          <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">isVoiceOverRunning</span><span class="p">:</span> <span class="kt">Bool</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:So16UIViewControllerC17RVS_UIKit_ToolboxE13biometricTypeSo010LABiometryG0Vvp"></a>
+                    <a name="//apple_ref/swift/Property/biometricType" class="dashAnchor"></a>
+                    <a class="token" href="#/s:So16UIViewControllerC17RVS_UIKit_ToolboxE13biometricTypeSo010LABiometryG0Vvp">biometricType</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Get the biometric authentication type.</p>
+
+<p>Possible Values:</p>
+
+<ul>
+<li>.none (no biometrics)</li>
+<li>.touchID (Touch ID)</li>
+<li>.faceID (Face ID)</li>
+</ul>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">biometricType</span><span class="p">:</span> <span class="kt">LABiometryType</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
 
                         </div>
                       </div>

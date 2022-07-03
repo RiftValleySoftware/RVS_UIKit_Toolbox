@@ -32,12 +32,21 @@ The Great Rift Valley Software Company: https://riftvalleysoftware.com
 "SLUG-BACKGROUND-COLOR-SWITCH-LABEL"                    =   "Background Color:";
 
 // MARK: Tab 1 (View Controller)
-"SLUG-BIOREPORT-NONE"                                   =   "No Biometrics Enabled";
-"SLUG-BIOREPORT-FACEID"                                 =   "Face ID is Enabled";
-"SLUG-BIOREPORT-TOUCHID"                                =   "Touch ID is Enabled";
-"SLUG-HIGHCONTRAST-YES"                                 =   "High Contrast Mode Is Enabled";
-"SLUG-HIGHCONTRAST-NO"                                  =   "High Contrast Mode Is Not Enabled";
-"SLUG-REDTRANS-YES"                                     =   "Reduced Transparency Mode Is Enabled";
-"SLUG-REDTRANS-NO"                                      =   "Reduced Transparency Mode Is Not Enabled";
-"SLUG-DARK-YES"                                         =   "Dark Mode Is Enabled";
-"SLUG-DARK-NO"                                          =   "Dark Mode Is Not Enabled";
+"SLUG-BIOREPORT-NONE"                                   =   "No Biometrics Enabled.";
+"SLUG-BIOREPORT-FACEID"                                 =   "Face ID is Enabled.";
+"SLUG-BIOREPORT-TOUCHID"                                =   "Touch ID is Enabled.";
+"SLUG-HIGHCONTRAST-YES"                                 =   "High Contrast Mode Is Enabled.";
+"SLUG-HIGHCONTRAST-NO"                                  =   "High Contrast Mode Is Not Enabled.";
+"SLUG-REDTRANS-YES"                                     =   "Reduced Transparency Mode Is Enabled.";
+"SLUG-REDTRANS-NO"                                      =   "Reduced Transparency Mode Is Not Enabled.";
+"SLUG-DARK-YES"                                         =   "Dark Mode Is Enabled.";
+"SLUG-DARK-NO"                                          =   "Dark Mode Is Not Enabled.";
+"SLUG-VMODE-YES"                                        =   "Voiceover Mode is on.";
+"SLUG-VMODE-NO"                                         =   "Voiceover Mode is off.";
+"SLUG-SCREEN-ASPECT-FORMAT"                             =   "The Screen Aspect is %f.";
+"SLUG-NEXT"                                             =   "Next";
+"SLUG-AT-ROOT"                                          =   "This is the root navigation view controller.";
+"SLUG-ERROR-ROOT"                                       =   "There is an error! This is not the root!";
+
+// MARK: Tab 1->Nav 0 (View Controller)
+"SLUG-PREVIOUS-FORMAT"                                  =   "The Previous Controller is called \"%@.\"";

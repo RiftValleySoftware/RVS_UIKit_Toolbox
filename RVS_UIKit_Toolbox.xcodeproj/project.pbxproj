@@ -21,6 +21,7 @@
 		D4CD86AA2870CF2300AFD67E /* RVS_UIKit_Toolbox_TestHarness_TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4CD86A92870CF2300AFD67E /* RVS_UIKit_Toolbox_TestHarness_TabBarController.swift */; };
 		D4F653122870F4D5001AF462 /* RVS_UIKit_Toolbox_TestHarness_Tab3_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4F653112870F4D5001AF462 /* RVS_UIKit_Toolbox_TestHarness_Tab3_ViewController.swift */; };
 		D4F65315287103A4001AF462 /* libRVS_UIKit_Toolbox.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D43965BC286C992100727E6A /* libRVS_UIKit_Toolbox.a */; };
+		D4F8DD7C2872315A00081E59 /* RVS_UIKit_Toolbox_TestHarness_Tab1_Nav0_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4F8DD7B2872315A00081E59 /* RVS_UIKit_Toolbox_TestHarness_Tab1_Nav0_ViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +59,7 @@
 		D4499DC92870881A00D53B7A /* RVS_UIKit_Toolbox_TestHarness_Tab2_ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RVS_UIKit_Toolbox_TestHarness_Tab2_ViewController.swift; sourceTree = "<group>"; };
 		D4CD86A92870CF2300AFD67E /* RVS_UIKit_Toolbox_TestHarness_TabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RVS_UIKit_Toolbox_TestHarness_TabBarController.swift; sourceTree = "<group>"; };
 		D4F653112870F4D5001AF462 /* RVS_UIKit_Toolbox_TestHarness_Tab3_ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RVS_UIKit_Toolbox_TestHarness_Tab3_ViewController.swift; sourceTree = "<group>"; };
+		D4F8DD7B2872315A00081E59 /* RVS_UIKit_Toolbox_TestHarness_Tab1_Nav0_ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RVS_UIKit_Toolbox_TestHarness_Tab1_Nav0_ViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,6 +126,7 @@
 				D4353A0228707DD00098949F /* RVS_UIKit_Toolbox_TestHarness_Base_Tabs_ViewController.swift */,
 				D43965D3286C999A00727E6A /* RVS_UIKit_Toolbox_TestHarness_Tab0_ViewController.swift */,
 				D4353A0428707E150098949F /* RVS_UIKit_Toolbox_TestHarness_Tab1_ViewController.swift */,
+				D4F8DD7B2872315A00081E59 /* RVS_UIKit_Toolbox_TestHarness_Tab1_Nav0_ViewController.swift */,
 				D4499DC92870881A00D53B7A /* RVS_UIKit_Toolbox_TestHarness_Tab2_ViewController.swift */,
 				D4F653112870F4D5001AF462 /* RVS_UIKit_Toolbox_TestHarness_Tab3_ViewController.swift */,
 				D43965E2286C99E200727E6A /* Resources */,
@@ -309,6 +312,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D4353A0528707E150098949F /* RVS_UIKit_Toolbox_TestHarness_Tab1_ViewController.swift in Sources */,
+				D4F8DD7C2872315A00081E59 /* RVS_UIKit_Toolbox_TestHarness_Tab1_Nav0_ViewController.swift in Sources */,
 				D43965D4286C999A00727E6A /* RVS_UIKit_Toolbox_TestHarness_Tab0_ViewController.swift in Sources */,
 				D4CD86AA2870CF2300AFD67E /* RVS_UIKit_Toolbox_TestHarness_TabBarController.swift in Sources */,
 				D43965D0286C999A00727E6A /* RVS_UIKit_Toolbox_TestHarness_AppSceneDelegate.swift in Sources */,

@@ -52,10 +52,32 @@ class RVS_UIKit_Toolbox_TestHarness_Tab1_ViewController: RVS_UIKit_Toolbox_TestH
     
     /* ################################################################## */
     /**
+     */
+    @IBOutlet weak var screenAspectLabel: UILabel?
+    
+    /* ################################################################## */
+    /**
+     */
+    @IBOutlet weak var voiceoverModeLabel: UILabel!
+
+    /* ################################################################## */
+    /**
+     */
+    @IBOutlet weak var rootViewControllerLabel: UILabel?
+
+    /* ################################################################## */
+    /**
+     */
+    @IBOutlet weak var nextNavBarButton: UIBarButtonItem?
+    
+    /* ################################################################## */
+    /**
      Called when the view Hierarchy has been loaded.
      */
     override func viewDidLoad() {
         super.viewDidLoad()
+        nextNavBarButton?.title = nextNavBarButton?.title?.localizedVariant
+        navigationItem.title = tabBarItem?.title
     }
     
     /* ################################################################## */
@@ -68,5 +90,8 @@ class RVS_UIKit_Toolbox_TestHarness_Tab1_ViewController: RVS_UIKit_Toolbox_TestH
         highContrastLabel?.text = "SLUG-HIGHCONTRAST-\(isHighContrastMode ? "YES" : "NO")".localizedVariant
         reducedTransparencyLabel?.text = "SLUG-REDTRANS-\(isReducedTransparencyMode ? "YES" : "NO")".localizedVariant
         darkModeLabel?.text = "SLUG-DARK-\(isDarkMode ? "YES" : "NO")".localizedVariant
+        screenAspectLabel?.text = String(format: "SLUG-SCREEN-ASPECT-FORMAT".localizedVariant, screenAspect)
+        voiceoverModeLabel?.text = "SLUG-VMODE-\(isVoiceOverRunning ? "YES" : "NO")".localizedVariant
+        rootViewControllerLabel?.text = (nil == previousViewController ? "SLUG-AT-ROOT" : "SLUG-ERROR-ROOT").localizedVariant
     }
 }
