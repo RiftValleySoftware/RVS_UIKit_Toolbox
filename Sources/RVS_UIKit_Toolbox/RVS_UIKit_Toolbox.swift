@@ -34,7 +34,7 @@ import LocalAuthentication
 public extension UITabBarController {
     /* ################################################################## */
     /**
-     This allows us to set specific colors for the normal, selected, and background attributes of the tab bar.
+     This allows us to set specific colors for the normal, selected, disabled, focused, and background attributes of the tab bar.
      All parameters are optional. If not provided, default values for the current theme are used.
      - parameters:
         - normal: The color to use for an unselected, enabled tab item.
@@ -54,8 +54,6 @@ public extension UITabBarController {
         appearance.configureWithOpaqueBackground()
         
         if let backgroundColor = inBackgroundColor {
-//            tabBar.backgroundColor = backgroundColor
-//            tabBar.barTintColor = backgroundColor
             appearance.backgroundColor = backgroundColor
         }
 
@@ -104,6 +102,8 @@ public extension UITabBarController {
         if #available(iOS 15.0, *) {
             tabBar.scrollEdgeAppearance = appearance
         }
+        
+        tabBar.setNeedsLayout()
     }
 }
 

@@ -49,6 +49,36 @@ class RVS_UIKit_Toolbox_TestHarness_Tab0_ViewController: RVS_UIKit_Toolbox_TestH
     /**
      */
     @IBOutlet weak var selectedColorSegmentedSwitch: UISegmentedControl?
+    
+    /* ################################################################## */
+    /**
+     */
+    @IBOutlet weak var disabledColorSwitchLabel: UILabel!
+    
+    /* ################################################################## */
+    /**
+     */
+    @IBOutlet weak var disabledColorSegmentedSwitch: UISegmentedControl!
+    
+    /* ################################################################## */
+    /**
+     */
+    @IBOutlet weak var focusedColorSwitchLabel: UILabel!
+    
+    /* ################################################################## */
+    /**
+     */
+    @IBOutlet weak var focusedColorSegmentedSwitch: UISegmentedControl!
+    
+    /* ################################################################## */
+    /**
+     */
+    @IBOutlet weak var backgroundColorSwitchLabel: UILabel!
+    
+    /* ################################################################## */
+    /**
+     */
+    @IBOutlet weak var backgroundColorSegmentedSwitch: UISegmentedControl!
 }
 
 /* ###################################################################################################################################### */
@@ -60,18 +90,39 @@ extension RVS_UIKit_Toolbox_TestHarness_Tab0_ViewController {
      Sets the tab bar to the colors selected in the switches.
      */
     func setTabBarColors() {
-        var normalColor: UIColor?
-        var selectedColor: UIColor?
-
-        if let index = normalColorSegmentedSwitch?.selectedSegmentIndex {
-            normalColor = UIColor(named: "Tint-\(index)")
+        var backgroundColor: UIColor? = .clear
+        var selectedColor: UIColor? = .black
+        var normalColor: UIColor? = .white
+        var disabledColor: UIColor? = .lightGray
+        var focusedColor: UIColor? = .blue
+        
+        if let index = backgroundColorSegmentedSwitch?.selectedSegmentIndex {
+            if 0 == index {
+                backgroundColor = .clear
+            } else {
+                backgroundColor = UIColor(named: "Tint-\(index - 1)")
+            }
         }
         
         if let index = selectedColorSegmentedSwitch?.selectedSegmentIndex {
             selectedColor = UIColor(named: "Tint-\(index)")
         }
-        
-        tabBarController?.setColorsTo(normal: normalColor, selected: selectedColor)
+
+        if let index = normalColorSegmentedSwitch?.selectedSegmentIndex {
+            normalColor = UIColor(named: "Tint-\(index)")
+        }
+
+        if let index = disabledColorSegmentedSwitch?.selectedSegmentIndex {
+            disabledColor = UIColor(named: "Tint-\(index)")
+        }
+
+        if let index = focusedColorSegmentedSwitch?.selectedSegmentIndex {
+            focusedColor = UIColor(named: "Tint-\(index)")
+        }
+
+        if let tabController = tabBarController as? RVS_UIKit_Toolbox_TestHarness_TabBarController {
+            tabController.setColorsTo(normal: normalColor, selected: selectedColor, disabled: disabledColor, focused: focusedColor, background: backgroundColor)
+        }
     }
 }
 
@@ -85,13 +136,18 @@ extension RVS_UIKit_Toolbox_TestHarness_Tab0_ViewController {
      */
     override func viewDidLoad() {
         super.viewDidLoad()
-        normalColorSwitchLabel?.text = normalColorSwitchLabel?.text?.localizedVariant
-        for index in 0..<(normalColorSegmentedSwitch?.numberOfSegments ?? 0) {
-            if let color = UIColor(named: "Tint-\(index)"),
+        
+        backgroundColorSwitchLabel?.text = backgroundColorSwitchLabel?.text?.localizedVariant
+        for index in 0..<(backgroundColorSegmentedSwitch?.numberOfSegments ?? 0) {
+            if 0 == index,
+               let image = UIImage(systemName: "square.fill")?.withTintColor(.clear) {
+                backgroundColorSegmentedSwitch?.setImage(image.withRenderingMode(.alwaysOriginal), forSegmentAt: index)
+            } else if let color = UIColor(named: "Tint-\(index - 1)"),
                let image = UIImage(systemName: "square.fill")?.withTintColor(color) {
-                normalColorSegmentedSwitch?.setImage(image.withRenderingMode(.alwaysOriginal), forSegmentAt: index)
+                backgroundColorSegmentedSwitch?.setImage(image.withRenderingMode(.alwaysOriginal), forSegmentAt: index)
             }
         }
+        
         selectedColorSwitchLabel?.text = selectedColorSwitchLabel?.text?.localizedVariant
         for index in 0..<(selectedColorSegmentedSwitch?.numberOfSegments ?? 0) {
             if let color = UIColor(named: "Tint-\(index)"),
@@ -100,7 +156,29 @@ extension RVS_UIKit_Toolbox_TestHarness_Tab0_ViewController {
             }
         }
         
-        setTabBarColors()
+        normalColorSwitchLabel?.text = normalColorSwitchLabel?.text?.localizedVariant
+        for index in 0..<(normalColorSegmentedSwitch?.numberOfSegments ?? 0) {
+            if let color = UIColor(named: "Tint-\(index)"),
+               let image = UIImage(systemName: "square.fill")?.withTintColor(color) {
+                normalColorSegmentedSwitch?.setImage(image.withRenderingMode(.alwaysOriginal), forSegmentAt: index)
+            }
+        }
+        
+        disabledColorSwitchLabel?.text = disabledColorSwitchLabel?.text?.localizedVariant
+        for index in 0..<(disabledColorSegmentedSwitch?.numberOfSegments ?? 0) {
+            if let color = UIColor(named: "Tint-\(index)"),
+               let image = UIImage(systemName: "square.fill")?.withTintColor(color) {
+                disabledColorSegmentedSwitch?.setImage(image.withRenderingMode(.alwaysOriginal), forSegmentAt: index)
+            }
+        }
+        
+        focusedColorSwitchLabel?.text = focusedColorSwitchLabel?.text?.localizedVariant
+        for index in 0..<(focusedColorSegmentedSwitch?.numberOfSegments ?? 0) {
+            if let color = UIColor(named: "Tint-\(index)"),
+               let image = UIImage(systemName: "square.fill")?.withTintColor(color) {
+                focusedColorSegmentedSwitch?.setImage(image.withRenderingMode(.alwaysOriginal), forSegmentAt: index)
+            }
+        }
     }
 }
 

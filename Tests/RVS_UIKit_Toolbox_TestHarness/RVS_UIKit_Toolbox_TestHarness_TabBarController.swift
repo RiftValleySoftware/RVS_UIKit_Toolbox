@@ -38,7 +38,6 @@ class RVS_UIKit_Toolbox_TestHarness_TabBarController: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
         tabBar.items?.forEach { $0.title = $0.title?.localizedVariant }
-        setColorsTo(normal: .white, selected: .black, background: .clear)
         selectedIndex = 0
     }
 }

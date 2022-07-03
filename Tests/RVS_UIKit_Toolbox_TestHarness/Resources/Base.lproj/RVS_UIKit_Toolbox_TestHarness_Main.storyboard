@@ -22,18 +22,18 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="Ggq-94-LEG">
-                                <rect key="frame" x="20" y="44" width="374" height="137"/>
+                                <rect key="frame" x="20" y="44" width="374" height="360.5"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SLUG-NORMAL-COLOR-SWITCH-LABEL" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U4e-7e-Umu">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SLUG-BACKGROUND-COLOR-SWITCH-LABEL" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hzw-Y9-BiY">
                                         <rect key="frame" x="0.0" y="0.0" width="374" height="20.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <segmentedControl opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="1" translatesAutoresizingMaskIntoConstraints="NO" id="8fy-gd-K4O">
+                                    <segmentedControl opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="rK8-8F-jHP">
                                         <rect key="frame" x="0.0" y="32.5" width="374" height="31"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="30" id="hcz-oV-fJ0"/>
+                                            <constraint firstAttribute="height" constant="30" id="7X5-nr-f8y"/>
                                         </constraints>
                                         <segments>
                                             <segment title="">
@@ -63,9 +63,12 @@
                                             <segment title="">
                                                 <imageReference key="image" image="square.fill" catalog="system" symbolScale="large"/>
                                             </segment>
+                                            <segment title="">
+                                                <imageReference key="image" image="square.fill" catalog="system" symbolScale="large"/>
+                                            </segment>
                                         </segments>
                                         <connections>
-                                            <action selector="colorSwitchChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="Tm6-Ei-NHC"/>
+                                            <action selector="colorSwitchChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="RCS-fy-Y0T"/>
                                         </connections>
                                     </segmentedControl>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SLUG-SELECTED-COLOR-SWITCH-LABEL" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CHy-Ib-akM">
@@ -112,6 +115,138 @@
                                             <action selector="colorSwitchChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="c5L-o0-3q5"/>
                                         </connections>
                                     </segmentedControl>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SLUG-NORMAL-COLOR-SWITCH-LABEL" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U4e-7e-Umu">
+                                        <rect key="frame" x="0.0" y="149" width="374" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <segmentedControl opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="1" translatesAutoresizingMaskIntoConstraints="NO" id="8fy-gd-K4O">
+                                        <rect key="frame" x="0.0" y="181.5" width="374" height="31"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="hcz-oV-fJ0"/>
+                                        </constraints>
+                                        <segments>
+                                            <segment title="">
+                                                <imageReference key="image" image="square.fill" catalog="system" symbolScale="large" renderingMode="template"/>
+                                            </segment>
+                                            <segment title="">
+                                                <imageReference key="image" image="square.fill" catalog="system" symbolScale="large" renderingMode="template"/>
+                                            </segment>
+                                            <segment title="">
+                                                <imageReference key="image" image="square.fill" catalog="system" symbolScale="large" renderingMode="template"/>
+                                            </segment>
+                                            <segment title="">
+                                                <imageReference key="image" image="square.fill" catalog="system" symbolScale="large" renderingMode="template"/>
+                                            </segment>
+                                            <segment title="">
+                                                <imageReference key="image" image="square.fill" catalog="system" symbolScale="large" renderingMode="template"/>
+                                            </segment>
+                                            <segment title="">
+                                                <imageReference key="image" image="square.fill" catalog="system" symbolScale="large" renderingMode="template"/>
+                                            </segment>
+                                            <segment title="">
+                                                <imageReference key="image" image="square.fill" catalog="system" symbolScale="large" renderingMode="template"/>
+                                            </segment>
+                                            <segment title="">
+                                                <imageReference key="image" image="square.fill" catalog="system" symbolScale="large" renderingMode="template"/>
+                                            </segment>
+                                            <segment title="">
+                                                <imageReference key="image" image="square.fill" catalog="system" symbolScale="large"/>
+                                            </segment>
+                                        </segments>
+                                        <connections>
+                                            <action selector="colorSwitchChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="Tm6-Ei-NHC"/>
+                                        </connections>
+                                    </segmentedControl>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SLUG-DISABLED-COLOR-SWITCH-LABEL" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zSW-Zv-IG9">
+                                        <rect key="frame" x="0.0" y="223.5" width="374" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <segmentedControl opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="2" translatesAutoresizingMaskIntoConstraints="NO" id="Pah-o4-0ar">
+                                        <rect key="frame" x="0.0" y="256" width="374" height="31"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="cCm-Hs-P7w"/>
+                                        </constraints>
+                                        <segments>
+                                            <segment title="">
+                                                <imageReference key="image" image="square.fill" catalog="system" symbolScale="large" renderingMode="template"/>
+                                            </segment>
+                                            <segment title="">
+                                                <imageReference key="image" image="square.fill" catalog="system" symbolScale="large" renderingMode="template"/>
+                                            </segment>
+                                            <segment title="">
+                                                <imageReference key="image" image="square.fill" catalog="system" symbolScale="large" renderingMode="template"/>
+                                            </segment>
+                                            <segment title="">
+                                                <imageReference key="image" image="square.fill" catalog="system" symbolScale="large" renderingMode="template"/>
+                                            </segment>
+                                            <segment title="">
+                                                <imageReference key="image" image="square.fill" catalog="system" symbolScale="large" renderingMode="template"/>
+                                            </segment>
+                                            <segment title="">
+                                                <imageReference key="image" image="square.fill" catalog="system" symbolScale="large" renderingMode="template"/>
+                                            </segment>
+                                            <segment title="">
+                                                <imageReference key="image" image="square.fill" catalog="system" symbolScale="large" renderingMode="template"/>
+                                            </segment>
+                                            <segment title="">
+                                                <imageReference key="image" image="square.fill" catalog="system" symbolScale="large" renderingMode="template"/>
+                                            </segment>
+                                            <segment title="">
+                                                <imageReference key="image" image="square.fill" catalog="system" symbolScale="large"/>
+                                            </segment>
+                                        </segments>
+                                        <connections>
+                                            <action selector="colorSwitchChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="L16-6T-tUe"/>
+                                        </connections>
+                                    </segmentedControl>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SLUG-FOCUSED-COLOR-SWITCH-LABEL" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OgY-ep-UzY">
+                                        <rect key="frame" x="0.0" y="298" width="374" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <segmentedControl opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="3" translatesAutoresizingMaskIntoConstraints="NO" id="fr4-gm-y9a">
+                                        <rect key="frame" x="0.0" y="330.5" width="374" height="31"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="DWv-s3-ljr"/>
+                                        </constraints>
+                                        <segments>
+                                            <segment title="">
+                                                <imageReference key="image" image="square.fill" catalog="system" symbolScale="large" renderingMode="template"/>
+                                            </segment>
+                                            <segment title="">
+                                                <imageReference key="image" image="square.fill" catalog="system" symbolScale="large" renderingMode="template"/>
+                                            </segment>
+                                            <segment title="">
+                                                <imageReference key="image" image="square.fill" catalog="system" symbolScale="large" renderingMode="template"/>
+                                            </segment>
+                                            <segment title="">
+                                                <imageReference key="image" image="square.fill" catalog="system" symbolScale="large" renderingMode="template"/>
+                                            </segment>
+                                            <segment title="">
+                                                <imageReference key="image" image="square.fill" catalog="system" symbolScale="large" renderingMode="template"/>
+                                            </segment>
+                                            <segment title="">
+                                                <imageReference key="image" image="square.fill" catalog="system" symbolScale="large" renderingMode="template"/>
+                                            </segment>
+                                            <segment title="">
+                                                <imageReference key="image" image="square.fill" catalog="system" symbolScale="large" renderingMode="template"/>
+                                            </segment>
+                                            <segment title="">
+                                                <imageReference key="image" image="square.fill" catalog="system" symbolScale="large" renderingMode="template"/>
+                                            </segment>
+                                            <segment title="">
+                                                <imageReference key="image" image="square.fill" catalog="system" symbolScale="large"/>
+                                            </segment>
+                                        </segments>
+                                        <connections>
+                                            <action selector="colorSwitchChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="2y9-bu-9ty"/>
+                                        </connections>
+                                    </segmentedControl>
                                 </subviews>
                             </stackView>
                         </subviews>
@@ -129,6 +264,12 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="SLUG-TAB-0-TITLE" image="square.fill" catalog="system" id="FLZ-mY-nUu"/>
                     <connections>
+                        <outlet property="backgroundColorSegmentedSwitch" destination="rK8-8F-jHP" id="6t5-aM-YOX"/>
+                        <outlet property="backgroundColorSwitchLabel" destination="hzw-Y9-BiY" id="9OY-XZ-N5x"/>
+                        <outlet property="disabledColorSegmentedSwitch" destination="Pah-o4-0ar" id="khB-e2-Rnw"/>
+                        <outlet property="disabledColorSwitchLabel" destination="zSW-Zv-IG9" id="JS8-xp-WfZ"/>
+                        <outlet property="focusedColorSegmentedSwitch" destination="fr4-gm-y9a" id="WOL-c0-Mg3"/>
+                        <outlet property="focusedColorSwitchLabel" destination="OgY-ep-UzY" id="HC0-FE-Mdw"/>
                         <outlet property="normalColorSegmentedSwitch" destination="8fy-gd-K4O" id="kGh-4K-BhX"/>
                         <outlet property="normalColorSwitchLabel" destination="U4e-7e-Umu" id="SK5-iH-8Gk"/>
                         <outlet property="selectedColorSegmentedSwitch" destination="XNW-io-ivZ" id="4Pq-9Y-BU5"/>
@@ -173,8 +314,6 @@
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="L8w-Ry-YZK">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <color key="selectedImageTintColor" systemColor="labelColor"/>
                     </tabBar>
                     <connections>
                         <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="ikt-Bx-b9U"/>
@@ -248,9 +387,6 @@
         <image name="hexagon.fill" catalog="system" width="128" height="124"/>
         <image name="square.fill" catalog="system" width="128" height="114"/>
         <image name="triangle.fill" catalog="system" width="128" height="112"/>
-        <systemColor name="labelColor">
-            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
