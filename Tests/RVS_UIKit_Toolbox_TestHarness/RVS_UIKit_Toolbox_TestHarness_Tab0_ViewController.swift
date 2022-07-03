@@ -120,9 +120,7 @@ extension RVS_UIKit_Toolbox_TestHarness_Tab0_ViewController {
             focusedColor = UIColor(named: "Tint-\(index)")
         }
 
-        if let tabController = tabBarController as? RVS_UIKit_Toolbox_TestHarness_TabBarController {
-            tabController.setColorsTo(normal: normalColor, selected: selectedColor, disabled: disabledColor, focused: focusedColor, background: backgroundColor)
-        }
+        tabBarController?.setColorsTo(normal: normalColor, selected: selectedColor, disabled: disabledColor, focused: focusedColor, background: backgroundColor)
     }
 }
 
