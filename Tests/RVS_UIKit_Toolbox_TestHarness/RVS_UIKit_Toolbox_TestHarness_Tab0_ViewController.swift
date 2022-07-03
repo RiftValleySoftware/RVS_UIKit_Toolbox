@@ -53,32 +53,32 @@ class RVS_UIKit_Toolbox_TestHarness_Tab0_ViewController: RVS_UIKit_Toolbox_TestH
     /* ################################################################## */
     /**
      */
-    @IBOutlet weak var disabledColorSwitchLabel: UILabel!
+    @IBOutlet weak var disabledColorSwitchLabel: UILabel?
     
     /* ################################################################## */
     /**
      */
-    @IBOutlet weak var disabledColorSegmentedSwitch: UISegmentedControl!
+    @IBOutlet weak var disabledColorSegmentedSwitch: UISegmentedControl?
     
     /* ################################################################## */
     /**
      */
-    @IBOutlet weak var focusedColorSwitchLabel: UILabel!
+    @IBOutlet weak var focusedColorSwitchLabel: UILabel?
     
     /* ################################################################## */
     /**
      */
-    @IBOutlet weak var focusedColorSegmentedSwitch: UISegmentedControl!
+    @IBOutlet weak var focusedColorSegmentedSwitch: UISegmentedControl?
     
     /* ################################################################## */
     /**
      */
-    @IBOutlet weak var backgroundColorSwitchLabel: UILabel!
+    @IBOutlet weak var backgroundColorSwitchLabel: UILabel?
     
     /* ################################################################## */
     /**
      */
-    @IBOutlet weak var backgroundColorSegmentedSwitch: UISegmentedControl!
+    @IBOutlet weak var backgroundColorSegmentedSwitch: UISegmentedControl?
 }
 
 /* ###################################################################################################################################### */
@@ -140,7 +140,7 @@ extension RVS_UIKit_Toolbox_TestHarness_Tab0_ViewController {
         backgroundColorSwitchLabel?.text = backgroundColorSwitchLabel?.text?.localizedVariant
         for index in 0..<(backgroundColorSegmentedSwitch?.numberOfSegments ?? 0) {
             if 0 == index,
-               let image = UIImage(systemName: "square.fill")?.withTintColor(.clear) {
+               let image = UIImage(systemName: "square")?.withTintColor(.black) {
                 backgroundColorSegmentedSwitch?.setImage(image.withRenderingMode(.alwaysOriginal), forSegmentAt: index)
             } else if let color = UIColor(named: "Tint-\(index - 1)"),
                let image = UIImage(systemName: "square.fill")?.withTintColor(color) {
