@@ -54,8 +54,8 @@ public extension UITabBarController {
         appearance.configureWithOpaqueBackground()
         
         if let backgroundColor = inBackgroundColor {
-            tabBar.backgroundColor = backgroundColor
-            tabBar.barTintColor = backgroundColor
+//            tabBar.backgroundColor = backgroundColor
+//            tabBar.barTintColor = backgroundColor
             appearance.backgroundColor = backgroundColor
         }
 
