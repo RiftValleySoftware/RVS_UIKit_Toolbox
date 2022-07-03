@@ -34,19 +34,15 @@ import LocalAuthentication
 public extension UITabBarController {
     /* ################################################################## */
     /**
-     This allows us to set specific colors for the normal, selected, disabled, focused, and background attributes of the tab bar.
+     This allows us to set specific colors for the normal, selected, and background attributes of the tab bar.
      All parameters are optional. If not provided, default values for the current theme are used.
      - parameters:
         - normal: The color to use for an unselected, enabled tab item.
         - selected: The color to use for a selected tab item.
-        - disabled: The color to use for a disabled tab item.
-        - focused: The color to use for a focused tab item.
         - background: The background color to use for the bar.
      */
     func setColorsTo(normal inNormalColor: UIColor? = nil,
                      selected inSelectedColor: UIColor? = nil,
-                     disabled inDisabledColor: UIColor? = nil,
-                     focused inFocusedColor: UIColor? = nil,
                      background inBackgroundColor: UIColor? = nil) {
 
         let appearance = UITabBarAppearance()
@@ -75,26 +71,6 @@ public extension UITabBarController {
             appearance.stackedLayoutAppearance.selected.titleTextAttributes = selectedTextAttributes
             appearance.inlineLayoutAppearance.selected.titleTextAttributes = selectedTextAttributes
             appearance.compactInlineLayoutAppearance.selected.titleTextAttributes = selectedTextAttributes
-        }
-        
-        if let disabledColor = inDisabledColor {
-            appearance.stackedLayoutAppearance.disabled.iconColor = disabledColor
-            appearance.compactInlineLayoutAppearance.disabled.iconColor = disabledColor
-            appearance.inlineLayoutAppearance.disabled.iconColor = disabledColor
-            let disabledTextAttributes: [NSAttributedString.Key: Any] = [NSAttributedString.Key.foregroundColor: disabledColor]
-            appearance.stackedLayoutAppearance.disabled.titleTextAttributes = disabledTextAttributes
-            appearance.inlineLayoutAppearance.disabled.titleTextAttributes = disabledTextAttributes
-            appearance.compactInlineLayoutAppearance.disabled.titleTextAttributes = disabledTextAttributes
-        }
-        
-        if let focusedColor = inFocusedColor {
-            appearance.stackedLayoutAppearance.focused.iconColor = focusedColor
-            appearance.inlineLayoutAppearance.focused.iconColor = focusedColor
-            appearance.compactInlineLayoutAppearance.focused.iconColor = focusedColor
-            let focusedTextAttributes: [NSAttributedString.Key: Any] = [NSAttributedString.Key.foregroundColor: focusedColor]
-            appearance.stackedLayoutAppearance.focused.titleTextAttributes = focusedTextAttributes
-            appearance.inlineLayoutAppearance.focused.titleTextAttributes = focusedTextAttributes
-            appearance.compactInlineLayoutAppearance.focused.titleTextAttributes = focusedTextAttributes
         }
 
         tabBar.standardAppearance = appearance

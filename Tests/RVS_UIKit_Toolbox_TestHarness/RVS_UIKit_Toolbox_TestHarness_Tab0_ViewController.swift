@@ -32,53 +32,39 @@ import RVS_Generic_Swift_Toolbox
 class RVS_UIKit_Toolbox_TestHarness_Tab0_ViewController: RVS_UIKit_Toolbox_TestHarness_Base_Tabs_ViewController {
     /* ################################################################## */
     /**
-     */
-    @IBOutlet weak var normalColorSwitchLabel: UILabel?
-    
-    /* ################################################################## */
-    /**
-     */
-    @IBOutlet weak var normalColorSegmentedSwitch: UISegmentedControl?
-    
-    /* ################################################################## */
-    /**
-     */
-    @IBOutlet weak var selectedColorSwitchLabel: UILabel?
-    
-    /* ################################################################## */
-    /**
-     */
-    @IBOutlet weak var selectedColorSegmentedSwitch: UISegmentedControl?
-    
-    /* ################################################################## */
-    /**
-     */
-    @IBOutlet weak var disabledColorSwitchLabel: UILabel?
-    
-    /* ################################################################## */
-    /**
-     */
-    @IBOutlet weak var disabledColorSegmentedSwitch: UISegmentedControl?
-    
-    /* ################################################################## */
-    /**
-     */
-    @IBOutlet weak var focusedColorSwitchLabel: UILabel?
-    
-    /* ################################################################## */
-    /**
-     */
-    @IBOutlet weak var focusedColorSegmentedSwitch: UISegmentedControl?
-    
-    /* ################################################################## */
-    /**
+     The label for the background color segmented switch.
      */
     @IBOutlet weak var backgroundColorSwitchLabel: UILabel?
     
     /* ################################################################## */
     /**
+     The background color segmented switch.
      */
     @IBOutlet weak var backgroundColorSegmentedSwitch: UISegmentedControl?
+    
+    /* ################################################################## */
+    /**
+     The label for the selected color segmented switch.
+     */
+    @IBOutlet weak var selectedColorSwitchLabel: UILabel?
+    
+    /* ################################################################## */
+    /**
+     The selected color segmented switch.
+     */
+    @IBOutlet weak var selectedColorSegmentedSwitch: UISegmentedControl?
+
+    /* ################################################################## */
+    /**
+     The label for the normal color segmented switch.
+     */
+    @IBOutlet weak var normalColorSwitchLabel: UILabel?
+    
+    /* ################################################################## */
+    /**
+     The normal color segmented switch.
+     */
+    @IBOutlet weak var normalColorSegmentedSwitch: UISegmentedControl?
 }
 
 /* ###################################################################################################################################### */
@@ -125,28 +111,6 @@ extension RVS_UIKit_Toolbox_TestHarness_Tab0_ViewController {
             }
         }
         
-        disabledColorSwitchLabel?.text = disabledColorSwitchLabel?.text?.localizedVariant
-        for index in 0..<(disabledColorSegmentedSwitch?.numberOfSegments ?? 0) {
-            if 0 == index,
-               let image = UIImage(systemName: "square")?.withTintColor(.black) {
-                disabledColorSegmentedSwitch?.setImage(image.withRenderingMode(.alwaysOriginal), forSegmentAt: index)
-            } else if let color = UIColor(named: "Tint-\(index - 1)"),
-               let image = UIImage(systemName: "square.fill")?.withTintColor(color) {
-                disabledColorSegmentedSwitch?.setImage(image.withRenderingMode(.alwaysOriginal), forSegmentAt: index)
-            }
-        }
-        
-        focusedColorSwitchLabel?.text = focusedColorSwitchLabel?.text?.localizedVariant
-        for index in 0..<(focusedColorSegmentedSwitch?.numberOfSegments ?? 0) {
-            if 0 == index,
-               let image = UIImage(systemName: "square")?.withTintColor(.black) {
-                focusedColorSegmentedSwitch?.setImage(image.withRenderingMode(.alwaysOriginal), forSegmentAt: index)
-            } else if let color = UIColor(named: "Tint-\(index - 1)"),
-               let image = UIImage(systemName: "square.fill")?.withTintColor(color) {
-                focusedColorSegmentedSwitch?.setImage(image.withRenderingMode(.alwaysOriginal), forSegmentAt: index)
-            }
-        }
-        
         colorSwitchChanged()
     }
 }
@@ -165,8 +129,6 @@ extension RVS_UIKit_Toolbox_TestHarness_Tab0_ViewController {
         var backgroundColor: UIColor? = .clear
         var selectedColor: UIColor? = .black
         var normalColor: UIColor? = .white
-        var disabledColor: UIColor? = .lightGray
-        var focusedColor: UIColor? = .blue
         
         if let index = backgroundColorSegmentedSwitch?.selectedSegmentIndex {
             if 0 == index {
@@ -192,22 +154,6 @@ extension RVS_UIKit_Toolbox_TestHarness_Tab0_ViewController {
             }
         }
 
-        if let index = disabledColorSegmentedSwitch?.selectedSegmentIndex {
-            if 0 == index {
-                disabledColor = .clear
-            } else {
-                disabledColor = UIColor(named: "Tint-\(index - 1)")
-            }
-        }
-
-        if let index = focusedColorSegmentedSwitch?.selectedSegmentIndex {
-            if 0 == index {
-                focusedColor = .clear
-            } else {
-                focusedColor = UIColor(named: "Tint-\(index - 1)")
-            }
-        }
-
-        tabBarController?.setColorsTo(normal: normalColor, selected: selectedColor, disabled: disabledColor, focused: focusedColor, background: backgroundColor)
+        tabBarController?.setColorsTo(normal: normalColor, selected: selectedColor, background: backgroundColor)
     }
 }

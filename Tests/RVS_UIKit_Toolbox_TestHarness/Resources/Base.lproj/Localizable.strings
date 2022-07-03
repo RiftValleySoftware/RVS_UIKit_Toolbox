@@ -29,3 +29,7 @@ The Great Rift Valley Software Company: https://riftvalleysoftware.com
 "SLUG-DISABLED-COLOR-SWITCH-LABEL"                      =   "Disabled Color:";
 "SLUG-FOCUSED-COLOR-SWITCH-LABEL"                       =   "Focused Color:";
 "SLUG-BACKGROUND-COLOR-SWITCH-LABEL"                    =   "Background Color:";
+
+"SLUG-NORMAL"                                           =   "Normal";
+"SLUG-DISABLED"                                         =   "Disabled";
+"SLUG-FOCUSED"                                          =   "Focused";
