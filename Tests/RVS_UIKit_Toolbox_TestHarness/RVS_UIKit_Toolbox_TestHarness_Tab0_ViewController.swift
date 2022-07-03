@@ -83,7 +83,7 @@ extension RVS_UIKit_Toolbox_TestHarness_Tab0_ViewController {
             if 0 == index,
                let image = UIImage(systemName: "square")?.withTintColor(.black) {
                 backgroundColorSegmentedSwitch?.setImage(image.withRenderingMode(.alwaysOriginal), forSegmentAt: index)
-            } else if let color = UIColor(named: "Tint-\(index - 1)"),
+            } else if let color = UIColor(named: "Tint-\(index)"),
                let image = UIImage(systemName: "square.fill")?.withTintColor(color) {
                 backgroundColorSegmentedSwitch?.setImage(image.withRenderingMode(.alwaysOriginal), forSegmentAt: index)
             }
@@ -94,7 +94,7 @@ extension RVS_UIKit_Toolbox_TestHarness_Tab0_ViewController {
             if 0 == index,
                let image = UIImage(systemName: "square")?.withTintColor(.black) {
                 selectedColorSegmentedSwitch?.setImage(image.withRenderingMode(.alwaysOriginal), forSegmentAt: index)
-            } else if let color = UIColor(named: "Tint-\(index - 1)"),
+            } else if let color = UIColor(named: "Tint-\(index)"),
                let image = UIImage(systemName: "square.fill")?.withTintColor(color) {
                 selectedColorSegmentedSwitch?.setImage(image.withRenderingMode(.alwaysOriginal), forSegmentAt: index)
             }
@@ -105,7 +105,7 @@ extension RVS_UIKit_Toolbox_TestHarness_Tab0_ViewController {
             if 0 == index,
                let image = UIImage(systemName: "square")?.withTintColor(.black) {
                 normalColorSegmentedSwitch?.setImage(image.withRenderingMode(.alwaysOriginal), forSegmentAt: index)
-            } else if let color = UIColor(named: "Tint-\(index - 1)"),
+            } else if let color = UIColor(named: "Tint-\(index)"),
                let image = UIImage(systemName: "square.fill")?.withTintColor(color) {
                 normalColorSegmentedSwitch?.setImage(image.withRenderingMode(.alwaysOriginal), forSegmentAt: index)
             }
@@ -134,7 +134,7 @@ extension RVS_UIKit_Toolbox_TestHarness_Tab0_ViewController {
             if 0 == index {
                 backgroundColor = .clear
             } else {
-                backgroundColor = UIColor(named: "Tint-\(index - 1)")
+                backgroundColor = UIColor(named: "Tint-\(index)")
             }
         }
         
@@ -142,7 +142,7 @@ extension RVS_UIKit_Toolbox_TestHarness_Tab0_ViewController {
             if 0 == index {
                 selectedColor = .clear
             } else {
-                selectedColor = UIColor(named: "Tint-\(index - 1)")
+                selectedColor = UIColor(named: "Tint-\(index)")
             }
         }
 
@@ -150,7 +150,7 @@ extension RVS_UIKit_Toolbox_TestHarness_Tab0_ViewController {
             if 0 == index {
                 normalColor = .clear
             } else {
-                normalColor = UIColor(named: "Tint-\(index - 1)")
+                normalColor = UIColor(named: "Tint-\(index)")
             }
         }
 

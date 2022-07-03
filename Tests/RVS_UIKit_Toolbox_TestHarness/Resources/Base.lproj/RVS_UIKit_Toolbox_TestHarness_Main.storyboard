@@ -18,9 +18,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background-gradient" translatesAutoresizingMaskIntoConstraints="NO" id="Wem-uL-DbK">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                            </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="Ggq-94-LEG">
                                 <rect key="frame" x="20" y="44" width="374" height="211.5"/>
                                 <subviews>
@@ -171,13 +168,9 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="Wem-uL-DbK" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="YsU-Gi-Iyq"/>
                             <constraint firstItem="Ggq-94-LEG" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="a7G-Qu-Z8n"/>
-                            <constraint firstItem="Wem-uL-DbK" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="eu7-HE-bSB"/>
-                            <constraint firstAttribute="bottom" secondItem="Wem-uL-DbK" secondAttribute="bottom" id="kha-bW-2di"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Ggq-94-LEG" secondAttribute="trailing" constant="20" id="sjh-v7-nkH"/>
                             <constraint firstItem="Ggq-94-LEG" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="tSg-gR-KKc"/>
-                            <constraint firstAttribute="trailing" secondItem="Wem-uL-DbK" secondAttribute="trailing" id="zW5-0c-UdY"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="SLUG-TAB-0-TITLE" image="square.fill" catalog="system" id="FLZ-mY-nUu"/>
@@ -201,19 +194,8 @@
                     <view key="view" contentMode="scaleToFill" id="SCu-xk-c2t">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background-gradient" translatesAutoresizingMaskIntoConstraints="NO" id="Olj-xH-chL">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                            </imageView>
-                        </subviews>
                         <viewLayoutGuide key="safeArea" id="4Sf-8Q-S37"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <constraints>
-                            <constraint firstAttribute="bottom" secondItem="Olj-xH-chL" secondAttribute="bottom" id="Eac-jn-haf"/>
-                            <constraint firstItem="Olj-xH-chL" firstAttribute="top" secondItem="SCu-xk-c2t" secondAttribute="top" id="dEK-c3-U1t"/>
-                            <constraint firstAttribute="trailing" secondItem="Olj-xH-chL" secondAttribute="trailing" id="qib-Jr-Pgc"/>
-                            <constraint firstItem="Olj-xH-chL" firstAttribute="leading" secondItem="SCu-xk-c2t" secondAttribute="leading" id="yLA-Eg-ave"/>
-                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="SLUG-TAB-1-TITLE" image="circle.fill" catalog="system" id="gqP-0U-hwi"/>
                 </viewController>
@@ -247,19 +229,8 @@
                     <view key="view" contentMode="scaleToFill" id="AyR-KQ-80a">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background-gradient" translatesAutoresizingMaskIntoConstraints="NO" id="9KH-1Y-1MY">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                            </imageView>
-                        </subviews>
                         <viewLayoutGuide key="safeArea" id="iBU-Ic-NgP"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <constraints>
-                            <constraint firstAttribute="bottom" secondItem="9KH-1Y-1MY" secondAttribute="bottom" id="P7E-1G-mFq"/>
-                            <constraint firstItem="9KH-1Y-1MY" firstAttribute="leading" secondItem="AyR-KQ-80a" secondAttribute="leading" id="U7e-HP-ERV"/>
-                            <constraint firstItem="9KH-1Y-1MY" firstAttribute="top" secondItem="AyR-KQ-80a" secondAttribute="top" id="cMx-rb-7Bi"/>
-                            <constraint firstAttribute="trailing" secondItem="9KH-1Y-1MY" secondAttribute="trailing" id="xDU-HD-5Ac"/>
-                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="SLUG-TAB-2-TITLE" image="triangle.fill" catalog="system" id="rbD-9w-Tzi"/>
                 </viewController>
@@ -274,19 +245,8 @@
                     <view key="view" contentMode="scaleToFill" id="NCd-bY-piB">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background-gradient" translatesAutoresizingMaskIntoConstraints="NO" id="azO-1v-U6l">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                            </imageView>
-                        </subviews>
                         <viewLayoutGuide key="safeArea" id="bfK-Ro-f0x"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <constraints>
-                            <constraint firstItem="azO-1v-U6l" firstAttribute="top" secondItem="NCd-bY-piB" secondAttribute="top" id="1au-gg-s0M"/>
-                            <constraint firstAttribute="trailing" secondItem="azO-1v-U6l" secondAttribute="trailing" id="smF-6p-LDJ"/>
-                            <constraint firstAttribute="bottom" secondItem="azO-1v-U6l" secondAttribute="bottom" id="wnp-04-6l6"/>
-                            <constraint firstItem="azO-1v-U6l" firstAttribute="leading" secondItem="NCd-bY-piB" secondAttribute="leading" id="yxP-V1-9uA"/>
-                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="SLUG-TAB-3-TITLE" image="hexagon.fill" catalog="system" id="ahE-G2-zub"/>
                 </viewController>
@@ -296,7 +256,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="background-gradient" width="1" height="1000"/>
         <image name="circle.fill" catalog="system" width="128" height="121"/>
         <image name="hexagon.fill" catalog="system" width="128" height="124"/>
         <image name="square.fill" catalog="system" width="128" height="114"/>

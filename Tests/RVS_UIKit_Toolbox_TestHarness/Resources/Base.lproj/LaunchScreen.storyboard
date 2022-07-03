@@ -20,23 +20,37 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background-gradient" translatesAutoresizingMaskIntoConstraints="NO" id="xEP-qK-Dqx">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                             </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="CenterImage" translatesAutoresizingMaskIntoConstraints="NO" id="Mrx-At-t0k">
+                                <rect key="frame" x="83" y="324" width="248" height="248"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="Mrx-At-t0k" secondAttribute="height" multiplier="1:1" id="30c-Pw-CQs"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="Mrx-At-t0k" firstAttribute="height" relation="lessThanOrEqual" secondItem="xEP-qK-Dqx" secondAttribute="height" multiplier="0.6" id="9ul-o1-Bbe"/>
                             <constraint firstAttribute="bottom" secondItem="xEP-qK-Dqx" secondAttribute="bottom" id="AxO-3d-WCZ"/>
                             <constraint firstItem="xEP-qK-Dqx" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" id="Klu-Nq-3iY"/>
+                            <constraint firstItem="Mrx-At-t0k" firstAttribute="width" relation="lessThanOrEqual" secondItem="xEP-qK-Dqx" secondAttribute="width" multiplier="0.6" id="Scw-5E-lzq"/>
                             <constraint firstItem="xEP-qK-Dqx" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="Sdw-Uj-85h"/>
                             <constraint firstAttribute="trailing" secondItem="xEP-qK-Dqx" secondAttribute="trailing" id="WQx-Wy-IKE"/>
+                            <constraint firstItem="Mrx-At-t0k" firstAttribute="width" secondItem="xEP-qK-Dqx" secondAttribute="width" priority="750" id="YRm-3H-mDr"/>
+                            <constraint firstItem="Mrx-At-t0k" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="bZ7-UI-8DD"/>
+                            <constraint firstItem="Mrx-At-t0k" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="iJE-Jg-Mv6"/>
+                            <constraint firstItem="Mrx-At-t0k" firstAttribute="height" secondItem="xEP-qK-Dqx" secondAttribute="height" priority="750" id="pzS-2v-Ugp"/>
                         </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="53" y="375"/>
+            <point key="canvasLocation" x="52.173913043478265" y="375"/>
         </scene>
     </scenes>
     <resources>
+        <image name="CenterImage" width="320" height="318"/>
         <image name="background-gradient" width="1" height="1000"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

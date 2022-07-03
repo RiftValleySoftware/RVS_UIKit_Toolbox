@@ -30,6 +30,30 @@ import RVS_Generic_Swift_Toolbox
  This is a base class for view controllers in the tabbed section of the app.
  */
 class RVS_UIKit_Toolbox_TestHarness_Base_Tabs_ViewController: UIViewController {
+    /* ############################################################## */
+    /**
+     This can be overloaded or set, to provide the image to be used as a background gradient.
+     */
+    var backgroundGradientImage: UIImage? = UIImage(named: "background-gradient")
+    
+    /* ############################################################## */
+    /**
+     This can be overloaded or set, to provide the image to be used as a "watermark."
+     */
+    var watermarkImage: UIImage? = UIImage(named: "CenterImage")
+
+    /* ################################################################## */
+    /**
+     This is the background image view.
+     */
+    var myBackgroundGradientView: UIImageView?
+
+    /* ################################################################## */
+    /**
+     This is the background center image view.
+     */
+    var myCenterImageView: UIImageView?
+
     /* ################################################################## */
     /**
      Called when the view Hierarchy has been loaded.
@@ -37,5 +61,43 @@ class RVS_UIKit_Toolbox_TestHarness_Base_Tabs_ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         tabBarItem?.title = tabBarItem?.title?.localizedVariant
+        if let view = view {
+            myBackgroundGradientView = UIImageView()
+            if let backgroundGradientView = myBackgroundGradientView,
+               let backGroundImage = backgroundGradientImage {
+                backgroundGradientView.image = backGroundImage
+                backgroundGradientView.translatesAutoresizingMaskIntoConstraints = false
+                backgroundGradientView.contentMode = .scaleToFill
+                view.insertSubview(backgroundGradientView, at: 0)
+                
+                backgroundGradientView.translatesAutoresizingMaskIntoConstraints = false
+                backgroundGradientView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
+                backgroundGradientView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
+                backgroundGradientView.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
+                backgroundGradientView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
+                
+                myCenterImageView = UIImageView()
+                if let centerImageView = myCenterImageView,
+                   let centerImage = watermarkImage {
+                    centerImageView.image = centerImage
+                    centerImageView.alpha = 0.05
+                    centerImageView.tintColor = .white
+                    centerImageView.translatesAutoresizingMaskIntoConstraints = false
+                    centerImageView.contentMode = .scaleAspectFit
+                    backgroundGradientView.insertSubview(centerImageView, at: 1)
+
+                    centerImageView.centerXAnchor.constraint(equalTo: backgroundGradientView.centerXAnchor).isActive = true
+                    centerImageView.centerYAnchor.constraint(equalTo: backgroundGradientView.centerYAnchor).isActive = true
+                    
+                    centerImageView.widthAnchor.constraint(lessThanOrEqualTo: backgroundGradientView.widthAnchor, multiplier: 0.6).isActive = true
+                    centerImageView.heightAnchor.constraint(lessThanOrEqualTo: backgroundGradientView.heightAnchor, multiplier: 0.6).isActive = true
+
+                    if let aspectConstraint = centerImageView.autoLayoutAspectConstraint(aspectRatio: 1.0) {
+                        aspectConstraint.isActive = true
+                        backgroundGradientView.addConstraint(aspectConstraint)
+                    }
+                }
+            }
+        }
     }
 }
