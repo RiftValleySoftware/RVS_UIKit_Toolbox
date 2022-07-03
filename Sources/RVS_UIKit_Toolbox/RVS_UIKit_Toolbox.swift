@@ -177,9 +177,11 @@ public extension UIViewController {
     /* ################################################################## */
     /**
      This puts away any open keyboards.
+     This is different from the UIView version, as it also forces [`endEditing(_:)`](https://developer.apple.com/documentation/uikit/uiview/1619630-endediting).
      */
     func resignAllFirstResponders() {
         view?.resignAllFirstResponders()
+        view?.endEditing(true)
     }
 
     /* ################################################################## */

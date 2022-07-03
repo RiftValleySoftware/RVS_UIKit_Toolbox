@@ -35,7 +35,43 @@ class RVS_UIKit_Toolbox_TestHarness_Tab1_Nav0_ViewController: RVS_UIKit_Toolbox_
      The label that reports on the previous navigation view controller.
      */
     @IBOutlet weak var navigationLabel: UILabel?
+    
+    /* ################################################################## */
+    /**
+     */
+    @IBOutlet weak var editText0: UITextField?
+    
+    /* ################################################################## */
+    /**
+     */
+    @IBOutlet weak var editFlagImageView0: UIImageView!
+    
+    /* ################################################################## */
+    /**
+     */
+    @IBOutlet weak var editText1: UITextField?
+    
+    /* ################################################################## */
+    /**
+     */
+    @IBOutlet weak var editFlagImageView1: UIImageView!
+    
+    /* ################################################################## */
+    /**
+     */
+    @IBOutlet weak var editText2: UITextField?
+    
+    /* ################################################################## */
+    /**
+     */
+    @IBOutlet weak var editFlagImageView2: UIImageView!
+    @IBOutlet weak var responderErrorLabel: UILabel!
+}
 
+/* ###################################################################################################################################### */
+// MARK: Base Class Overrides
+/* ###################################################################################################################################### */
+extension RVS_UIKit_Toolbox_TestHarness_Tab1_Nav0_ViewController {
     /* ################################################################## */
     /**
      Called when the view is about to lay out its subviews.
@@ -43,5 +79,63 @@ class RVS_UIKit_Toolbox_TestHarness_Tab1_Nav0_ViewController: RVS_UIKit_Toolbox_
     override func viewWillLayoutSubviews() {
         super.viewWillLayoutSubviews()
         navigationLabel?.text = String(format: "SLUG-PREVIOUS-FORMAT".localizedVariant, previousViewController?.navigationItem.title ?? "ERROR")
+        responderErrorLabel?.text = responderErrorLabel?.text?.localizedVariant
+        responderErrorLabel?.isHidden = true
+    }
+}
+
+/* ###################################################################################################################################### */
+// MARK: Callbacks
+/* ###################################################################################################################################### */
+extension RVS_UIKit_Toolbox_TestHarness_Tab1_Nav0_ViewController {
+    /* ################################################################## */
+    /**
+     Called when the background is tapped. Closes the keyboard, and deselects the first responder.
+     */
+    @IBAction func closeKeyboard(_: Any! = nil) {
+        resignAllFirstResponders()
+        editFlagImageView0?.image = UIImage(systemName: "circle")
+        editFlagImageView1?.image = UIImage(systemName: "circle")
+        editFlagImageView2?.image = UIImage(systemName: "circle")
+        if nil != currentFirstResponder {
+            responderErrorLabel?.isHidden = false
+        }
+    }
+}
+
+/* ###################################################################################################################################### */
+// MARK: Base Class Overrides
+/* ###################################################################################################################################### */
+extension RVS_UIKit_Toolbox_TestHarness_Tab1_Nav0_ViewController: UITextFieldDelegate {
+    /* ################################################################## */
+    /**
+     */
+    func textFieldDidBeginEditing(_ inTextField: UITextField) {
+        if nil != currentFirstResponder {
+            responderErrorLabel?.isHidden = true
+            switch inTextField {
+            case editText0:
+                editFlagImageView0?.image = UIImage(systemName: "circle.fill")
+                editFlagImageView1?.image = UIImage(systemName: "circle")
+                editFlagImageView2?.image = UIImage(systemName: "circle")
+                
+            case editText1:
+                editFlagImageView0?.image = UIImage(systemName: "circle")
+                editFlagImageView1?.image = UIImage(systemName: "circle.fill")
+                editFlagImageView2?.image = UIImage(systemName: "circle")
+                
+            case editText2:
+                editFlagImageView0?.image = UIImage(systemName: "circle")
+                editFlagImageView1?.image = UIImage(systemName: "circle")
+                editFlagImageView2?.image = UIImage(systemName: "circle.fill")
+                
+            default:
+                editFlagImageView0?.image = UIImage(systemName: "circle")
+                editFlagImageView1?.image = UIImage(systemName: "circle")
+                editFlagImageView2?.image = UIImage(systemName: "circle")
+            }
+        } else {
+            responderErrorLabel?.isHidden = false
+        }
     }
 }
