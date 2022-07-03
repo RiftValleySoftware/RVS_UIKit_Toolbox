@@ -77,7 +77,7 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <segmentedControl opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="XNW-io-ivZ">
+                                    <segmentedControl opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="1" translatesAutoresizingMaskIntoConstraints="NO" id="XNW-io-ivZ">
                                         <rect key="frame" x="0.0" y="107" width="374" height="31"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="8b3-ht-c0b"/>
@@ -110,6 +110,9 @@
                                             <segment title="">
                                                 <imageReference key="image" image="square.fill" catalog="system" symbolScale="large"/>
                                             </segment>
+                                            <segment title="">
+                                                <imageReference key="image" image="square.fill" catalog="system" symbolScale="large"/>
+                                            </segment>
                                         </segments>
                                         <connections>
                                             <action selector="colorSwitchChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="c5L-o0-3q5"/>
@@ -121,7 +124,7 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <segmentedControl opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="1" translatesAutoresizingMaskIntoConstraints="NO" id="8fy-gd-K4O">
+                                    <segmentedControl opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="2" translatesAutoresizingMaskIntoConstraints="NO" id="8fy-gd-K4O">
                                         <rect key="frame" x="0.0" y="181.5" width="374" height="31"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="hcz-oV-fJ0"/>
@@ -154,6 +157,9 @@
                                             <segment title="">
                                                 <imageReference key="image" image="square.fill" catalog="system" symbolScale="large"/>
                                             </segment>
+                                            <segment title="">
+                                                <imageReference key="image" image="square.fill" catalog="system" symbolScale="large"/>
+                                            </segment>
                                         </segments>
                                         <connections>
                                             <action selector="colorSwitchChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="Tm6-Ei-NHC"/>
@@ -165,7 +171,7 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <segmentedControl opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="2" translatesAutoresizingMaskIntoConstraints="NO" id="Pah-o4-0ar">
+                                    <segmentedControl opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="3" translatesAutoresizingMaskIntoConstraints="NO" id="Pah-o4-0ar">
                                         <rect key="frame" x="0.0" y="256" width="374" height="31"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="cCm-Hs-P7w"/>
@@ -198,6 +204,9 @@
                                             <segment title="">
                                                 <imageReference key="image" image="square.fill" catalog="system" symbolScale="large"/>
                                             </segment>
+                                            <segment title="">
+                                                <imageReference key="image" image="square.fill" catalog="system" symbolScale="large"/>
+                                            </segment>
                                         </segments>
                                         <connections>
                                             <action selector="colorSwitchChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="L16-6T-tUe"/>
@@ -209,7 +218,7 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <segmentedControl opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="3" translatesAutoresizingMaskIntoConstraints="NO" id="fr4-gm-y9a">
+                                    <segmentedControl opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="4" translatesAutoresizingMaskIntoConstraints="NO" id="fr4-gm-y9a">
                                         <rect key="frame" x="0.0" y="330.5" width="374" height="31"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="DWv-s3-ljr"/>
@@ -238,6 +247,9 @@
                                             </segment>
                                             <segment title="">
                                                 <imageReference key="image" image="square.fill" catalog="system" symbolScale="large" renderingMode="template"/>
+                                            </segment>
+                                            <segment title="">
+                                                <imageReference key="image" image="square.fill" catalog="system" symbolScale="large"/>
                                             </segment>
                                             <segment title="">
                                                 <imageReference key="image" image="square.fill" catalog="system" symbolScale="large"/>

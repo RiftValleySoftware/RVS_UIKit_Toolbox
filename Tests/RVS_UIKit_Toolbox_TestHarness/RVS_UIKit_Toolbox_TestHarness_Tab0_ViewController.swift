@@ -82,49 +82,6 @@ class RVS_UIKit_Toolbox_TestHarness_Tab0_ViewController: RVS_UIKit_Toolbox_TestH
 }
 
 /* ###################################################################################################################################### */
-// MARK: Instance Methods
-/* ###################################################################################################################################### */
-extension RVS_UIKit_Toolbox_TestHarness_Tab0_ViewController {
-    /* ################################################################## */
-    /**
-     Sets the tab bar to the colors selected in the switches.
-     */
-    func setTabBarColors() {
-        var backgroundColor: UIColor? = .clear
-        var selectedColor: UIColor? = .black
-        var normalColor: UIColor? = .white
-        var disabledColor: UIColor? = .lightGray
-        var focusedColor: UIColor? = .blue
-        
-        if let index = backgroundColorSegmentedSwitch?.selectedSegmentIndex {
-            if 0 == index {
-                backgroundColor = .clear
-            } else {
-                backgroundColor = UIColor(named: "Tint-\(index - 1)")
-            }
-        }
-        
-        if let index = selectedColorSegmentedSwitch?.selectedSegmentIndex {
-            selectedColor = UIColor(named: "Tint-\(index)")
-        }
-
-        if let index = normalColorSegmentedSwitch?.selectedSegmentIndex {
-            normalColor = UIColor(named: "Tint-\(index)")
-        }
-
-        if let index = disabledColorSegmentedSwitch?.selectedSegmentIndex {
-            disabledColor = UIColor(named: "Tint-\(index)")
-        }
-
-        if let index = focusedColorSegmentedSwitch?.selectedSegmentIndex {
-            focusedColor = UIColor(named: "Tint-\(index)")
-        }
-
-        tabBarController?.setColorsTo(normal: normalColor, selected: selectedColor, disabled: disabledColor, focused: focusedColor, background: backgroundColor)
-    }
-}
-
-/* ###################################################################################################################################### */
 // MARK: Base Class Overrides
 /* ###################################################################################################################################### */
 extension RVS_UIKit_Toolbox_TestHarness_Tab0_ViewController {
@@ -148,7 +105,10 @@ extension RVS_UIKit_Toolbox_TestHarness_Tab0_ViewController {
         
         selectedColorSwitchLabel?.text = selectedColorSwitchLabel?.text?.localizedVariant
         for index in 0..<(selectedColorSegmentedSwitch?.numberOfSegments ?? 0) {
-            if let color = UIColor(named: "Tint-\(index)"),
+            if 0 == index,
+               let image = UIImage(systemName: "square")?.withTintColor(.black) {
+                selectedColorSegmentedSwitch?.setImage(image.withRenderingMode(.alwaysOriginal), forSegmentAt: index)
+            } else if let color = UIColor(named: "Tint-\(index - 1)"),
                let image = UIImage(systemName: "square.fill")?.withTintColor(color) {
                 selectedColorSegmentedSwitch?.setImage(image.withRenderingMode(.alwaysOriginal), forSegmentAt: index)
             }
@@ -156,7 +116,10 @@ extension RVS_UIKit_Toolbox_TestHarness_Tab0_ViewController {
         
         normalColorSwitchLabel?.text = normalColorSwitchLabel?.text?.localizedVariant
         for index in 0..<(normalColorSegmentedSwitch?.numberOfSegments ?? 0) {
-            if let color = UIColor(named: "Tint-\(index)"),
+            if 0 == index,
+               let image = UIImage(systemName: "square")?.withTintColor(.black) {
+                normalColorSegmentedSwitch?.setImage(image.withRenderingMode(.alwaysOriginal), forSegmentAt: index)
+            } else if let color = UIColor(named: "Tint-\(index - 1)"),
                let image = UIImage(systemName: "square.fill")?.withTintColor(color) {
                 normalColorSegmentedSwitch?.setImage(image.withRenderingMode(.alwaysOriginal), forSegmentAt: index)
             }
@@ -164,7 +127,10 @@ extension RVS_UIKit_Toolbox_TestHarness_Tab0_ViewController {
         
         disabledColorSwitchLabel?.text = disabledColorSwitchLabel?.text?.localizedVariant
         for index in 0..<(disabledColorSegmentedSwitch?.numberOfSegments ?? 0) {
-            if let color = UIColor(named: "Tint-\(index)"),
+            if 0 == index,
+               let image = UIImage(systemName: "square")?.withTintColor(.black) {
+                disabledColorSegmentedSwitch?.setImage(image.withRenderingMode(.alwaysOriginal), forSegmentAt: index)
+            } else if let color = UIColor(named: "Tint-\(index - 1)"),
                let image = UIImage(systemName: "square.fill")?.withTintColor(color) {
                 disabledColorSegmentedSwitch?.setImage(image.withRenderingMode(.alwaysOriginal), forSegmentAt: index)
             }
@@ -172,11 +138,16 @@ extension RVS_UIKit_Toolbox_TestHarness_Tab0_ViewController {
         
         focusedColorSwitchLabel?.text = focusedColorSwitchLabel?.text?.localizedVariant
         for index in 0..<(focusedColorSegmentedSwitch?.numberOfSegments ?? 0) {
-            if let color = UIColor(named: "Tint-\(index)"),
+            if 0 == index,
+               let image = UIImage(systemName: "square")?.withTintColor(.black) {
+                focusedColorSegmentedSwitch?.setImage(image.withRenderingMode(.alwaysOriginal), forSegmentAt: index)
+            } else if let color = UIColor(named: "Tint-\(index - 1)"),
                let image = UIImage(systemName: "square.fill")?.withTintColor(color) {
                 focusedColorSegmentedSwitch?.setImage(image.withRenderingMode(.alwaysOriginal), forSegmentAt: index)
             }
         }
+        
+        colorSwitchChanged()
     }
 }
 
@@ -186,8 +157,57 @@ extension RVS_UIKit_Toolbox_TestHarness_Tab0_ViewController {
 extension RVS_UIKit_Toolbox_TestHarness_Tab0_ViewController {
     /* ################################################################## */
     /**
+     Called to check the color segmented switches, and set the tab bar to their values.
+     
+     - parameter: Ignored (and can be omitted).
      */
-    @IBAction func colorSwitchChanged(_: Any) {
-        setTabBarColors()
+    @IBAction func colorSwitchChanged(_: Any! = nil) {
+        var backgroundColor: UIColor? = .clear
+        var selectedColor: UIColor? = .black
+        var normalColor: UIColor? = .white
+        var disabledColor: UIColor? = .lightGray
+        var focusedColor: UIColor? = .blue
+        
+        if let index = backgroundColorSegmentedSwitch?.selectedSegmentIndex {
+            if 0 == index {
+                backgroundColor = .clear
+            } else {
+                backgroundColor = UIColor(named: "Tint-\(index - 1)")
+            }
+        }
+        
+        if let index = selectedColorSegmentedSwitch?.selectedSegmentIndex {
+            if 0 == index {
+                selectedColor = .clear
+            } else {
+                selectedColor = UIColor(named: "Tint-\(index - 1)")
+            }
+        }
+
+        if let index = normalColorSegmentedSwitch?.selectedSegmentIndex {
+            if 0 == index {
+                normalColor = .clear
+            } else {
+                normalColor = UIColor(named: "Tint-\(index - 1)")
+            }
+        }
+
+        if let index = disabledColorSegmentedSwitch?.selectedSegmentIndex {
+            if 0 == index {
+                disabledColor = .clear
+            } else {
+                disabledColor = UIColor(named: "Tint-\(index - 1)")
+            }
+        }
+
+        if let index = focusedColorSegmentedSwitch?.selectedSegmentIndex {
+            if 0 == index {
+                focusedColor = .clear
+            } else {
+                focusedColor = UIColor(named: "Tint-\(index - 1)")
+            }
+        }
+
+        tabBarController?.setColorsTo(normal: normalColor, selected: selectedColor, disabled: disabledColor, focused: focusedColor, background: backgroundColor)
     }
 }

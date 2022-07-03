@@ -39,5 +39,8 @@ class RVS_UIKit_Toolbox_TestHarness_TabBarController: UITabBarController {
         super.viewDidLoad()
         tabBar.items?.forEach { $0.title = $0.title?.localizedVariant }
         selectedIndex = 0
+        tabBar.layer.borderWidth = 0.5
+        tabBar.layer.borderColor = UIColor.clear.cgColor
+        tabBar.clipsToBounds = true
     }
 }

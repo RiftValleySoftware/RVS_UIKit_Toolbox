@@ -103,7 +103,7 @@ public extension UITabBarController {
             tabBar.scrollEdgeAppearance = appearance
         }
         
-        tabBar.setNeedsLayout()
+        tabBar.setNeedsLayout() // This is required, because otherwise, the items don't refresh.
     }
 }
 
