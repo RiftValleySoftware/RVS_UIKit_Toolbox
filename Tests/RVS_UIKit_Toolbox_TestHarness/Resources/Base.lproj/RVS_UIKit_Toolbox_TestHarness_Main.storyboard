@@ -10,10 +10,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--SLUG-TAB-0-TITLE-->
+        <!--Tab Bar Tab-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="RVS_UIKit_Toolbox_TestHarness_Tab0_ViewController" customModule="RVS_UIKit_Toolbox_TestHarness" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Tab Bar Tab" id="BYZ-38-t0r" userLabel="Tab Bar Tab" customClass="RVS_UIKit_Toolbox_TestHarness_Tab0_ViewController" customModule="RVS_UIKit_Toolbox_TestHarness" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -187,26 +187,69 @@
             </objects>
             <point key="canvasLocation" x="-1081.1594202898552" y="-169.41964285714286"/>
         </scene>
-        <!--SLUG-TAB-1-TITLE-->
+        <!--View Controller Tab-->
         <scene sceneID="nwT-OL-gyH">
             <objects>
-                <viewController id="4d7-Gj-a9m" customClass="RVS_UIKit_Toolbox_TestHarness_Tab1_ViewController" customModule="RVS_UIKit_Toolbox_TestHarness" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="View Controller Tab" id="4d7-Gj-a9m" userLabel="View Controller Tab" customClass="RVS_UIKit_Toolbox_TestHarness_Tab1_ViewController" customModule="RVS_UIKit_Toolbox_TestHarness" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="SCu-xk-c2t">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Rt7-Hv-DME">
+                                <rect key="frame" x="20" y="44" width="374" height="769"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Unu-TF-18e">
+                                        <rect key="frame" x="166.5" y="0.0" width="41.5" height="148.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yx9-gl-Qug">
+                                        <rect key="frame" x="166.5" y="156.5" width="41.5" height="149"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="35E-53-Wxd">
+                                        <rect key="frame" x="166.5" y="313.5" width="41.5" height="148.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="onT-OS-Rxn">
+                                        <rect key="frame" x="166.5" y="470" width="41.5" height="299"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="4Sf-8Q-S37"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Rt7-Hv-DME" firstAttribute="leading" secondItem="4Sf-8Q-S37" secondAttribute="leading" constant="20" id="7Xl-Te-vch"/>
+                            <constraint firstItem="Rt7-Hv-DME" firstAttribute="bottom" secondItem="4Sf-8Q-S37" secondAttribute="bottom" placeholder="YES" id="hc0-Ke-eXL"/>
+                            <constraint firstItem="4Sf-8Q-S37" firstAttribute="trailing" secondItem="Rt7-Hv-DME" secondAttribute="trailing" constant="20" id="qrX-yX-5lA"/>
+                            <constraint firstItem="Rt7-Hv-DME" firstAttribute="top" secondItem="4Sf-8Q-S37" secondAttribute="top" id="rET-lC-yuJ"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="SLUG-TAB-1-TITLE" image="circle.fill" catalog="system" id="gqP-0U-hwi"/>
+                    <connections>
+                        <outlet property="bioReportLabel" destination="Unu-TF-18e" id="gaf-6K-vKu"/>
+                        <outlet property="darkModeLabel" destination="onT-OS-Rxn" id="RY3-iw-3MG"/>
+                        <outlet property="highContrastLabel" destination="Yx9-gl-Qug" id="144-zZ-nQd"/>
+                        <outlet property="reducedTransparencyLabel" destination="35E-53-Wxd" id="vBE-z2-EJU"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bbi-Fo-kLE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-94" y="-169"/>
+            <point key="canvasLocation" x="-94.20289855072464" y="-169.41964285714286"/>
         </scene>
-        <!--Kit Toolbox Test Harness Tab Bar Controller-->
+        <!--Tab Bar Controller-->
         <scene sceneID="fvR-Ri-Lb4">
             <objects>
-                <tabBarController id="YcN-eF-k7Q" customClass="RVS_UIKit_Toolbox_TestHarness_TabBarController" customModule="RVS_UIKit_Toolbox_TestHarness" customModuleProvider="target" sceneMemberID="viewController">
+                <tabBarController title="Tab Bar Controller" id="YcN-eF-k7Q" userLabel="Tab Bar Controller" customClass="RVS_UIKit_Toolbox_TestHarness_TabBarController" customModule="RVS_UIKit_Toolbox_TestHarness" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="L8w-Ry-YZK">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -222,10 +265,10 @@
             </objects>
             <point key="canvasLocation" x="461" y="-898"/>
         </scene>
-        <!--SLUG-TAB-2-TITLE-->
+        <!--View Tab-->
         <scene sceneID="sLp-Lj-zSZ">
             <objects>
-                <viewController id="2R3-ro-6eP" customClass="RVS_UIKit_Toolbox_TestHarness_Tab2_ViewController" customModule="RVS_UIKit_Toolbox_TestHarness" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="View Tab" id="2R3-ro-6eP" userLabel="View Tab" customClass="RVS_UIKit_Toolbox_TestHarness_Tab2_ViewController" customModule="RVS_UIKit_Toolbox_TestHarness" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="AyR-KQ-80a">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -238,10 +281,10 @@
             </objects>
             <point key="canvasLocation" x="984" y="-169"/>
         </scene>
-        <!--SLUG-TAB-3-TITLE-->
+        <!--Image Tab-->
         <scene sceneID="KwZ-Yp-blH">
             <objects>
-                <viewController id="L0M-tb-1Ck" customClass="RVS_UIKit_Toolbox_TestHarness_Tab3_ViewController" customModule="RVS_UIKit_Toolbox_TestHarness" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Image Tab" id="L0M-tb-1Ck" userLabel="Image Tab" customClass="RVS_UIKit_Toolbox_TestHarness_Tab3_ViewController" customModule="RVS_UIKit_Toolbox_TestHarness" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="NCd-bY-piB">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

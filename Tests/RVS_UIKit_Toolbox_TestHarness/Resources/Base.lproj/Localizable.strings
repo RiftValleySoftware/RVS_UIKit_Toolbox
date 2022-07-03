@@ -24,12 +24,20 @@ The Great Rift Valley Software Company: https://riftvalleysoftware.com
 "SLUG-TAB-2-TITLE"                                      =   "View";
 "SLUG-TAB-3-TITLE"                                      =   "Image";
 
+// MARK: - Tab 0 (Tab Bar)
 "SLUG-NORMAL-COLOR-SWITCH-LABEL"                        =   "Normal Color:";
 "SLUG-SELECTED-COLOR-SWITCH-LABEL"                      =   "Selected Color:";
 "SLUG-DISABLED-COLOR-SWITCH-LABEL"                      =   "Disabled Color:";
 "SLUG-FOCUSED-COLOR-SWITCH-LABEL"                       =   "Focused Color:";
 "SLUG-BACKGROUND-COLOR-SWITCH-LABEL"                    =   "Background Color:";
 
-"SLUG-NORMAL"                                           =   "Normal";
-"SLUG-DISABLED"                                         =   "Disabled";
-"SLUG-FOCUSED"                                          =   "Focused";
+// MARK: Tab 1 (View Controller)
+"SLUG-BIOREPORT-NONE"                                   =   "No Biometrics Enabled";
+"SLUG-BIOREPORT-FACEID"                                 =   "Face ID is Enabled";
+"SLUG-BIOREPORT-TOUCHID"                                =   "Touch ID is Enabled";
+"SLUG-HIGHCONTRAST-YES"                                 =   "High Contrast Mode Is Enabled";
+"SLUG-HIGHCONTRAST-NO"                                  =   "High Contrast Mode Is Not Enabled";
+"SLUG-REDTRANS-YES"                                     =   "Reduced Transparency Mode Is Enabled";
+"SLUG-REDTRANS-NO"                                      =   "Reduced Transparency Mode Is Not Enabled";
+"SLUG-DARK-YES"                                         =   "Dark Mode Is Enabled";
+"SLUG-DARK-NO"                                          =   "Dark Mode Is Not Enabled";

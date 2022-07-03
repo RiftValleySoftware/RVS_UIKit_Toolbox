@@ -32,9 +32,41 @@ import RVS_Generic_Swift_Toolbox
 class RVS_UIKit_Toolbox_TestHarness_Tab1_ViewController: RVS_UIKit_Toolbox_TestHarness_Base_Tabs_ViewController {
     /* ################################################################## */
     /**
+     */
+    @IBOutlet weak var bioReportLabel: UILabel?
+    
+    /* ################################################################## */
+    /**
+     */
+    @IBOutlet weak var highContrastLabel: UILabel?
+    
+    /* ################################################################## */
+    /**
+     */
+    @IBOutlet weak var reducedTransparencyLabel: UILabel?
+    
+    /* ################################################################## */
+    /**
+     */
+    @IBOutlet weak var darkModeLabel: UILabel?
+    
+    /* ################################################################## */
+    /**
      Called when the view Hierarchy has been loaded.
      */
     override func viewDidLoad() {
         super.viewDidLoad()
+    }
+    
+    /* ################################################################## */
+    /**
+     Called when the view is about to lay out its subviews.
+     */
+    override func viewWillLayoutSubviews() {
+        super.viewWillLayoutSubviews()
+        bioReportLabel?.text = "SLUG-BIOREPORT-\((.none == biometricType) ? "NONE" : ((.faceID == biometricType) ? "FACEID" : "TOUCHID"))".localizedVariant
+        highContrastLabel?.text = "SLUG-HIGHCONTRAST-\(isHighContrastMode ? "YES" : "NO")".localizedVariant
+        reducedTransparencyLabel?.text = "SLUG-REDTRANS-\(isReducedTransparencyMode ? "YES" : "NO")".localizedVariant
+        darkModeLabel?.text = "SLUG-DARK-\(isDarkMode ? "YES" : "NO")".localizedVariant
     }
 }

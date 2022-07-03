@@ -93,21 +93,20 @@ public extension UITabBarController {
 public extension UIViewController {
     /* ################################################################## */
     /**
-     This will be the string we use to describe the biometric type.
-     It will either be nil (no biometrics), .touchID (Touch ID), or .faceID (Face ID).
+     Get the biometric authentication type.
+     
+     Possible Values:
+        - .none (no biometrics)
+        - .touchID (Touch ID)
+        - .faceID (Face ID)
      */
-    class var biometricType: LABiometryType? {
+    class var biometricType: LABiometryType {
         let authenticationContext = LAContext()
         var error: NSError?
         
-        var bioType: LABiometryType?
-        
-        // We just need to find out if we need to use "Face," or "Touch."
-        if authenticationContext.canEvaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, error: &error) {
-            bioType = authenticationContext.biometryType
-        }
-        
-        return bioType
+        guard authenticationContext.canEvaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, error: &error) else { return .none }
+
+        return authenticationContext.biometryType
     }
     
     /* ################################################################## */
@@ -121,6 +120,12 @@ public extension UIViewController {
      Returns true, if we are in Reduced Transparency Mode.
      */
     class var isReducedTransparencyMode: Bool { UIAccessibility.isReduceTransparencyEnabled }
+
+    /* ################################################################## */
+    /**
+     Returns true, if voiceover mode is on.
+     */
+    class var isVoiceOverRunning: Bool { UIAccessibility.isVoiceOverRunning }
 
     /* ################################################################## */
     /**
@@ -142,10 +147,20 @@ public extension UIViewController {
 
     /* ################################################################## */
     /**
-     This will be the string we use to describe the biometric type.
-     It will either be nil (no biometrics), .touchID (Touch ID), or .faceID (Face ID).
+     Returns true, if voiceover mode is on.
      */
-    var biometricType: LABiometryType? { Self.biometricType }
+    var isVoiceOverRunning: Bool { Self.isVoiceOverRunning }
+
+    /* ################################################################## */
+    /**
+     Get the biometric authentication type.
+     
+     Possible Values:
+        - .none (no biometrics)
+        - .touchID (Touch ID)
+        - .faceID (Face ID)
+     */
+    var biometricType: LABiometryType { Self.biometricType }
     
     /* ################################################################## */
     /**
