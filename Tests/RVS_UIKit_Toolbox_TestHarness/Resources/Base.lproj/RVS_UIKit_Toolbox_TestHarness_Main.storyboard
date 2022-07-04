@@ -481,8 +481,50 @@
                     <view key="view" contentMode="scaleToFill" id="NCd-bY-piB">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="dHa-SU-beE">
+                                <rect key="frame" x="20" y="44" width="374" height="769"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gqH-Mn-7lI">
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="130"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Cat" translatesAutoresizingMaskIntoConstraints="NO" id="Pm1-Hc-3Wo">
+                                                <rect key="frame" x="0.0" y="0.0" width="244" height="130"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="Pm1-Hc-3Wo" secondAttribute="height" multiplier="64:34" id="ELB-Db-yc0"/>
+                                                </constraints>
+                                            </imageView>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="z9s-vF-TTi">
+                                                <rect key="frame" x="244" y="-3" width="130" height="136"/>
+                                                <color key="tintColor" systemColor="labelColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="z9s-vF-TTi" secondAttribute="height" multiplier="1:1" id="jAI-q9-0Ai"/>
+                                                </constraints>
+                                                <imageReference key="image" image="globe.europe.africa.fill" catalog="system" symbolScale="large"/>
+                                            </imageView>
+                                        </subviews>
+                                    </stackView>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ywD-bv-py0" userLabel="Filler View">
+                                        <rect key="frame" x="0.0" y="130" width="374" height="639"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="gqH-Mn-7lI" firstAttribute="leading" secondItem="dHa-SU-beE" secondAttribute="leading" id="FZK-NW-jtv"/>
+                                    <constraint firstAttribute="trailing" secondItem="gqH-Mn-7lI" secondAttribute="trailing" id="Tdy-Od-0L8"/>
+                                    <constraint firstAttribute="trailing" secondItem="ywD-bv-py0" secondAttribute="trailing" id="oJo-eB-lWc"/>
+                                    <constraint firstItem="ywD-bv-py0" firstAttribute="leading" secondItem="dHa-SU-beE" secondAttribute="leading" id="zln-5z-apU"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="bfK-Ro-f0x"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="dHa-SU-beE" firstAttribute="leading" secondItem="bfK-Ro-f0x" secondAttribute="leading" constant="20" id="CcR-Ab-UIc"/>
+                            <constraint firstItem="dHa-SU-beE" firstAttribute="bottom" secondItem="bfK-Ro-f0x" secondAttribute="bottom" id="FLs-mM-h6t"/>
+                            <constraint firstItem="dHa-SU-beE" firstAttribute="top" secondItem="bfK-Ro-f0x" secondAttribute="top" id="Ufh-Zy-TbN"/>
+                            <constraint firstItem="bfK-Ro-f0x" firstAttribute="trailing" secondItem="dHa-SU-beE" secondAttribute="trailing" constant="20" id="sCA-ki-HP4"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="SLUG-TAB-3-TITLE" id="ahE-G2-zub">
                         <imageReference key="image" image="3.circle.fill" catalog="system" symbolScale="large"/>
@@ -490,7 +532,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TvF-sc-LgG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1954" y="-169"/>
+            <point key="canvasLocation" x="1953.6231884057972" y="-169.41964285714286"/>
         </scene>
         <!--View Controller Tab-->
         <scene sceneID="gIv-JS-sFk">
@@ -641,9 +683,14 @@
         <image name="2.circle.fill" catalog="system" width="128" height="121"/>
         <image name="3.circle.fill" catalog="system" width="128" height="121"/>
         <image name="4.circle.fill" catalog="system" width="128" height="121"/>
+        <image name="Cat" width="640" height="340"/>
         <image name="circle" catalog="system" width="128" height="121"/>
         <image name="circle.fill" catalog="system" width="128" height="121"/>
+        <image name="globe.europe.africa.fill" catalog="system" width="128" height="121"/>
         <image name="square.fill" catalog="system" width="128" height="114"/>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
