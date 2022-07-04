@@ -131,6 +131,17 @@ public extension UIViewController {
     // MARK: System State Flag Instance Computed Properties
     /* ################################################################## */
     /**
+     Get the biometric authentication type.
+     
+     Possible Values:
+        - .none (no biometrics)
+        - .touchID (Touch ID)
+        - .faceID (Face ID)
+     */
+    var biometricType: LABiometryType { Self.biometricType }
+    
+    /* ################################################################## */
+    /**
      Returns true, if we are in Dark Mode.
      */
     var isDarkMode: Bool { .dark == traitCollection.userInterfaceStyle }
@@ -153,17 +164,6 @@ public extension UIViewController {
      */
     var isVoiceOverRunning: Bool { Self.isVoiceOverRunning }
 
-    /* ################################################################## */
-    /**
-     Get the biometric authentication type.
-     
-     Possible Values:
-        - .none (no biometrics)
-        - .touchID (Touch ID)
-        - .faceID (Face ID)
-     */
-    var biometricType: LABiometryType { Self.biometricType }
-    
     // MARK: View Hierarchy Instance Computed Properties
     /* ################################################################## */
     /**

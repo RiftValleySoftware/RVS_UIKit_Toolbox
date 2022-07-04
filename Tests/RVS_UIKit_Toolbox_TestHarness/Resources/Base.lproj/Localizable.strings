@@ -52,3 +52,9 @@ The Great Rift Valley Software Company: https://riftvalleysoftware.com
 // MARK: Tab 1->Nav 0 (View Controller)
 "SLUG-PREVIOUS-FORMAT"                                  =   "The Previous Controller is called \"%@.\"";
 "SLUG-RESPONDER-ERROR"                                  =   "The Responder is Wrong!";
+
+// MARK: Tab 2 (View)
+"SLUG-CORNER-SIZE-SLIDER-LABEL"                         =   "Corner Radius:";
+"SLUG-BORDER-WIDTH-SLIDER-LABEL"                        =   "Border Width:";
+"SLUG-BORDER-COLOR-SWITCH-LABEL"                        =   "Border Color:";
+"SLUG-ADD-CONTAINED-VIEW-BUTTON"                        =   "Add Contained View";
