@@ -93,6 +93,15 @@ This mostly has resizing stuff, but also a bit of pixel-level inspection.</p>
         <section class="section">
           <div class="section-content">
             <div class="task-group">
+              <div class="task-name-container">
+                <a name="/Class%20Functions"></a>
+                <a name="//apple_ref/swift/Section/Class Functions" class="dashAnchor"></a>
+                <div class="section-name-container">
+                  <a class="section-name-link" href="#/Class%20Functions"></a>
+                  <h3 class="section-name"><span>Class Functions</span>
+</h3>
+                </div>
+              </div>
               <ul class="item-container">
                 <li class="item">
                   <div>
@@ -144,6 +153,128 @@ This mostly has resizing stuff, but also a bit of pixel-level inspection.</p>
                     </section>
                   </div>
                 </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/Image%20Composition%20Instance%20Computed%20Properties"></a>
+                <a name="//apple_ref/swift/Section/Image Composition Instance Computed Properties" class="dashAnchor"></a>
+                <div class="section-name-container">
+                  <a class="section-name-link" href="#/Image%20Composition%20Instance%20Computed%20Properties"></a>
+                  <h3 class="section-name"><span>Image Composition Instance Computed Properties</span>
+</h3>
+                </div>
+              </div>
+              <ul class="item-container">
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:So7UIImageC17RVS_UIKit_ToolboxE19hasAlphaInformationSbvp"></a>
+                    <a name="//apple_ref/swift/Property/hasAlphaInformation" class="dashAnchor"></a>
+                    <a class="token" href="#/s:So7UIImageC17RVS_UIKit_ToolboxE19hasAlphaInformationSbvp">hasAlphaInformation</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">hasAlphaInformation</span><span class="p">:</span> <span class="kt">Bool</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>True, if the image has an alpha component.
+       <strong>NOTE:</strong> The Photos app seems to have a bug, where it won&rsquo;t see alpha information of monchrome (black and white) PNG images with alpha channels.</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/Pixel%20Information%20Instance%20Methods"></a>
+                <a name="//apple_ref/swift/Section/Pixel Information Instance Methods" class="dashAnchor"></a>
+                <div class="section-name-container">
+                  <a class="section-name-link" href="#/Pixel%20Information%20Instance%20Methods"></a>
+                  <h3 class="section-name"><span>Pixel Information Instance Methods</span>
+</h3>
+                </div>
+              </div>
+              <ul class="item-container">
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:So7UIImageC17RVS_UIKit_ToolboxE21getRGBColorOfThePixel2atSo7UIColorCSgSo7CGPointV_tF"></a>
+                    <a name="//apple_ref/swift/Method/getRGBColorOfThePixel(at:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:So7UIImageC17RVS_UIKit_ToolboxE21getRGBColorOfThePixel2atSo7UIColorCSgSo7CGPointV_tF">getRGBColorOfThePixel(at:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>This returns the RGB color (as a UIColor) of the pixel in the image, at the given point. It is restricted to 32-bit (RGBA/8-bit pixel) values.
+This was inspired by several of the answers <a href="https://stackoverflow.com/questions/25146557/how-do-i-get-the-color-of-a-pixel-in-a-uiimage-with-swift">in this StackOverflow Question</a>.
+<strong>NOTE:</strong> This is unlikely to be highly performant!</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">getRGBColorOfThePixel</span><span class="p">(</span><span class="n">at</span> <span class="nv">inPoint</span><span class="p">:</span> <span class="kt">CGPoint</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">UIColor</span><span class="p">?</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>at</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The point in the image to sample (NOTE: Must be within image bounds, or nil is returned).</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>A UIColor (or nil).</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/Sizing%20Instance%20Methods"></a>
+                <a name="//apple_ref/swift/Section/Sizing Instance Methods" class="dashAnchor"></a>
+                <div class="section-name-container">
+                  <a class="section-name-link" href="#/Sizing%20Instance%20Methods"></a>
+                  <h3 class="section-name"><span>Sizing Instance Methods</span>
+</h3>
+                </div>
+              </div>
+              <ul class="item-container">
                 <li class="item">
                   <div>
                     <code>
@@ -303,89 +434,6 @@ If the image is currently smaller than the maximum size, it will not be scaled.<
                       <div>
                         <h4>Return Value</h4>
                         <p>A new image, with the given dimensions. May be nil, if no width or height was supplied, or if there was an error.</p>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/s:So7UIImageC17RVS_UIKit_ToolboxE21getRGBColorOfThePixel2atSo7UIColorCSgSo7CGPointV_tF"></a>
-                    <a name="//apple_ref/swift/Method/getRGBColorOfThePixel(at:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:So7UIImageC17RVS_UIKit_ToolboxE21getRGBColorOfThePixel2atSo7UIColorCSgSo7CGPointV_tF">getRGBColorOfThePixel(at:<wbr>)</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>This returns the RGB color (as a UIColor) of the pixel in the image, at the given point. It is restricted to 32-bit (RGBA/8-bit pixel) values.
-This was inspired by several of the answers <a href="https://stackoverflow.com/questions/25146557/how-do-i-get-the-color-of-a-pixel-in-a-uiimage-with-swift">in this StackOverflow Question</a>.
-<strong>NOTE:</strong> This is unlikely to be highly performant!</p>
-
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">getRGBColorOfThePixel</span><span class="p">(</span><span class="n">at</span> <span class="nv">inPoint</span><span class="p">:</span> <span class="kt">CGPoint</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">UIColor</span><span class="p">?</span></code></pre>
-
-                        </div>
-                      </div>
-                      <div>
-                        <h4>Parameters</h4>
-                        <table class="graybox">
-                          <tbody>
-                            <tr>
-                              <td>
-                                <code>
-                                <em>at</em>
-                                </code>
-                              </td>
-                              <td>
-                                <div>
-                                  <p>The point in the image to sample (NOTE: Must be within image bounds, or nil is returned).</p>
-                                </div>
-                              </td>
-                            </tr>
-                          </tbody>
-                        </table>
-                      </div>
-                      <div>
-                        <h4>Return Value</h4>
-                        <p>A UIColor (or nil).</p>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/s:So7UIImageC17RVS_UIKit_ToolboxE19hasAlphaInformationSbvp"></a>
-                    <a name="//apple_ref/swift/Property/hasAlphaInformation" class="dashAnchor"></a>
-                    <a class="token" href="#/s:So7UIImageC17RVS_UIKit_ToolboxE19hasAlphaInformationSbvp">hasAlphaInformation</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">hasAlphaInformation</span><span class="p">:</span> <span class="kt">Bool</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
-
-                        </div>
-                      </div>
-                      <div>
-                        <h4>Return Value</h4>
-                        <p>True, if the image has an alpha component.
-       <strong>NOTE:</strong> The Photos app seems to have a bug, where it won&rsquo;t see alpha information of monchrome (black and white) PNG images with alpha channels.</p>
                       </div>
                     </section>
                   </div>

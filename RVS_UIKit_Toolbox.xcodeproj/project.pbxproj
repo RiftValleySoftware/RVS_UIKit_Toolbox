@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D40B98FB287330D10027956D /* RVS_UIKit_Toolbox_TestHarness_Tab4_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D40B98FA287330D10027956D /* RVS_UIKit_Toolbox_TestHarness_Tab4_ViewController.swift */; };
 		D4353A0128707D680098949F /* RVS_Generic_Swift_Toolbox in Frameworks */ = {isa = PBXBuildFile; productRef = D4353A0028707D680098949F /* RVS_Generic_Swift_Toolbox */; };
 		D4353A0328707DD00098949F /* RVS_UIKit_Toolbox_TestHarness_Base_Tabs_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4353A0228707DD00098949F /* RVS_UIKit_Toolbox_TestHarness_Base_Tabs_ViewController.swift */; };
 		D4353A0528707E150098949F /* RVS_UIKit_Toolbox_TestHarness_Tab1_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4353A0428707E150098949F /* RVS_UIKit_Toolbox_TestHarness_Tab1_ViewController.swift */; };
@@ -42,6 +43,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		D40B98FA287330D10027956D /* RVS_UIKit_Toolbox_TestHarness_Tab4_ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RVS_UIKit_Toolbox_TestHarness_Tab4_ViewController.swift; sourceTree = "<group>"; };
 		D4353A0228707DD00098949F /* RVS_UIKit_Toolbox_TestHarness_Base_Tabs_ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RVS_UIKit_Toolbox_TestHarness_Base_Tabs_ViewController.swift; sourceTree = "<group>"; };
 		D4353A0428707E150098949F /* RVS_UIKit_Toolbox_TestHarness_Tab1_ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RVS_UIKit_Toolbox_TestHarness_Tab1_ViewController.swift; sourceTree = "<group>"; };
 		D43965BC286C992100727E6A /* libRVS_UIKit_Toolbox.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libRVS_UIKit_Toolbox.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -129,6 +131,7 @@
 				D4F8DD7B2872315A00081E59 /* RVS_UIKit_Toolbox_TestHarness_Tab1_Nav0_ViewController.swift */,
 				D4499DC92870881A00D53B7A /* RVS_UIKit_Toolbox_TestHarness_Tab2_ViewController.swift */,
 				D4F653112870F4D5001AF462 /* RVS_UIKit_Toolbox_TestHarness_Tab3_ViewController.swift */,
+				D40B98FA287330D10027956D /* RVS_UIKit_Toolbox_TestHarness_Tab4_ViewController.swift */,
 				D43965E2286C99E200727E6A /* Resources */,
 				D43965E1286C99D700727E6A /* Meta */,
 			);
@@ -319,6 +322,7 @@
 				D4499DCA2870881A00D53B7A /* RVS_UIKit_Toolbox_TestHarness_Tab2_ViewController.swift in Sources */,
 				D4F653122870F4D5001AF462 /* RVS_UIKit_Toolbox_TestHarness_Tab3_ViewController.swift in Sources */,
 				D4353A0328707DD00098949F /* RVS_UIKit_Toolbox_TestHarness_Base_Tabs_ViewController.swift in Sources */,
+				D40B98FB287330D10027956D /* RVS_UIKit_Toolbox_TestHarness_Tab4_ViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

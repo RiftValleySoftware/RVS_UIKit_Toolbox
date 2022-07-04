@@ -91,6 +91,7 @@ public extension UITabBarController {
  These provide utilities for determining running state of the device, biometric support, and some responder stuff.
  */
 public extension UIViewController {
+    // MARK: Class Computed Properties
     /* ################################################################## */
     /**
      Get the biometric authentication type.
@@ -127,6 +128,7 @@ public extension UIViewController {
      */
     class var isVoiceOverRunning: Bool { UIAccessibility.isVoiceOverRunning }
 
+    // MARK: System State Flag Instance Computed Properties
     /* ################################################################## */
     /**
      Returns true, if we are in Dark Mode.
@@ -162,12 +164,27 @@ public extension UIViewController {
      */
     var biometricType: LABiometryType { Self.biometricType }
     
+    // MARK: View Hierarchy Instance Computed Properties
     /* ################################################################## */
     /**
      Returns the X/Y aspect of the screen (window). It will return 0, if it cannot determine the aspect.
      */
     var screenAspect: CGFloat { view?.screenAspect ?? 0 }
 
+    /* ################################################################## */
+    /**
+     Returns the previous ViewController in a navigation stack.
+     Nil, if at root, or not in a navigation stack.
+     Inspired by [this SO answer](https://stackoverflow.com/a/42916780/879365).
+     */
+    var previousViewController: UIViewController? {
+        guard let viewControllers = navigationController?.viewControllers,
+              1 < viewControllers.count  else { return nil }
+        
+        return viewControllers[viewControllers.count - 2]
+    }
+
+    // MARK: Responder Stuff
     /* ################################################################## */
     /**
      This returns the first responder, wherever it is in our hierarchy.
@@ -183,19 +200,6 @@ public extension UIViewController {
         view?.resignAllFirstResponders()
         view?.endEditing(true)
     }
-
-    /* ################################################################## */
-    /**
-     Returns the previous ViewController in a navigation stack.
-     Nil, if at root, or not in a navigation stack.
-     Inspired by [this SO answer](https://stackoverflow.com/a/42916780/879365).
-     */
-    var previousViewController: UIViewController? {
-        guard let viewControllers = navigationController?.viewControllers,
-              1 < viewControllers.count  else { return nil }
-        
-        return viewControllers[viewControllers.count - 2]
-    }
 }
 
 /* ###################################################################################################################################### */
@@ -206,6 +210,7 @@ public extension UIViewController {
  It has a few "informational" computed properties, and some other simple tools for things like auto layout.
  */
 public extension UIView {
+    // MARK: IBInspectable Computed Instance Properties
     /* ################################################################## */
     /**
      This gives us access to the corner radius, so we can give the view rounded corners.
@@ -250,12 +255,14 @@ public extension UIView {
         }
     }
     
+    // MARK: Screen Stuff
     /* ################################################################## */
     /**
      Returns the X/Y aspect of the screen (window). It will return 0, if it cannot determine the aspect.
      */
     var screenAspect: CGFloat { (window?.bounds.size.width ?? 0) / (window?.bounds.size.height ?? 1) }
 
+    // MARK: Responder Stuff
     /* ################################################################## */
     /**
      This returns the first responder, wherever it is in our hierarchy.
@@ -279,7 +286,8 @@ public extension UIView {
             subviews.forEach { $0.resignAllFirstResponders() }
         }
     }
-    
+
+    // MARK: Auto Layout Instance Methods
     /* ################################################################## */
     /**
      This allows us to add a subview, and set it up with auto-layout constraints to fill the superview.
@@ -334,6 +342,7 @@ public extension UIView {
  This mostly has resizing stuff, but also a bit of pixel-level inspection.
  */
 public extension UIImage {
+    // MARK: Class Functions
     /* ################################################################## */
     /**
      This is a "cascading" image fetcher. It first, ses if there is an asset with the name given, then, it looks in the SFSymbols, finally, returning the SFSymbols.nosign, if none found.
@@ -344,6 +353,56 @@ public extension UIImage {
      */
     class func assetOrSystemImage(name inName: String) -> UIImage? { UIImage(named: inName) ?? UIImage(systemName: inName) ?? UIImage(systemName: "nosign") }
     
+    // MARK: Image Composition Instance Computed Properties
+    /* ################################################################## */
+    /**
+     - returns: True, if the image has an alpha component.
+                **NOTE:** The Photos app seems to have a bug, where it won't see alpha information of monchrome (black and white) PNG images with alpha channels.
+     */
+    var hasAlphaInformation: Bool {
+        guard let cgImage = cgImage else { return false }
+        let alpha = cgImage.alphaInfo
+        return alpha == .first || alpha == .last || alpha == .premultipliedFirst || alpha == .premultipliedLast
+    }
+    
+    // MARK: Pixel Information Instance Methods
+    /* ################################################################## */
+    /**
+     This returns the RGB color (as a UIColor) of the pixel in the image, at the given point. It is restricted to 32-bit (RGBA/8-bit pixel) values.
+     This was inspired by several of the answers [in this StackOverflow Question](https://stackoverflow.com/questions/25146557/how-do-i-get-the-color-of-a-pixel-in-a-uiimage-with-swift).
+     **NOTE:** This is unlikely to be highly performant!
+     
+     - parameter at: The point in the image to sample (NOTE: Must be within image bounds, or nil is returned).
+     - returns: A UIColor (or nil).
+     */
+    func getRGBColorOfThePixel(at inPoint: CGPoint) -> UIColor? {
+        guard (0..<size.width).contains(inPoint.x),
+              (0..<size.height).contains(inPoint.y)
+        else { return nil }
+
+        // We draw the image into a context, in order to be sure that we are accessing image data in our required format (RGBA).
+        UIGraphicsBeginImageContextWithOptions(size, false, 0)
+        draw(at: .zero)
+        let imageData = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+
+        guard let cgImage = imageData?.cgImage,
+              let pixelData = cgImage.dataProvider?.data
+        else { return nil }
+        
+        let data: UnsafePointer<UInt8> = CFDataGetBytePtr(pixelData)
+        let bytesPerPixel = (cgImage.bitsPerPixel + 7) / 8
+        let pixelByteOffset: Int = (cgImage.bytesPerRow * Int(inPoint.y)) + (Int(inPoint.x) * bytesPerPixel)
+        let divisor = CGFloat(255.0)
+        let r = CGFloat(data[pixelByteOffset]) / divisor
+        let g = CGFloat(data[pixelByteOffset + 1]) / divisor
+        let b = CGFloat(data[pixelByteOffset + 2]) / divisor
+        let a = CGFloat(data[pixelByteOffset + 3]) / divisor
+
+        return UIColor(red: r, green: g, blue: b, alpha: a)
+    }
+
+    // MARK: Sizing Instance Methods
     /* ################################################################## */
     /**
      This allows an image to be resized, given a maximum dimension, and a scale will be determined to meet that dimension.
@@ -401,53 +460,6 @@ public extension UIImage {
         
         return nil
     }
-    
-    /* ################################################################## */
-    /**
-     This returns the RGB color (as a UIColor) of the pixel in the image, at the given point. It is restricted to 32-bit (RGBA/8-bit pixel) values.
-     This was inspired by several of the answers [in this StackOverflow Question](https://stackoverflow.com/questions/25146557/how-do-i-get-the-color-of-a-pixel-in-a-uiimage-with-swift).
-     **NOTE:** This is unlikely to be highly performant!
-     
-     - parameter at: The point in the image to sample (NOTE: Must be within image bounds, or nil is returned).
-     - returns: A UIColor (or nil).
-     */
-    func getRGBColorOfThePixel(at inPoint: CGPoint) -> UIColor? {
-        guard (0..<size.width).contains(inPoint.x),
-              (0..<size.height).contains(inPoint.y)
-        else { return nil }
-
-        // We draw the image into a context, in order to be sure that we are accessing image data in our required format (RGBA).
-        UIGraphicsBeginImageContextWithOptions(size, false, 0)
-        draw(at: .zero)
-        let imageData = UIGraphicsGetImageFromCurrentImageContext()
-        UIGraphicsEndImageContext()
-
-        guard let cgImage = imageData?.cgImage,
-              let pixelData = cgImage.dataProvider?.data
-        else { return nil }
-        
-        let data: UnsafePointer<UInt8> = CFDataGetBytePtr(pixelData)
-        let bytesPerPixel = (cgImage.bitsPerPixel + 7) / 8
-        let pixelByteOffset: Int = (cgImage.bytesPerRow * Int(inPoint.y)) + (Int(inPoint.x) * bytesPerPixel)
-        let divisor = CGFloat(255.0)
-        let r = CGFloat(data[pixelByteOffset]) / divisor
-        let g = CGFloat(data[pixelByteOffset + 1]) / divisor
-        let b = CGFloat(data[pixelByteOffset + 2]) / divisor
-        let a = CGFloat(data[pixelByteOffset + 3]) / divisor
-
-        return UIColor(red: r, green: g, blue: b, alpha: a)
-    }
-
-    /* ################################################################## */
-    /**
-     - returns: True, if the image has an alpha component.
-                **NOTE:** The Photos app seems to have a bug, where it won't see alpha information of monchrome (black and white) PNG images with alpha channels.
-     */
-    var hasAlphaInformation: Bool {
-        guard let cgImage = cgImage else { return false }
-        let alpha = cgImage.alphaInfo
-        return alpha == .first || alpha == .last || alpha == .premultipliedFirst || alpha == .premultipliedLast
-    }
 }
 
 /* ###################################################################################################################################### */
@@ -458,6 +470,7 @@ public extension UIImage {
  This mostly has ways of inspecting the color.
  */
 public extension UIColor {
+    // MARK: Convenience Initializers
     /* ################################################################## */
     /**
      [This comes fairly directly from this Hacking With Swift tutorial](https://www.hackingwithswift.com/example-code/uicolor/how-to-convert-a-hex-color-to-a-uicolor)
@@ -500,6 +513,7 @@ public extension UIColor {
         return nil
     }
 
+    // MARK: Color Information Instance Computed Properties
     /* ################################################################## */
     /**
      - returns: true, if the color is clear.
@@ -515,6 +529,34 @@ public extension UIColor {
         return false
     }
     
+    /* ################################################################## */
+    /**
+     This just allows us to get an HSB color from a standard UIColor.
+     [From This SO Answer](https://stackoverflow.com/a/30713456/879365)
+     
+     - returns: A tuple, containing the HSBA color.
+     */
+    var hsba: (h: CGFloat, s: CGFloat, b: CGFloat, a: CGFloat) {
+        var h: CGFloat = 0, s: CGFloat = 0, b: CGFloat = 0, a: CGFloat = 0
+        if getHue(&h, saturation: &s, brightness: &b, alpha: &a) {
+            return (h: h, s: s, b: b, a: a)
+        }
+        
+        return (h: 0, s: 0, b: 0, a: 0)
+    }
+    
+    /* ################################################################## */
+    /**
+     Returns the inverted color.
+     NOTE: This is quite primitive, and may not return exactly what may be expected.
+     [From This SO Answer](https://stackoverflow.com/a/57111280/879365)
+     */
+    var inverted: UIColor {
+        var a: CGFloat = 0.0, r: CGFloat = 0.0, g: CGFloat = 0.0, b: CGFloat = 0.0
+        return getRed(&r, green: &g, blue: &b, alpha: &a) ? UIColor(red: 1.0-r, green: 1.0-g, blue: 1.0-b, alpha: a) : .label
+    }
+
+    // MARK: Color Computation Instance Methods
     /* ################################################################## */
     /**
      This will return an intermediate color, between this color, and another one.
@@ -554,32 +596,5 @@ public extension UIColor {
                            alpha: CGFloat(a1 + (a2 - a1) * samplePoint)
             )
         }
-    }
-    
-    /* ################################################################## */
-    /**
-     This just allows us to get an HSB color from a standard UIColor.
-     [From This SO Answer](https://stackoverflow.com/a/30713456/879365)
-     
-     - returns: A tuple, containing the HSBA color.
-     */
-    var hsba: (h: CGFloat, s: CGFloat, b: CGFloat, a: CGFloat) {
-        var h: CGFloat = 0, s: CGFloat = 0, b: CGFloat = 0, a: CGFloat = 0
-        if getHue(&h, saturation: &s, brightness: &b, alpha: &a) {
-            return (h: h, s: s, b: b, a: a)
-        }
-        
-        return (h: 0, s: 0, b: 0, a: 0)
-    }
-    
-    /* ################################################################## */
-    /**
-     Returns the inverted color.
-     NOTE: This is quite primitive, and may not return exactly what may be expected.
-     [From This SO Answer](https://stackoverflow.com/a/57111280/879365)
-     */
-    var inverted: UIColor {
-        var a: CGFloat = 0.0, r: CGFloat = 0.0, g: CGFloat = 0.0, b: CGFloat = 0.0
-        return getRed(&r, green: &g, blue: &b, alpha: &a) ? UIColor(red: 1.0-r, green: 1.0-g, blue: 1.0-b, alpha: a) : .label
     }
 }

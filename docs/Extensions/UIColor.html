@@ -93,6 +93,15 @@ This mostly has ways of inspecting the color.</p>
         <section class="section">
           <div class="section-content">
             <div class="task-group">
+              <div class="task-name-container">
+                <a name="/Convenience%20Initializers"></a>
+                <a name="//apple_ref/swift/Section/Convenience Initializers" class="dashAnchor"></a>
+                <div class="section-name-container">
+                  <a class="section-name-link" href="#/Convenience%20Initializers"></a>
+                  <h3 class="section-name"><span>Convenience Initializers</span>
+</h3>
+                </div>
+              </div>
               <ul class="item-container">
                 <li class="item">
                   <div>
@@ -144,6 +153,19 @@ This mostly has ways of inspecting the color.</p>
                     </section>
                   </div>
                 </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/Color%20Information%20Instance%20Computed%20Properties"></a>
+                <a name="//apple_ref/swift/Section/Color Information Instance Computed Properties" class="dashAnchor"></a>
+                <div class="section-name-container">
+                  <a class="section-name-link" href="#/Color%20Information%20Instance%20Computed%20Properties"></a>
+                  <h3 class="section-name"><span>Color Information Instance Computed Properties</span>
+</h3>
+                </div>
+              </div>
+              <ul class="item-container">
                 <li class="item">
                   <div>
                     <code>
@@ -174,6 +196,80 @@ This mostly has ways of inspecting the color.</p>
                     </section>
                   </div>
                 </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:So7UIColorC17RVS_UIKit_ToolboxE4hsba12CoreGraphics7CGFloatV1h_AG1sAG1bAG1atvp"></a>
+                    <a name="//apple_ref/swift/Property/hsba" class="dashAnchor"></a>
+                    <a class="token" href="#/s:So7UIColorC17RVS_UIKit_ToolboxE4hsba12CoreGraphics7CGFloatV1h_AG1sAG1bAG1atvp">hsba</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>This just allows us to get an HSB color from a standard UIColor.
+<a href="https://stackoverflow.com/a/30713456/879365">From This SO Answer</a></p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">hsba</span><span class="p">:</span> <span class="p">(</span><span class="nv">h</span><span class="p">:</span> <span class="kt">CGFloat</span><span class="p">,</span> <span class="nv">s</span><span class="p">:</span> <span class="kt">CGFloat</span><span class="p">,</span> <span class="nv">b</span><span class="p">:</span> <span class="kt">CGFloat</span><span class="p">,</span> <span class="nv">a</span><span class="p">:</span> <span class="kt">CGFloat</span><span class="p">)</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>A tuple, containing the HSBA color.</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:So7UIColorC17RVS_UIKit_ToolboxE8invertedABvp"></a>
+                    <a name="//apple_ref/swift/Property/inverted" class="dashAnchor"></a>
+                    <a class="token" href="#/s:So7UIColorC17RVS_UIKit_ToolboxE8invertedABvp">inverted</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Returns the inverted color.
+NOTE: This is quite primitive, and may not return exactly what may be expected.
+<a href="https://stackoverflow.com/a/57111280/879365">From This SO Answer</a></p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">inverted</span><span class="p">:</span> <span class="kt">UIColor</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/Color%20Computation%20Instance%20Methods"></a>
+                <a name="//apple_ref/swift/Section/Color Computation Instance Methods" class="dashAnchor"></a>
+                <div class="section-name-container">
+                  <a class="section-name-link" href="#/Color%20Computation%20Instance%20Methods"></a>
+                  <h3 class="section-name"><span>Color Computation Instance Methods</span>
+</h3>
+                </div>
+              </div>
+              <ul class="item-container">
                 <li class="item">
                   <div>
                     <code>
@@ -246,67 +342,6 @@ This mostly has ways of inspecting the color.</p>
                       <div>
                         <h4>Return Value</h4>
                         <p>the intermediate color.</p>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/s:So7UIColorC17RVS_UIKit_ToolboxE4hsba12CoreGraphics7CGFloatV1h_AG1sAG1bAG1atvp"></a>
-                    <a name="//apple_ref/swift/Property/hsba" class="dashAnchor"></a>
-                    <a class="token" href="#/s:So7UIColorC17RVS_UIKit_ToolboxE4hsba12CoreGraphics7CGFloatV1h_AG1sAG1bAG1atvp">hsba</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>This just allows us to get an HSB color from a standard UIColor.
-<a href="https://stackoverflow.com/a/30713456/879365">From This SO Answer</a></p>
-
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">hsba</span><span class="p">:</span> <span class="p">(</span><span class="nv">h</span><span class="p">:</span> <span class="kt">CGFloat</span><span class="p">,</span> <span class="nv">s</span><span class="p">:</span> <span class="kt">CGFloat</span><span class="p">,</span> <span class="nv">b</span><span class="p">:</span> <span class="kt">CGFloat</span><span class="p">,</span> <span class="nv">a</span><span class="p">:</span> <span class="kt">CGFloat</span><span class="p">)</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
-
-                        </div>
-                      </div>
-                      <div>
-                        <h4>Return Value</h4>
-                        <p>A tuple, containing the HSBA color.</p>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/s:So7UIColorC17RVS_UIKit_ToolboxE8invertedABvp"></a>
-                    <a name="//apple_ref/swift/Property/inverted" class="dashAnchor"></a>
-                    <a class="token" href="#/s:So7UIColorC17RVS_UIKit_ToolboxE8invertedABvp">inverted</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>Returns the inverted color.
-NOTE: This is quite primitive, and may not return exactly what may be expected.
-<a href="https://stackoverflow.com/a/57111280/879365">From This SO Answer</a></p>
-
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">inverted</span><span class="p">:</span> <span class="kt">UIColor</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
-
-                        </div>
                       </div>
                     </section>
                   </div>

@@ -93,6 +93,15 @@ These provide utilities for determining running state of the device, biometric s
         <section class="section">
           <div class="section-content">
             <div class="task-group">
+              <div class="task-name-container">
+                <a name="/Class%20Computed%20Properties"></a>
+                <a name="//apple_ref/swift/Section/Class Computed Properties" class="dashAnchor"></a>
+                <div class="section-name-container">
+                  <a class="section-name-link" href="#/Class%20Computed%20Properties"></a>
+                  <h3 class="section-name"><span>Class Computed Properties</span>
+</h3>
+                </div>
+              </div>
               <ul class="item-container">
                 <li class="item">
                   <div>
@@ -210,6 +219,19 @@ These provide utilities for determining running state of the device, biometric s
                     </section>
                   </div>
                 </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/System%20State%20Flag%20Instance%20Computed%20Properties"></a>
+                <a name="//apple_ref/swift/Section/System State Flag Instance Computed Properties" class="dashAnchor"></a>
+                <div class="section-name-container">
+                  <a class="section-name-link" href="#/System%20State%20Flag%20Instance%20Computed%20Properties"></a>
+                  <h3 class="section-name"><span>System State Flag Instance Computed Properties</span>
+</h3>
+                </div>
+              </div>
+              <ul class="item-container">
                 <li class="item">
                   <div>
                     <code>
@@ -353,6 +375,19 @@ These provide utilities for determining running state of the device, biometric s
                     </section>
                   </div>
                 </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/View%20Hierarchy%20Instance%20Computed%20Properties"></a>
+                <a name="//apple_ref/swift/Section/View Hierarchy Instance Computed Properties" class="dashAnchor"></a>
+                <div class="section-name-container">
+                  <a class="section-name-link" href="#/View%20Hierarchy%20Instance%20Computed%20Properties"></a>
+                  <h3 class="section-name"><span>View Hierarchy Instance Computed Properties</span>
+</h3>
+                </div>
+              </div>
+              <ul class="item-container">
                 <li class="item">
                   <div>
                     <code>
@@ -380,6 +415,48 @@ These provide utilities for determining running state of the device, biometric s
                     </section>
                   </div>
                 </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:So16UIViewControllerC17RVS_UIKit_ToolboxE012previousViewB0ABSgvp"></a>
+                    <a name="//apple_ref/swift/Property/previousViewController" class="dashAnchor"></a>
+                    <a class="token" href="#/s:So16UIViewControllerC17RVS_UIKit_ToolboxE012previousViewB0ABSgvp">previousViewController</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Returns the previous ViewController in a navigation stack.
+Nil, if at root, or not in a navigation stack.
+Inspired by <a href="https://stackoverflow.com/a/42916780/879365">this SO answer</a>.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">previousViewController</span><span class="p">:</span> <span class="kt">UIViewController</span><span class="p">?</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/Responder%20Stuff"></a>
+                <a name="//apple_ref/swift/Section/Responder Stuff" class="dashAnchor"></a>
+                <div class="section-name-container">
+                  <a class="section-name-link" href="#/Responder%20Stuff"></a>
+                  <h3 class="section-name"><span>Responder Stuff</span>
+</h3>
+                </div>
+              </div>
+              <ul class="item-container">
                 <li class="item">
                   <div>
                     <code>
@@ -420,7 +497,8 @@ These provide utilities for determining running state of the device, biometric s
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>This puts away any open keyboards.</p>
+                        <p>This puts away any open keyboards.
+This is different from the UIView version, as it also forces <a href="https://developer.apple.com/documentation/uikit/uiview/1619630-endediting"><code>endEditing(_:)</code></a>.</p>
 
                       </div>
                       <div class="declaration">
@@ -428,35 +506,6 @@ These provide utilities for determining running state of the device, biometric s
                         <div class="language">
                           <p class="aside-title">Swift</p>
                           <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">resignAllFirstResponders</span><span class="p">()</span></code></pre>
-
-                        </div>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/s:So16UIViewControllerC17RVS_UIKit_ToolboxE012previousViewB0ABSgvp"></a>
-                    <a name="//apple_ref/swift/Property/previousViewController" class="dashAnchor"></a>
-                    <a class="token" href="#/s:So16UIViewControllerC17RVS_UIKit_ToolboxE012previousViewB0ABSgvp">previousViewController</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>Returns the previous ViewController in a navigation stack.
-Nil, if at root, or not in a navigation stack.
-Inspired by <a href="https://stackoverflow.com/a/42916780/879365">this SO answer</a>.</p>
-
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">previousViewController</span><span class="p">:</span> <span class="kt">UIViewController</span><span class="p">?</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
 
                         </div>
                       </div>

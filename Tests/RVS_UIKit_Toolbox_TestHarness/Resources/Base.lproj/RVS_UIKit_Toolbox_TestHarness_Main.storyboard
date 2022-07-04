@@ -173,7 +173,7 @@
                             <constraint firstItem="Ggq-94-LEG" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="tSg-gR-KKc"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="SLUG-TAB-0-TITLE" image="square.fill" catalog="system" id="FLZ-mY-nUu"/>
+                    <tabBarItem key="tabBarItem" title="SLUG-TAB-0-TITLE" image="circle.fill" catalog="system" id="FLZ-mY-nUu"/>
                     <connections>
                         <outlet property="backgroundColorSegmentedSwitch" destination="rK8-8F-jHP" id="6t5-aM-YOX"/>
                         <outlet property="backgroundColorSwitchLabel" destination="hzw-Y9-BiY" id="9OY-XZ-N5x"/>
@@ -288,6 +288,7 @@
                         <segue destination="h2D-0e-Plz" kind="relationship" relationship="viewControllers" id="wui-jC-fQ7"/>
                         <segue destination="2R3-ro-6eP" kind="relationship" relationship="viewControllers" id="d9E-RV-StO"/>
                         <segue destination="L0M-tb-1Ck" kind="relationship" relationship="viewControllers" id="dUg-I5-uQx"/>
+                        <segue destination="0Ei-el-aQN" kind="relationship" relationship="viewControllers" id="JI9-RT-brk"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Hc5-Yi-BBq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -298,7 +299,7 @@
         <scene sceneID="9gM-Oj-4tP">
             <objects>
                 <navigationController id="h2D-0e-Plz" userLabel="View Controller Navigation Controller" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="SLUG-TAB-1-TITLE" image="circle.fill" catalog="system" id="Vbm-F1-oHK"/>
+                    <tabBarItem key="tabBarItem" title="SLUG-TAB-1-TITLE" image="triangle.fill" catalog="system" id="Vbm-F1-oHK"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="FRc-hD-cBF">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -322,7 +323,7 @@
                         <viewLayoutGuide key="safeArea" id="iBU-Ic-NgP"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="SLUG-TAB-2-TITLE" image="triangle.fill" catalog="system" id="rbD-9w-Tzi"/>
+                    <tabBarItem key="tabBarItem" title="SLUG-TAB-2-TITLE" image="square.fill" catalog="system" id="rbD-9w-Tzi"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UwH-t8-POH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -338,7 +339,7 @@
                         <viewLayoutGuide key="safeArea" id="bfK-Ro-f0x"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="SLUG-TAB-3-TITLE" image="hexagon.fill" catalog="system" id="ahE-G2-zub"/>
+                    <tabBarItem key="tabBarItem" title="SLUG-TAB-3-TITLE" image="pentagon.fill" catalog="system" id="ahE-G2-zub"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TvF-sc-LgG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -470,11 +471,28 @@
             </objects>
             <point key="canvasLocation" x="983" y="546"/>
         </scene>
+        <!--Image Tab-->
+        <scene sceneID="5a0-ie-7Y3">
+            <objects>
+                <viewController title="Color Tab" id="0Ei-el-aQN" userLabel="Image Tab" customClass="RVS_UIKit_Toolbox_TestHarness_Tab4_ViewController" customModule="RVS_UIKit_Toolbox_TestHarness" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="WK6-Ir-hPl">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="wcx-Ha-jm0"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="SLUG-TAB-4-TITLE" image="hexagon.fill" catalog="system" id="jfg-8t-LPt"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="drC-Tx-d7C" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2839" y="-169"/>
+        </scene>
     </scenes>
     <resources>
         <image name="circle" catalog="system" width="128" height="121"/>
         <image name="circle.fill" catalog="system" width="128" height="121"/>
         <image name="hexagon.fill" catalog="system" width="128" height="124"/>
+        <image name="pentagon.fill" catalog="system" width="128" height="113"/>
         <image name="square.fill" catalog="system" width="128" height="114"/>
         <image name="triangle.fill" catalog="system" width="128" height="112"/>
         <systemColor name="systemBackgroundColor">
