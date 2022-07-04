@@ -77,7 +77,7 @@ class RVS_UIKit_Toolbox_TestHarness_Tab1_ViewController: RVS_UIKit_Toolbox_TestH
     override func viewDidLoad() {
         super.viewDidLoad()
         nextNavBarButton?.title = nextNavBarButton?.title?.localizedVariant
-        navigationItem.title = tabBarItem?.title
+        navigationItem.title = navigationController?.tabBarItem.title
     }
     
     /* ################################################################## */

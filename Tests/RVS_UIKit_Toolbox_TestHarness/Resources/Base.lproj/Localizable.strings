@@ -20,7 +20,7 @@ CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFT
 The Great Rift Valley Software Company: https://riftvalleysoftware.com
 */
 "SLUG-TAB-0-TITLE"                                      =   "Tab Bar";
-"SLUG-TAB-1-TITLE"                                      =   "View Controller";
+"SLUG-TAB-1-TITLE"                                      =   "Controller";
 "SLUG-TAB-2-TITLE"                                      =   "View";
 "SLUG-TAB-3-TITLE"                                      =   "Image";
 "SLUG-TAB-4-TITLE"                                      =   "Color";
