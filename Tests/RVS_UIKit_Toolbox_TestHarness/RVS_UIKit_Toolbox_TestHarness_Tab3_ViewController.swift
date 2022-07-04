@@ -32,6 +32,21 @@ import RVS_Generic_Swift_Toolbox
 class RVS_UIKit_Toolbox_TestHarness_Tab3_ViewController: RVS_UIKit_Toolbox_TestHarness_Base_Tabs_ViewController {
     /* ################################################################## */
     /**
+     */
+    @IBOutlet weak var imageContainerStackView: UIStackView?
+    
+    /* ################################################################## */
+    /**
+     */
+    @IBOutlet weak var jpegImageView: UIImageView?
+    
+    /* ################################################################## */
+    /**
+     */
+    @IBOutlet weak var sfSymbolImageView: UIImageView?
+    
+    /* ################################################################## */
+    /**
      Called when the view Hierarchy has been loaded.
      */
     override func viewDidLoad() {
