@@ -482,7 +482,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="dHa-SU-beE">
+                            <stackView opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="dHa-SU-beE">
                                 <rect key="frame" x="20" y="44" width="374" height="769"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SLUG-SCALE-LABEL" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i8S-HC-ucm">
@@ -515,19 +515,31 @@
                                             <action selector="scaleSliderChanged:" destination="L0M-tb-1Ck" eventType="valueChanged" id="3yw-i1-VMP"/>
                                         </connections>
                                     </slider>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="qHb-Pc-gAm">
+                                        <rect key="frame" x="166.5" y="117.5" width="41.5" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Pm1-Hc-3Wo">
-                                        <rect key="frame" x="0.0" y="117.5" width="374" height="198.5"/>
+                                        <rect key="frame" x="0.0" y="150" width="374" height="198.5"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="Pm1-Hc-3Wo" secondAttribute="height" multiplier="64:34" id="ELB-Db-yc0"/>
                                         </constraints>
                                     </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="dZr-89-7MC">
+                                        <rect key="frame" x="166.5" y="360.5" width="41.5" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="z9s-vF-TTi">
-                                        <rect key="frame" x="0.0" y="328" width="374" height="199"/>
+                                        <rect key="frame" x="0.0" y="393" width="374" height="199"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </imageView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ywD-bv-py0" userLabel="Filler View">
-                                        <rect key="frame" x="0.0" y="539" width="374" height="230"/>
+                                        <rect key="frame" x="0.0" y="604" width="374" height="165"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </view>
                                 </subviews>
@@ -559,10 +571,12 @@
                         <imageReference key="image" image="3.circle.fill" catalog="system" symbolScale="large"/>
                     </tabBarItem>
                     <connections>
+                        <outlet property="jpegAlphaReportLabel" destination="qHb-Pc-gAm" id="tfa-iH-jkJ"/>
                         <outlet property="jpegImageView" destination="Pm1-Hc-3Wo" id="Tlq-jG-cKG"/>
                         <outlet property="scaleLabel" destination="i8S-HC-ucm" id="glb-b7-CVA"/>
                         <outlet property="scaleSlider" destination="DyA-eT-U0I" id="XpF-Gq-1Sa"/>
                         <outlet property="scaleTypeSegmentedSwitch" destination="ovG-EY-EQs" id="caA-JG-4s1"/>
+                        <outlet property="sfSymbolAlphaReportLabel" destination="dZr-89-7MC" id="9Pj-k7-4sG"/>
                         <outlet property="sfSymbolImageView" destination="z9s-vF-TTi" id="7wB-3b-KeO"/>
                     </connections>
                 </viewController>

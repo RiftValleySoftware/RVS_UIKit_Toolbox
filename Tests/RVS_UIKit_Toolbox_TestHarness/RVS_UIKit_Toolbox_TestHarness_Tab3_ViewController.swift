@@ -82,9 +82,21 @@ class RVS_UIKit_Toolbox_TestHarness_Tab3_ViewController: RVS_UIKit_Toolbox_TestH
     
     /* ################################################################## */
     /**
+     The label for the alpha content report, over the JPEG Image.
+     */
+    @IBOutlet weak var jpegAlphaReportLabel: UILabel?
+    
+    /* ################################################################## */
+    /**
      The image view for the raster (JPEG) image.
      */
     @IBOutlet weak var jpegImageView: UIImageView?
+    
+    /* ################################################################## */
+    /**
+     The label for the alpha content report, over the SF Symbol Image.
+     */
+    @IBOutlet weak var sfSymbolAlphaReportLabel: UILabel?
     
     /* ################################################################## */
     /**
@@ -110,6 +122,9 @@ extension RVS_UIKit_Toolbox_TestHarness_Tab3_ViewController {
         
         jpegImage = UIImage.assetOrSystemImage(name: "SLUG-JPEG-IMAGE-NAME".localizedVariant)
         sfSymbolImage = UIImage.assetOrSystemImage(name: "SLUG-SYSTEM-IMAGE-NAME".localizedVariant)?.applyingSymbolConfiguration(UIImage.SymbolConfiguration(scale: .large))
+        
+        jpegAlphaReportLabel?.text = String(format: "SLUG-IMAGE-ALPHA-%@", (jpegImage?.hasAlphaInformation ?? false) ? "YES" : "NO").localizedVariant
+        sfSymbolAlphaReportLabel?.text = String(format: "SLUG-IMAGE-ALPHA-%@", (sfSymbolImage?.hasAlphaInformation ?? false) ? "YES" : "NO").localizedVariant
         
         scaleTypeSegmentedSwitchChanged()
     }

@@ -62,6 +62,8 @@ The Great Rift Valley Software Company: https://riftvalleysoftware.com
 // MARK: Tab 3 (Image)
 "SLUG-JPEG-IMAGE-NAME"                                  =   "Cat";
 "SLUG-SYSTEM-IMAGE-NAME"                                =   "globe";
+"SLUG-IMAGE-ALPHA-YES"                                  =   "This Image Has Alpha Information";
+"SLUG-IMAGE-ALPHA-NO"                                   =   "This Image Does Not Have Alpha Information";
 "SLUG-SCALE-LABEL"                                      =   "Scaling:";
 "SLUG-SCALE-TYPE-0"                                     =   "Width";
 "SLUG-SCALE-TYPE-1"                                     =   "Height";
