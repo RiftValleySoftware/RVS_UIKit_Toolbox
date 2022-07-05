@@ -485,34 +485,62 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="dHa-SU-beE">
                                 <rect key="frame" x="20" y="44" width="374" height="769"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gqH-Mn-7lI">
-                                        <rect key="frame" x="0.0" y="0.0" width="374" height="130"/>
-                                        <subviews>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Cat" translatesAutoresizingMaskIntoConstraints="NO" id="Pm1-Hc-3Wo">
-                                                <rect key="frame" x="0.0" y="0.0" width="244" height="130"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" secondItem="Pm1-Hc-3Wo" secondAttribute="height" multiplier="64:34" id="ELB-Db-yc0"/>
-                                                </constraints>
-                                            </imageView>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="z9s-vF-TTi">
-                                                <rect key="frame" x="244" y="-3" width="130" height="136"/>
-                                                <color key="tintColor" systemColor="systemTealColor"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" secondItem="z9s-vF-TTi" secondAttribute="height" multiplier="1:1" id="jAI-q9-0Ai"/>
-                                                </constraints>
-                                                <imageReference key="image" image="globe" catalog="system" symbolScale="large"/>
-                                            </imageView>
-                                        </subviews>
-                                    </stackView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SLUG-SCALE-LABEL" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i8S-HC-ucm">
+                                        <rect key="frame" x="107" y="0.0" width="160.5" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="ovG-EY-EQs">
+                                        <rect key="frame" x="0.0" y="32.5" width="374" height="32"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="31" id="j2E-Wm-Fbr"/>
+                                        </constraints>
+                                        <segments>
+                                            <segment title="SLUG-SCALE-TYPE-0"/>
+                                            <segment title="SLUG-SCALE-TYPE-1"/>
+                                            <segment title="SLUG-SCALE-TYPE-2"/>
+                                        </segments>
+                                        <connections>
+                                            <action selector="scaleTypeSegmentedSwitchChanged:" destination="L0M-tb-1Ck" eventType="valueChanged" id="YxX-es-n9U"/>
+                                        </connections>
+                                    </segmentedControl>
+                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="DyA-eT-U0I">
+                                        <rect key="frame" x="-2" y="75.5" width="378" height="31"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="fpV-7f-1T0"/>
+                                        </constraints>
+                                        <connections>
+                                            <action selector="scaleSliderChanged:" destination="L0M-tb-1Ck" eventType="valueChanged" id="3yw-i1-VMP"/>
+                                        </connections>
+                                    </slider>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Pm1-Hc-3Wo">
+                                        <rect key="frame" x="0.0" y="117.5" width="374" height="198.5"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="Pm1-Hc-3Wo" secondAttribute="height" multiplier="64:34" id="ELB-Db-yc0"/>
+                                        </constraints>
+                                    </imageView>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="z9s-vF-TTi">
+                                        <rect key="frame" x="0.0" y="328" width="374" height="199"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </imageView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ywD-bv-py0" userLabel="Filler View">
-                                        <rect key="frame" x="0.0" y="142" width="374" height="627"/>
+                                        <rect key="frame" x="0.0" y="539" width="374" height="230"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </view>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstItem="gqH-Mn-7lI" firstAttribute="leading" secondItem="dHa-SU-beE" secondAttribute="leading" id="FZK-NW-jtv"/>
-                                    <constraint firstAttribute="trailing" secondItem="gqH-Mn-7lI" secondAttribute="trailing" id="Tdy-Od-0L8"/>
+                                    <constraint firstItem="ovG-EY-EQs" firstAttribute="leading" secondItem="dHa-SU-beE" secondAttribute="leading" id="1tx-lM-IHa"/>
+                                    <constraint firstAttribute="trailing" secondItem="DyA-eT-U0I" secondAttribute="trailing" id="2Ge-Wp-MA8"/>
+                                    <constraint firstItem="DyA-eT-U0I" firstAttribute="leading" secondItem="dHa-SU-beE" secondAttribute="leading" id="9kb-og-AVc"/>
+                                    <constraint firstItem="z9s-vF-TTi" firstAttribute="height" secondItem="Pm1-Hc-3Wo" secondAttribute="height" id="Jm6-5Y-TEb"/>
+                                    <constraint firstAttribute="trailing" secondItem="z9s-vF-TTi" secondAttribute="trailing" id="LWL-E6-HTM"/>
+                                    <constraint firstItem="z9s-vF-TTi" firstAttribute="leading" secondItem="dHa-SU-beE" secondAttribute="leading" id="cjX-5p-OQ8"/>
                                     <constraint firstAttribute="trailing" secondItem="ywD-bv-py0" secondAttribute="trailing" id="oJo-eB-lWc"/>
+                                    <constraint firstItem="Pm1-Hc-3Wo" firstAttribute="leading" secondItem="dHa-SU-beE" secondAttribute="leading" id="owh-n0-hvA"/>
+                                    <constraint firstAttribute="trailing" secondItem="ovG-EY-EQs" secondAttribute="trailing" id="vLy-Hr-CUX"/>
+                                    <constraint firstAttribute="trailing" secondItem="Pm1-Hc-3Wo" secondAttribute="trailing" id="voC-Bx-E7P"/>
                                     <constraint firstItem="ywD-bv-py0" firstAttribute="leading" secondItem="dHa-SU-beE" secondAttribute="leading" id="zln-5z-apU"/>
                                 </constraints>
                             </stackView>
@@ -530,8 +558,10 @@
                         <imageReference key="image" image="3.circle.fill" catalog="system" symbolScale="large"/>
                     </tabBarItem>
                     <connections>
-                        <outlet property="imageContainerStackView" destination="gqH-Mn-7lI" id="YJt-WJ-olL"/>
                         <outlet property="jpegImageView" destination="Pm1-Hc-3Wo" id="Tlq-jG-cKG"/>
+                        <outlet property="scaleLabel" destination="i8S-HC-ucm" id="glb-b7-CVA"/>
+                        <outlet property="scaleSlider" destination="DyA-eT-U0I" id="XpF-Gq-1Sa"/>
+                        <outlet property="scaleTypeSegmentedSwitch" destination="ovG-EY-EQs" id="caA-JG-4s1"/>
                         <outlet property="sfSymbolImageView" destination="z9s-vF-TTi" id="7wB-3b-KeO"/>
                     </connections>
                 </viewController>
@@ -688,10 +718,8 @@
         <image name="2.circle.fill" catalog="system" width="128" height="121"/>
         <image name="3.circle.fill" catalog="system" width="128" height="121"/>
         <image name="4.circle.fill" catalog="system" width="128" height="121"/>
-        <image name="Cat" width="640" height="340"/>
         <image name="circle" catalog="system" width="128" height="121"/>
         <image name="circle.fill" catalog="system" width="128" height="121"/>
-        <image name="globe" catalog="system" width="128" height="121"/>
         <image name="square.fill" catalog="system" width="128" height="114"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -701,9 +729,6 @@
         </systemColor>
         <systemColor name="systemRedColor">
             <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-        <systemColor name="systemTealColor">
-            <color red="0.18823529411764706" green="0.69019607843137254" blue="0.7803921568627451" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

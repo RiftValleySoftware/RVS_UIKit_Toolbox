@@ -58,3 +58,11 @@ The Great Rift Valley Software Company: https://riftvalleysoftware.com
 "SLUG-BORDER-WIDTH-SLIDER-LABEL"                        =   "Border Width:";
 "SLUG-BORDER-COLOR-SWITCH-LABEL"                        =   "Border Color:";
 "SLUG-ADD-CONTAINED-VIEW-BUTTON"                        =   "Add Contained View";
+
+// MARK: Tab 3 (Image)
+"SLUG-JPEG-IMAGE-NAME"                                  =   "Cat";
+"SLUG-SYSTEM-IMAGE-NAME"                                =   "globe";
+"SLUG-SCALE-LABEL"                                      =   "Scaling:";
+"SLUG-SCALE-TYPE-0"                                     =   "Width";
+"SLUG-SCALE-TYPE-1"                                     =   "Height";
+"SLUG-SCALE-TYPE-2"                                     =   "Max";

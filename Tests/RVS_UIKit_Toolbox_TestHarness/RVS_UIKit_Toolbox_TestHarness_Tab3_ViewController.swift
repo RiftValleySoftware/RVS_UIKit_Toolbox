@@ -32,24 +32,74 @@ import RVS_Generic_Swift_Toolbox
 class RVS_UIKit_Toolbox_TestHarness_Tab3_ViewController: RVS_UIKit_Toolbox_TestHarness_Base_Tabs_ViewController {
     /* ################################################################## */
     /**
+     The label for the scale adjustment items.
      */
-    @IBOutlet weak var imageContainerStackView: UIStackView?
+    @IBOutlet weak var scaleLabel: UILabel?
     
     /* ################################################################## */
     /**
+     The segmented switch that determines the behavior of the slider.
+     */
+    @IBOutlet weak var scaleTypeSegmentedSwitch: UISegmentedControl?
+
+    /* ################################################################## */
+    /**
+     The slider that adjusts the scale.
+     */
+    @IBOutlet weak var scaleSlider: UISlider?
+    
+    /* ################################################################## */
+    /**
+     The image view for the raster (JPEG) image.
      */
     @IBOutlet weak var jpegImageView: UIImageView?
     
     /* ################################################################## */
     /**
+     The image view for the SFSymbol (Vector) image.
      */
     @IBOutlet weak var sfSymbolImageView: UIImageView?
-    
+}
+
+/* ###################################################################################################################################### */
+// MARK: Base Class Overrides
+/* ###################################################################################################################################### */
+extension RVS_UIKit_Toolbox_TestHarness_Tab3_ViewController {
     /* ################################################################## */
     /**
      Called when the view Hierarchy has been loaded.
      */
     override func viewDidLoad() {
         super.viewDidLoad()
+        scaleLabel?.text = scaleLabel?.text?.localizedVariant
+        for segmentIndex in 0..<(scaleTypeSegmentedSwitch?.numberOfSegments ?? 0) {
+            scaleTypeSegmentedSwitch?.setTitle("SLUG-SCALE-TYPE-\(segmentIndex)".localizedVariant, forSegmentAt: segmentIndex)
+        }
+        
+        jpegImageView?.image = UIImage.assetOrSystemImage(name: "SLUG-JPEG-IMAGE-NAME".localizedVariant)
+        sfSymbolImageView?.image = UIImage.assetOrSystemImage(name: "SLUG-SYSTEM-IMAGE-NAME".localizedVariant)
+    }
+}
+
+/* ###################################################################################################################################### */
+// MARK: Callbacks
+/* ###################################################################################################################################### */
+extension RVS_UIKit_Toolbox_TestHarness_Tab3_ViewController {
+    /* ################################################################## */
+    /**
+     Called when the scale type segment switch changes.
+     
+     - parameter: Ignored.
+     */
+    @IBAction func scaleTypeSegmentedSwitchChanged(_: Any) {
+    }
+    
+    /* ################################################################## */
+    /**
+     Called when the scale slider changes.
+     
+     - parameter: Ignored.
+    */
+    @IBAction func scaleSliderChanged(_: Any) {
     }
 }
