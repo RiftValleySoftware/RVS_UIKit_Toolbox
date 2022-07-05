@@ -422,8 +422,7 @@ public extension UIImage {
     /**
      This allows an image to be resized, given a maximum dimension, and a scale will be determined to meet that dimension.
      
-     - parameters:
-         - toScaleFactor: The scale of the resulting image, as a multiplier of the current size.
+     - parameter toScaleFactor: The scale of the resulting image, as a multiplier of the current size.
      
      - returns: A new image, with the given scale. May be nil, if there was an error.
      */
