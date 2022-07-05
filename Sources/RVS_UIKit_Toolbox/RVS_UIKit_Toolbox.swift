@@ -408,8 +408,7 @@ public extension UIImage {
      This allows an image to be resized, given a maximum dimension, and a scale will be determined to meet that dimension.
      If the image is currently smaller than the maximum size, it will not be scaled.
      
-     - parameters:
-         - toMaximumSize: The maximum size, in either the X or Y axis, of the image, in pixels.
+     - parameter toMaximumSize: The maximum size, in either the X or Y axis, of the image, in pixels.
      
      - returns: A new image, with the given dimensions. May be nil, if there was an error.
      */
