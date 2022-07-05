@@ -140,7 +140,7 @@ extension RVS_UIKit_Toolbox_TestHarness_Tab3_ViewController {
      - parameter: Ignored (and can be omitted).
     */
     @IBAction func scaleSliderChanged(_: Any! = nil) {
-        let scaleMultiplier = CGFloat(pow(10, scaleSlider?.value ?? 1.0))
+        let scaleMultiplier = CGFloat(pow(10, scaleSlider?.value ?? 0))
         if let jpegImageSize = jpegImage?.size,
            let sfSymbolImageSize = sfSymbolImage?.size,
            let scaleTypeIndex = scaleTypeSegmentedSwitch?.selectedSegmentIndex,
