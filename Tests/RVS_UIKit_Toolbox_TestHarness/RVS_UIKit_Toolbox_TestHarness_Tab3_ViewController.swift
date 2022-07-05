@@ -30,6 +30,38 @@ import RVS_Generic_Swift_Toolbox
  This controls the UIImage Test tab.
  */
 class RVS_UIKit_Toolbox_TestHarness_Tab3_ViewController: RVS_UIKit_Toolbox_TestHarness_Base_Tabs_ViewController {
+    /* ################################################################################################################################## */
+    // MARK: Scale Type Segmented Switch Values Enum
+    /* ################################################################################################################################## */
+    /**
+     This defines enums for the seg switch values.
+     */
+    enum ScaleType: Int {
+        /// The scaling will be done via the X-axis of each image.
+        case width
+        
+        /// The scaling will be done via the Y-axis of each image
+        case height
+        
+        /// The scaling will be done via a scale factor (simple multiplier coefficient)
+        case factor
+        
+        /// The scaling will fit within a certain max height or width.
+        case max
+    }
+    
+    /* ################################################################## */
+    /**
+     This holds the JPEG image, shown in the top screen.
+     */
+    var jpegImage: UIImage?
+    
+    /* ################################################################## */
+    /**
+     This holds the SF Symbols image, shown in the bottom screen.
+     */
+    var sfSymbolImage: UIImage?
+    
     /* ################################################################## */
     /**
      The label for the scale adjustment items.
@@ -76,8 +108,10 @@ extension RVS_UIKit_Toolbox_TestHarness_Tab3_ViewController {
             scaleTypeSegmentedSwitch?.setTitle("SLUG-SCALE-TYPE-\(segmentIndex)".localizedVariant, forSegmentAt: segmentIndex)
         }
         
-        jpegImageView?.image = UIImage.assetOrSystemImage(name: "SLUG-JPEG-IMAGE-NAME".localizedVariant)
-        sfSymbolImageView?.image = UIImage.assetOrSystemImage(name: "SLUG-SYSTEM-IMAGE-NAME".localizedVariant)
+        jpegImage = UIImage.assetOrSystemImage(name: "SLUG-JPEG-IMAGE-NAME".localizedVariant)
+        sfSymbolImage = UIImage.assetOrSystemImage(name: "SLUG-SYSTEM-IMAGE-NAME".localizedVariant)?.applyingSymbolConfiguration(UIImage.SymbolConfiguration(scale: .large))
+        
+        scaleTypeSegmentedSwitchChanged()
     }
 }
 
@@ -88,18 +122,46 @@ extension RVS_UIKit_Toolbox_TestHarness_Tab3_ViewController {
     /* ################################################################## */
     /**
      Called when the scale type segment switch changes.
+     This resets the slider to 100% image size.
      
-     - parameter: Ignored.
+     - parameter: Ignored (and can be omitted).
      */
-    @IBAction func scaleTypeSegmentedSwitchChanged(_: Any) {
+    @IBAction func scaleTypeSegmentedSwitchChanged(_: Any! = nil) {
+        scaleSlider?.minimumValue = -0.5
+        scaleSlider?.maximumValue = 0.5
+        scaleSlider?.value = 0
+        scaleSliderChanged()
     }
     
     /* ################################################################## */
     /**
      Called when the scale slider changes.
      
-     - parameter: Ignored.
+     - parameter: Ignored (and can be omitted).
     */
-    @IBAction func scaleSliderChanged(_: Any) {
+    @IBAction func scaleSliderChanged(_: Any! = nil) {
+        let scaleMultiplier = CGFloat(pow(10, scaleSlider?.value ?? 1.0))
+        if let jpegImageSize = jpegImage?.size,
+           let sfSymbolImageSize = sfSymbolImage?.size,
+           let scaleTypeIndex = scaleTypeSegmentedSwitch?.selectedSegmentIndex,
+           let scaleType = ScaleType(rawValue: scaleTypeIndex) {
+            switch scaleType {
+            case .width:
+                jpegImageView?.image = jpegImage?.resized(toNewWidth: jpegImageSize.width * scaleMultiplier)
+                sfSymbolImageView?.image = sfSymbolImage?.resized(toNewWidth: sfSymbolImageSize.width * scaleMultiplier)
+
+            case .height:
+                jpegImageView?.image = jpegImage?.resized(toNewHeight: jpegImageSize.width * scaleMultiplier)
+                sfSymbolImageView?.image = sfSymbolImage?.resized(toNewHeight: sfSymbolImageSize.width * scaleMultiplier)
+
+            case .factor:
+                jpegImageView?.image = jpegImage?.resized(toScaleFactor: scaleMultiplier)
+                sfSymbolImageView?.image = sfSymbolImage?.resized(toScaleFactor: scaleMultiplier)
+
+            case .max:
+                jpegImageView?.image = jpegImage?.resized(toMaximumSize: max(jpegImageSize.width, jpegImageSize.height) * scaleMultiplier)
+                sfSymbolImageView?.image = sfSymbolImage?.resized(toMaximumSize: max(sfSymbolImageSize.width, sfSymbolImageSize.height) * scaleMultiplier)
+            }
+        }
     }
 }

@@ -500,12 +500,13 @@
                                             <segment title="SLUG-SCALE-TYPE-0"/>
                                             <segment title="SLUG-SCALE-TYPE-1"/>
                                             <segment title="SLUG-SCALE-TYPE-2"/>
+                                            <segment title="SLUG-SCALE-TYPE-3"/>
                                         </segments>
                                         <connections>
                                             <action selector="scaleTypeSegmentedSwitchChanged:" destination="L0M-tb-1Ck" eventType="valueChanged" id="YxX-es-n9U"/>
                                         </connections>
                                     </segmentedControl>
-                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="DyA-eT-U0I">
+                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="-0.5" maxValue="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="DyA-eT-U0I">
                                         <rect key="frame" x="-2" y="75.5" width="378" height="31"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="fpV-7f-1T0"/>
