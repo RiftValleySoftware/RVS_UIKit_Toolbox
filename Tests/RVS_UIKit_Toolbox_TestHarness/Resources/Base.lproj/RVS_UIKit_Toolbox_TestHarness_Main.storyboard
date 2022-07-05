@@ -516,30 +516,50 @@
                                         </connections>
                                     </slider>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="qHb-Pc-gAm">
-                                        <rect key="frame" x="166.5" y="117.5" width="41.5" height="20.5"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <rect key="frame" x="168.5" y="117.5" width="37" height="18"/>
+                                        <fontDescription key="fontDescription" type="italicSystem" pointSize="15"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Pm1-Hc-3Wo">
-                                        <rect key="frame" x="0.0" y="150" width="374" height="198.5"/>
+                                    <imageView clipsSubviews="YES" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Pm1-Hc-3Wo">
+                                        <rect key="frame" x="0.0" y="147.5" width="374" height="198.5"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <gestureRecognizers/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="Pm1-Hc-3Wo" secondAttribute="height" multiplier="64:34" id="ELB-Db-yc0"/>
                                         </constraints>
+                                        <connections>
+                                            <outletCollection property="gestureRecognizers" destination="YlR-qC-Yps" appends="YES" id="adC-dO-Uvw"/>
+                                        </connections>
                                     </imageView>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="zvp-QQ-JFq">
+                                        <rect key="frame" x="171" y="355.5" width="32" height="37"/>
+                                        <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="32" id="Qbx-go-36p"/>
+                                            <constraint firstAttribute="width" secondItem="zvp-QQ-JFq" secondAttribute="height" multiplier="1:1" id="zUe-Z2-knO"/>
+                                        </constraints>
+                                        <imageReference key="image" image="square.fill" catalog="system" symbolScale="large"/>
+                                        <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="large" weight="black"/>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="3IX-nc-qXC">
+                                        <rect key="frame" x="162" y="402" width="50" height="50"/>
+                                        <fontDescription key="fontDescription" type="italicSystem" pointSize="15"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="dZr-89-7MC">
-                                        <rect key="frame" x="166.5" y="360.5" width="41.5" height="20.5"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <rect key="frame" x="168.5" y="464" width="37" height="18"/>
+                                        <fontDescription key="fontDescription" type="italicSystem" pointSize="15"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="z9s-vF-TTi">
-                                        <rect key="frame" x="0.0" y="393" width="374" height="199"/>
+                                        <rect key="frame" x="0.0" y="494" width="374" height="199"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </imageView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ywD-bv-py0" userLabel="Filler View">
-                                        <rect key="frame" x="0.0" y="604" width="374" height="165"/>
+                                        <rect key="frame" x="0.0" y="705" width="374" height="64"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </view>
                                 </subviews>
@@ -573,6 +593,8 @@
                     <connections>
                         <outlet property="jpegAlphaReportLabel" destination="qHb-Pc-gAm" id="tfa-iH-jkJ"/>
                         <outlet property="jpegImageView" destination="Pm1-Hc-3Wo" id="Tlq-jG-cKG"/>
+                        <outlet property="pixelReportLabel" destination="3IX-nc-qXC" id="Vqb-LK-Yuo"/>
+                        <outlet property="pixelReportVisualImageView" destination="zvp-QQ-JFq" id="Kf7-CZ-raD"/>
                         <outlet property="scaleLabel" destination="i8S-HC-ucm" id="glb-b7-CVA"/>
                         <outlet property="scaleSlider" destination="DyA-eT-U0I" id="XpF-Gq-1Sa"/>
                         <outlet property="scaleTypeSegmentedSwitch" destination="ovG-EY-EQs" id="caA-JG-4s1"/>
@@ -581,6 +603,11 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TvF-sc-LgG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="YlR-qC-Yps">
+                    <connections>
+                        <action selector="jpegImageTapped:" destination="L0M-tb-1Ck" id="2Xm-TV-ZBd"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="1953.6231884057972" y="-169.41964285714286"/>
         </scene>

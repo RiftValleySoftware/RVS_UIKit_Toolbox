@@ -69,3 +69,4 @@ The Great Rift Valley Software Company: https://riftvalleysoftware.com
 "SLUG-SCALE-TYPE-1"                                     =   "Height";
 "SLUG-SCALE-TYPE-2"                                     =   "Factor";
 "SLUG-SCALE-TYPE-3"                                     =   "Max";
+"SLUG-PIXEL-REPORT-FORMAT"                              =   "The pixel at (%d, %d) has an RGB value of (%f, %f, %f).";

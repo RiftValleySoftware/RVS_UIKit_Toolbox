@@ -91,7 +91,19 @@ class RVS_UIKit_Toolbox_TestHarness_Tab3_ViewController: RVS_UIKit_Toolbox_TestH
      The image view for the raster (JPEG) image.
      */
     @IBOutlet weak var jpegImageView: UIImageView?
+
+    /* ################################################################## */
+    /**
+     The image view for the display of the pixe color of the raster (JPEG) image.
+     */
+    @IBOutlet weak var pixelReportVisualImageView: UIImageView?
     
+    /* ################################################################## */
+    /**
+     The label for the pixel RGB content report.
+     */
+    @IBOutlet weak var pixelReportLabel: UILabel?
+
     /* ################################################################## */
     /**
      The label for the alpha content report, over the SF Symbol Image.
@@ -178,6 +190,33 @@ extension RVS_UIKit_Toolbox_TestHarness_Tab3_ViewController {
                 jpegImageView?.image = jpegImage?.resized(toMaximumSize: max(jpegImageSize.width, jpegImageSize.height) * scaleMultiplier)
                 sfSymbolImageView?.image = sfSymbolImage?.resized(toMaximumSize: max(sfSymbolImageSize.width, sfSymbolImageSize.height) * scaleMultiplier)
             }
+        }
+    }
+
+    /* ################################################################## */
+    /**
+     Called when the user taps in the JPEG image.
+     */
+    @IBAction func jpegImageTapped(_ inTapGesture: UITapGestureRecognizer) {
+        guard let tappedView = inTapGesture.view as? UIImageView,
+              let image = tappedView.image
+        else { return }
+
+        let imageSize = image.size
+        let viewSize = tappedView.frame.size
+        let offsetX = (imageSize.width - viewSize.width) / 2
+        let offsetY = (imageSize.height - viewSize.height) / 2
+        let location = inTapGesture.location(in: tappedView)
+        let newX = min(imageSize.width, max(0, location.x + offsetX))
+        let newY = min(imageSize.height, max(0, location.y + offsetY))
+        let tappedLocation = CGPoint(x: newX, y: newY)
+        
+        if let rgbValue = image.getRGBColorOfThePixel(at: tappedLocation) {
+            var a: CGFloat = 0.0, r: CGFloat = 0.0, g: CGFloat = 0.0, b: CGFloat = 0.0
+            rgbValue.getRed(&r, green: &g, blue: &b, alpha: &a)
+            let reportString = String(format: "SLUG-PIXEL-REPORT-FORMAT".localizedVariant, Int(tappedLocation.x), Int(tappedLocation.y), r, g, b)
+            pixelReportLabel?.text = reportString
+            pixelReportVisualImageView?.tintColor = rgbValue
         }
     }
 }
