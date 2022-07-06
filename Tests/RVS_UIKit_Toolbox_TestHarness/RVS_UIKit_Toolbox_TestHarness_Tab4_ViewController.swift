@@ -27,14 +27,146 @@ import RVS_Generic_Swift_Toolbox
 // MARK: - UIColor Extension Test Harness View Controller -
 /* ###################################################################################################################################### */
 /**
- This controls the UIImage Test tab.
+ This controls the UIColor Test tab.
  */
 class RVS_UIKit_Toolbox_TestHarness_Tab4_ViewController: RVS_UIKit_Toolbox_TestHarness_Base_Tabs_ViewController {
+    /* ################################################################## */
+    /**
+     */
+    @IBOutlet weak var color0Label: UILabel?
+
+    /* ################################################################## */
+    /**
+     */
+    @IBOutlet weak var color1Label: UILabel?
+
+    /* ################################################################## */
+    /**
+     */
+    @IBOutlet weak var color0TextEntry: UITextField?
+
+    /* ################################################################## */
+    /**
+     */
+    @IBOutlet weak var color1TextEntry: UITextField?
+    
+    /* ################################################################## */
+    /**
+     */
+    @IBOutlet weak var color0DisplayView: UIView?
+    
+    /* ################################################################## */
+    /**
+     */
+    @IBOutlet weak var color1DisplayView: UIView?
+    
+    /* ################################################################## */
+    /**
+     */
+    @IBOutlet weak var interimColorSlider: UISlider?
+    
+    /* ################################################################## */
+    /**
+     */
+    @IBOutlet weak var interimColorDisplayView: UIView?
+    
+    /* ################################################################## */
+    /**
+     */
+    @IBOutlet weak var rgbLabelButton: UIButton?
+    
+    /* ################################################################## */
+    /**
+     */
+    @IBOutlet weak var hsbLabelButton: UIButton?
+    
+    /* ################################################################## */
+    /**
+     */
+    @IBOutlet weak var hsbRGBSwitch: UISwitch!
+}
+
+/* ###################################################################################################################################### */
+// MARK: Base Class Overrides
+/* ###################################################################################################################################### */
+extension RVS_UIKit_Toolbox_TestHarness_Tab4_ViewController {
     /* ################################################################## */
     /**
      Called when the view Hierarchy has been loaded.
      */
     override func viewDidLoad() {
         super.viewDidLoad()
+        color0Label?.text = color0Label?.text?.localizedVariant
+        color1Label?.text = color1Label?.text?.localizedVariant
+        rgbLabelButton?.setTitle(rgbLabelButton?.title(for: .normal)?.localizedVariant, for: .normal)
+        hsbLabelButton?.setTitle(hsbLabelButton?.title(for: .normal)?.localizedVariant, for: .normal)
+        colorTextEntryChanged()
+    }
+}
+
+/* ###################################################################################################################################### */
+// MARK: Callbacks
+/* ###################################################################################################################################### */
+extension RVS_UIKit_Toolbox_TestHarness_Tab4_ViewController {
+    /* ################################################################## */
+    /**
+     */
+    @IBAction func colorTextEntryChanged(_: Any! = nil) {
+        guard let color0Hex = color0TextEntry?.text?.hexOnly,
+              let color1Hex = color1TextEntry?.text?.hexOnly,
+              let color0 = UIColor(hex: "#\(color0Hex)"),
+              let color1 = UIColor(hex: "#\(color1Hex)")
+        else { return }
+        
+        color0DisplayView?.backgroundColor = color0
+        color1DisplayView?.backgroundColor = color1
+        
+        interimColorSlider?.minimumTrackTintColor = color0
+        interimColorSlider?.maximumTrackTintColor = color1
+        
+        interimColorSliderChanged()
+    }
+    
+    /* ################################################################## */
+    /**
+     */
+    @IBAction func interimColorSliderChanged(_: Any! = nil) {
+        guard let color0Hex = color0TextEntry?.text?.hexOnly,
+              let color1Hex = color1TextEntry?.text?.hexOnly,
+              let color0 = UIColor(hex: "#\(color0Hex)"),
+              let color1 = UIColor(hex: "#\(color1Hex)"),
+              let isHSL = hsbRGBSwitch?.isOn,
+              let samplePoint = interimColorSlider?.value
+        else {
+            interimColorDisplayView?.backgroundColor = .clear
+            return
+        }
+        
+        interimColorDisplayView?.backgroundColor = color0.intermediateColor(otherColor: color1, samplePoint: CGFloat(samplePoint), isHSL: isHSL)
+    }
+    
+    /* ################################################################## */
+    /**
+     */
+    @IBAction func rgbLabelButtonHit(_: Any! = nil) {
+        hsbRGBSwitch?.setOn(false, animated: true)
+        hsbRGBSwitch?.sendActions(for: .valueChanged)
+    }
+    
+    /* ################################################################## */
+    /**
+     */
+    @IBAction func hsbRGBButtonHit(_: Any! = nil) {
+        rgbLabelButton?.isEnabled = hsbRGBSwitch?.isOn ?? false
+        hsbLabelButton?.isEnabled = !(hsbRGBSwitch?.isOn ?? true)
+        interimColorSliderChanged()
+    }
+    
+    /* ################################################################## */
+    /**
+     */
+    @IBAction func hsbLabelButtonHit(_: Any! = nil) {
+        hsbRGBSwitch?.setOn(true, animated: true)
+        hsbRGBSwitch?.sendActions(for: .valueChanged)
     }
 }

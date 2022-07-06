@@ -531,7 +531,7 @@ public extension UIColor {
      - returns: true, if the color is clear.
      */
     var isClear: Bool {
-        var white: CGFloat = 0, h: CGFloat = 0, s: CGFloat = 0, b: CGFloat = 0, a: CGFloat = 0
+        var (white, h, s, b, a): (CGFloat, CGFloat, CGFloat, CGFloat, CGFloat) = (0, 0, 0, 0, 0)
         if !getHue(&h, saturation: &s, brightness: &b, alpha: &a) {
             return 0.0 == a
         } else if getWhite(&white, alpha: &a) {
@@ -549,12 +549,8 @@ public extension UIColor {
      - returns: A tuple, containing the HSBA color.
      */
     var hsba: (h: CGFloat, s: CGFloat, b: CGFloat, a: CGFloat) {
-        var h: CGFloat = 0, s: CGFloat = 0, b: CGFloat = 0, a: CGFloat = 0
-        if getHue(&h, saturation: &s, brightness: &b, alpha: &a) {
-            return (h: h, s: s, b: b, a: a)
-        }
-        
-        return (h: 0, s: 0, b: 0, a: 0)
+        var (h, s, b, a): (CGFloat, CGFloat, CGFloat, CGFloat) = (0, 0, 0, 0)
+        return getHue(&h, saturation: &s, brightness: &b, alpha: &a) ? (h: h, s: s, b: b, a: a) : (h: 0, s: 0, b: 0, a: 0)
     }
     
     /* ################################################################## */
@@ -564,8 +560,8 @@ public extension UIColor {
      [From This SO Answer](https://stackoverflow.com/a/57111280/879365)
      */
     var inverted: UIColor {
-        var a: CGFloat = 0.0, r: CGFloat = 0.0, g: CGFloat = 0.0, b: CGFloat = 0.0
-        return getRed(&r, green: &g, blue: &b, alpha: &a) ? UIColor(red: 1.0-r, green: 1.0-g, blue: 1.0-b, alpha: a) : .label
+        var (r, g, b, a): (CGFloat, CGFloat, CGFloat, CGFloat) = (0, 0, 0, 0)
+        return getRed(&r, green: &g, blue: &b, alpha: &a) ? UIColor(red: 1.0-r, green: 1.0-g, blue: 1.0-b, alpha: a) : .clear
     }
 
     // MARK: Color Computation Instance Methods
@@ -575,21 +571,22 @@ public extension UIColor {
      
      [This was inspired by this SO answer](https://stackoverflow.com/a/46729248/879365)
      - parameter otherColor: The other end of the color spectrum we are testing.
-     - parameter samplePoint: Betweeen 0 (this color), and 1 (otherColor).
+     - parameter samplePoint: Optional (default is 50%). The distance betweeen 0 (this color), and 1 (otherColor).
      - parameter isHSL: Optional (default is true). If true, then the intermediate color is determined via HSL. If false, we use RGB.
      - returns: the intermediate color.
      */
-    func intermediateColor(otherColor inColor: UIColor, samplePoint inSamplePoint: CGFloat, isHSL inIsHSL: Bool = true) -> UIColor {
+    func intermediateColor(otherColor inColor: UIColor, samplePoint inSamplePoint: CGFloat = 0.5, isHSL inIsHSL: Bool = true) -> UIColor {
         let samplePoint = max(0, min(1, inSamplePoint))
         
         guard 0 < samplePoint else { return self }
-        guard (0..<100).contains(samplePoint) else { return inColor }
+        guard 1 > samplePoint else { return inColor }
         
         if inIsHSL {
             var (h1, s1, b1, a1): (CGFloat, CGFloat, CGFloat, CGFloat) = (0, 0, 0, 0)
             var (h2, s2, b2, a2): (CGFloat, CGFloat, CGFloat, CGFloat) = (0, 0, 0, 0)
-            guard getHue(&h1, saturation: &s1, brightness: &b1, alpha: &a1) else { return self }
-            guard inColor.getHue(&h2, saturation: &s2, brightness: &b2, alpha: &a2) else { return self }
+            guard getHue(&h1, saturation: &s1, brightness: &b1, alpha: &a1),
+                  inColor.getHue(&h2, saturation: &s2, brightness: &b2, alpha: &a2)
+            else { return self }
 
             return UIColor(hue: CGFloat(h1 + (h2 - h1) * samplePoint),
                            saturation: CGFloat(s1 + (s2 - s1) * samplePoint),
@@ -599,8 +596,9 @@ public extension UIColor {
         } else {
             var (r1, g1, b1, a1): (CGFloat, CGFloat, CGFloat, CGFloat) = (0, 0, 0, 0)
             var (r2, g2, b2, a2): (CGFloat, CGFloat, CGFloat, CGFloat) = (0, 0, 0, 0)
-            guard getRed(&r1, green: &g1, blue: &b1, alpha: &a1) else { return self }
-            guard inColor.getRed(&r2, green: &g2, blue: &b2, alpha: &a2) else { return self }
+            guard getRed(&r1, green: &g1, blue: &b1, alpha: &a1),
+                  inColor.getRed(&r2, green: &g2, blue: &b2, alpha: &a2)
+            else { return self }
 
             return UIColor(red: CGFloat(r1 + (r2 - r1) * samplePoint),
                            green: CGFloat(g1 + (g2 - g1) * samplePoint),

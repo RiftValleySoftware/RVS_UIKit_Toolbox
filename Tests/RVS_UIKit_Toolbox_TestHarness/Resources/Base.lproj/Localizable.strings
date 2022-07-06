@@ -70,3 +70,9 @@ The Great Rift Valley Software Company: https://riftvalleysoftware.com
 "SLUG-SCALE-TYPE-2"                                     =   "Factor";
 "SLUG-SCALE-TYPE-3"                                     =   "Max";
 "SLUG-PIXEL-REPORT-FORMAT"                              =   "The pixel at (%d, %d) has an RGB value of (%f, %f, %f).";
+
+// MARK: Tab 4 (Color)
+"SLUG-COLOR-0-LABEL"                                    =   "Color 0 (Hex)";
+"SLUG-COLOR-1-LABEL"                                    =   "Color 1 (Hex)";
+"SLUG-HSB-LABEL"                                        =   "HSL";
+"SLUG-RGB-LABEL"                                        =   "RGB";
