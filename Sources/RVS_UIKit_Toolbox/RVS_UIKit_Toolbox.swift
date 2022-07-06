@@ -528,6 +528,23 @@ public extension UIColor {
     // MARK: Color Information Instance Computed Properties
     /* ################################################################## */
     /**
+     - returns: the color, as an RGBA hex value
+     */
+    var hexValue: String {
+        var (r, g, b, a): (CGFloat, CGFloat, CGFloat, CGFloat) = (0, 0, 0, 0)
+        guard getRed(&r, green: &g, blue: &b, alpha: &a) else { return "" }
+        
+        let redVal = Int(ceil(r * 255))
+        let greenVal = Int(ceil(g * 255))
+        let blueVal = Int(ceil(b * 255))
+        let alphaVal = Int(ceil(a * 255))
+
+        let retVal: UInt64 = alphaVal + (blueVal << 8) + (greenVal << 16) + (redVal << 32)
+        return String(format: "#%08X", retVal)
+    }
+    
+    /* ################################################################## */
+    /**
      - returns: true, if the color is clear.
      */
     var isClear: Bool {
