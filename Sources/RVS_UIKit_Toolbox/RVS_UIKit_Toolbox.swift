@@ -389,11 +389,14 @@ public extension UIImage {
         guard let cgImage = imageData?.cgImage,
               let pixelData = cgImage.dataProvider?.data
         else { return nil }
-        
+
         let data: UnsafePointer<UInt8> = CFDataGetBytePtr(pixelData)
-        let bytesPerPixel = (cgImage.bitsPerPixel + 7) / 8
+        // Even though we are using flexible addressing, things are expected to be a simple 32-bit, 4-8-bit-element pixel, so we have some assertions. If we will be changing pixel depth, we'll need to change the data pointer type.
+        let bytesPerPixel = (cgImage.bitsPerPixel + (cgImage.bitsPerComponent - 1)) / cgImage.bitsPerComponent
+        assert(4 == bytesPerPixel, "Unexpected bytes per pixel value!")
         let pixelByteOffset: Int = (cgImage.bytesPerRow * Int(inPoint.y)) + (Int(inPoint.x) * bytesPerPixel)
-        let divisor = CGFloat(255.0)
+        let divisor = CGFloat(1 << cgImage.bitsPerComponent) - 1
+        assert(255 == divisor, "Unexpected bits per component value!")
         let r = CGFloat(data[pixelByteOffset]) / divisor
         let g = CGFloat(data[pixelByteOffset + 1]) / divisor
         let b = CGFloat(data[pixelByteOffset + 2]) / divisor
