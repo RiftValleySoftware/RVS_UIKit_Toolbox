@@ -532,28 +532,38 @@
                                             <outletCollection property="gestureRecognizers" destination="YlR-qC-Yps" appends="YES" id="adC-dO-Uvw"/>
                                         </connections>
                                     </imageView>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="zvp-QQ-JFq">
-                                        <rect key="frame" x="171" y="355.5" width="32" height="37"/>
-                                        <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G4D-x0-1ca">
+                                        <rect key="frame" x="0.0" y="358" width="374" height="40"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="32" id="Qbx-go-36p"/>
-                                            <constraint firstAttribute="width" secondItem="zvp-QQ-JFq" secondAttribute="height" multiplier="1:1" id="zUe-Z2-knO"/>
+                                            <constraint firstAttribute="height" constant="40" id="cdL-za-CAi"/>
                                         </constraints>
-                                        <imageReference key="image" image="square.fill" catalog="system" symbolScale="large"/>
-                                        <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="large" weight="black"/>
-                                    </imageView>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="12"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                <real key="value" value="4"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                <color key="value" systemColor="labelColor"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="dZr-89-7MC">
-                                        <rect key="frame" x="168.5" y="402" width="37" height="18"/>
+                                        <rect key="frame" x="168.5" y="410" width="37" height="18"/>
                                         <fontDescription key="fontDescription" type="italicSystem" pointSize="15"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="z9s-vF-TTi">
-                                        <rect key="frame" x="0.0" y="432" width="374" height="199"/>
+                                        <rect key="frame" x="0.0" y="440" width="374" height="199"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </imageView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ywD-bv-py0" userLabel="Filler View">
-                                        <rect key="frame" x="0.0" y="643" width="374" height="126"/>
+                                        <rect key="frame" x="0.0" y="651" width="374" height="118"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </view>
                                 </subviews>
@@ -562,7 +572,9 @@
                                     <constraint firstAttribute="trailing" secondItem="DyA-eT-U0I" secondAttribute="trailing" id="2Ge-Wp-MA8"/>
                                     <constraint firstItem="DyA-eT-U0I" firstAttribute="leading" secondItem="dHa-SU-beE" secondAttribute="leading" id="9kb-og-AVc"/>
                                     <constraint firstItem="z9s-vF-TTi" firstAttribute="height" secondItem="Pm1-Hc-3Wo" secondAttribute="height" id="Jm6-5Y-TEb"/>
+                                    <constraint firstAttribute="trailing" secondItem="G4D-x0-1ca" secondAttribute="trailing" id="Kkx-Ir-wHw"/>
                                     <constraint firstAttribute="trailing" secondItem="z9s-vF-TTi" secondAttribute="trailing" id="LWL-E6-HTM"/>
+                                    <constraint firstItem="G4D-x0-1ca" firstAttribute="leading" secondItem="dHa-SU-beE" secondAttribute="leading" id="Vyo-Ev-cm8"/>
                                     <constraint firstItem="z9s-vF-TTi" firstAttribute="leading" secondItem="dHa-SU-beE" secondAttribute="leading" id="cjX-5p-OQ8"/>
                                     <constraint firstAttribute="trailing" secondItem="ywD-bv-py0" secondAttribute="trailing" id="oJo-eB-lWc"/>
                                     <constraint firstItem="Pm1-Hc-3Wo" firstAttribute="leading" secondItem="dHa-SU-beE" secondAttribute="leading" id="owh-n0-hvA"/>
@@ -587,7 +599,7 @@
                     <connections>
                         <outlet property="jpegAlphaReportLabel" destination="qHb-Pc-gAm" id="tfa-iH-jkJ"/>
                         <outlet property="jpegImageView" destination="Pm1-Hc-3Wo" id="Tlq-jG-cKG"/>
-                        <outlet property="pixelReportVisualImageView" destination="zvp-QQ-JFq" id="Kf7-CZ-raD"/>
+                        <outlet property="pixelReportLabel" destination="G4D-x0-1ca" id="sfU-6f-DsC"/>
                         <outlet property="scaleLabel" destination="i8S-HC-ucm" id="glb-b7-CVA"/>
                         <outlet property="scaleSlider" destination="DyA-eT-U0I" id="XpF-Gq-1Sa"/>
                         <outlet property="scaleTypeSegmentedSwitch" destination="ovG-EY-EQs" id="caA-JG-4s1"/>
@@ -756,6 +768,9 @@
         <image name="circle" catalog="system" width="128" height="121"/>
         <image name="circle.fill" catalog="system" width="128" height="121"/>
         <image name="square.fill" catalog="system" width="128" height="114"/>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

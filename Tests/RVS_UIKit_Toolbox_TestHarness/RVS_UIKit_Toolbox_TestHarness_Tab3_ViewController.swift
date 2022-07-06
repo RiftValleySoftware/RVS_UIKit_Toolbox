@@ -94,9 +94,9 @@ class RVS_UIKit_Toolbox_TestHarness_Tab3_ViewController: RVS_UIKit_Toolbox_TestH
 
     /* ################################################################## */
     /**
-     The image view for the display of the pixe color of the raster (JPEG) image.
+     The label for the display of the pixel color of the raster (JPEG) image.
      */
-    @IBOutlet weak var pixelReportVisualImageView: UIImageView?
+    @IBOutlet weak var pixelReportLabel: UILabel?
 
     /* ################################################################## */
     /**
@@ -192,15 +192,26 @@ extension RVS_UIKit_Toolbox_TestHarness_Tab3_ViewController {
      Called when the user taps in the JPEG image.
      */
     @IBAction func jpegImageTapped(_ inTapGesture: UITapGestureRecognizer) {
-        guard let tappedView = inTapGesture.view as? UIImageView,
+        guard let tappedView = jpegImageView,
               let image = tappedView.image
-        else { return }
+        else {
+            pixelReportLabel?.backgroundColor = .clear
+            pixelReportLabel?.text = nil
+            return
+        }
         
         let location = inTapGesture.location(in: tappedView)
-
+        
+        guard location.x <= image.size.width,
+              location.y <= image.size.height else {
+            pixelReportLabel?.backgroundColor = .clear
+            pixelReportLabel?.text = nil
+            return
+        }
+        
         let newX = min(image.size.width, max(0, location.x))
         let newY = min(image.size.height, max(0, location.y))
-        
-        pixelReportVisualImageView?.tintColor = image.getRGBColorOfThePixel(at: CGPoint(x: newX, y: newY))
+        pixelReportLabel?.text = "(\(Int(newX)), \(Int(newY)))"
+        pixelReportLabel?.backgroundColor = image.getRGBColorOfThePixel(at: CGPoint(x: newX, y: newY))
     }
 }
