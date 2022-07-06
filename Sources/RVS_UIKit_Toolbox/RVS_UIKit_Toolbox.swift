@@ -380,7 +380,7 @@ public extension UIImage {
               (0..<size.height).contains(inPoint.y)
         else { return nil }
 
-        // We draw the image into a context, in order to be sure that we are accessing image data in our required format (RGBA).
+        // We draw the image into a context, in order to be sure that we are accessing image data in our required format (BGRA).
         UIGraphicsBeginImageContextWithOptions(size, false, 1)
         draw(at: .zero)
         let imageData = UIGraphicsGetImageFromCurrentImageContext()
