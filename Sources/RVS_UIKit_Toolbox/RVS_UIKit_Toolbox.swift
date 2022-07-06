@@ -381,16 +381,15 @@ public extension UIImage {
         else { return nil }
 
         // We draw the image into a context, in order to be sure that we are accessing image data in our required format (RGBA).
-        UIGraphicsBeginImageContextWithOptions(size, false, 0)
+        UIGraphicsBeginImageContextWithOptions(size, false, 1)
         draw(at: .zero)
         let imageData = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
 
-        guard let bitsPerPixel = imageData?.cgImage?.bitsPerPixel,
-              let bitsPerComponent = imageData?.cgImage?.bitsPerComponent,
-              let bytesPerRow = imageData?.cgImage?.bytesPerRow,
-              let pixelData = imageData?.cgImage?.dataProvider?.data,
-              let data: UnsafePointer<UInt8> = CFDataGetBytePtr(pixelData)
+        guard let bitsPerPixel: Int = imageData?.cgImage?.bitsPerPixel,
+              let bitsPerComponent: Int = imageData?.cgImage?.bitsPerComponent,
+              let bytesPerRow: Int = imageData?.cgImage?.bytesPerRow,
+              let data: UnsafePointer<UInt8> = CFDataGetBytePtr(imageData?.cgImage?.dataProvider?.data)
         else { return nil }
         
         let bytesPerPixel = (bitsPerPixel + (bitsPerComponent - 1)) / bitsPerComponent
@@ -401,9 +400,9 @@ public extension UIImage {
         assert(4 == bytesPerPixel, "Unexpected bytes per pixel value!")
         assert(255 == divisor, "Unexpected bits per component value!")
         
-        let r = CGFloat(data[pixelByteOffset]) / divisor
+        let b = CGFloat(data[pixelByteOffset]) / divisor
         let g = CGFloat(data[pixelByteOffset + 1]) / divisor
-        let b = CGFloat(data[pixelByteOffset + 2]) / divisor
+        let r = CGFloat(data[pixelByteOffset + 2]) / divisor
         let a = CGFloat(data[pixelByteOffset + 3]) / divisor
 
         return UIColor(red: r, green: g, blue: b, alpha: a)
