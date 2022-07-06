@@ -389,21 +389,27 @@ public extension UIImage {
         guard let bitsPerPixel = imageData?.cgImage?.bitsPerPixel,
               let bitsPerComponent = imageData?.cgImage?.bitsPerComponent,
               let bytesPerRow = imageData?.cgImage?.bytesPerRow,
+              let bitmapInfo = imageData?.cgImage?.bitmapInfo,
+              // Even though we are using flexible addressing, things are expected to be a simple 32-bit, 4-8-bit-element pixel. If we will be changing pixel depth, we'll need to change the data pointer type.
+              bitmapInfo.contains(.byteOrder32Big) || bitmapInfo.contains(.byteOrder32Little),
               let data = CFDataGetBytePtr(imageData?.cgImage?.dataProvider?.data)
         else { return nil }
         
         let bytesPerPixel = (bitsPerPixel + (bitsPerComponent - 1)) / bitsPerComponent
         let pixelByteOffset = (bytesPerRow * Int(inPoint.y)) + (Int(inPoint.x) * bytesPerPixel)
         let divisor = CGFloat(1 << bitsPerComponent) - 1
-
-        // Even though we are using flexible addressing, things are expected to be a simple 32-bit, 4-8-bit-element pixel, so we have some assertions. If we will be changing pixel depth, we'll need to change the data pointer type.
-        assert(4 == bytesPerPixel, "Unexpected bytes per pixel value!")
-        assert(255 == divisor, "Unexpected bits per component value!")
         
-        let b = CGFloat(data[pixelByteOffset]) / divisor
-        let g = CGFloat(data[pixelByteOffset + 1]) / divisor
-        let r = CGFloat(data[pixelByteOffset + 2]) / divisor
         let a = CGFloat(data[pixelByteOffset + 3]) / divisor
+        let g = CGFloat(data[pixelByteOffset + 1]) / divisor
+        var r, b: CGFloat
+        
+        if bitmapInfo.contains(.byteOrder32Little) {
+            b = CGFloat(data[pixelByteOffset]) / divisor
+            r = CGFloat(data[pixelByteOffset + 2]) / divisor
+        } else {
+            r = CGFloat(data[pixelByteOffset]) / divisor
+            b = CGFloat(data[pixelByteOffset + 2]) / divisor
+        }
 
         return UIColor(red: r, green: g, blue: b, alpha: a)
     }
