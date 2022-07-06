@@ -507,7 +507,7 @@
                                         </connections>
                                     </segmentedControl>
                                     <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="-0.5" maxValue="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="DyA-eT-U0I">
-                                        <rect key="frame" x="-2" y="75.5" width="378" height="31"/>
+                                        <rect key="frame" x="2" y="75.5" width="370" height="31"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="fpV-7f-1T0"/>
                                         </constraints>
@@ -569,8 +569,8 @@
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="ovG-EY-EQs" firstAttribute="leading" secondItem="dHa-SU-beE" secondAttribute="leading" id="1tx-lM-IHa"/>
-                                    <constraint firstAttribute="trailing" secondItem="DyA-eT-U0I" secondAttribute="trailing" id="2Ge-Wp-MA8"/>
-                                    <constraint firstItem="DyA-eT-U0I" firstAttribute="leading" secondItem="dHa-SU-beE" secondAttribute="leading" id="9kb-og-AVc"/>
+                                    <constraint firstAttribute="trailing" secondItem="DyA-eT-U0I" secondAttribute="trailing" constant="4" id="2Ge-Wp-MA8"/>
+                                    <constraint firstItem="DyA-eT-U0I" firstAttribute="leading" secondItem="dHa-SU-beE" secondAttribute="leading" constant="4" id="9kb-og-AVc"/>
                                     <constraint firstItem="z9s-vF-TTi" firstAttribute="height" secondItem="Pm1-Hc-3Wo" secondAttribute="height" id="Jm6-5Y-TEb"/>
                                     <constraint firstAttribute="trailing" secondItem="G4D-x0-1ca" secondAttribute="trailing" id="Kkx-Ir-wHw"/>
                                     <constraint firstAttribute="trailing" secondItem="z9s-vF-TTi" secondAttribute="trailing" id="LWL-E6-HTM"/>

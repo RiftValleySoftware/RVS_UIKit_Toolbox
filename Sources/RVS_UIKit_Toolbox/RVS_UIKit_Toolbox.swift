@@ -386,14 +386,14 @@ public extension UIImage {
         let imageData = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
 
-        guard let bitsPerPixel: Int = imageData?.cgImage?.bitsPerPixel,
-              let bitsPerComponent: Int = imageData?.cgImage?.bitsPerComponent,
-              let bytesPerRow: Int = imageData?.cgImage?.bytesPerRow,
-              let data: UnsafePointer<UInt8> = CFDataGetBytePtr(imageData?.cgImage?.dataProvider?.data)
+        guard let bitsPerPixel = imageData?.cgImage?.bitsPerPixel,
+              let bitsPerComponent = imageData?.cgImage?.bitsPerComponent,
+              let bytesPerRow = imageData?.cgImage?.bytesPerRow,
+              let data = CFDataGetBytePtr(imageData?.cgImage?.dataProvider?.data)
         else { return nil }
         
         let bytesPerPixel = (bitsPerPixel + (bitsPerComponent - 1)) / bitsPerComponent
-        let pixelByteOffset: Int = (bytesPerRow * Int(inPoint.y)) + (Int(inPoint.x) * bytesPerPixel)
+        let pixelByteOffset = (bytesPerRow * Int(inPoint.y)) + (Int(inPoint.x) * bytesPerPixel)
         let divisor = CGFloat(1 << bitsPerComponent) - 1
 
         // Even though we are using flexible addressing, things are expected to be a simple 32-bit, 4-8-bit-element pixel, so we have some assertions. If we will be changing pixel depth, we'll need to change the data pointer type.
