@@ -380,7 +380,7 @@ public extension UIImage {
               (0..<size.height).contains(inPoint.y)
         else { return nil }
 
-        // We draw the image into a context, in order to be sure that we are accessing image data in our required format (BGRA).
+        // We draw the image into a context, in order to be sure that we are accessing image data in our required format (BGRA or RGBA).
         UIGraphicsBeginImageContextWithOptions(size, false, 1)
         draw(at: .zero)
         let imageData = UIGraphicsGetImageFromCurrentImageContext()
@@ -399,16 +399,18 @@ public extension UIImage {
         let pixelByteOffset = (bytesPerRow * Int(inPoint.y)) + (Int(inPoint.x) * bytesPerPixel)
         let divisor = CGFloat(1 << bitsPerComponent) - 1
         
-        let a = CGFloat(data[pixelByteOffset + 3]) / divisor
-        let g = CGFloat(data[pixelByteOffset + 1]) / divisor
-        var r, b: CGFloat
+        var r, g, b, a: CGFloat
         
         if bitmapInfo.contains(.byteOrder32Little) {
             b = CGFloat(data[pixelByteOffset]) / divisor
+            g = CGFloat(data[pixelByteOffset + 1]) / divisor
             r = CGFloat(data[pixelByteOffset + 2]) / divisor
+            a = CGFloat(data[pixelByteOffset + 3]) / divisor
         } else {
-            r = CGFloat(data[pixelByteOffset]) / divisor
-            b = CGFloat(data[pixelByteOffset + 2]) / divisor
+            a = CGFloat(data[pixelByteOffset]) / divisor
+            r = CGFloat(data[pixelByteOffset + 1]) / divisor
+            g = CGFloat(data[pixelByteOffset + 2]) / divisor
+            b = CGFloat(data[pixelByteOffset + 3]) / divisor
         }
 
         return UIColor(red: r, green: g, blue: b, alpha: a)
