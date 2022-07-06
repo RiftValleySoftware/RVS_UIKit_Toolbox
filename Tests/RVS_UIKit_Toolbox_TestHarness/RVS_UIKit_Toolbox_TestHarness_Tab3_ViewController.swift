@@ -97,12 +97,6 @@ class RVS_UIKit_Toolbox_TestHarness_Tab3_ViewController: RVS_UIKit_Toolbox_TestH
      The image view for the display of the pixe color of the raster (JPEG) image.
      */
     @IBOutlet weak var pixelReportVisualImageView: UIImageView?
-    
-    /* ################################################################## */
-    /**
-     The label for the pixel RGB content report.
-     */
-    @IBOutlet weak var pixelReportLabel: UILabel?
 
     /* ################################################################## */
     /**
@@ -204,18 +198,14 @@ extension RVS_UIKit_Toolbox_TestHarness_Tab3_ViewController {
 
         let imageSize = image.size
         let viewSize = tappedView.frame.size
-        let offsetX = (imageSize.width - viewSize.width) / 2
-        let offsetY = (imageSize.height - viewSize.height) / 2
+        let offsetX = (viewSize.width - imageSize.width) / 2
+        let offsetY = (viewSize.height - imageSize.height) / 2
         let location = inTapGesture.location(in: tappedView)
-        let newX = min(imageSize.width, max(0, location.x + offsetX))
-        let newY = min(imageSize.height, max(0, location.y + offsetY))
-        let tappedLocation = CGPoint(x: newX, y: newY)
+        let newX = min(imageSize.width, max(0, location.x - offsetX))
+        let newY = min(imageSize.height, max(0, location.y - offsetY))
+        let pixelLocation = CGPoint(x: newX, y: newY)
         
-        if let rgbValue = image.getRGBColorOfThePixel(at: tappedLocation) {
-            var a: CGFloat = 0.0, r: CGFloat = 0.0, g: CGFloat = 0.0, b: CGFloat = 0.0
-            rgbValue.getRed(&r, green: &g, blue: &b, alpha: &a)
-            let reportString = String(format: "SLUG-PIXEL-REPORT-FORMAT".localizedVariant, Int(tappedLocation.x), Int(tappedLocation.y), r, g, b)
-            pixelReportLabel?.text = reportString
+        if let rgbValue = image.getRGBColorOfThePixel(at: pixelLocation) {
             pixelReportVisualImageView?.tintColor = rgbValue
         }
     }

@@ -542,24 +542,18 @@
                                         <imageReference key="image" image="square.fill" catalog="system" symbolScale="large"/>
                                         <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="large" weight="black"/>
                                     </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="3IX-nc-qXC">
-                                        <rect key="frame" x="162" y="402" width="50" height="50"/>
-                                        <fontDescription key="fontDescription" type="italicSystem" pointSize="15"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="dZr-89-7MC">
-                                        <rect key="frame" x="168.5" y="464" width="37" height="18"/>
+                                        <rect key="frame" x="168.5" y="402" width="37" height="18"/>
                                         <fontDescription key="fontDescription" type="italicSystem" pointSize="15"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="z9s-vF-TTi">
-                                        <rect key="frame" x="0.0" y="494" width="374" height="199"/>
+                                        <rect key="frame" x="0.0" y="432" width="374" height="199"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </imageView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ywD-bv-py0" userLabel="Filler View">
-                                        <rect key="frame" x="0.0" y="705" width="374" height="64"/>
+                                        <rect key="frame" x="0.0" y="643" width="374" height="126"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </view>
                                 </subviews>
@@ -593,7 +587,6 @@
                     <connections>
                         <outlet property="jpegAlphaReportLabel" destination="qHb-Pc-gAm" id="tfa-iH-jkJ"/>
                         <outlet property="jpegImageView" destination="Pm1-Hc-3Wo" id="Tlq-jG-cKG"/>
-                        <outlet property="pixelReportLabel" destination="3IX-nc-qXC" id="Vqb-LK-Yuo"/>
                         <outlet property="pixelReportVisualImageView" destination="zvp-QQ-JFq" id="Kf7-CZ-raD"/>
                         <outlet property="scaleLabel" destination="i8S-HC-ucm" id="glb-b7-CVA"/>
                         <outlet property="scaleSlider" destination="DyA-eT-U0I" id="XpF-Gq-1Sa"/>
