@@ -195,18 +195,12 @@ extension RVS_UIKit_Toolbox_TestHarness_Tab3_ViewController {
         guard let tappedView = inTapGesture.view as? UIImageView,
               let image = tappedView.image
         else { return }
-
-        let imageSize = image.size
-        let viewSize = tappedView.frame.size
-        let offsetX = (viewSize.width - imageSize.width) / 2
-        let offsetY = (viewSize.height - imageSize.height) / 2
-        let location = inTapGesture.location(in: tappedView)
-        let newX = min(imageSize.width, max(0, location.x - offsetX))
-        let newY = min(imageSize.height, max(0, location.y - offsetY))
-        let pixelLocation = CGPoint(x: newX, y: newY)
         
-        if let rgbValue = image.getRGBColorOfThePixel(at: pixelLocation) {
-            pixelReportVisualImageView?.tintColor = rgbValue
-        }
+        let location = inTapGesture.location(in: tappedView)
+
+        let newX = min(image.size.width, max(0, location.x))
+        let newY = min(image.size.height, max(0, location.y))
+        
+        pixelReportVisualImageView?.tintColor = image.getRGBColorOfThePixel(at: CGPoint(x: newX, y: newY))
     }
 }
