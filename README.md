@@ -56,7 +56,7 @@ If you do this, you should include the source file directly into your project, a
 
 Once the package has been added to the project, and the module is imported (or the source file is directly integrated into the main module), the extensions immediately become available in the base UIKit classes. The extensions are listed below:
 
-#### [UITabBarController](https://riftvalleysoftware.github.io/RVS_UIKit_Toolbox/Extensions/UITabBarController.html)
+#### [`UITabBarController`](https://riftvalleysoftware.github.io/RVS_UIKit_Toolbox/Extensions/UITabBarController.html)
 
 This adds just one method to [the standard UIKit UITabBarController Class](https://developer.apple.com/documentation/uikit/uitabbarcontroller):
 
@@ -64,7 +64,7 @@ This adds just one method to [the standard UIKit UITabBarController Class](https
 
 The purpose of this method, is to allow an easy shortcut to customizing the colors of the Tab Bar.
 
-#### [UIViewController](https://riftvalleysoftware.github.io/RVS_UIKit_Toolbox/Extensions/UIViewController.html)
+#### [`UIViewController`](https://riftvalleysoftware.github.io/RVS_UIKit_Toolbox/Extensions/UIViewController.html)
 
 This adds a number of computed properties, and one method, to deal with [Responders](https://developer.apple.com/documentation/uikit/uiresponder).
 
@@ -101,6 +101,53 @@ This recursively finds the current selected responder (or nil, if no responder):
 This method will also end editing for the view controller:
 - [`resignAllFirstResponders()`](https://riftvalleysoftware.github.io/RVS_UIKit_Toolbox/Extensions/UIViewController.html#/s:So16UIViewControllerC17RVS_UIKit_ToolboxE24resignAllFirstRespondersyyF)
 
+#### [`UIView`](https://riftvalleysoftware.github.io/RVS_UIKit_Toolbox/Extensions/UIView.html)
+
+##### IBInspectable Computed Instance Properties
+- [`cornerRadius`](https://riftvalleysoftware.github.io/RVS_UIKit_Toolbox/Extensions/UIView.html#/c:@CM@RVS_UIKit_Toolbox@@objc(cs)UIView(py)cornerRadius)
+- [`borderWidth`](https://riftvalleysoftware.github.io/RVS_UIKit_Toolbox/Extensions/UIView.html#/c:@CM@RVS_UIKit_Toolbox@@objc(cs)UIView(py)borderWidth)
+- [`borderColor`](https://riftvalleysoftware.github.io/RVS_UIKit_Toolbox/Extensions/UIView.html#/c:@CM@RVS_UIKit_Toolbox@@objc(cs)UIView(py)borderColor)
+
+##### Screen Stuff
+- [`screenAspect`](https://riftvalleysoftware.github.io/RVS_UIKit_Toolbox/Extensions/UIView.html#/s:So6UIViewC17RVS_UIKit_ToolboxE12screenAspect12CoreGraphics7CGFloatVvp)
+
+##### Responder Stuff
+- [`currentFirstResponder`](https://riftvalleysoftware.github.io/RVS_UIKit_Toolbox/Extensions/UIView.html#/s:So6UIViewC17RVS_UIKit_ToolboxE21currentFirstResponderSo11UIResponderCSgvp)
+- [`resignAllFirstResponders()`](https://riftvalleysoftware.github.io/RVS_UIKit_Toolbox/Extensions/UIView.html#/s:So6UIViewC17RVS_UIKit_ToolboxE24resignAllFirstRespondersyyF)
+
+##### Auto Layout Instance Methods
+- [`addContainedView(_:underThis:andGiveMeABottomHook:)`](https://riftvalleysoftware.github.io/RVS_UIKit_Toolbox/Extensions/UIView.html#/s:So6UIViewC17RVS_UIKit_ToolboxE16addContainedView_9underThis20andGiveMeABottomHookSo19NSLayoutYAxisAnchorCSgAB_AISbtF)
+- [`autoLayoutAspectConstraint(aspectRatio:)`](https://riftvalleysoftware.github.io/RVS_UIKit_Toolbox/Extensions/UIView.html#/s:So6UIViewC17RVS_UIKit_ToolboxE26autoLayoutAspectConstraint11aspectRatioSo08NSLayoutH0CSg12CoreGraphics7CGFloatV_tF)
+
+#### [`UIImage`](https://riftvalleysoftware.github.io/RVS_UIKit_Toolbox/Extensions/UIImage.html)
+
+##### Class Functions
+- [`assetOrSystemImage(name:))`](file:///Users/chrismarshall/Development/RiftValley/RVS_UIKit_Toolbox/docs/Extensions/UIImage.html#/s:So7UIImageC17RVS_UIKit_ToolboxE18assetOrSystemImage4nameABSgSS_tFZ)
+
+##### Image Composition Instance Computed Properties
+- [`hasAlphaInformation`](file:///Users/chrismarshall/Development/RiftValley/RVS_UIKit_Toolbox/docs/Extensions/UIImage.html#/s:So7UIImageC17RVS_UIKit_ToolboxE19hasAlphaInformationSbvp)
+
+##### Pixel Information Instance Methods
+- [`getRGBColorOfThePixel(at:)`](file:///Users/chrismarshall/Development/RiftValley/RVS_UIKit_Toolbox/docs/Extensions/UIImage.html#/s:So7UIImageC17RVS_UIKit_ToolboxE21getRGBColorOfThePixel2atSo7UIColorCSgSo7CGPointV_tF)
+
+##### Sizing Instance Methods
+- [`resized(toMaximumSize:)`](file:///Users/chrismarshall/Development/RiftValley/RVS_UIKit_Toolbox/docs/Extensions/UIImage.html#/s:So7UIImageC17RVS_UIKit_ToolboxE7resized13toMaximumSizeABSg12CoreGraphics7CGFloatV_tF)
+- [`resized(toScaleFactor:)`](file:///Users/chrismarshall/Development/RiftValley/RVS_UIKit_Toolbox/docs/Extensions/UIImage.html#/s:So7UIImageC17RVS_UIKit_ToolboxE7resized13toScaleFactorABSg12CoreGraphics7CGFloatV_tF)
+- [`resized(toNewWidth:toNewHeight:)`](file:///Users/chrismarshall/Development/RiftValley/RVS_UIKit_Toolbox/docs/Extensions/UIImage.html#/s:So7UIImageC17RVS_UIKit_ToolboxE7resized10toNewWidth0fG6HeightABSg12CoreGraphics7CGFloatVSg_AKtF)
+
+#### [`UIColor`](https://riftvalleysoftware.github.io/RVS_UIKit_Toolbox/Extensions/UIColor.html)
+
+##### Convenience Initializers
+- [`init(hex:)`](file:///Users/chrismarshall/Development/RiftValley/RVS_UIKit_Toolbox/docs/Extensions/UIColor.html#/s:So7UIColorC17RVS_UIKit_ToolboxE3hexABSgSS_tcfc)
+
+##### Color Information Instance Computed Properties
+- [`hexValue`](file:///Users/chrismarshall/Development/RiftValley/RVS_UIKit_Toolbox/docs/Extensions/UIColor.html#/s:So7UIColorC17RVS_UIKit_ToolboxE8hexValueSSvp)
+- [`isClear`](file:///Users/chrismarshall/Development/RiftValley/RVS_UIKit_Toolbox/docs/Extensions/UIColor.html#/s:So7UIColorC17RVS_UIKit_ToolboxE7isClearSbvp)
+- [`hsba`](file:///Users/chrismarshall/Development/RiftValley/RVS_UIKit_Toolbox/docs/Extensions/UIColor.html#/s:So7UIColorC17RVS_UIKit_ToolboxE4hsba12CoreGraphics7CGFloatV1h_AG1sAG1bAG1atvp)
+- [`inverted`](file:///Users/chrismarshall/Development/RiftValley/RVS_UIKit_Toolbox/docs/Extensions/UIColor.html#/s:So7UIColorC17RVS_UIKit_ToolboxE8invertedABvp)
+
+##### Color Computation Instance Methods
+- [`intermediateColor(otherColor:samplePoint:isHSL:)`](file:///Users/chrismarshall/Development/RiftValley/RVS_UIKit_Toolbox/docs/Extensions/UIColor.html#/s:So7UIColorC17RVS_UIKit_ToolboxE17intermediateColor05otherF011samplePoint5isHSLA2B_12CoreGraphics7CGFloatVSbtF)
 
 # LICENSE
 
