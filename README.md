@@ -48,7 +48,7 @@ If you do this, then the file would be integrated directly into the main module,
 
 #### Git Submodule
 
-Finally, you can simply include the module into your project, using [a Git Submodule](), which is available, using the two URIs (SSL or HTTPS), referenced above, in Swift Package Manager section.
+Finally, you can simply include the module into your project, using [a Git Submodule](), which is available, using the two URIs (SSL or HTTPS), referenced above, in the Swift Package Manager section.
 
 If you do this, you should include the source file directly into your project, as outlined in the Carthage section.
 
