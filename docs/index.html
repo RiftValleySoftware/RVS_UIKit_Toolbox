@@ -128,7 +128,7 @@
 <p>This adds a number of computed properties, and one method, to deal with <a href="https://developer.apple.com/documentation/uikit/uiresponder">Responders</a>.</p>
 <h5 id='class-computed-properties' class='heading'>Class Computed Properties</h5>
 
-<p>These are defined as &ldquo;class&rdquo; properties, so you don&rsquo;t need an instance to use them:&ldquo;&rdquo;</p>
+<p>These are defined as &ldquo;class&rdquo; properties, so you don&rsquo;t need an instance to use them.</p>
 
 <ul>
 <li><a href="https://riftvalleysoftware.github.io/RVS_UIKit_Toolbox/Extensions/UIViewController.html#/s:So16UIViewControllerC17RVS_UIKit_ToolboxE13biometricTypeSo010LABiometryG0VvpZ"><code>biometricType</code></a></li>
@@ -138,24 +138,46 @@
 </ul>
 <h5 id='system-state-flag-instance-computed-properties' class='heading'>System State Flag Instance Computed Properties</h5>
 
+<p>These are instance properties, as opposed to class properties:</p>
+
 <ul>
 <li><a href="https://riftvalleysoftware.github.io/RVS_UIKit_Toolbox/Extensions/UIViewController.html#/s:So16UIViewControllerC17RVS_UIKit_ToolboxE13biometricTypeSo010LABiometryG0Vvp"><code>biometricType</code></a></li>
-<li><a href="https://riftvalleysoftware.github.io/RVS_UIKit_Toolbox/Extensions/UIViewController.html#/s:So16UIViewControllerC17RVS_UIKit_ToolboxE10isDarkModeSbvp"><code>isDarkMode</code></a></li>
 <li><a href="https://riftvalleysoftware.github.io/RVS_UIKit_Toolbox/Extensions/UIViewController.html#/s:So16UIViewControllerC17RVS_UIKit_ToolboxE18isHighContrastModeSbvp"><code>isHighContrastMode</code></a></li>
 <li><a href="https://riftvalleysoftware.github.io/RVS_UIKit_Toolbox/Extensions/UIViewController.html#/s:So16UIViewControllerC17RVS_UIKit_ToolboxE25isReducedTransparencyModeSbvp"><code>isReducedTransparencyMode</code></a></li>
 <li><a href="https://riftvalleysoftware.github.io/RVS_UIKit_Toolbox/Extensions/UIViewController.html#/s:So16UIViewControllerC17RVS_UIKit_ToolboxE18isVoiceOverRunningSbvp"><code>isVoiceOverRunning</code></a></li>
+</ul>
+
+<p>These are only available in instances (not class):</p>
+
+<ul>
+<li><a href="https://riftvalleysoftware.github.io/RVS_UIKit_Toolbox/Extensions/UIViewController.html#/s:So16UIViewControllerC17RVS_UIKit_ToolboxE10isDarkModeSbvp"><code>isDarkMode</code></a></li>
 <li><a href="https://riftvalleysoftware.github.io/RVS_UIKit_Toolbox/Extensions/UIViewController.html#/s:So16UIViewControllerC17RVS_UIKit_ToolboxE19hapticsAreAvailableSbvp"><code>hapticsAreAvailable</code></a></li>
 </ul>
-<h5 id='view-hierarchy-instance-computed-properties' class='heading'>View Hierarchy Instance Computed Properties</h5>
+<h5 id='device-instance-computed-properties' class='heading'>Device Instance Computed Properties</h5>
+
+<p>This is a property that returns the aspect of the device screen:</p>
 
 <ul>
 <li><a href="https://riftvalleysoftware.github.io/RVS_UIKit_Toolbox/Extensions/UIViewController.html#/s:So16UIViewControllerC17RVS_UIKit_ToolboxE12screenAspect12CoreGraphics7CGFloatVvp"><code>screenAspect</code></a></li>
+</ul>
+<h5 id='view-hierarchy-instance-computed-properties' class='heading'>View Hierarchy Instance Computed Properties</h5>
+
+<p>This will return the view controller immediately &ldquo;under&rdquo; this one, in a navigation stack:</p>
+
+<ul>
 <li><a href="https://riftvalleysoftware.github.io/RVS_UIKit_Toolbox/Extensions/UIViewController.html#/s:So16UIViewControllerC17RVS_UIKit_ToolboxE012previousViewB0ABSgvp"><code>previousViewController</code></a></li>
 </ul>
 <h5 id='responder-stuff' class='heading'>Responder Stuff</h5>
 
+<p>This recursively finds the current selected responder (or nil, if no responder):</p>
+
 <ul>
 <li><a href="https://riftvalleysoftware.github.io/RVS_UIKit_Toolbox/Extensions/UIViewController.html#/s:So16UIViewControllerC17RVS_UIKit_ToolboxE21currentFirstResponderSo11UIResponderCSgvp"><code>currentFirstResponder</code></a></li>
+</ul>
+
+<p>This method will also end editing for the view controller:</p>
+
+<ul>
 <li><a href="https://riftvalleysoftware.github.io/RVS_UIKit_Toolbox/Extensions/UIViewController.html#/s:So16UIViewControllerC17RVS_UIKit_ToolboxE24resignAllFirstRespondersyyF"><code>resignAllFirstResponders()</code></a></li>
 </ul>
 <h1 id='license' class='heading'>LICENSE</h1>

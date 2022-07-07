@@ -144,12 +144,6 @@ public extension UIViewController {
     
     /* ################################################################## */
     /**
-     Returns true, if we are in Dark Mode.
-     */
-    var isDarkMode: Bool { .dark == traitCollection.userInterfaceStyle }
-    
-    /* ################################################################## */
-    /**
      Returns true, if we are in High Contrast Mode.
      */
     var isHighContrastMode: Bool { Self.isHighContrastMode }
@@ -168,17 +162,24 @@ public extension UIViewController {
     
     /* ################################################################## */
     /**
+     Returns true, if we are in Dark Mode.
+     */
+    var isDarkMode: Bool { .dark == traitCollection.userInterfaceStyle }
+
+    /* ################################################################## */
+    /**
      Returns true, if haptics are available.
      */
     var hapticsAreAvailable: Bool { CHHapticEngine.capabilitiesForHardware().supportsHaptics }
 
-    // MARK: View Hierarchy Instance Computed Properties
+    // MARK: Device Instance Computed Properties
     /* ################################################################## */
     /**
      Returns the X/Y aspect of the screen (window). It will return 0, if it cannot determine the aspect.
      */
     var screenAspect: CGFloat { view?.screenAspect ?? 0 }
 
+    // MARK: View Hierarchy Instance Computed Properties
     /* ################################################################## */
     /**
      Returns the previous ViewController in a navigation stack.

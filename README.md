@@ -69,26 +69,36 @@ The purpose of this method, is to allow an easy shortcut to customizing the colo
 This adds a number of computed properties, and one method, to deal with [Responders](https://developer.apple.com/documentation/uikit/uiresponder).
 
 ##### Class Computed Properties
-These are defined as "class" properties, so you don't need an instance to use them:""
+These are defined as "class" properties, so you don't need an instance to use them.
 - [`biometricType`](https://riftvalleysoftware.github.io/RVS_UIKit_Toolbox/Extensions/UIViewController.html#/s:So16UIViewControllerC17RVS_UIKit_ToolboxE13biometricTypeSo010LABiometryG0VvpZ)
 - [`isHighContrastMode`](https://riftvalleysoftware.github.io/RVS_UIKit_Toolbox/Extensions/UIViewController.html#/s:So16UIViewControllerC17RVS_UIKit_ToolboxE18isHighContrastModeSbvpZ)
 - [`isReducedTransparencyMode`](https://riftvalleysoftware.github.io/RVS_UIKit_Toolbox/Extensions/UIViewController.html#/s:So16UIViewControllerC17RVS_UIKit_ToolboxE25isReducedTransparencyModeSbvpZ)
 - [`isVoiceOverRunning`](https://riftvalleysoftware.github.io/RVS_UIKit_Toolbox/Extensions/UIViewController.html#/s:So16UIViewControllerC17RVS_UIKit_ToolboxE18isVoiceOverRunningSbvpZ)
 
 ##### System State Flag Instance Computed Properties
+These are instance properties, as opposed to class properties:
 - [`biometricType`](https://riftvalleysoftware.github.io/RVS_UIKit_Toolbox/Extensions/UIViewController.html#/s:So16UIViewControllerC17RVS_UIKit_ToolboxE13biometricTypeSo010LABiometryG0Vvp)
-- [`isDarkMode`](https://riftvalleysoftware.github.io/RVS_UIKit_Toolbox/Extensions/UIViewController.html#/s:So16UIViewControllerC17RVS_UIKit_ToolboxE10isDarkModeSbvp)
 - [`isHighContrastMode`](https://riftvalleysoftware.github.io/RVS_UIKit_Toolbox/Extensions/UIViewController.html#/s:So16UIViewControllerC17RVS_UIKit_ToolboxE18isHighContrastModeSbvp)
 - [`isReducedTransparencyMode`](https://riftvalleysoftware.github.io/RVS_UIKit_Toolbox/Extensions/UIViewController.html#/s:So16UIViewControllerC17RVS_UIKit_ToolboxE25isReducedTransparencyModeSbvp)
 - [`isVoiceOverRunning`](https://riftvalleysoftware.github.io/RVS_UIKit_Toolbox/Extensions/UIViewController.html#/s:So16UIViewControllerC17RVS_UIKit_ToolboxE18isVoiceOverRunningSbvp)
+
+These are only available in instances (not class):
+- [`isDarkMode`](https://riftvalleysoftware.github.io/RVS_UIKit_Toolbox/Extensions/UIViewController.html#/s:So16UIViewControllerC17RVS_UIKit_ToolboxE10isDarkModeSbvp)
 - [`hapticsAreAvailable`](https://riftvalleysoftware.github.io/RVS_UIKit_Toolbox/Extensions/UIViewController.html#/s:So16UIViewControllerC17RVS_UIKit_ToolboxE19hapticsAreAvailableSbvp)
 
-##### View Hierarchy Instance Computed Properties
+##### Device Instance Computed Properties
+This is a property that returns the aspect of the device screen:
 - [`screenAspect`](https://riftvalleysoftware.github.io/RVS_UIKit_Toolbox/Extensions/UIViewController.html#/s:So16UIViewControllerC17RVS_UIKit_ToolboxE12screenAspect12CoreGraphics7CGFloatVvp)
+
+##### View Hierarchy Instance Computed Properties
+This will return the view controller immediately "under" this one, in a navigation stack:
 - [`previousViewController`](https://riftvalleysoftware.github.io/RVS_UIKit_Toolbox/Extensions/UIViewController.html#/s:So16UIViewControllerC17RVS_UIKit_ToolboxE012previousViewB0ABSgvp)
 
 ##### Responder Stuff
+This recursively finds the current selected responder (or nil, if no responder):
 - [`currentFirstResponder`](https://riftvalleysoftware.github.io/RVS_UIKit_Toolbox/Extensions/UIViewController.html#/s:So16UIViewControllerC17RVS_UIKit_ToolboxE21currentFirstResponderSo11UIResponderCSgvp)
+
+This method will also end editing for the view controller:
 - [`resignAllFirstResponders()`](https://riftvalleysoftware.github.io/RVS_UIKit_Toolbox/Extensions/UIViewController.html#/s:So16UIViewControllerC17RVS_UIKit_ToolboxE24resignAllFirstRespondersyyF)
 
 
