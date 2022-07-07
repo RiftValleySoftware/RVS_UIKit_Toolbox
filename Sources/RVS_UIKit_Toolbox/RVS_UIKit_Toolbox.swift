@@ -30,7 +30,8 @@ import CoreHaptics
 // MARK: - UITabBarController Extension -
 /* ###################################################################################################################################### */
 /**
- This allows setting the colors for a tab bar.
+ An extension to [the standard UITabBarController class](https://developer.apple.com/documentation/uikit/uitabbarcontroller).
+ This adds a method to ease customization of bar colors.
  */
 public extension UITabBarController {
     /* ################################################################## */
@@ -88,7 +89,7 @@ public extension UITabBarController {
 // MARK: - UIViewController Extension -
 /* ###################################################################################################################################### */
 /**
- A set of various extensions of the UIViewController class.
+ A set of various extensions of [the UIViewController class](https://developer.apple.com/documentation/uikit/uiviewcontroller).
  These provide utilities for determining running state of the device, biometric support, and some responder stuff.
  */
 public extension UIViewController {
@@ -169,7 +170,7 @@ public extension UIViewController {
     /**
      Returns true, if haptics are available.
      */
-    var areHapticsAvailable: Bool { CHHapticEngine.capabilitiesForHardware().supportsHaptics }
+    var hapticsAreAvailable: Bool { CHHapticEngine.capabilitiesForHardware().supportsHaptics }
 
     // MARK: View Hierarchy Instance Computed Properties
     /* ################################################################## */
@@ -213,7 +214,7 @@ public extension UIViewController {
 // MARK: - UIView Extension -
 /* ###################################################################################################################################### */
 /**
- A set of extensions to the UIView class.
+ A set of extensions to [the UIView class](https://developer.apple.com/documentation/uikit/uiview).
  It has a few "informational" computed properties, and some other simple tools for things like auto layout.
  */
 public extension UIView {
@@ -345,7 +346,7 @@ public extension UIView {
 // MARK: - UIImage Extension -
 /* ###################################################################################################################################### */
 /**
- A set of extensions for UIImage.
+ A set of extensions to [the UIImage class](https://developer.apple.com/documentation/uikit/uiimage).
  This mostly has resizing stuff, but also a bit of pixel-level inspection.
  */
 public extension UIImage {
@@ -487,7 +488,7 @@ public extension UIImage {
 // MARK: - UIColor Extension -
 /* ###################################################################################################################################### */
 /**
- A set of UIColor extensions.
+ A set of extensions to [the UIColor class](https://developer.apple.com/documentation/uikit/uicolor).
  This mostly has ways of inspecting the color.
  */
 public extension UIColor {

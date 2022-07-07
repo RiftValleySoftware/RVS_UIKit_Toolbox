@@ -112,6 +112,6 @@ extension RVS_UIKit_Toolbox_TestHarness_Tab1_ViewController {
         screenAspectLabel?.text = String(format: "SLUG-SCREEN-ASPECT-FORMAT".localizedVariant, screenAspect)
         voiceoverModeLabel?.text = "SLUG-VMODE-\(isVoiceOverRunning ? "YES" : "NO")".localizedVariant
         rootViewControllerLabel?.text = (nil == previousViewController ? "SLUG-AT-ROOT" : "SLUG-ERROR-ROOT").localizedVariant
-        areHapticsAvailableLabel?.text = "SLUG-HAPTICS-\(areHapticsAvailable ? "YES" : "NO")".localizedVariant
+        areHapticsAvailableLabel?.text = "SLUG-HAPTICS-\(hapticsAreAvailable ? "YES" : "NO")".localizedVariant
     }
 }
