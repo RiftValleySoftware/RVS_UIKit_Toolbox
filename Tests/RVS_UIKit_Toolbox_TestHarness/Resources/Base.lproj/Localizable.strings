@@ -71,10 +71,15 @@ The Great Rift Valley Software Company: https://riftvalleysoftware.com
 "SLUG-SCALE-TYPE-1"                                     =   "Height";
 "SLUG-SCALE-TYPE-2"                                     =   "Factor";
 "SLUG-SCALE-TYPE-3"                                     =   "Max";
-"SLUG-PIXEL-REPORT-FORMAT"                              =   "The pixel at (%d, %d) has an RGB value of (%f, %f, %f).";
 
 // MARK: Tab 4 (Color)
 "SLUG-COLOR-0-LABEL"                                    =   "Color 0 (Hex)";
 "SLUG-COLOR-1-LABEL"                                    =   "Color 1 (Hex)";
+"SLUG-CLEAR-LABEL-YES"                                  =   "This Color is Clear.";
+"SLUG-CLEAR-LABEL-NO"                                   =   "This Color is Not Clear.";
+"SLUG-MONO-LABEL-YES"                                   =   "This Color is Monochrome.";
+"SLUG-MONO-LABEL-NO"                                    =   "This Color is Not Monochrome.";
+"SLUG-INVERTED-LABEL"                                   =   "Inverted:";
 "SLUG-HSB-LABEL"                                        =   "HSL";
 "SLUG-RGB-LABEL"                                        =   "RGB";
+"SLUG-COLOR-DISPLAY-FORMAT"                             =   "HEX:\t%@\nRGBA:\t%.4f, %.4f, %.4f, %.4f\nHSLA:\t%.4f, %.4f, %.4f, %.4f\n%@";

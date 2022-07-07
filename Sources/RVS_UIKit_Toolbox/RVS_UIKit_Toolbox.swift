@@ -19,7 +19,7 @@ CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFT
 
 The Great Rift Valley Software Company: https://riftvalleysoftware.com
  
-Version: 1.0.0
+Version: 1.0.1
 */
 
 import UIKit
@@ -545,13 +545,12 @@ public extension UIColor {
         var (r, g, b, a): (CGFloat, CGFloat, CGFloat, CGFloat) = (0, 0, 0, 0)
         guard getRed(&r, green: &g, blue: &b, alpha: &a) else { return "" }
         
-        let redVal = UInt64(ceil(r * 255))
-        let greenVal = UInt64(ceil(g * 255))
-        let blueVal = UInt64(ceil(b * 255))
+        let redVal = UInt64(ceil(r * 255)) << 24
+        let greenVal = UInt64(ceil(g * 255)) << 16
+        let blueVal = UInt64(ceil(b * 255)) << 8
         let alphaVal = UInt64(ceil(a * 255))
 
-        let retVal: UInt64 = alphaVal + (blueVal << 8) + (greenVal << 16) + (redVal << 32)
-        return String(format: "#%08X", retVal)
+        return String(format: "#%08X", redVal + greenVal + blueVal + alphaVal)
     }
     
     /* ################################################################## */
@@ -571,6 +570,26 @@ public extension UIColor {
     
     /* ################################################################## */
     /**
+     - returns: True, if the color is monochrome (has no hue).
+     */
+    var isMonochrome: Bool {
+        var (h, s, b, a): (CGFloat, CGFloat, CGFloat, CGFloat) = (0, 0, 0, 0)
+        return getHue(&h, saturation: &s, brightness: &b, alpha: &a) ? 0 == h : false
+    }
+
+    /* ################################################################## */
+    /**
+     This just allows us to get an RGB color from a standard UIColor.
+     
+     - returns: A tuple, containing the RGBA color.
+     */
+    var rgba: (r: CGFloat, g: CGFloat, b: CGFloat, a: CGFloat) {
+        var (r, g, b, a): (CGFloat, CGFloat, CGFloat, CGFloat) = (0, 0, 0, 0)
+        return getRed(&r, green: &g, blue: &b, alpha: &a) ? (r: r, g: g, b: b, a: a) : (r: 0, g: 0, b: 0, a: 0)
+    }
+    
+    /* ################################################################## */
+    /**
      This just allows us to get an HSB color from a standard UIColor.
      [From This SO Answer](https://stackoverflow.com/a/30713456/879365)
      
@@ -580,7 +599,7 @@ public extension UIColor {
         var (h, s, b, a): (CGFloat, CGFloat, CGFloat, CGFloat) = (0, 0, 0, 0)
         return getHue(&h, saturation: &s, brightness: &b, alpha: &a) ? (h: h, s: s, b: b, a: a) : (h: 0, s: 0, b: 0, a: 0)
     }
-    
+
     /* ################################################################## */
     /**
      Returns the inverted color.
