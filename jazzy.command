@@ -5,11 +5,9 @@ cd "${MY_SCRIPT_PATH}"
 rm -drf docs
 jazzy   --github_url https://github.com/RiftValleySoftware/RVS_UIKit_Toolbox\
         --readme ./README.md \
-        --theme fullwidth\
         --author The\ Great\ Rift\ Valley\ Software\ Company\
         --author_url https://riftvalleysoftware.com\
         --module RVS_UIKit_Toolbox\
-        --exclude=/*/main.swift \
         --copyright [©2022\ The\ Great\ Rift\ Valley\ Software\ Company]\(https://riftvalleysoftware.com\)
 cp ./img/* docs/img
 cd "${CWD}"
