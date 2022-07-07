@@ -6,7 +6,7 @@ A set of basic [UIKit](https://developer.apple.com/documentation/uikit) tools, f
 
 ## Overview
 
-This package offers a few extensions of standard UIKit classes, in order to abstract some of the more common sftware tasks.
+This package offers a few extensions of standard UIKit classes, in order to abstract some of the more common software tasks.
 
 ## Implementation
 
