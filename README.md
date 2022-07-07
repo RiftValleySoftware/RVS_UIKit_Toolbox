@@ -42,7 +42,7 @@ If you choose to build the module, you will also need to import the module into 
     
 Alternatively, the entire set of extensions is available in [a single source file](https://github.com/RiftValleySoftware/RVS_UIKit_Toolbox/blob/master/Sources/RVS_UIKit_Toolbox/RVS_UIKit_Toolbox.swift), that you can integrate directly into the main module:
 
-With Carthage, this would be available in the `Carthage/Checkins/RVS_UIKit_ToolboxSources/RVS_UIKit_Toolbox` directory.
+With Carthage, this would be available in the `Carthage/Checkins/RVS_UIKit_Toolbox/Sources/RVS_UIKit_Toolbox` directory.
 
 If you do this, then the file would be integrated directly into the main module, so you will not need to `import` the file.
 
