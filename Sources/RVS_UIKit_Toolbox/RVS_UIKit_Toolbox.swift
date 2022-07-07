@@ -369,7 +369,9 @@ public extension UIImage {
     /* ################################################################## */
     /**
      This returns the RGB color (as a UIColor) of the pixel in the image, at the given point. It is restricted to 32-bit (RGBA/8-bit pixel) values.
+     
      This was inspired by several of the answers [in this StackOverflow Question](https://stackoverflow.com/questions/25146557/how-do-i-get-the-color-of-a-pixel-in-a-uiimage-with-swift).
+     
      **NOTE:** This is unlikely to be highly performant!
      
      - parameter at: The point in the image to sample (NOTE: Must be within image bounds, or nil is returned).
@@ -380,7 +382,7 @@ public extension UIImage {
               (0..<size.height).contains(inPoint.y)
         else { return nil }
 
-        // We draw the image into a context, in order to be sure that we are accessing image data in our required format (BGRA or RGBA).
+        // We draw the image into a context, in order to be sure that we are accessing image data in our required format (BGRA or ARGB).
         UIGraphicsBeginImageContextWithOptions(size, false, 1)
         draw(at: .zero)
         let imageData = UIGraphicsGetImageFromCurrentImageContext()
@@ -528,16 +530,16 @@ public extension UIColor {
     // MARK: Color Information Instance Computed Properties
     /* ################################################################## */
     /**
-     - returns: the color, as an RGBA hex value
+     - returns: the color, as an RGBA hex value in a String, prefixed by a hash sign ("#RRGGBBAA").
      */
     var hexValue: String {
         var (r, g, b, a): (CGFloat, CGFloat, CGFloat, CGFloat) = (0, 0, 0, 0)
         guard getRed(&r, green: &g, blue: &b, alpha: &a) else { return "" }
         
-        let redVal = Int(ceil(r * 255))
-        let greenVal = Int(ceil(g * 255))
-        let blueVal = Int(ceil(b * 255))
-        let alphaVal = Int(ceil(a * 255))
+        let redVal = UInt64(ceil(r * 255))
+        let greenVal = UInt64(ceil(g * 255))
+        let blueVal = UInt64(ceil(b * 255))
+        let alphaVal = UInt64(ceil(a * 255))
 
         let retVal: UInt64 = alphaVal + (blueVal << 8) + (greenVal << 16) + (redVal << 32)
         return String(format: "#%08X", retVal)
