@@ -149,6 +149,25 @@ This method will also end editing for the view controller:
 ##### Color Computation Instance Methods
 - [`intermediateColor(otherColor:samplePoint:isHSL:)`](file:///Users/chrismarshall/Development/RiftValley/RVS_UIKit_Toolbox/docs/Extensions/UIColor.html#/s:So7UIColorC17RVS_UIKit_ToolboxE17intermediateColor05otherF011samplePoint5isHSLA2B_12CoreGraphics7CGFloatVSbtF)
 
+## The Test Harness App
+
+Because the package is a UIKit extension, [unit tests will be less effective than a test harness](https://littlegreenviper.com/various/testing-harness-vs-unit/). We provide a fairly comprehensive test harness app, that not only provides excellent code coverage, but also acts as a template for real-world implementation.
+
+[Here is the source code for the test harness app](https://github.com/RiftValleySoftware/RVS_UIKit_Toolbox/tree/master/Tests/RVS_UIKit_Toolbox_TestHarness). It is one of the targets in [the Xcode workspace](https://github.com/RiftValleySoftware/RVS_UIKit_Toolbox/tree/master/RVS_UIKit_Toolbox.xcworkspace).
+
+The app is a fairly basic "tabbed" app, that presents 5 tabs; each, corresponding to one of the extended classes:
+
+|Figure 1: UITabBarController|Figure 2: UIViewController|Figure 3: UIView|Figure 4: UIImage|Figure 5: UIColor|
+|:----:|:----:|:----:|:----:|:----:|
+|![Figure 1](img/Figure-1.png)|![Figure 2](img/Figure-2.png)|![Figure 3](img/Figure-3.png)|![Figure 4](img/Figure-4.png)|![Figure 5](img/Figure-5.png)|
+
+Tab 1 (UIViewController) also has a navigation stack, and allows you to open a second screen, showing access to the previous view controller, and the responder properties:
+
+|Figure 6: UIViewController Navigation Screen|
+|:----:|
+|![Figure 6](img/Figure-6.png)|
+
+The app is written as if it were a "shipped" app, and has excellent code quality, localization, and clear implementation. It should be an excellent example of use.
 # LICENSE
 
 © Copyright 2022, [The Great Rift Valley Software Company](https://riftvalleysoftware.com)

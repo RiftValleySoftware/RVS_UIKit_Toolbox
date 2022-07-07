@@ -247,6 +247,45 @@
 <ul>
 <li><a href="file:///Users/chrismarshall/Development/RiftValley/RVS_UIKit_Toolbox/docs/Extensions/UIColor.html#/s:So7UIColorC17RVS_UIKit_ToolboxE17intermediateColor05otherF011samplePoint5isHSLA2B_12CoreGraphics7CGFloatVSbtF"><code>intermediateColor(otherColor:samplePoint:isHSL:)</code></a></li>
 </ul>
+<h2 id='the-test-harness-app' class='heading'>The Test Harness App</h2>
+
+<p>Because the package is a UIKit extension, <a href="https://littlegreenviper.com/various/testing-harness-vs-unit/">unit tests will be less effective than a test harness</a>. We provide a fairly comprehensive test harness app, that not only provides excellent code coverage, but also acts as a template for real-world implementation.</p>
+
+<p><a href="https://github.com/RiftValleySoftware/RVS_UIKit_Toolbox/tree/master/Tests/RVS_UIKit_Toolbox_TestHarness">Here is the source code for the test harness app</a>. It is one of the targets in <a href="https://github.com/RiftValleySoftware/RVS_UIKit_Toolbox/tree/master/RVS_UIKit_Toolbox.xcworkspace">the Xcode workspace</a>.</p>
+
+<p>The app is a fairly basic &ldquo;tabbed&rdquo; app, that presents 5 tabs; each, corresponding to one of the extended classes:</p>
+
+<table><thead>
+<tr>
+<th style="text-align: center">Figure 1: UITabBarController</th>
+<th style="text-align: center">Figure 2: UIViewController</th>
+<th style="text-align: center">Figure 3: UIView</th>
+<th style="text-align: center">Figure 4: UIImage</th>
+<th style="text-align: center">Figure 5: UIColor</th>
+</tr>
+</thead><tbody>
+<tr>
+<td style="text-align: center"><img src="img/Figure-1.png" alt="Figure 1"></td>
+<td style="text-align: center"><img src="img/Figure-2.png" alt="Figure 2"></td>
+<td style="text-align: center"><img src="img/Figure-3.png" alt="Figure 3"></td>
+<td style="text-align: center"><img src="img/Figure-4.png" alt="Figure 4"></td>
+<td style="text-align: center"><img src="img/Figure-5.png" alt="Figure 5"></td>
+</tr>
+</tbody></table>
+
+<p>Tab 1 (UIViewController) also has a navigation stack, and allows you to open a second screen, showing access to the previous view controller, and the responder properties:</p>
+
+<table><thead>
+<tr>
+<th style="text-align: center">Figure 6: UIViewController Navigation Screen</th>
+</tr>
+</thead><tbody>
+<tr>
+<td style="text-align: center"><img src="img/Figure-6.png" alt="Figure 6"></td>
+</tr>
+</tbody></table>
+
+<p>The app is written as if it were a &ldquo;shipped&rdquo; app, and has excellent code quality, localization, and clear implementation. It should be an excellent example of use.</p>
 <h1 id='license' class='heading'>LICENSE</h1>
 
 <p>© Copyright 2022, <a href="https://riftvalleysoftware.com">The Great Rift Valley Software Company</a></p>
