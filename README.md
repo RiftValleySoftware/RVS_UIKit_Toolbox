@@ -21,8 +21,8 @@ The most common method of integration will almost certainly be via [the Swift Pa
 
 The package can be accessed from [GitHub](https://github.com), via the following URIs:
 
-- SSL: git@github.com:RiftValleySoftware/RVS_UIKit_Toolbox.git
-- HTTPS: https://github.com/RiftValleySoftware/RVS_UIKit_Toolbox.git
+- SSL: `git@github.com:RiftValleySoftware/RVS_UIKit_Toolbox.git`
+- HTTPS: `https://github.com/RiftValleySoftware/RVS_UIKit_Toolbox.git`
 
 Simply integrate the package into your project, and import the module, in files that use its extensions:
 
