@@ -48,6 +48,8 @@ The Great Rift Valley Software Company: https://riftvalleysoftware.com
 "SLUG-NEXT"                                             =   "Next";
 "SLUG-AT-ROOT"                                          =   "This is the root navigation view controller.";
 "SLUG-ERROR-ROOT"                                       =   "There is an error! This is not the root!";
+"SLUG-HAPTICS-YES"                                      =   "Haptics Are Available.";
+"SLUG-HAPTICS-NO"                                       =   "Haptics Are Not Available.";
 
 // MARK: Tab 1->Nav 0 (View Controller)
 "SLUG-PREVIOUS-FORMAT"                                  =   "The Previous Controller is called \"%@.\"";

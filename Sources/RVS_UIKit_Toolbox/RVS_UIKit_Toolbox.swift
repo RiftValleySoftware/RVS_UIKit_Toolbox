@@ -24,6 +24,7 @@ Version: 1.0.0
 
 import UIKit
 import LocalAuthentication
+import CoreHaptics
 
 /* ###################################################################################################################################### */
 // MARK: - UITabBarController Extension -
@@ -163,6 +164,12 @@ public extension UIViewController {
      Returns true, if voiceover mode is on.
      */
     var isVoiceOverRunning: Bool { Self.isVoiceOverRunning }
+    
+    /* ################################################################## */
+    /**
+     Returns true, if haptics are available.
+     */
+    var areHapticsAvailable: Bool { CHHapticEngine.capabilitiesForHardware().supportsHaptics }
 
     // MARK: View Hierarchy Instance Computed Properties
     /* ################################################################## */

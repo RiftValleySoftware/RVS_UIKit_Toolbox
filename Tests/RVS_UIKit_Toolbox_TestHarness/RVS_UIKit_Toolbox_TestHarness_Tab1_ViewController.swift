@@ -68,6 +68,11 @@ class RVS_UIKit_Toolbox_TestHarness_Tab1_ViewController: RVS_UIKit_Toolbox_TestH
     /* ################################################################## */
     /**
      */
+    @IBOutlet weak var areHapticsAvailableLabel: UILabel?
+    
+    /* ################################################################## */
+    /**
+     */
     @IBOutlet weak var nextNavBarButton: UIBarButtonItem?
     
     /* ################################################################## */
@@ -93,5 +98,6 @@ class RVS_UIKit_Toolbox_TestHarness_Tab1_ViewController: RVS_UIKit_Toolbox_TestH
         screenAspectLabel?.text = String(format: "SLUG-SCREEN-ASPECT-FORMAT".localizedVariant, screenAspect)
         voiceoverModeLabel?.text = "SLUG-VMODE-\(isVoiceOverRunning ? "YES" : "NO")".localizedVariant
         rootViewControllerLabel?.text = (nil == previousViewController ? "SLUG-AT-ROOT" : "SLUG-ERROR-ROOT").localizedVariant
+        areHapticsAvailableLabel?.text = "SLUG-HAPTICS-\(areHapticsAvailable ? "YES" : "NO")".localizedVariant
     }
 }
