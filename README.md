@@ -122,32 +122,32 @@ This method will also end editing for the view controller:
 #### [`UIImage`](https://riftvalleysoftware.github.io/RVS_UIKit_Toolbox/Extensions/UIImage.html)
 
 ##### Class Functions
-- [`assetOrSystemImage(name:))`](file:///Users/chrismarshall/Development/RiftValley/RVS_UIKit_Toolbox/docs/Extensions/UIImage.html#/s:So7UIImageC17RVS_UIKit_ToolboxE18assetOrSystemImage4nameABSgSS_tFZ)
+- [`assetOrSystemImage(name:))`](https://riftvalleysoftware.github.io/RVS_UIKit_Toolbox/Extensions/UIImage.html#/s:So7UIImageC17RVS_UIKit_ToolboxE18assetOrSystemImage4nameABSgSS_tFZ)
 
 ##### Image Composition Instance Computed Properties
-- [`hasAlphaInformation`](file:///Users/chrismarshall/Development/RiftValley/RVS_UIKit_Toolbox/docs/Extensions/UIImage.html#/s:So7UIImageC17RVS_UIKit_ToolboxE19hasAlphaInformationSbvp)
+- [`hasAlphaInformation`](https://riftvalleysoftware.github.io/RVS_UIKit_Toolbox/Extensions/UIImage.html#/s:So7UIImageC17RVS_UIKit_ToolboxE19hasAlphaInformationSbvp)
 
 ##### Pixel Information Instance Methods
-- [`getRGBColorOfThePixel(at:)`](file:///Users/chrismarshall/Development/RiftValley/RVS_UIKit_Toolbox/docs/Extensions/UIImage.html#/s:So7UIImageC17RVS_UIKit_ToolboxE21getRGBColorOfThePixel2atSo7UIColorCSgSo7CGPointV_tF)
+- [`getRGBColorOfThePixel(at:)`](https://riftvalleysoftware.github.io/RVS_UIKit_Toolbox/Extensions/UIImage.html#/s:So7UIImageC17RVS_UIKit_ToolboxE21getRGBColorOfThePixel2atSo7UIColorCSgSo7CGPointV_tF)
 
 ##### Sizing Instance Methods
-- [`resized(toMaximumSize:)`](file:///Users/chrismarshall/Development/RiftValley/RVS_UIKit_Toolbox/docs/Extensions/UIImage.html#/s:So7UIImageC17RVS_UIKit_ToolboxE7resized13toMaximumSizeABSg12CoreGraphics7CGFloatV_tF)
-- [`resized(toScaleFactor:)`](file:///Users/chrismarshall/Development/RiftValley/RVS_UIKit_Toolbox/docs/Extensions/UIImage.html#/s:So7UIImageC17RVS_UIKit_ToolboxE7resized13toScaleFactorABSg12CoreGraphics7CGFloatV_tF)
-- [`resized(toNewWidth:toNewHeight:)`](file:///Users/chrismarshall/Development/RiftValley/RVS_UIKit_Toolbox/docs/Extensions/UIImage.html#/s:So7UIImageC17RVS_UIKit_ToolboxE7resized10toNewWidth0fG6HeightABSg12CoreGraphics7CGFloatVSg_AKtF)
+- [`resized(toMaximumSize:)`](https://riftvalleysoftware.github.io/RVS_UIKit_Toolbox/Extensions/UIImage.html#/s:So7UIImageC17RVS_UIKit_ToolboxE7resized13toMaximumSizeABSg12CoreGraphics7CGFloatV_tF)
+- [`resized(toScaleFactor:)`](https://riftvalleysoftware.github.io/RVS_UIKit_Toolbox/Extensions/UIImage.html#/s:So7UIImageC17RVS_UIKit_ToolboxE7resized13toScaleFactorABSg12CoreGraphics7CGFloatV_tF)
+- [`resized(toNewWidth:toNewHeight:)`](https://riftvalleysoftware.github.io/RVS_UIKit_Toolbox/Extensions/UIImage.html#/s:So7UIImageC17RVS_UIKit_ToolboxE7resized10toNewWidth0fG6HeightABSg12CoreGraphics7CGFloatVSg_AKtF)
 
 #### [`UIColor`](https://riftvalleysoftware.github.io/RVS_UIKit_Toolbox/Extensions/UIColor.html)
 
 ##### Convenience Initializers
-- [`init(hex:)`](file:///Users/chrismarshall/Development/RiftValley/RVS_UIKit_Toolbox/docs/Extensions/UIColor.html#/s:So7UIColorC17RVS_UIKit_ToolboxE3hexABSgSS_tcfc)
+- [`init(hex:)`](https://riftvalleysoftware.github.io/RVS_UIKit_Toolbox/Extensions/UIColor.html#/s:So7UIColorC17RVS_UIKit_ToolboxE3hexABSgSS_tcfc)
 
 ##### Color Information Instance Computed Properties
-- [`hexValue`](file:///Users/chrismarshall/Development/RiftValley/RVS_UIKit_Toolbox/docs/Extensions/UIColor.html#/s:So7UIColorC17RVS_UIKit_ToolboxE8hexValueSSvp)
-- [`isClear`](file:///Users/chrismarshall/Development/RiftValley/RVS_UIKit_Toolbox/docs/Extensions/UIColor.html#/s:So7UIColorC17RVS_UIKit_ToolboxE7isClearSbvp)
-- [`hsba`](file:///Users/chrismarshall/Development/RiftValley/RVS_UIKit_Toolbox/docs/Extensions/UIColor.html#/s:So7UIColorC17RVS_UIKit_ToolboxE4hsba12CoreGraphics7CGFloatV1h_AG1sAG1bAG1atvp)
-- [`inverted`](file:///Users/chrismarshall/Development/RiftValley/RVS_UIKit_Toolbox/docs/Extensions/UIColor.html#/s:So7UIColorC17RVS_UIKit_ToolboxE8invertedABvp)
+- [`hexValue`](https://riftvalleysoftware.github.io/RVS_UIKit_Toolbox/Extensions/UIColor.html#/s:So7UIColorC17RVS_UIKit_ToolboxE8hexValueSSvp)
+- [`isClear`](https://riftvalleysoftware.github.io/RVS_UIKit_Toolbox/Extensions/UIColor.html#/s:So7UIColorC17RVS_UIKit_ToolboxE7isClearSbvp)
+- [`hsba`](https://riftvalleysoftware.github.io/RVS_UIKit_Toolbox/Extensions/UIColor.html#/s:So7UIColorC17RVS_UIKit_ToolboxE4hsba12CoreGraphics7CGFloatV1h_AG1sAG1bAG1atvp)
+- [`inverted`](https://riftvalleysoftware.github.io/RVS_UIKit_Toolbox/Extensions/UIColor.html#/s:So7UIColorC17RVS_UIKit_ToolboxE8invertedABvp)
 
 ##### Color Computation Instance Methods
-- [`intermediateColor(otherColor:samplePoint:isHSL:)`](file:///Users/chrismarshall/Development/RiftValley/RVS_UIKit_Toolbox/docs/Extensions/UIColor.html#/s:So7UIColorC17RVS_UIKit_ToolboxE17intermediateColor05otherF011samplePoint5isHSLA2B_12CoreGraphics7CGFloatVSbtF)
+- [`intermediateColor(otherColor:samplePoint:isHSL:)`](https://riftvalleysoftware.github.io/RVS_UIKit_Toolbox/Extensions/UIColor.html#/s:So7UIColorC17RVS_UIKit_ToolboxE17intermediateColor05otherF011samplePoint5isHSLA2B_12CoreGraphics7CGFloatVSbtF)
 
 ## The Test Harness App
 
