@@ -68,7 +68,7 @@ class RVS_UIKit_Toolbox_TestHarness_Tab4_ViewController: RVS_UIKit_Toolbox_TestH
     /* ################################################################## */
     /**
      */
-    @IBOutlet weak var interimColorDisplayView: UIView?
+    @IBOutlet weak var interimColorDisplayLabel: UILabel?
     
     /* ################################################################## */
     /**
@@ -131,6 +131,8 @@ extension RVS_UIKit_Toolbox_TestHarness_Tab4_ViewController {
     /**
      */
     @IBAction func interimColorSliderChanged(_: Any! = nil) {
+        var intermediateColor: UIColor = .clear
+        
         guard let color0Hex = color0TextEntry?.text?.hexOnly,
               let color1Hex = color1TextEntry?.text?.hexOnly,
               let color0 = UIColor(hex: "#\(color0Hex)"),
@@ -138,11 +140,14 @@ extension RVS_UIKit_Toolbox_TestHarness_Tab4_ViewController {
               let isHSL = hsbRGBSwitch?.isOn,
               let samplePoint = interimColorSlider?.value
         else {
-            interimColorDisplayView?.backgroundColor = .clear
+            interimColorDisplayLabel?.backgroundColor = .clear
+            interimColorDisplayLabel?.text = nil
             return
         }
         
-        interimColorDisplayView?.backgroundColor = color0.intermediateColor(otherColor: color1, samplePoint: CGFloat(samplePoint), isHSL: isHSL)
+        intermediateColor = color0.intermediateColor(otherColor: color1, samplePoint: CGFloat(samplePoint), isHSL: isHSL)
+        interimColorDisplayLabel?.text = intermediateColor.hexValue
+        interimColorDisplayLabel?.backgroundColor = intermediateColor
     }
     
     /* ################################################################## */
