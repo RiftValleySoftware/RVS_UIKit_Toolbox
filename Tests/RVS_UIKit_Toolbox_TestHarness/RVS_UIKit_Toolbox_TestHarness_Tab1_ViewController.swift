@@ -32,49 +32,63 @@ import RVS_Generic_Swift_Toolbox
 class RVS_UIKit_Toolbox_TestHarness_Tab1_ViewController: RVS_UIKit_Toolbox_TestHarness_Base_Tabs_ViewController {
     /* ################################################################## */
     /**
+     The label that reports the type of biometrics available.
      */
     @IBOutlet weak var bioReportLabel: UILabel?
     
     /* ################################################################## */
     /**
+     The label that reports whether or not High Contrast Mode is on.
      */
     @IBOutlet weak var highContrastLabel: UILabel?
     
     /* ################################################################## */
     /**
+     The label that reports whether or not Reduced Transparency Mode is on.
      */
     @IBOutlet weak var reducedTransparencyLabel: UILabel?
     
     /* ################################################################## */
     /**
+     The label that reports whether or not Dark Mode is on.
      */
     @IBOutlet weak var darkModeLabel: UILabel?
     
     /* ################################################################## */
     /**
+     The label that reports the screen aspect.
      */
     @IBOutlet weak var screenAspectLabel: UILabel?
     
     /* ################################################################## */
     /**
+     The label that reports whether or not Voiceover Mode is on.
      */
     @IBOutlet weak var voiceoverModeLabel: UILabel!
 
     /* ################################################################## */
     /**
+     The label that reports whether or not this is the Root Controller of the Navigation Stack.
      */
     @IBOutlet weak var rootViewControllerLabel: UILabel?
 
     /* ################################################################## */
     /**
+     The label that reports whether or not haptics are available.
      */
     @IBOutlet weak var areHapticsAvailableLabel: UILabel?
     
     /* ################################################################## */
     /**
+     The Navigation Bar Button that brings in the next controller.
      */
     @IBOutlet weak var nextNavBarButton: UIBarButtonItem?
-    
+}
+
+/* ###################################################################################################################################### */
+// MARK: Base Class Overrides
+/* ###################################################################################################################################### */
+extension RVS_UIKit_Toolbox_TestHarness_Tab1_ViewController {
     /* ################################################################## */
     /**
      Called when the view Hierarchy has been loaded.

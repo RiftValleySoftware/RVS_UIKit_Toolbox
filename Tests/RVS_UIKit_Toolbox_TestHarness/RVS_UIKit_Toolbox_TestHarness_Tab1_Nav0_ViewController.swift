@@ -27,7 +27,7 @@ import RVS_Generic_Swift_Toolbox
 // MARK: - UIViewController Extension Test Harness View Controller -
 /* ###################################################################################################################################### */
 /**
- This controls the UIViewController Test tab.
+ This controls the second UIViewController Test tab.
  */
 class RVS_UIKit_Toolbox_TestHarness_Tab1_Nav0_ViewController: RVS_UIKit_Toolbox_TestHarness_Base_Tabs_ViewController {
     /* ################################################################## */
@@ -38,34 +38,45 @@ class RVS_UIKit_Toolbox_TestHarness_Tab1_Nav0_ViewController: RVS_UIKit_Toolbox_
     
     /* ################################################################## */
     /**
+     The leftmost edit field (ignored).
      */
     @IBOutlet weak var editText0: UITextField?
     
     /* ################################################################## */
     /**
+     The image for the "attention flag" over the leftmost edit field.
      */
     @IBOutlet weak var editFlagImageView0: UIImageView!
     
     /* ################################################################## */
     /**
+     The middle edit field (ignored).
      */
     @IBOutlet weak var editText1: UITextField?
     
     /* ################################################################## */
     /**
+     The image for the "attention flag" over the middle edit field.
      */
     @IBOutlet weak var editFlagImageView1: UIImageView!
     
     /* ################################################################## */
     /**
+     The rightmost edit field (ignored).
      */
     @IBOutlet weak var editText2: UITextField?
     
     /* ################################################################## */
     /**
+     The image for the "attention flag" over the rightmost edit field.
      */
-    @IBOutlet weak var editFlagImageView2: UIImageView!
-    @IBOutlet weak var responderErrorLabel: UILabel!
+    @IBOutlet weak var editFlagImageView2: UIImageView?
+    
+    /* ################################################################## */
+    /**
+     The label that is displayed, if there is a Responder error (Should never happen).
+     */
+    @IBOutlet weak var responderErrorLabel: UILabel?
 }
 
 /* ###################################################################################################################################### */
@@ -104,11 +115,15 @@ extension RVS_UIKit_Toolbox_TestHarness_Tab1_Nav0_ViewController {
 }
 
 /* ###################################################################################################################################### */
-// MARK: Base Class Overrides
+// MARK: UITextFieldDelegate Conformance
 /* ###################################################################################################################################### */
 extension RVS_UIKit_Toolbox_TestHarness_Tab1_Nav0_ViewController: UITextFieldDelegate {
     /* ################################################################## */
     /**
+     Called when a text field is about to start editing.
+     We use this to switch the "attention" circle.
+     
+     - parameter inTextField: The text field about to edit.
      */
     func textFieldDidBeginEditing(_ inTextField: UITextField) {
         if nil != currentFirstResponder {

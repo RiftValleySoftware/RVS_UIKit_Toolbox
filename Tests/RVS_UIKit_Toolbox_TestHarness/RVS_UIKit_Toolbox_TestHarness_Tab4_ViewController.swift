@@ -32,58 +32,69 @@ import RVS_Generic_Swift_Toolbox
 class RVS_UIKit_Toolbox_TestHarness_Tab4_ViewController: RVS_UIKit_Toolbox_TestHarness_Base_Tabs_ViewController {
     /* ################################################################## */
     /**
-     */
+     This is the label for the first color text entry.
+    */
     @IBOutlet weak var color0Label: UILabel?
 
     /* ################################################################## */
     /**
+     This is the label for the second color text entry.
      */
     @IBOutlet weak var color1Label: UILabel?
 
     /* ################################################################## */
     /**
+     This text field allows you to enter a hex value, for the first color.
      */
     @IBOutlet weak var color0TextEntry: UITextField?
 
     /* ################################################################## */
     /**
+     This text field allows you to enter a hex value, for the second color.
      */
     @IBOutlet weak var color1TextEntry: UITextField?
     
     /* ################################################################## */
     /**
+     This uses the background color to give a visual representation of the first color.
      */
     @IBOutlet weak var color0DisplayView: UIView?
     
     /* ################################################################## */
     /**
+     This uses the background color to give a visual representation of the second color.
      */
     @IBOutlet weak var color1DisplayView: UIView?
     
     /* ################################################################## */
     /**
+     This slider changes the sample point of the interim color.
      */
     @IBOutlet weak var interimColorSlider: UISlider?
     
     /* ################################################################## */
     /**
+     The label that displays the current interim colr (as a background color, and a hex value).
      */
     @IBOutlet weak var interimColorDisplayLabel: UILabel?
     
     /* ################################################################## */
     /**
+     This is a "label" for the RGB/HSL switch, that will set the switch to RGB.
      */
     @IBOutlet weak var rgbLabelButton: UIButton?
     
     /* ################################################################## */
     /**
+     This is a "label" for the RGB/HSL switch, that will set the switch to HSL
      */
     @IBOutlet weak var hsbLabelButton: UIButton?
     
     /* ################################################################## */
     /**
+     This switches the interim color mode between RGB and HSL.
      */
-    @IBOutlet weak var hsbRGBSwitch: UISwitch!
+    @IBOutlet weak var hsbRGBSwitch: UISwitch?
 }
 
 /* ###################################################################################################################################### */
@@ -110,6 +121,9 @@ extension RVS_UIKit_Toolbox_TestHarness_Tab4_ViewController {
 extension RVS_UIKit_Toolbox_TestHarness_Tab4_ViewController {
     /* ################################################################## */
     /**
+     Called when either of the Hex text field changes.
+     
+     - parameter: ignored (and can be omitted).
      */
     @IBAction func colorTextEntryChanged(_: Any! = nil) {
         guard let color0Hex = color0TextEntry?.text?.hexOnly,
@@ -129,6 +143,9 @@ extension RVS_UIKit_Toolbox_TestHarness_Tab4_ViewController {
     
     /* ################################################################## */
     /**
+     Called when the interim color slider changes.
+     
+     - parameter: ignored (and can be omitted).
      */
     @IBAction func interimColorSliderChanged(_: Any! = nil) {
         var intermediateColor: UIColor = .clear
@@ -152,6 +169,10 @@ extension RVS_UIKit_Toolbox_TestHarness_Tab4_ViewController {
     
     /* ################################################################## */
     /**
+     Called then the RGB label button is hit.
+     This forces the switch to RGB.
+     
+     - parameter: ignored (and can be omitted).
      */
     @IBAction func rgbLabelButtonHit(_: Any! = nil) {
         hsbRGBSwitch?.setOn(false, animated: true)
@@ -160,6 +181,9 @@ extension RVS_UIKit_Toolbox_TestHarness_Tab4_ViewController {
     
     /* ################################################################## */
     /**
+     Called when the RGB/HSL switch changes.
+     
+     - parameter: ignored (and can be omitted).
      */
     @IBAction func hsbRGBButtonHit(_: Any! = nil) {
         rgbLabelButton?.isEnabled = hsbRGBSwitch?.isOn ?? false
@@ -169,6 +193,10 @@ extension RVS_UIKit_Toolbox_TestHarness_Tab4_ViewController {
     
     /* ################################################################## */
     /**
+     Called then the HSL label button is hit.
+     This forces the switch to HSL.
+     
+     - parameter: ignored (and can be omitted).
      */
     @IBAction func hsbLabelButtonHit(_: Any! = nil) {
         hsbRGBSwitch?.setOn(true, animated: true)
