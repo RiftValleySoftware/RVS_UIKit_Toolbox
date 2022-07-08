@@ -26,7 +26,7 @@ import PackageDescription
 
 let package = Package(
     name: "RVS_UIKit_Toolbox",
-    platforms: [.iOS(.v14)],
+    platforms: [.iOS(.v13)],
     products: [
         .library(
             name: "RVS_UIKit_Toolbox",
