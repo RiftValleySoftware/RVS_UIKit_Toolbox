@@ -24,7 +24,7 @@ import UIKit
 import RVS_Generic_Swift_Toolbox
 
 /* ###################################################################################################################################### */
-// MARK: - UIViewController Extension Test Harness View Controller -
+// MARK: - UIViewController Extension Test Harness View Controller (Second Controller) -
 /* ###################################################################################################################################### */
 /**
  This controls the second UIViewController Test tab.
@@ -77,6 +77,12 @@ class RVS_UIKit_Toolbox_TestHarness_Tab1_Nav0_ViewController: RVS_UIKit_Toolbox_
      The label that is displayed, if there is a Responder error (Should never happen).
      */
     @IBOutlet weak var responderErrorLabel: UILabel?
+    
+    /* ################################################################## */
+    /**
+     The Navigation Bar Button that brings in the next controller.
+     */
+    @IBOutlet weak var nextNavBarButton: UIBarButtonItem?
 }
 
 /* ###################################################################################################################################### */
@@ -89,6 +95,8 @@ extension RVS_UIKit_Toolbox_TestHarness_Tab1_Nav0_ViewController {
      */
     override func viewWillLayoutSubviews() {
         super.viewWillLayoutSubviews()
+        nextNavBarButton?.title = nextNavBarButton?.title?.localizedVariant
+        navigationItem.title = String(format: "SLUG-TITLE-FORMAT".localizedVariant, (navigationController?.viewControllers.count ?? 1) - 1)
         navigationLabel?.text = String(format: "SLUG-PREVIOUS-FORMAT".localizedVariant, previousViewController?.navigationItem.title ?? "ERROR")
         responderErrorLabel?.text = responderErrorLabel?.text?.localizedVariant
         responderErrorLabel?.isHidden = true

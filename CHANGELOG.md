@@ -1,3 +1,6 @@
+*Version 1.1.3* **July 9, 2022**
+- Documentation improvements. No code or API changes.
+
 *Version 1.1.2* **July 8, 2022**
 - Forgot to change it in the package file, too.
 

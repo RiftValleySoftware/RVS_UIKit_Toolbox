@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		D40B98FB287330D10027956D /* RVS_UIKit_Toolbox_TestHarness_Tab4_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D40B98FA287330D10027956D /* RVS_UIKit_Toolbox_TestHarness_Tab4_ViewController.swift */; };
+		D413E7B72879986F006C38EF /* Documentation.docc in Sources */ = {isa = PBXBuildFile; fileRef = D413E7B62879986F006C38EF /* Documentation.docc */; };
 		D4353A0128707D680098949F /* RVS_Generic_Swift_Toolbox in Frameworks */ = {isa = PBXBuildFile; productRef = D4353A0028707D680098949F /* RVS_Generic_Swift_Toolbox */; };
 		D4353A0328707DD00098949F /* RVS_UIKit_Toolbox_TestHarness_Base_Tabs_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4353A0228707DD00098949F /* RVS_UIKit_Toolbox_TestHarness_Base_Tabs_ViewController.swift */; };
 		D4353A0528707E150098949F /* RVS_UIKit_Toolbox_TestHarness_Tab1_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4353A0428707E150098949F /* RVS_UIKit_Toolbox_TestHarness_Tab1_ViewController.swift */; };
@@ -44,6 +45,7 @@
 
 /* Begin PBXFileReference section */
 		D40B98FA287330D10027956D /* RVS_UIKit_Toolbox_TestHarness_Tab4_ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RVS_UIKit_Toolbox_TestHarness_Tab4_ViewController.swift; sourceTree = "<group>"; };
+		D413E7B62879986F006C38EF /* Documentation.docc */ = {isa = PBXFileReference; lastKnownFileType = folder.documentationcatalog; path = Documentation.docc; sourceTree = "<group>"; };
 		D4353A0228707DD00098949F /* RVS_UIKit_Toolbox_TestHarness_Base_Tabs_ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RVS_UIKit_Toolbox_TestHarness_Base_Tabs_ViewController.swift; sourceTree = "<group>"; };
 		D4353A0428707E150098949F /* RVS_UIKit_Toolbox_TestHarness_Tab1_ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RVS_UIKit_Toolbox_TestHarness_Tab1_ViewController.swift; sourceTree = "<group>"; };
 		D43965BC286C992100727E6A /* libRVS_UIKit_Toolbox.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libRVS_UIKit_Toolbox.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -99,6 +101,7 @@
 		D43965BE286C992100727E6A /* RVS_UIKit_Toolbox */ = {
 			isa = PBXGroup;
 			children = (
+				D413E7B62879986F006C38EF /* Documentation.docc */,
 				D43965BF286C992100727E6A /* RVS_UIKit_Toolbox.swift */,
 			);
 			path = RVS_UIKit_Toolbox;
@@ -307,6 +310,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D43965C0286C992100727E6A /* RVS_UIKit_Toolbox.swift in Sources */,
+				D413E7B72879986F006C38EF /* Documentation.docc in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -533,7 +537,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.1.2;
+				MARKETING_VERSION = 1.1.3;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.riftvalleysoftware.RVS-UIKit-Toolbox-TestHarness";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTS_MACCATALYST = YES;
@@ -565,7 +569,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.1.2;
+				MARKETING_VERSION = 1.1.3;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.riftvalleysoftware.RVS-UIKit-Toolbox-TestHarness";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTS_MACCATALYST = YES;

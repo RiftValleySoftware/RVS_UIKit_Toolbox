@@ -641,7 +641,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="CbG-db-9Bq">
-                                <rect key="frame" x="20" y="88" width="374" height="725"/>
+                                <rect key="frame" x="20" y="88" width="374" height="676"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="0yA-PG-L5b">
                                         <rect key="frame" x="168.5" y="0.0" width="37.5" height="30"/>
@@ -725,7 +725,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vG2-54-2RS" userLabel="Filler View">
-                                        <rect key="frame" x="0.0" y="124.5" width="374" height="600.5"/>
+                                        <rect key="frame" x="0.0" y="124.5" width="374" height="551.5"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </view>
                                 </subviews>
@@ -749,7 +749,15 @@
                         </connections>
                     </view>
                     <tabBarItem key="tabBarItem" title="SLUG-TAB-1-TITLE" image="circle.fill" catalog="system" id="MXS-wT-AAM"/>
-                    <navigationItem key="navigationItem" id="PDV-sU-nF2"/>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" id="PDV-sU-nF2">
+                        <barButtonItem key="rightBarButtonItem" title="SLUG-NEXT" id="623-jl-WQs">
+                            <connections>
+                                <segue destination="uBk-yh-tGC" kind="show" id="IS1-QP-Dhw"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="editFlagImageView0" destination="TrS-IP-3QM" id="EL9-57-jwY"/>
                         <outlet property="editFlagImageView1" destination="zFg-FU-iy9" id="OUW-u6-fhY"/>
@@ -758,6 +766,7 @@
                         <outlet property="editText1" destination="RMJ-RC-CiD" id="qMK-Ox-HK6"/>
                         <outlet property="editText2" destination="66D-tv-MAx" id="Uke-wL-Z7H"/>
                         <outlet property="navigationLabel" destination="0yA-PG-L5b" id="Ygf-P7-u4n"/>
+                        <outlet property="nextNavBarButton" destination="623-jl-WQs" id="Sk6-W2-L3d"/>
                         <outlet property="responderErrorLabel" destination="VxV-Xz-K97" id="4AT-Pf-9gu"/>
                     </connections>
                 </viewController>

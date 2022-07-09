@@ -54,6 +54,7 @@ The Great Rift Valley Software Company: https://riftvalleysoftware.com
 // MARK: Tab 1->Nav 0 (View Controller)
 "SLUG-PREVIOUS-FORMAT"                                  =   "The Previous Controller is called \"%@.\"";
 "SLUG-RESPONDER-ERROR"                                  =   "The Responder is Wrong!";
+"SLUG-TITLE-FORMAT"                                     =   "Controller %d";
 
 // MARK: Tab 2 (View)
 "SLUG-CORNER-SIZE-SLIDER-LABEL"                         =   "Corner Radius:";
