@@ -170,7 +170,7 @@ Tab 1 (UIViewController) also has a navigation stack, and allows you to open a s
 |![Figure 6](img/Figure-6.png)|
 
 The app is written as if it were a "shipped" app, and has excellent code quality, localization, and clear implementation. It should be an excellent example of use.
-# LICENSE
+## LICENSE
 
 © Copyright 2022, [The Great Rift Valley Software Company](https://riftvalleysoftware.com)
 
