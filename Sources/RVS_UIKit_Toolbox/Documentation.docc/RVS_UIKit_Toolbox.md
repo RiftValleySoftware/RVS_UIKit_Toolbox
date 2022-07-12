@@ -1,10 +1,12 @@
+![Icon](icon.png)
+
 # ``RVS_UIKit_Toolbox``
 
-A set of basic UIKit tools, for Swift iOS app development.
+A set of basic [UIKit](https://developer.apple.com/documentation/uikit) tools, for Swift iOS app development.
 
 ## Overview
 
-This package offers a few extensions of standard [UIKit](https://developer.apple.com/documentation/uikit) classes, in order to abstract some of the more common software tasks.
+This package offers a few extensions of standard UIKit classes, in order to abstract some of the more common software tasks.
 
 ## Implementation
 
@@ -163,9 +165,9 @@ The app is a fairly basic "tabbed" app, that presents 5 tabs; each, correspondin
 
 Tab 1 (UIViewController) also has a navigation stack, and allows you to open a second screen, showing access to the previous view controller, and the responder properties:
 
-|Figure 6: UIViewController Navigation Screen|
-|:----:|
-|![Figure 6](Figure-6.png)|
+|Figure 6: UIViewController Navigation Screen|Figure 7: UIViewController Navigation Screen (With Focus))|Figure 8: UIViewController Navigation Screen (Next Screen))|
+|:----:|:----:|:----:|
+|![Figure 6](Figure-6.png)|![Figure 7](Figure-7.png)|![Figure 8](Figure-8.png)|
 
 The app is written as if it were a "shipped" app, and has excellent code quality, localization, and clear implementation. It should be an excellent example of use.
 ## LICENSE

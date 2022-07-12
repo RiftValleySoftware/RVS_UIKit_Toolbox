@@ -1,3 +1,6 @@
+*Version 1.1.5* **July 12, 2022**
+- Documentation updates only. No API changes.
+
 *Version 1.1.4* **July 9, 2022**
 - Updated the Generic Swift Toolbox Package.
 
