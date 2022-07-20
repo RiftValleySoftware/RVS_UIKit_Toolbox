@@ -50,6 +50,8 @@ The Great Rift Valley Software Company: https://riftvalleysoftware.com
 "SLUG-ERROR-ROOT"                                       =   "There is an error! This is not the root!";
 "SLUG-HAPTICS-YES"                                      =   "Haptics Are Available.";
 "SLUG-HAPTICS-NO"                                       =   "Haptics Are Not Available.";
+"SLUG-ICLOUD-YES"                                       =   "iCloud is Available, and Logged In.";
+"SLUG-ICLOUD-NO"                                        =   "iCloud is Not Available, or is Not Logged In.";
 
 // MARK: Tab 1->Nav 0 (View Controller)
 "SLUG-PREVIOUS-FORMAT"                                  =   "The Previous Controller is called \"%@.\"";

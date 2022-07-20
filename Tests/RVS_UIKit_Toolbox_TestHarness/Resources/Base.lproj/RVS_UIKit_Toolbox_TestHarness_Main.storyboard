@@ -247,8 +247,14 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="awl-C7-NRu">
+                                        <rect key="frame" x="166.5" y="210.5" width="41.5" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Gq5-yl-qbR" userLabel="Filler View">
-                                        <rect key="frame" x="0.0" y="210.5" width="374" height="514.5"/>
+                                        <rect key="frame" x="0.0" y="239" width="374" height="486"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </view>
                                 </subviews>
@@ -279,6 +285,7 @@
                         <outlet property="bioReportLabel" destination="Unu-TF-18e" id="gaf-6K-vKu"/>
                         <outlet property="darkModeLabel" destination="onT-OS-Rxn" id="RY3-iw-3MG"/>
                         <outlet property="highContrastLabel" destination="Yx9-gl-Qug" id="144-zZ-nQd"/>
+                        <outlet property="isICloudAvailableLabel" destination="awl-C7-NRu" id="1B1-Vl-9uz"/>
                         <outlet property="nextNavBarButton" destination="uq3-gX-b8D" id="aL0-bT-7LY"/>
                         <outlet property="reducedTransparencyLabel" destination="35E-53-Wxd" id="vBE-z2-EJU"/>
                         <outlet property="rootViewControllerLabel" destination="QKP-UN-oI1" id="9zE-AX-mPV"/>

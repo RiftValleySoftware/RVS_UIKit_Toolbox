@@ -1,3 +1,6 @@
+*Version 1.2.0* **July 20, 2022**
+- Added the `isICloudAvailable` computed property.
+
 *Version 1.1.5* **July 12, 2022**
 - Documentation updates only. No API changes.
 

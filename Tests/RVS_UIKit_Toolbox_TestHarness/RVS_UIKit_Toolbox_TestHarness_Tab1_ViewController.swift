@@ -77,6 +77,12 @@ class RVS_UIKit_Toolbox_TestHarness_Tab1_ViewController: RVS_UIKit_Toolbox_TestH
      The label that reports whether or not haptics are available.
      */
     @IBOutlet weak var areHapticsAvailableLabel: UILabel?
+
+    /* ################################################################## */
+    /**
+     The label that reports whether or not iCloud is avalable (and logged-in).
+     */
+    @IBOutlet weak var isICloudAvailableLabel: UILabel!
     
     /* ################################################################## */
     /**
@@ -101,10 +107,10 @@ extension RVS_UIKit_Toolbox_TestHarness_Tab1_ViewController {
     
     /* ################################################################## */
     /**
-     Called when the view is about to lay out its subviews.
+     Called when the view is about to appear.
      */
-    override func viewWillLayoutSubviews() {
-        super.viewWillLayoutSubviews()
+    override func viewWillAppear(_ inIsAnimated: Bool) {
+        super.viewWillAppear(inIsAnimated)
         bioReportLabel?.text = "SLUG-BIOREPORT-\((.none == biometricType) ? "NONE" : ((.faceID == biometricType) ? "FACEID" : "TOUCHID"))".localizedVariant
         highContrastLabel?.text = "SLUG-HIGHCONTRAST-\(isHighContrastMode ? "YES" : "NO")".localizedVariant
         reducedTransparencyLabel?.text = "SLUG-REDTRANS-\(isReducedTransparencyMode ? "YES" : "NO")".localizedVariant
@@ -113,5 +119,6 @@ extension RVS_UIKit_Toolbox_TestHarness_Tab1_ViewController {
         voiceoverModeLabel?.text = "SLUG-VMODE-\(isVoiceOverRunning ? "YES" : "NO")".localizedVariant
         rootViewControllerLabel?.text = (nil == previousViewController ? "SLUG-AT-ROOT" : "SLUG-ERROR-ROOT").localizedVariant
         areHapticsAvailableLabel?.text = "SLUG-HAPTICS-\(hapticsAreAvailable ? "YES" : "NO")".localizedVariant
+        isICloudAvailableLabel?.text = "SLUG-ICLOUD-\(isICloudAvailable ? "YES" : "NO")".localizedVariant
     }
 }

@@ -74,6 +74,7 @@ These are defined as "class" properties, so you don't need an instance to use th
 - [`isHighContrastMode`](https://riftvalleysoftware.github.io/RVS_UIKit_Toolbox/Extensions/UIViewController.html#/s:So16UIViewControllerC17RVS_UIKit_ToolboxE18isHighContrastModeSbvpZ)
 - [`isReducedTransparencyMode`](https://riftvalleysoftware.github.io/RVS_UIKit_Toolbox/Extensions/UIViewController.html#/s:So16UIViewControllerC17RVS_UIKit_ToolboxE25isReducedTransparencyModeSbvpZ)
 - [`isVoiceOverRunning`](https://riftvalleysoftware.github.io/RVS_UIKit_Toolbox/Extensions/UIViewController.html#/s:So16UIViewControllerC17RVS_UIKit_ToolboxE18isVoiceOverRunningSbvpZ)
+- [`isICloudAvailable`](https://riftvalleysoftware.github.io/RVS_UIKit_Toolbox/Extensions/UIViewController.html#/s:So16UIViewControllerC17RVS_UIKit_ToolboxE17isICloudAvailableSbvpZ)
 
 ##### System State Flag Instance Computed Properties
 These are instance properties, as opposed to class properties:
@@ -81,6 +82,7 @@ These are instance properties, as opposed to class properties:
 - [`isHighContrastMode`](https://riftvalleysoftware.github.io/RVS_UIKit_Toolbox/Extensions/UIViewController.html#/s:So16UIViewControllerC17RVS_UIKit_ToolboxE18isHighContrastModeSbvp)
 - [`isReducedTransparencyMode`](https://riftvalleysoftware.github.io/RVS_UIKit_Toolbox/Extensions/UIViewController.html#/s:So16UIViewControllerC17RVS_UIKit_ToolboxE25isReducedTransparencyModeSbvp)
 - [`isVoiceOverRunning`](https://riftvalleysoftware.github.io/RVS_UIKit_Toolbox/Extensions/UIViewController.html#/s:So16UIViewControllerC17RVS_UIKit_ToolboxE18isVoiceOverRunningSbvp)
+- [`isICloudAvailable`](https://riftvalleysoftware.github.io/RVS_UIKit_Toolbox/Extensions/UIViewController.html#/s:So16UIViewControllerC17RVS_UIKit_ToolboxE17isICloudAvailableSbvp)
 
 These are only available in instances (not class):
 - [`isDarkMode`](https://riftvalleysoftware.github.io/RVS_UIKit_Toolbox/Extensions/UIViewController.html#/s:So16UIViewControllerC17RVS_UIKit_ToolboxE10isDarkModeSbvp)

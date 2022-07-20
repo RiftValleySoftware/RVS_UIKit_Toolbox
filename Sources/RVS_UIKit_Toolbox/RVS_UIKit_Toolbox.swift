@@ -19,7 +19,7 @@ CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFT
 
 The Great Rift Valley Software Company: https://riftvalleysoftware.com
  
-Version: 1.1.5
+Version: 1.2.0
 */
 
 import UIKit
@@ -130,6 +130,14 @@ public extension UIViewController {
      */
     class var isVoiceOverRunning: Bool { UIAccessibility.isVoiceOverRunning }
 
+    /* ################################################################## */
+    /**
+     Returns true, if iCloud is available, and logged-in.
+     
+     *NOTE: If iCloud is available, but the user is not logged in, this will also return false.*
+     */
+    class var isICloudAvailable: Bool { nil != FileManager.default.ubiquityIdentityToken }
+
     // MARK: System State Flag Instance Computed Properties
     /* ################################################################## */
     /**
@@ -159,7 +167,16 @@ public extension UIViewController {
      Returns true, if voiceover mode is on.
      */
     var isVoiceOverRunning: Bool { Self.isVoiceOverRunning }
-    
+
+    /* ################################################################## */
+    /**
+     Returns true, if iCloud is available, and logged-in.
+     
+     *NOTE: If iCloud is available, but the user is not logged in, this will also return false.*
+     */
+    var isICloudAvailable: Bool { Self.isICloudAvailable }
+
+    // MARK: These are only available in instances
     /* ################################################################## */
     /**
      Returns true, if we are in Dark Mode.
@@ -171,7 +188,7 @@ public extension UIViewController {
      Returns true, if haptics are available.
      */
     var hapticsAreAvailable: Bool { CHHapticEngine.capabilitiesForHardware().supportsHaptics }
-
+    
     // MARK: Device Instance Computed Properties
     /* ################################################################## */
     /**
