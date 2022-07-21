@@ -167,7 +167,7 @@ The app is a fairly basic "tabbed" app, that presents 5 tabs; each, correspondin
 
 Tab 1 (UIViewController) also has a navigation stack, and allows you to open a second screen, showing access to the previous view controller, and the responder properties:
 
-|Figure 6: UIViewController Navigation Screen|Figure 7: UIViewController Navigation Screen (With Focus))|Figure 8: UIViewController Navigation Screen (Next Screen))|
+|Figure 6: UIViewController Navigation Screen|Figure 7: UIViewController Navigation Screen (With Focus)|Figure 8: UIViewController Navigation Screen (Next Screen)|
 |:----:|:----:|:----:|
 |![Figure 6](img/Figure-6.png)|![Figure 7](img/Figure-7.png)|![Figure 8](img/Figure-8.png)|
 
