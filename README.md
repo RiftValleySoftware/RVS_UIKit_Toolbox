@@ -75,6 +75,7 @@ These are defined as "class" properties, so you don't need an instance to use th
 - [`isReducedTransparencyMode`](https://riftvalleysoftware.github.io/RVS_UIKit_Toolbox/Extensions/UIViewController.html#/s:So16UIViewControllerC17RVS_UIKit_ToolboxE25isReducedTransparencyModeSbvpZ)
 - [`isVoiceOverRunning`](https://riftvalleysoftware.github.io/RVS_UIKit_Toolbox/Extensions/UIViewController.html#/s:So16UIViewControllerC17RVS_UIKit_ToolboxE18isVoiceOverRunningSbvpZ)
 - [`isICloudAvailable`](https://riftvalleysoftware.github.io/RVS_UIKit_Toolbox/Extensions/UIViewController.html#/s:So16UIViewControllerC17RVS_UIKit_ToolboxE17isICloudAvailableSbvpZ)
+- [`screenAspect`](https://riftvalleysoftware.github.io/RVS_UIKit_Toolbox/Extensions/UIViewController.html#/s:So16UIViewControllerC17RVS_UIKit_ToolboxE12screenAspect12CoreGraphics7CGFloatVvpZ)
 
 ##### System State Flag Instance Computed Properties
 These are instance properties, as opposed to class properties:
@@ -109,9 +110,6 @@ This method will also end editing for the view controller:
 - [`cornerRadius`](https://riftvalleysoftware.github.io/RVS_UIKit_Toolbox/Extensions/UIView.html#/c:@CM@RVS_UIKit_Toolbox@@objc(cs)UIView(py)cornerRadius)
 - [`borderWidth`](https://riftvalleysoftware.github.io/RVS_UIKit_Toolbox/Extensions/UIView.html#/c:@CM@RVS_UIKit_Toolbox@@objc(cs)UIView(py)borderWidth)
 - [`borderColor`](https://riftvalleysoftware.github.io/RVS_UIKit_Toolbox/Extensions/UIView.html#/c:@CM@RVS_UIKit_Toolbox@@objc(cs)UIView(py)borderColor)
-
-##### Screen Stuff
-- [`screenAspect`](https://riftvalleysoftware.github.io/RVS_UIKit_Toolbox/Extensions/UIView.html#/s:So6UIViewC17RVS_UIKit_ToolboxE12screenAspect12CoreGraphics7CGFloatVvp)
 
 ##### Responder Stuff
 - [`currentFirstResponder`](https://riftvalleysoftware.github.io/RVS_UIKit_Toolbox/Extensions/UIView.html#/s:So6UIViewC17RVS_UIKit_ToolboxE21currentFirstResponderSo11UIResponderCSgvp)

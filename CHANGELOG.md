@@ -1,3 +1,6 @@
+*Version 1.3.2* **July 21, 2022**
+- Documentation fixes only. No API or code changes.
+
 *Version 1.3.1* **July 21, 2022**
 - Fixed an issue with the new class/instance property. It really needs to live in the view controller; not the view.
 

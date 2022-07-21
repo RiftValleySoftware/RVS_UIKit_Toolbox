@@ -1,12 +1,10 @@
-![Icon](icon.png)
-
 # ``RVS_UIKit_Toolbox``
 
-A set of basic [UIKit](https://developer.apple.com/documentation/uikit) tools, for Swift iOS app development.
+A set of basic UIKit tools, for Swift iOS app development.
 
 ## Overview
 
-This package offers a few extensions of standard UIKit classes, in order to abstract some of the more common software tasks.
+This package offers a few extensions of standard [UIKit](https://developer.apple.com/documentation/uikit) classes, in order to abstract some of the more common software tasks.
 
 ## Implementation
 
@@ -74,6 +72,8 @@ These are defined as "class" properties, so you don't need an instance to use th
 - [`isHighContrastMode`](https://riftvalleysoftware.github.io/RVS_UIKit_Toolbox/Extensions/UIViewController.html#/s:So16UIViewControllerC17RVS_UIKit_ToolboxE18isHighContrastModeSbvpZ)
 - [`isReducedTransparencyMode`](https://riftvalleysoftware.github.io/RVS_UIKit_Toolbox/Extensions/UIViewController.html#/s:So16UIViewControllerC17RVS_UIKit_ToolboxE25isReducedTransparencyModeSbvpZ)
 - [`isVoiceOverRunning`](https://riftvalleysoftware.github.io/RVS_UIKit_Toolbox/Extensions/UIViewController.html#/s:So16UIViewControllerC17RVS_UIKit_ToolboxE18isVoiceOverRunningSbvpZ)
+- [`isICloudAvailable`](https://riftvalleysoftware.github.io/RVS_UIKit_Toolbox/Extensions/UIViewController.html#/s:So16UIViewControllerC17RVS_UIKit_ToolboxE17isICloudAvailableSbvpZ)
+- [`screenAspect`](https://riftvalleysoftware.github.io/RVS_UIKit_Toolbox/Extensions/UIViewController.html#/s:So16UIViewControllerC17RVS_UIKit_ToolboxE12screenAspect12CoreGraphics7CGFloatVvpZ)
 
 ##### System State Flag Instance Computed Properties
 These are instance properties, as opposed to class properties:
@@ -81,6 +81,7 @@ These are instance properties, as opposed to class properties:
 - [`isHighContrastMode`](https://riftvalleysoftware.github.io/RVS_UIKit_Toolbox/Extensions/UIViewController.html#/s:So16UIViewControllerC17RVS_UIKit_ToolboxE18isHighContrastModeSbvp)
 - [`isReducedTransparencyMode`](https://riftvalleysoftware.github.io/RVS_UIKit_Toolbox/Extensions/UIViewController.html#/s:So16UIViewControllerC17RVS_UIKit_ToolboxE25isReducedTransparencyModeSbvp)
 - [`isVoiceOverRunning`](https://riftvalleysoftware.github.io/RVS_UIKit_Toolbox/Extensions/UIViewController.html#/s:So16UIViewControllerC17RVS_UIKit_ToolboxE18isVoiceOverRunningSbvp)
+- [`isICloudAvailable`](https://riftvalleysoftware.github.io/RVS_UIKit_Toolbox/Extensions/UIViewController.html#/s:So16UIViewControllerC17RVS_UIKit_ToolboxE17isICloudAvailableSbvp)
 
 These are only available in instances (not class):
 - [`isDarkMode`](https://riftvalleysoftware.github.io/RVS_UIKit_Toolbox/Extensions/UIViewController.html#/s:So16UIViewControllerC17RVS_UIKit_ToolboxE10isDarkModeSbvp)
@@ -107,9 +108,6 @@ This method will also end editing for the view controller:
 - [`cornerRadius`](https://riftvalleysoftware.github.io/RVS_UIKit_Toolbox/Extensions/UIView.html#/c:@CM@RVS_UIKit_Toolbox@@objc(cs)UIView(py)cornerRadius)
 - [`borderWidth`](https://riftvalleysoftware.github.io/RVS_UIKit_Toolbox/Extensions/UIView.html#/c:@CM@RVS_UIKit_Toolbox@@objc(cs)UIView(py)borderWidth)
 - [`borderColor`](https://riftvalleysoftware.github.io/RVS_UIKit_Toolbox/Extensions/UIView.html#/c:@CM@RVS_UIKit_Toolbox@@objc(cs)UIView(py)borderColor)
-
-##### Screen Stuff
-- [`screenAspect`](https://riftvalleysoftware.github.io/RVS_UIKit_Toolbox/Extensions/UIView.html#/s:So6UIViewC17RVS_UIKit_ToolboxE12screenAspect12CoreGraphics7CGFloatVvp)
 
 ##### Responder Stuff
 - [`currentFirstResponder`](https://riftvalleysoftware.github.io/RVS_UIKit_Toolbox/Extensions/UIView.html#/s:So6UIViewC17RVS_UIKit_ToolboxE21currentFirstResponderSo11UIResponderCSgvp)
