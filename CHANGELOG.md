@@ -1,3 +1,6 @@
+*Version 1.3.0* **July 21, 2022**
+- The `screenAspect` computed property was problematic. I changed it to use the main screen. This also gives us a class property.
+
 *Version 1.2.2* **July 21, 2022**
 - Updated the docs. No API or code changes.
 

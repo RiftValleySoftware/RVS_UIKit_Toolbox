@@ -107,10 +107,10 @@ extension RVS_UIKit_Toolbox_TestHarness_Tab1_ViewController {
     
     /* ################################################################## */
     /**
-     Called when the view is about to appear.
+     Called when the view has changed/initialized its layout.
      */
-    override func viewWillAppear(_ inIsAnimated: Bool) {
-        super.viewWillAppear(inIsAnimated)
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
         bioReportLabel?.text = "SLUG-BIOREPORT-\((.none == biometricType) ? "NONE" : ((.faceID == biometricType) ? "FACEID" : "TOUCHID"))".localizedVariant
         highContrastLabel?.text = "SLUG-HIGHCONTRAST-\(isHighContrastMode ? "YES" : "NO")".localizedVariant
         reducedTransparencyLabel?.text = "SLUG-REDTRANS-\(isReducedTransparencyMode ? "YES" : "NO")".localizedVariant

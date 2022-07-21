@@ -19,7 +19,7 @@ CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFT
 
 The Great Rift Valley Software Company: https://riftvalleysoftware.com
  
-Version: 1.2.2
+Version: 1.3.0
 */
 
 import UIKit
@@ -284,9 +284,15 @@ public extension UIView {
     // MARK: Screen Stuff
     /* ################################################################## */
     /**
-     Returns the X/Y aspect of the screen (window). It will return 0, if it cannot determine the aspect.
+     Returns the X/Y aspect of the screen (window). This is a class property.
      */
-    var screenAspect: CGFloat { (window?.bounds.size.width ?? 0) / (window?.bounds.size.height ?? 1) }
+    class var screenAspect: CGFloat { UIScreen.main.bounds.size.width / UIScreen.main.bounds.size.height }
+
+    /* ################################################################## */
+    /**
+     Returns the X/Y aspect of the screen (window). This is an instance property.
+     */
+    var screenAspect: CGFloat { Self.screenAspect }
 
     // MARK: Responder Stuff
     /* ################################################################## */
