@@ -1,3 +1,6 @@
+*Version 1.2.2* **July 21, 2022**
+- Updated the docs. No API or code changes.
+
 *Version 1.2.1* **July 21, 2022**
 - Updated the docs. No API or code changes.
 
