@@ -1,3 +1,6 @@
+*Version 1.3.1* **July 21, 2022**
+- Fixed an issue with the new class/instance property. It really needs to live in the view controller; not the view.
+
 *Version 1.3.0* **July 21, 2022**
 - The `screenAspect` computed property was problematic. I changed it to use the main screen. This also gives us a class property.
 

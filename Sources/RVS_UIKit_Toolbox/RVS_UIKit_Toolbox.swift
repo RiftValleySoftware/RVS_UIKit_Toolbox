@@ -19,7 +19,7 @@ CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFT
 
 The Great Rift Valley Software Company: https://riftvalleysoftware.com
  
-Version: 1.3.0
+Version: 1.3.1
 */
 
 import UIKit
@@ -138,6 +138,12 @@ public extension UIViewController {
      */
     class var isICloudAvailable: Bool { nil != FileManager.default.ubiquityIdentityToken }
 
+    /* ################################################################## */
+    /**
+     Returns the X/Y aspect of the screen (window).
+     */
+    class var screenAspect: CGFloat { UIScreen.main.bounds.size.width / UIScreen.main.bounds.size.height }
+
     // MARK: System State Flag Instance Computed Properties
     /* ################################################################## */
     /**
@@ -192,9 +198,9 @@ public extension UIViewController {
     // MARK: Device Instance Computed Properties
     /* ################################################################## */
     /**
-     Returns the X/Y aspect of the screen (window). It will return 0, if it cannot determine the aspect.
+     Returns the X/Y aspect of the screen (window).
      */
-    var screenAspect: CGFloat { view?.screenAspect ?? 0 }
+    var screenAspect: CGFloat { Self.screenAspect }
 
     // MARK: View Hierarchy Instance Computed Properties
     /* ################################################################## */
@@ -280,19 +286,6 @@ public extension UIView {
             setNeedsDisplay()
         }
     }
-    
-    // MARK: Screen Stuff
-    /* ################################################################## */
-    /**
-     Returns the X/Y aspect of the screen (window). This is a class property.
-     */
-    class var screenAspect: CGFloat { UIScreen.main.bounds.size.width / UIScreen.main.bounds.size.height }
-
-    /* ################################################################## */
-    /**
-     Returns the X/Y aspect of the screen (window). This is an instance property.
-     */
-    var screenAspect: CGFloat { Self.screenAspect }
 
     // MARK: Responder Stuff
     /* ################################################################## */
