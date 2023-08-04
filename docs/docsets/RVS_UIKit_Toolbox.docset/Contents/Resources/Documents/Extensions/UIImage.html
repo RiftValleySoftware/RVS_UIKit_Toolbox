@@ -76,6 +76,81 @@ This mostly has resizing stuff, but also a bit of pixel-level inspection.</p>
           <section class="section task-group-section">
             <div class="task-group">
               <div class="task-name-container">
+                <a name="/Convenience%20Initializers"></a>
+                <a name="//apple_ref/swift/Section/Convenience Initializers" class="dashAnchor"></a>
+                <div class="section-name-container">
+                  <a class="section-name-link" href="#/Convenience%20Initializers"></a>
+                  <h3 class="section-name"><span>Convenience Initializers</span>
+</h3>
+                </div>
+              </div>
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:So7UIImageC17RVS_UIKit_ToolboxE5color4sizeABSgSo7UIColorC_So6CGSizeVtcfc"></a>
+                    <a name="//apple_ref/swift/Method/init(color:size:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:So7UIImageC17RVS_UIKit_ToolboxE5color4sizeABSgSo7UIColorC_So6CGSizeVtcfc">init(color:<wbr>size:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>This convenience initializer allows us to create a solid rectangular image, of just one color.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">convenience</span> <span class="nf">init</span><span class="p">?(</span><span class="n">color</span> <span class="nv">inColor</span><span class="p">:</span> <span class="kt">UIColor</span><span class="p">,</span> <span class="n">size</span> <span class="nv">inSize</span><span class="p">:</span> <span class="kt">CGSize</span> <span class="o">=</span> <span class="kt">CGSize</span><span class="p">(</span><span class="nv">width</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="nv">height</span><span class="p">:</span> <span class="mi">1</span><span class="p">))</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>color</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The color to use as a fill.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>size</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The size of the image. This is optional. If not provided, the image will be 1-pixel square.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>A new instance (or nil) of an image filled with the color.</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
                 <a name="/Class%20Functions"></a>
                 <a name="//apple_ref/swift/Section/Class Functions" class="dashAnchor"></a>
                 <div class="section-name-container">
@@ -262,9 +337,9 @@ This mostly has resizing stuff, but also a bit of pixel-level inspection.</p>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:So7UIImageC17RVS_UIKit_ToolboxE7resized13toMaximumSizeABSg12CoreGraphics7CGFloatV_tF"></a>
+                    <a name="/s:So7UIImageC17RVS_UIKit_ToolboxE7resized13toMaximumSizeABSg14CoreFoundation7CGFloatV_tF"></a>
                     <a name="//apple_ref/swift/Method/resized(toMaximumSize:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:So7UIImageC17RVS_UIKit_ToolboxE7resized13toMaximumSizeABSg12CoreGraphics7CGFloatV_tF">resized(toMaximumSize:<wbr>)</a>
+                    <a class="token" href="#/s:So7UIImageC17RVS_UIKit_ToolboxE7resized13toMaximumSizeABSg14CoreFoundation7CGFloatV_tF">resized(toMaximumSize:<wbr>)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -313,9 +388,9 @@ If the image is currently smaller than the maximum size, it will not be scaled.<
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:So7UIImageC17RVS_UIKit_ToolboxE7resized13toScaleFactorABSg12CoreGraphics7CGFloatV_tF"></a>
+                    <a name="/s:So7UIImageC17RVS_UIKit_ToolboxE7resized13toScaleFactorABSg14CoreFoundation7CGFloatV_tF"></a>
                     <a name="//apple_ref/swift/Method/resized(toScaleFactor:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:So7UIImageC17RVS_UIKit_ToolboxE7resized13toScaleFactorABSg12CoreGraphics7CGFloatV_tF">resized(toScaleFactor:<wbr>)</a>
+                    <a class="token" href="#/s:So7UIImageC17RVS_UIKit_ToolboxE7resized13toScaleFactorABSg14CoreFoundation7CGFloatV_tF">resized(toScaleFactor:<wbr>)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -363,9 +438,9 @@ If the image is currently smaller than the maximum size, it will not be scaled.<
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:So7UIImageC17RVS_UIKit_ToolboxE7resized10toNewWidth0fG6HeightABSg12CoreGraphics7CGFloatVSg_AKtF"></a>
+                    <a name="/s:So7UIImageC17RVS_UIKit_ToolboxE7resized10toNewWidth0fG6HeightABSg14CoreFoundation7CGFloatVSg_AKtF"></a>
                     <a name="//apple_ref/swift/Method/resized(toNewWidth:toNewHeight:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:So7UIImageC17RVS_UIKit_ToolboxE7resized10toNewWidth0fG6HeightABSg12CoreGraphics7CGFloatVSg_AKtF">resized(toNewWidth:<wbr>toNewHeight:<wbr>)</a>
+                    <a class="token" href="#/s:So7UIImageC17RVS_UIKit_ToolboxE7resized10toNewWidth0fG6HeightABSg14CoreFoundation7CGFloatVSg_AKtF">resized(toNewWidth:<wbr>toNewHeight:<wbr>)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -428,7 +503,7 @@ If the image is currently smaller than the maximum size, it will not be scaled.<
         </section>
         <section id="footer">
           <p><a class="link" href="https://riftvalleysoftware.com" target="_blank" rel="external noopener">©2022 The Great Rift Valley Software Company</a></p>
-          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external noopener">jazzy ♪♫ v0.14.2</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external noopener">Realm</a> project.</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external noopener">jazzy ♪♫ v0.14.3</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external noopener">Realm</a> project.</p>
         </section>
       </article>
     </div>

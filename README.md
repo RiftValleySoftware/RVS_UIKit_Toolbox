@@ -124,8 +124,11 @@ This method will also end editing for the view controller:
 ##### Class Functions
 - [`assetOrSystemImage(name:))`](https://riftvalleysoftware.github.io/RVS_UIKit_Toolbox/Extensions/UIImage.html#/s:So7UIImageC17RVS_UIKit_ToolboxE18assetOrSystemImage4nameABSgSS_tFZ)
 
+##### Convenience Initializers
+- [`init(color:)`](https://riftvalleysoftware.github.io/RVS_UIKit_Toolbox/docs/Extensions/UIImage.html#/s:So7UIImageC17RVS_UIKit_ToolboxE5color4sizeABSgSo7UIColorC_So6CGSizeVtcfc)
+
 ##### Image Composition Instance Computed Properties
-- [`hasAlphaInformation`](https://riftvalleysoftware.github.io/RVS_UIKit_Toolbox/Extensions/UIImage.html#/s:So7UIImageC17RVS_UIKit_ToolboxE19hasAlphaInformationSbvp)
+- [`hasAlphaInformation`](https://riftvalleysoftware.github.io/RVS_UIKit_Toolbox/docs/Extensions/UIImage.html#/s:So7UIImageC17RVS_UIKit_ToolboxE19hasAlphaInformationSbvp)
 
 ##### Pixel Information Instance Methods
 - [`getRGBColorOfThePixel(at:)`](https://riftvalleysoftware.github.io/RVS_UIKit_Toolbox/Extensions/UIImage.html#/s:So7UIImageC17RVS_UIKit_ToolboxE21getRGBColorOfThePixel2atSo7UIColorCSgSo7CGPointV_tF)

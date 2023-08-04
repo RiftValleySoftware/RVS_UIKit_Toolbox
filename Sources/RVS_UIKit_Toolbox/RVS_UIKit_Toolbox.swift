@@ -19,7 +19,7 @@ CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFT
 
 The Great Rift Valley Software Company: https://riftvalleysoftware.com
  
-Version: 1.4.0
+Version: 1.4.1
 */
 
 import UIKit
@@ -367,29 +367,6 @@ public extension UIView {
  This mostly has resizing stuff, but also a bit of pixel-level inspection.
  */
 public extension UIImage {
-    // MARK: Class Functions
-    /* ################################################################## */
-    /**
-     This is a "cascading" image fetcher. It first, ses if there is an asset with the name given, then, it looks in the SFSymbols, finally, returning the SFSymbols.nosign, if none found.
-     
-     - parameter name: The name of the resource.
-     
-     - returns: A new image. May be nil, if none found.
-     */
-    class func assetOrSystemImage(name inName: String) -> UIImage? { UIImage(named: inName) ?? UIImage(systemName: inName) ?? UIImage(systemName: "nosign") }
-    
-    // MARK: Image Composition Instance Computed Properties
-    /* ################################################################## */
-    /**
-     - returns: True, if the image has an alpha component.
-                **NOTE:** The Photos app seems to have a bug, where it won't see alpha information of monchrome (black and white) PNG images with alpha channels.
-     */
-    var hasAlphaInformation: Bool {
-        guard let cgImage = cgImage else { return false }
-        let alpha = cgImage.alphaInfo
-        return alpha == .first || alpha == .last || alpha == .premultipliedFirst || alpha == .premultipliedLast
-    }
-    
     // MARK: Convenience Initializers
     /* ################################################################## */
     /**
@@ -415,6 +392,29 @@ public extension UIImage {
         self.init(cgImage: cgImage)
     }
 
+    // MARK: Class Functions
+    /* ################################################################## */
+    /**
+     This is a "cascading" image fetcher. It first, ses if there is an asset with the name given, then, it looks in the SFSymbols, finally, returning the SFSymbols.nosign, if none found.
+     
+     - parameter name: The name of the resource.
+     
+     - returns: A new image. May be nil, if none found.
+     */
+    class func assetOrSystemImage(name inName: String) -> UIImage? { UIImage(named: inName) ?? UIImage(systemName: inName) ?? UIImage(systemName: "nosign") }
+    
+    // MARK: Image Composition Instance Computed Properties
+    /* ################################################################## */
+    /**
+     - returns: True, if the image has an alpha component.
+                **NOTE:** The Photos app seems to have a bug, where it won't see alpha information of monchrome (black and white) PNG images with alpha channels.
+     */
+    var hasAlphaInformation: Bool {
+        guard let cgImage = cgImage else { return false }
+        let alpha = cgImage.alphaInfo
+        return alpha == .first || alpha == .last || alpha == .premultipliedFirst || alpha == .premultipliedLast
+    }
+    
     // MARK: Pixel Information Instance Methods
     /* ################################################################## */
     /**

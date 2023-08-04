@@ -1,3 +1,6 @@
+*Version 1.4.1* **August 4, 2023**
+- Documentation updates.
+
 *Version 1.4.0* **August 4, 2023**
 - Added a color image generator to the UIImage extension.
 
