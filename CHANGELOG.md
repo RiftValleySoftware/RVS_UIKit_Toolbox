@@ -1,3 +1,6 @@
+*Version 1.4.0* **August 4, 2023**
+- Added a color image generator to the UIImage extension.
+
 *Version 1.3.4* **October 6, 2022**
 - Updated the test harness dependency. No API changes.
 

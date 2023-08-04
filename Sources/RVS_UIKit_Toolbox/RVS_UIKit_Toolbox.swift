@@ -19,7 +19,7 @@ CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFT
 
 The Great Rift Valley Software Company: https://riftvalleysoftware.com
  
-Version: 1.3.4
+Version: 1.4.0
 */
 
 import UIKit
@@ -390,6 +390,31 @@ public extension UIImage {
         return alpha == .first || alpha == .last || alpha == .premultipliedFirst || alpha == .premultipliedLast
     }
     
+    // MARK: Convenience Initializers
+    /* ################################################################## */
+    /**
+     This convenience initializer allows us to create a solid rectangular image, of just one color.
+     
+     - parameter color: The color to use as a fill.
+     - parameter size: The size of the image. This is optional. If not provided, the image will be 1-pixel square.
+     - returns: A new instance (or nil) of an image filled with the color.
+     */
+    convenience init?(color inColor: UIColor, size inSize: CGSize = CGSize(width: 1, height: 1)) {
+        guard 0 < inSize.width,
+              0 < inSize.height
+        else { return nil }
+        
+        UIGraphicsBeginImageContextWithOptions(inSize, false, 0)
+        inColor.setFill()
+        UIRectFill(CGRect(origin: .zero, size: inSize))
+        let colorBlock = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+      
+        guard let cgImage = colorBlock?.cgImage else { return nil }
+        
+        self.init(cgImage: cgImage)
+    }
+
     // MARK: Pixel Information Instance Methods
     /* ################################################################## */
     /**
