@@ -1,3 +1,6 @@
+*Version 1.4.2* **August 4, 2023**
+- Documentation fixes.
+
 *Version 1.4.1* **August 4, 2023**
 - Documentation updates.
 
