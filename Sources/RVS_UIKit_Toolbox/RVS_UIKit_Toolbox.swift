@@ -19,7 +19,7 @@ CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFT
 
 The Great Rift Valley Software Company: https://riftvalleysoftware.com
  
-Version: 1.4.1
+Version: 1.4.3
 */
 
 import UIKit
@@ -382,14 +382,15 @@ public extension UIImage {
         else { return nil }
         
         UIGraphicsBeginImageContextWithOptions(inSize, false, 0)
-        inColor.setFill()
-        UIRectFill(CGRect(origin: .zero, size: inSize))
-        let colorBlock = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsGetCurrentContext()?.setFillColor(inColor.cgColor)
+        UIGraphicsGetCurrentContext()?.fill(CGRect(origin: .zero, size: inSize))
+        let colorImage = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
       
-        guard let cgImage = colorBlock?.cgImage else { return nil }
+        guard let cgImage = colorImage?.cgImage else { return nil }
         
-        self.init(cgImage: cgImage)
+        // The reason for the scale hijinx, is because the graphics context sometimes sets itself up at an optimized size, and we may need to adjust the result.
+        self.init(cgImage: cgImage, scale: CGFloat(cgImage.width) / inSize.width, orientation: .up)
     }
 
     // MARK: Class Functions

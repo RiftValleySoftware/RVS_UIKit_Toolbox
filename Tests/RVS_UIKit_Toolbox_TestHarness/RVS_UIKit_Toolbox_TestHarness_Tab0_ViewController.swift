@@ -32,6 +32,12 @@ import RVS_Generic_Swift_Toolbox
 class RVS_UIKit_Toolbox_TestHarness_Tab0_ViewController: RVS_UIKit_Toolbox_TestHarness_Base_Tabs_ViewController {
     /* ################################################################## */
     /**
+     This is the square size for each of the color images.
+     */
+    private static let _colorImageSizeInDisplayUnits = CGFloat(16)
+    
+    /* ################################################################## */
+    /**
      The label for the background color segmented switch.
      */
     @IBOutlet weak var backgroundColorSwitchLabel: UILabel?
@@ -84,7 +90,7 @@ extension RVS_UIKit_Toolbox_TestHarness_Tab0_ViewController {
                let image = UIImage(systemName: "square")?.withTintColor(.black) {
                 backgroundColorSegmentedSwitch?.setImage(image.withRenderingMode(.alwaysOriginal), forSegmentAt: index)
             } else if let color = UIColor(named: "Tint-\(index)"),
-               let image = UIImage(systemName: "square.fill")?.withTintColor(color) {
+                      let image = UIImage(color: color)?.resized(toNewWidth: Self._colorImageSizeInDisplayUnits) {  // We test the 1 X 1 default, here.
                 backgroundColorSegmentedSwitch?.setImage(image.withRenderingMode(.alwaysOriginal), forSegmentAt: index)
             }
         }
@@ -95,7 +101,7 @@ extension RVS_UIKit_Toolbox_TestHarness_Tab0_ViewController {
                let image = UIImage(systemName: "square")?.withTintColor(.black) {
                 selectedColorSegmentedSwitch?.setImage(image.withRenderingMode(.alwaysOriginal), forSegmentAt: index)
             } else if let color = UIColor(named: "Tint-\(index)"),
-               let image = UIImage(systemName: "square.fill")?.withTintColor(color) {
+                      let image = UIImage(color: color, size: CGSize(width: Self._colorImageSizeInDisplayUnits, height: Self._colorImageSizeInDisplayUnits)) {
                 selectedColorSegmentedSwitch?.setImage(image.withRenderingMode(.alwaysOriginal), forSegmentAt: index)
             }
         }
@@ -106,7 +112,7 @@ extension RVS_UIKit_Toolbox_TestHarness_Tab0_ViewController {
                let image = UIImage(systemName: "square")?.withTintColor(.black) {
                 normalColorSegmentedSwitch?.setImage(image.withRenderingMode(.alwaysOriginal), forSegmentAt: index)
             } else if let color = UIColor(named: "Tint-\(index)"),
-               let image = UIImage(systemName: "square.fill")?.withTintColor(color) {
+               let image = UIImage(color: color, size: CGSize(width: Self._colorImageSizeInDisplayUnits, height: Self._colorImageSizeInDisplayUnits)) {
                 normalColorSegmentedSwitch?.setImage(image.withRenderingMode(.alwaysOriginal), forSegmentAt: index)
             }
         }
