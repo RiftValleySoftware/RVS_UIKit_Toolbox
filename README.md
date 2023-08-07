@@ -134,9 +134,9 @@ This method will also end editing for the view controller:
 - [`getRGBColorOfThePixel(at:)`](https://riftvalleysoftware.github.io/RVS_UIKit_Toolbox/Extensions/UIImage.html#/s:So7UIImageC17RVS_UIKit_ToolboxE21getRGBColorOfThePixel2atSo7UIColorCSgSo7CGPointV_tF)
 
 ##### Sizing Instance Methods
-- [`resized(toMaximumSize:)`](https://riftvalleysoftware.github.io/RVS_UIKit_Toolbox/Extensions/UIImage.html#/s:So7UIImageC17RVS_UIKit_ToolboxE7resized13toMaximumSizeABSg12CoreGraphics7CGFloatV_tF)
-- [`resized(toScaleFactor:)`](https://riftvalleysoftware.github.io/RVS_UIKit_Toolbox/Extensions/UIImage.html#/s:So7UIImageC17RVS_UIKit_ToolboxE7resized13toScaleFactorABSg12CoreGraphics7CGFloatV_tF)
-- [`resized(toNewWidth:toNewHeight:)`](https://riftvalleysoftware.github.io/RVS_UIKit_Toolbox/Extensions/UIImage.html#/s:So7UIImageC17RVS_UIKit_ToolboxE7resized10toNewWidth0fG6HeightABSg12CoreGraphics7CGFloatVSg_AKtF)
+- [`resized(toMaximumSize:)`](https://riftvalleysoftware.github.io/RVS_UIKit_Toolbox/Extensions/UIImage.html#/s:So7UIImageC17RVS_UIKit_ToolboxE7resized13toMaximumSizeABSg14CoreFoundation7CGFloatV_tF)
+- [`resized(toScaleFactor:)`](https://riftvalleysoftware.github.io/RVS_UIKit_Toolbox/Extensions/UIImage.html#/s:So7UIImageC17RVS_UIKit_ToolboxE7resized13toScaleFactorABSg14CoreFoundation7CGFloatV_tF)
+- [`resized(toNewWidth:toNewHeight:)`](https://riftvalleysoftware.github.io/RVS_UIKit_Toolbox/Extensions/UIImage.html#/s:So7UIImageC17RVS_UIKit_ToolboxE7resized10toNewWidth0fG6HeightABSg14CoreFoundation7CGFloatVSg_AKtF)
 
 #### [`UIColor`](https://riftvalleysoftware.github.io/RVS_UIKit_Toolbox/Extensions/UIColor.html)
 
