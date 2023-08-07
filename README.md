@@ -91,7 +91,7 @@ These are only available in instances (not class):
 
 ##### Device Instance Computed Properties
 This is a property that returns the aspect of the device screen:
-- [`screenAspect`](https://riftvalleysoftware.github.io/RVS_UIKit_Toolbox/Extensions/UIViewController.html#/s:So16UIViewControllerC17RVS_UIKit_ToolboxE12screenAspect12CoreGraphics7CGFloatVvp)
+- [`screenAspect`](https://riftvalleysoftware.github.io/RVS_UIKit_Toolbox/Extensions/UIViewController.html#/s:So16UIViewControllerC17RVS_UIKit_ToolboxE12screenAspect14CoreFoundation7CGFloatVvp)
 
 ##### View Hierarchy Instance Computed Properties
 This will return the view controller immediately "under" this one, in a navigation stack:
