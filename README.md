@@ -147,8 +147,8 @@ This method will also end editing for the view controller:
 - [`hexValue`](https://riftvalleysoftware.github.io/RVS_UIKit_Toolbox/Extensions/UIColor.html#/s:So7UIColorC17RVS_UIKit_ToolboxE8hexValueSSvp)
 - [`isClear`](https://riftvalleysoftware.github.io/RVS_UIKit_Toolbox/Extensions/UIColor.html#/s:So7UIColorC17RVS_UIKit_ToolboxE7isClearSbvp)
 - [`isMonochrome`](https://riftvalleysoftware.github.io/RVS_UIKit_Toolbox/Extensions/UIColor.html#/s:So7UIColorC17RVS_UIKit_ToolboxE12isMonochromeSbvp)
-- [`rgba`](https://riftvalleysoftware.github.io/RVS_UIKit_Toolbox/Extensions/UIColor.html#/s:So7UIColorC17RVS_UIKit_ToolboxE4rgba12CoreGraphics7CGFloatV1r_AG1gAG1bAG1atvp)
-- [`hsba`](https://riftvalleysoftware.github.io/RVS_UIKit_Toolbox/Extensions/UIColor.html#/s:So7UIColorC17RVS_UIKit_ToolboxE4hsba12CoreGraphics7CGFloatV1h_AG1sAG1bAG1atvp)
+- [`rgba`](https://riftvalleysoftware.github.io/RVS_UIKit_Toolbox/Extensions/UIColor.html#/s:So7UIColorC17RVS_UIKit_ToolboxE4rgba14CoreFoundation7CGFloatV1r_AG1gAG1bAG1atvp)
+- [`hsba`](https://riftvalleysoftware.github.io/RVS_UIKit_Toolbox/Extensions/UIColor.html#/s:So7UIColorC17RVS_UIKit_ToolboxE4hsba14CoreFoundation7CGFloatV1h_AG1sAG1bAG1atvp)
 - [`inverted`](https://riftvalleysoftware.github.io/RVS_UIKit_Toolbox/Extensions/UIColor.html#/s:So7UIColorC17RVS_UIKit_ToolboxE8invertedABvp)
 
 ##### Color Computation Instance Methods
