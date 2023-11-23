@@ -19,7 +19,7 @@ CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFT
 
 The Great Rift Valley Software Company: https://riftvalleysoftware.com
  
-Version: 1.4.3
+Version: 1.4.4
 */
 
 import UIKit
@@ -98,18 +98,28 @@ public extension UIViewController {
     /**
      Get the biometric authentication type.
      
+     This is inspired by [this SO answer](https://stackoverflow.com/a/49551177/879365)
+     
      Possible Values:
         - .none (no biometrics)
         - .touchID (Touch ID)
         - .faceID (Face ID)
      */
     class var biometricType: LABiometryType {
-        let authenticationContext = LAContext()
+        let laContext = LAContext()
         var error: NSError?
-        
-        guard authenticationContext.canEvaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, error: &error) else { return .none }
+        let evaluated = laContext.canEvaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, error: &error)
 
-        return authenticationContext.biometryType
+        guard nil == error else { return .none }
+
+        if #available(iOS 11.0, *) {
+            if .faceID == laContext.biometryType { return .faceID }
+            if .touchID == laContext.biometryType { return .touchID }
+        } else if evaluated {
+            return .touchID
+        }
+        
+        return .none
     }
     
     /* ################################################################## */

@@ -1,3 +1,6 @@
+*Version 1.4.4* **November 23, 2023**
+- Tweaked the biometric type computed property, to be a bit more robust.
+
 *Version 1.4.2* **August 6, 2023**
 - Fixed an issue with the new UIImage(color:) extension. It wasn't rendering at the correct size.
 - Added tests for the new UIImage extension into the test harness (the first tab actually tests it).
