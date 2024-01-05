@@ -11,6 +11,9 @@
          location = "group:CHANGELOG.md">
       </FileRef>
       <FileRef
+         location = "group:PRIVACY.md">
+      </FileRef>
+      <FileRef
          location = "group:jazzy.command">
       </FileRef>
       <FileRef

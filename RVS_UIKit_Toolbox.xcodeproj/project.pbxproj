@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D4069A9F2B484C2D00BD934C /* RVS_UIKit_Toolbox.swift in Sources */ = {isa = PBXBuildFile; fileRef = D43965BF286C992100727E6A /* RVS_UIKit_Toolbox.swift */; };
 		D40B98FB287330D10027956D /* RVS_UIKit_Toolbox_TestHarness_Tab4_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D40B98FA287330D10027956D /* RVS_UIKit_Toolbox_TestHarness_Tab4_ViewController.swift */; };
 		D413E7B72879986F006C38EF /* Documentation.docc in Sources */ = {isa = PBXBuildFile; fileRef = D413E7B62879986F006C38EF /* Documentation.docc */; };
 		D4353A0128707D680098949F /* RVS_Generic_Swift_Toolbox in Frameworks */ = {isa = PBXBuildFile; productRef = D4353A0028707D680098949F /* RVS_Generic_Swift_Toolbox */; };
@@ -22,19 +23,11 @@
 		D4499DCA2870881A00D53B7A /* RVS_UIKit_Toolbox_TestHarness_Tab2_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4499DC92870881A00D53B7A /* RVS_UIKit_Toolbox_TestHarness_Tab2_ViewController.swift */; };
 		D4CD86AA2870CF2300AFD67E /* RVS_UIKit_Toolbox_TestHarness_TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4CD86A92870CF2300AFD67E /* RVS_UIKit_Toolbox_TestHarness_TabBarController.swift */; };
 		D4F653122870F4D5001AF462 /* RVS_UIKit_Toolbox_TestHarness_Tab3_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4F653112870F4D5001AF462 /* RVS_UIKit_Toolbox_TestHarness_Tab3_ViewController.swift */; };
-		D4F65315287103A4001AF462 /* libRVS_UIKit_Toolbox.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D43965BC286C992100727E6A /* libRVS_UIKit_Toolbox.a */; };
 		D4F8DD7C2872315A00081E59 /* RVS_UIKit_Toolbox_TestHarness_Tab1_Nav0_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4F8DD7B2872315A00081E59 /* RVS_UIKit_Toolbox_TestHarness_Tab1_Nav0_ViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		D4F653132871037E001AF462 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = D43965B4286C992100727E6A /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = D43965BB286C992100727E6A;
-			remoteInfo = RVS_UIKit_Toolbox;
-		};
-		D4F65316287103A4001AF462 /* PBXContainerItemProxy */ = {
+		D4069A9D2B4848EC00BD934C /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D43965B4286C992100727E6A /* Project object */;
 			proxyType = 1;
@@ -71,7 +64,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D4F65315287103A4001AF462 /* libRVS_UIKit_Toolbox.a in Frameworks */,
 				D4353A0128707D680098949F /* RVS_Generic_Swift_Toolbox in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -176,7 +168,6 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D43965C3286C992100727E6A /* Build configuration list for PBXNativeTarget "RVS_UIKit_Toolbox" */;
 			buildPhases = (
-				D43965EB286C9CD400727E6A /* SwiftLint */,
 				D43965B8286C992100727E6A /* Sources */,
 			);
 			buildRules = (
@@ -192,7 +183,6 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D43965DE286C999B00727E6A /* Build configuration list for PBXNativeTarget "RVS_UIKit_Toolbox_TestHarness" */;
 			buildPhases = (
-				D43965EC286C9CF300727E6A /* SwiftLint */,
 				D43965C9286C999A00727E6A /* Sources */,
 				D43965CA286C999A00727E6A /* Frameworks */,
 				D43965CB286C999A00727E6A /* Resources */,
@@ -200,8 +190,7 @@
 			buildRules = (
 			);
 			dependencies = (
-				D4F653142871037E001AF462 /* PBXTargetDependency */,
-				D4F65317287103A4001AF462 /* PBXTargetDependency */,
+				D4069A9E2B4848EC00BD934C /* PBXTargetDependency */,
 			);
 			name = RVS_UIKit_Toolbox_TestHarness;
 			packageProductDependencies = (
@@ -219,7 +208,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1340;
-				LastUpgradeCheck = 1400;
+				LastUpgradeCheck = 1510;
 				TargetAttributes = {
 					D43965BB286C992100727E6A = {
 						CreatedOnToolsVersion = 13.4.1;
@@ -265,47 +254,6 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
-/* Begin PBXShellScriptBuildPhase section */
-		D43965EB286C9CD400727E6A /* SwiftLint */ = {
-			isa = PBXShellScriptBuildPhase;
-			alwaysOutOfDate = 1;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-			);
-			name = SwiftLint;
-			outputFileListPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "if command -v swiftlint\nthen\n    swiftlint\nfi\n";
-		};
-		D43965EC286C9CF300727E6A /* SwiftLint */ = {
-			isa = PBXShellScriptBuildPhase;
-			alwaysOutOfDate = 1;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-			);
-			name = SwiftLint;
-			outputFileListPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "if command -v swiftlint\nthen\n    swiftlint\nfi\n";
-		};
-/* End PBXShellScriptBuildPhase section */
-
 /* Begin PBXSourcesBuildPhase section */
 		D43965B8286C992100727E6A /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -326,6 +274,7 @@
 				D4CD86AA2870CF2300AFD67E /* RVS_UIKit_Toolbox_TestHarness_TabBarController.swift in Sources */,
 				D43965D0286C999A00727E6A /* RVS_UIKit_Toolbox_TestHarness_AppSceneDelegate.swift in Sources */,
 				D4499DCA2870881A00D53B7A /* RVS_UIKit_Toolbox_TestHarness_Tab2_ViewController.swift in Sources */,
+				D4069A9F2B484C2D00BD934C /* RVS_UIKit_Toolbox.swift in Sources */,
 				D4F653122870F4D5001AF462 /* RVS_UIKit_Toolbox_TestHarness_Tab3_ViewController.swift in Sources */,
 				D4353A0328707DD00098949F /* RVS_UIKit_Toolbox_TestHarness_Base_Tabs_ViewController.swift in Sources */,
 				D40B98FB287330D10027956D /* RVS_UIKit_Toolbox_TestHarness_Tab4_ViewController.swift in Sources */,
@@ -335,15 +284,10 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		D4F653142871037E001AF462 /* PBXTargetDependency */ = {
+		D4069A9E2B4848EC00BD934C /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = D43965BB286C992100727E6A /* RVS_UIKit_Toolbox */;
-			targetProxy = D4F653132871037E001AF462 /* PBXContainerItemProxy */;
-		};
-		D4F65317287103A4001AF462 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = D43965BB286C992100727E6A /* RVS_UIKit_Toolbox */;
-			targetProxy = D4F65316287103A4001AF462 /* PBXContainerItemProxy */;
+			targetProxy = D4069A9D2B4848EC00BD934C /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -412,6 +356,7 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -473,6 +418,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;

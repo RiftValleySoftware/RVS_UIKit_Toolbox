@@ -63,6 +63,7 @@ The Great Rift Valley Software Company: https://riftvalleysoftware.com
 "SLUG-BORDER-WIDTH-SLIDER-LABEL"                        =   "Border Width:";
 "SLUG-BORDER-COLOR-SWITCH-LABEL"                        =   "Border Color:";
 "SLUG-ADD-CONTAINED-VIEW-BUTTON"                        =   "Add Contained View";
+"SLUG-PLACEHOLDER-TEXT"                                 =   "RVS_PlaceholderTextView Placeholder Text";
 
 // MARK: Tab 3 (Image)
 "SLUG-JPEG-IMAGE-NAME"                                  =   "Cat";
