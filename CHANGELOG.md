@@ -1,3 +1,7 @@
+*Version 1.5.2* **January 5, 2024**
+- Re-added the `RVS_PlaceholderTextView` class (It was PEBCAK).
+- Updated to the latest generic toolbox dependency.
+
 *Version 1.5.1* **January 5, 2024**
 - Removed the `RVS_PlaceholderTextView` class (It was too problematic).
 

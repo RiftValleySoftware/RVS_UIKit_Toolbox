@@ -19,7 +19,7 @@ CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFT
 
 The Great Rift Valley Software Company: https://riftvalleysoftware.com
  
-Version: 1.5.1
+Version: 1.5.2
 */
 
 import UIKit
@@ -716,13 +716,78 @@ public extension UIColor {
 public class RVS_PlaceholderTextView: UITextView {
     /* ################################################################## */
     /**
+     This is how many display units to inset the placeholder from the left margin.
+     */
+    static private let _leftInsetInDisplayUnits = CGFloat(5)
+    
+    /* ################################################################## */
+    /**
      This is a placeholder text label for the text view (which doesn't naturally have one).
      */
-    private weak var _placeholderLabel: UILabel?
+    private let _placeholderLabel = UILabel()
     
     /* ################################################################## */
     /**
      This is the string that is displayed in the placeholder label. Default is empty.
      */
     @IBInspectable public var placeholder: String = ""
+    
+    /* ################################################################## */
+    /**
+     In our deinitializer, we make sure to remove the observer.
+     */
+    deinit {
+        NotificationCenter.default.removeObserver(self,
+                                                  name: UITextView.textDidChangeNotification,
+                                                  object: self
+        )
+    }
+}
+
+/* ###################################################################################################################################### */
+// MARK: Private Callbacks
+/* ###################################################################################################################################### */
+public extension RVS_PlaceholderTextView {
+    /* ################################################################## */
+    /**
+     This is called whenever text changes. We use this to hide or show the placeholder.
+     - parameter: Ignored (the notification).
+     */
+    @objc private func _textViewChanged(_: Notification) {
+        _placeholderLabel.isHidden = !(text ?? "").isEmpty
+    }
+}
+
+/* ###################################################################################################################################### */
+// MARK: Base Class Overrides
+/* ###################################################################################################################################### */
+public extension RVS_PlaceholderTextView {
+    /* ################################################################## */
+    /**
+     When we do our layout, we add the placeholder view.
+     */
+    override func layoutSubviews() {
+        super.layoutSubviews()
+
+        // If we already have it up, then we can skip the rest.
+        guard !subviews.contains(_placeholderLabel),
+              let pointSize = font?.pointSize
+        else { return }
+
+        addSubview(_placeholderLabel)
+        _placeholderLabel.translatesAutoresizingMaskIntoConstraints = false
+        _placeholderLabel.topAnchor.constraint(equalTo: topAnchor, constant: pointSize / 2).isActive = true
+        _placeholderLabel.leftAnchor.constraint(equalTo: leftAnchor, constant: Self._leftInsetInDisplayUnits).isActive = true
+        _placeholderLabel.font = font
+        _placeholderLabel.textColor = .tertiaryLabel
+        _placeholderLabel.sizeToFit()
+        _placeholderLabel.text = placeholder
+        _placeholderLabel.isHidden = !(text ?? "").isEmpty
+        // We detect changes, by observing for them.
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(_textViewChanged(_:)),
+                                               name: UITextView.textDidChangeNotification,
+                                               object: self
+        )
+    }
 }

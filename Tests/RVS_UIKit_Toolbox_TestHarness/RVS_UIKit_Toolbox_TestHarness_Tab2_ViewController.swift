@@ -22,6 +22,7 @@ The Great Rift Valley Software Company: https://riftvalleysoftware.com
 
 import UIKit
 import RVS_Generic_Swift_Toolbox
+import RVS_UIKit_Toolbox
 
 /* ###################################################################################################################################### */
 // MARK: - UIView Extension Test Harness View Controller -
@@ -89,6 +90,12 @@ class RVS_UIKit_Toolbox_TestHarness_Tab2_ViewController: RVS_UIKit_Toolbox_TestH
      This button will add a new view to the auto-layout container.
      */
     @IBOutlet weak var addContainedViewButton: UIButton?
+
+    /* ################################################################## */
+    /**
+     This is a demo of the placeholder text view.
+     */
+    @IBOutlet weak var placeholderTextView: RVS_PlaceholderTextView?
 }
 
 /* ###################################################################################################################################### */
@@ -101,6 +108,7 @@ extension RVS_UIKit_Toolbox_TestHarness_Tab2_ViewController {
      */
     override func viewDidLoad() {
         super.viewDidLoad()
+        placeholderTextView?.placeholder = placeholderTextView?.placeholder.localizedVariant ?? "ERROR"
         cornerSizeSliderLabel?.text = cornerSizeSliderLabel?.text?.localizedVariant
         borderWidthSliderLabel?.text = borderWidthSliderLabel?.text?.localizedVariant
         borderColorSwitchLabel?.text = borderColorSwitchLabel?.text?.localizedVariant
