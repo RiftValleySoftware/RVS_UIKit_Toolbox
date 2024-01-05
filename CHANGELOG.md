@@ -1,3 +1,6 @@
+*Version 1.5.1* **January 5, 2024**
+- Removed the `RVS_PlaceholderTextView` class (It was too problematic).
+
 *Version 1.5.0* **January 5, 2024**
 - Added the `RVS_PlaceholderTextView` class.
 - Added a privacy manifest.

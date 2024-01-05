@@ -7,13 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		D4069A9F2B484C2D00BD934C /* RVS_UIKit_Toolbox.swift in Sources */ = {isa = PBXBuildFile; fileRef = D43965BF286C992100727E6A /* RVS_UIKit_Toolbox.swift */; };
 		D40B98FB287330D10027956D /* RVS_UIKit_Toolbox_TestHarness_Tab4_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D40B98FA287330D10027956D /* RVS_UIKit_Toolbox_TestHarness_Tab4_ViewController.swift */; };
 		D413E7B72879986F006C38EF /* Documentation.docc in Sources */ = {isa = PBXBuildFile; fileRef = D413E7B62879986F006C38EF /* Documentation.docc */; };
 		D4353A0128707D680098949F /* RVS_Generic_Swift_Toolbox in Frameworks */ = {isa = PBXBuildFile; productRef = D4353A0028707D680098949F /* RVS_Generic_Swift_Toolbox */; };
 		D4353A0328707DD00098949F /* RVS_UIKit_Toolbox_TestHarness_Base_Tabs_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4353A0228707DD00098949F /* RVS_UIKit_Toolbox_TestHarness_Base_Tabs_ViewController.swift */; };
 		D4353A0528707E150098949F /* RVS_UIKit_Toolbox_TestHarness_Tab1_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4353A0428707E150098949F /* RVS_UIKit_Toolbox_TestHarness_Tab1_ViewController.swift */; };
-		D43965C0286C992100727E6A /* RVS_UIKit_Toolbox.swift in Sources */ = {isa = PBXBuildFile; fileRef = D43965BF286C992100727E6A /* RVS_UIKit_Toolbox.swift */; };
+		D435FF002B48540E00B6AB3B /* RVS_UIKit_Toolbox.swift in Sources */ = {isa = PBXBuildFile; fileRef = D43965BF286C992100727E6A /* RVS_UIKit_Toolbox.swift */; };
+		D435FF022B48541700B6AB3B /* libRVS_UIKit_Toolbox.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D43965BC286C992100727E6A /* libRVS_UIKit_Toolbox.a */; };
 		D43965D0286C999A00727E6A /* RVS_UIKit_Toolbox_TestHarness_AppSceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D43965CF286C999A00727E6A /* RVS_UIKit_Toolbox_TestHarness_AppSceneDelegate.swift */; };
 		D43965D4286C999A00727E6A /* RVS_UIKit_Toolbox_TestHarness_Tab0_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D43965D3286C999A00727E6A /* RVS_UIKit_Toolbox_TestHarness_Tab0_ViewController.swift */; };
 		D43965D7286C999A00727E6A /* RVS_UIKit_Toolbox_TestHarness_Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D43965D5286C999A00727E6A /* RVS_UIKit_Toolbox_TestHarness_Main.storyboard */; };
@@ -28,6 +28,13 @@
 
 /* Begin PBXContainerItemProxy section */
 		D4069A9D2B4848EC00BD934C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D43965B4286C992100727E6A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D43965BB286C992100727E6A;
+			remoteInfo = RVS_UIKit_Toolbox;
+		};
+		D435FF032B48541700B6AB3B /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D43965B4286C992100727E6A /* Project object */;
 			proxyType = 1;
@@ -64,6 +71,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D435FF022B48541700B6AB3B /* libRVS_UIKit_Toolbox.a in Frameworks */,
 				D4353A0128707D680098949F /* RVS_Generic_Swift_Toolbox in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -71,6 +79,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D435FF012B48541700B6AB3B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		D43965B3286C992100727E6A = {
 			isa = PBXGroup;
 			children = (
@@ -78,6 +93,7 @@
 				D43965C7286C995700727E6A /* Tests */,
 				D43965E9286C9C6300727E6A /* Meta */,
 				D43965BD286C992100727E6A /* Products */,
+				D435FF012B48541700B6AB3B /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -191,6 +207,7 @@
 			);
 			dependencies = (
 				D4069A9E2B4848EC00BD934C /* PBXTargetDependency */,
+				D435FF042B48541700B6AB3B /* PBXTargetDependency */,
 			);
 			name = RVS_UIKit_Toolbox_TestHarness;
 			packageProductDependencies = (
@@ -259,7 +276,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D43965C0286C992100727E6A /* RVS_UIKit_Toolbox.swift in Sources */,
+				D435FF002B48540E00B6AB3B /* RVS_UIKit_Toolbox.swift in Sources */,
 				D413E7B72879986F006C38EF /* Documentation.docc in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -274,7 +291,6 @@
 				D4CD86AA2870CF2300AFD67E /* RVS_UIKit_Toolbox_TestHarness_TabBarController.swift in Sources */,
 				D43965D0286C999A00727E6A /* RVS_UIKit_Toolbox_TestHarness_AppSceneDelegate.swift in Sources */,
 				D4499DCA2870881A00D53B7A /* RVS_UIKit_Toolbox_TestHarness_Tab2_ViewController.swift in Sources */,
-				D4069A9F2B484C2D00BD934C /* RVS_UIKit_Toolbox.swift in Sources */,
 				D4F653122870F4D5001AF462 /* RVS_UIKit_Toolbox_TestHarness_Tab3_ViewController.swift in Sources */,
 				D4353A0328707DD00098949F /* RVS_UIKit_Toolbox_TestHarness_Base_Tabs_ViewController.swift in Sources */,
 				D40B98FB287330D10027956D /* RVS_UIKit_Toolbox_TestHarness_Tab4_ViewController.swift in Sources */,
@@ -288,6 +304,11 @@
 			isa = PBXTargetDependency;
 			target = D43965BB286C992100727E6A /* RVS_UIKit_Toolbox */;
 			targetProxy = D4069A9D2B4848EC00BD934C /* PBXContainerItemProxy */;
+		};
+		D435FF042B48541700B6AB3B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D43965BB286C992100727E6A /* RVS_UIKit_Toolbox */;
+			targetProxy = D435FF032B48541700B6AB3B /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -485,7 +506,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.4.4;
+				MARKETING_VERSION = 1.5.1;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.riftvalleysoftware.RVS-UIKit-Toolbox-TestHarness";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTS_MACCATALYST = YES;
@@ -517,7 +538,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.4.4;
+				MARKETING_VERSION = 1.5.1;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.riftvalleysoftware.RVS-UIKit-Toolbox-TestHarness";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTS_MACCATALYST = YES;

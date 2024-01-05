@@ -89,12 +89,6 @@ class RVS_UIKit_Toolbox_TestHarness_Tab2_ViewController: RVS_UIKit_Toolbox_TestH
      This button will add a new view to the auto-layout container.
      */
     @IBOutlet weak var addContainedViewButton: UIButton?
-
-    /* ################################################################## */
-    /**
-     This is a demo of the placeholder text view.
-     */
-    @IBOutlet weak var placeholderTextView: RVS_PlaceholderTextView?
 }
 
 /* ###################################################################################################################################### */
@@ -107,7 +101,6 @@ extension RVS_UIKit_Toolbox_TestHarness_Tab2_ViewController {
      */
     override func viewDidLoad() {
         super.viewDidLoad()
-        placeholderTextView?.placeholder = "ERROR" // placeholderTextView?.placeholder.localizedVariant ?? "ERROR"
         cornerSizeSliderLabel?.text = cornerSizeSliderLabel?.text?.localizedVariant
         borderWidthSliderLabel?.text = borderWidthSliderLabel?.text?.localizedVariant
         borderColorSwitchLabel?.text = borderColorSwitchLabel?.text?.localizedVariant

@@ -19,7 +19,7 @@ CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFT
 
 The Great Rift Valley Software Company: https://riftvalleysoftware.com
  
-Version: 1.5.0
+Version: 1.5.1
 */
 
 import UIKit
@@ -718,51 +718,11 @@ public class RVS_PlaceholderTextView: UITextView {
     /**
      This is a placeholder text label for the text view (which doesn't naturally have one).
      */
-    public weak var placeholderLabel: UILabel?
+    private weak var _placeholderLabel: UILabel?
     
     /* ################################################################## */
     /**
      This is the string that is displayed in the placeholder label. Default is empty.
      */
     @IBInspectable public var placeholder: String = ""
-}
-
-/* ###################################################################################################################################### */
-// MARK: Base Class Overrides
-/* ###################################################################################################################################### */
-public extension RVS_PlaceholderTextView {
-    /* ################################################################## */
-    /**
-     We override the text property, as this is how we detect changes.
-     */
-    override var text: String? {
-        get { super.text }
-        set {
-            super.text = newValue
-            placeholderLabel?.isHidden = !(newValue ?? "").isEmpty
-        }
-    }
-    
-    /* ################################################################## */
-    /**
-     When we do our layout, we add the placeholder view.
-     */
-    override func layoutSubviews() {
-        super.layoutSubviews()
-
-        guard nil == placeholderLabel,
-              let pointSize = font?.pointSize
-        else { return }
-
-        let placeholderLabelTemp = UILabel()
-        
-        addSubview(placeholderLabelTemp)
-        placeholderLabelTemp.font = font
-        placeholderLabelTemp.textColor = .tertiaryLabel
-        placeholderLabelTemp.sizeToFit()
-        placeholderLabelTemp.frame.origin = CGPoint(x: 5, y: pointSize / 2)
-        placeholderLabelTemp.text = placeholder
-        placeholderLabelTemp.isHidden = !(text ?? "").isEmpty
-        placeholderLabel = placeholderLabelTemp
-    }
 }
