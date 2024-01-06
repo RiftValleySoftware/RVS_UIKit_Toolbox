@@ -1,3 +1,7 @@
+*Version 1.5.3* **January 6, 2024**
+- Added a standard Apple privacy manifest (in addition to the markdown file).
+- Added the ability to switch the font for the placeholder text label.
+
 *Version 1.5.2* **January 5, 2024**
 - Re-added the `RVS_PlaceholderTextView` class (It was PEBCAK).
 - Updated to the latest generic toolbox dependency.

@@ -154,6 +154,9 @@ This method will also end editing for the view controller:
 ##### Color Computation Instance Methods
 - [`intermediateColor(otherColor:samplePoint:isHSL:)`](https://riftvalleysoftware.github.io/RVS_UIKit_Toolbox/Extensions/UIColor.html#/s:So7UIColorC17RVS_UIKit_ToolboxE17intermediateColor05otherF011samplePoint5isHSLA2B_12CoreGraphics7CGFloatVSbtF)
 
+#### [`RVS_PlaceholderTextView`](https://riftvalleysoftware.github.io/RVS_UIKit_Toolbox/docs/Classes/RVS_PlaceholderTextView.html)
+ This is a subclass of the standard [`UITextView`](https://developer.apple.com/documentation/uikit/uitextview) class. that adds the ability to provide a "placeholder," in the same manner as the [`UITextField`](https://developer.apple.com/documentation/uikit/uitextfield) class.
+
 ## The Test Harness App
 
 Because the package is a UIKit extension, [unit tests will be less effective than a test harness](https://littlegreenviper.com/various/testing-harness-vs-unit/). We provide a fairly comprehensive test harness app, that not only provides excellent code coverage, but also acts as a template for real-world implementation.

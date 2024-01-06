@@ -19,7 +19,7 @@ CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFT
 
 The Great Rift Valley Software Company: https://riftvalleysoftware.com
  
-Version: 1.5.2
+Version: 1.5.3
 */
 
 import UIKit
@@ -712,6 +712,11 @@ public extension UIColor {
 // MARK: - Text View Class With Placeholder -
 /* ###################################################################################################################################### */
 /**
+ This is a subclass of the standard [`UITextView`](https://developer.apple.com/documentation/uikit/uitextview) class.
+ 
+ It adds the ability to provide a "placeholder," in the same manner as the [`UITextField`](https://developer.apple.com/documentation/uikit/uitextfield) class.
+ 
+ In this class, a label is displayed, with the placeholder text, and that label is only displayed when there is no text in the view.
  */
 public class RVS_PlaceholderTextView: UITextView {
     /* ################################################################## */
@@ -730,17 +735,30 @@ public class RVS_PlaceholderTextView: UITextView {
     /**
      This is the string that is displayed in the placeholder label. Default is empty.
      */
-    @IBInspectable public var placeholder: String = ""
+    @IBInspectable public var placeholder: String = "" {
+        didSet {
+            _placeholderLabel.removeFromSuperview()
+            setNeedsLayout()
+        }
+    }
     
+    /* ################################################################## */
+    /**
+     If this is true, then the placeholder is displayed in the system font (sized for the view font). Default is true.
+     */
+    @IBInspectable public var useSystemFont: Bool = true {
+        didSet {
+            _placeholderLabel.removeFromSuperview()
+            setNeedsLayout()
+        }
+    }
+
     /* ################################################################## */
     /**
      In our deinitializer, we make sure to remove the observer.
      */
     deinit {
-        NotificationCenter.default.removeObserver(self,
-                                                  name: UITextView.textDidChangeNotification,
-                                                  object: self
-        )
+        NotificationCenter.default.removeObserver(self, name: UITextView.textDidChangeNotification, object: self)
     }
 }
 
@@ -769,25 +787,20 @@ public extension RVS_PlaceholderTextView {
     override func layoutSubviews() {
         super.layoutSubviews()
 
-        // If we already have it up, then we can skip the rest.
-        guard !subviews.contains(_placeholderLabel),
-              let pointSize = font?.pointSize
-        else { return }
+        if !subviews.contains(_placeholderLabel) {
+            guard let pointSize = font?.pointSize else { return }
 
-        addSubview(_placeholderLabel)
-        _placeholderLabel.translatesAutoresizingMaskIntoConstraints = false
-        _placeholderLabel.topAnchor.constraint(equalTo: topAnchor, constant: pointSize / 2).isActive = true
-        _placeholderLabel.leftAnchor.constraint(equalTo: leftAnchor, constant: Self._leftInsetInDisplayUnits).isActive = true
-        _placeholderLabel.font = font
-        _placeholderLabel.textColor = .tertiaryLabel
-        _placeholderLabel.sizeToFit()
-        _placeholderLabel.text = placeholder
-        _placeholderLabel.isHidden = !(text ?? "").isEmpty
-        // We detect changes, by observing for them.
-        NotificationCenter.default.addObserver(self,
-                                               selector: #selector(_textViewChanged(_:)),
-                                               name: UITextView.textDidChangeNotification,
-                                               object: self
-        )
+            addSubview(_placeholderLabel)
+            _placeholderLabel.translatesAutoresizingMaskIntoConstraints = false
+            _placeholderLabel.topAnchor.constraint(equalTo: topAnchor, constant: pointSize / 2).isActive = true
+            _placeholderLabel.leftAnchor.constraint(equalTo: leftAnchor, constant: Self._leftInsetInDisplayUnits).isActive = true
+            _placeholderLabel.font = useSystemFont ? .systemFont(ofSize: pointSize) : font
+            _placeholderLabel.textColor = .tertiaryLabel
+            _placeholderLabel.sizeToFit()
+            _placeholderLabel.text = placeholder
+            _placeholderLabel.isHidden = !(text ?? "").isEmpty
+            // We detect changes, by observing for them.
+            NotificationCenter.default.addObserver(self, selector: #selector(_textViewChanged(_:)), name: UITextView.textDidChangeNotification, object: self)
+        }
     }
 }

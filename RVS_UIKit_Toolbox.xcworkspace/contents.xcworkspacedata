@@ -19,6 +19,9 @@
       <FileRef
          location = "group:Package.swift">
       </FileRef>
+      <FileRef
+         location = "group:PrivacyInfo.xcprivacy">
+      </FileRef>
    </Group>
    <FileRef
       location = "group:RVS_UIKit_Toolbox.xcodeproj">

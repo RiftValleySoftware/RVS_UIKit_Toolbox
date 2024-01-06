@@ -93,6 +93,18 @@ class RVS_UIKit_Toolbox_TestHarness_Tab2_ViewController: RVS_UIKit_Toolbox_TestH
 
     /* ################################################################## */
     /**
+     The label for the system font switch is actually a button.
+     */
+    @IBOutlet weak var placeholderFontLabelButton: UIButton?
+    
+    /* ################################################################## */
+    /**
+     This is the use system font for placeholder switch.
+     */
+    @IBOutlet weak var placeholderFontSwitch: UISwitch?
+    
+    /* ################################################################## */
+    /**
      This is a demo of the placeholder text view.
      */
     @IBOutlet weak var placeholderTextView: RVS_PlaceholderTextView?
@@ -108,6 +120,8 @@ extension RVS_UIKit_Toolbox_TestHarness_Tab2_ViewController {
      */
     override func viewDidLoad() {
         super.viewDidLoad()
+        placeholderFontSwitch?.isOn = placeholderTextView?.useSystemFont ?? false
+        placeholderFontLabelButton?.setTitle(placeholderFontLabelButton?.title(for: .normal)?.localizedVariant, for: .normal)
         placeholderTextView?.placeholder = placeholderTextView?.placeholder.localizedVariant ?? "ERROR"
         cornerSizeSliderLabel?.text = cornerSizeSliderLabel?.text?.localizedVariant
         borderWidthSliderLabel?.text = borderWidthSliderLabel?.text?.localizedVariant
@@ -203,5 +217,20 @@ extension RVS_UIKit_Toolbox_TestHarness_Tab2_ViewController {
         topAnchor = newBottom
         
         addContainedViewButton?.isEnabled = 3 > (containedViewContainerView?.subviews.count ?? 3)
+    }
+    
+    /* ################################################################## */
+    /**
+     The use system font switch (ot its label) was hit.
+     
+     - parameter inControl: The item that called this. It can either be a UIButton, or a UISwitch.
+     */
+    @IBAction func fontSwitchChanged(_ inControl: UIControl) {
+        if let fontSwitch = inControl as? UISwitch {
+            placeholderTextView?.useSystemFont = fontSwitch.isOn
+        } else {
+            placeholderFontSwitch?.setOn(!(placeholderFontSwitch?.isOn ?? true), animated: true)
+            placeholderFontSwitch?.sendActions(for: .valueChanged)
+        }
     }
 }
