@@ -1,3 +1,6 @@
+*Version 1.5.4* **April 11, 2024**
+- Made the placeholder label in the `RVS_PlaceholderTextView` class multiline.
+
 *Version 1.5.3* **January 6, 2024**
 - Added a standard Apple privacy manifest (in addition to the markdown file).
 - Added the ability to switch the font for the placeholder text label.

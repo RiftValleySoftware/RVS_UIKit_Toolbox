@@ -19,7 +19,7 @@ CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFT
 
 The Great Rift Valley Software Company: https://riftvalleysoftware.com
  
-Version: 1.5.3
+Version: 1.5.4
 */
 
 import UIKit
@@ -796,8 +796,9 @@ public extension RVS_PlaceholderTextView {
             _placeholderLabel.leftAnchor.constraint(equalTo: leftAnchor, constant: Self._leftInsetInDisplayUnits).isActive = true
             _placeholderLabel.font = useSystemFont ? .systemFont(ofSize: pointSize) : font
             _placeholderLabel.textColor = .tertiaryLabel
-            _placeholderLabel.sizeToFit()
+            _placeholderLabel.numberOfLines = 0
             _placeholderLabel.text = placeholder
+            _placeholderLabel.sizeToFit()
             _placeholderLabel.isHidden = !(text ?? "").isEmpty
             // We detect changes, by observing for them.
             NotificationCenter.default.addObserver(self, selector: #selector(_textViewChanged(_:)), name: UITextView.textDidChangeNotification, object: self)
