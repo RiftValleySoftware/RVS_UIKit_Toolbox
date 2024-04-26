@@ -19,7 +19,7 @@ CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFT
 
 The Great Rift Valley Software Company: https://riftvalleysoftware.com
  
-Version: 1.6.0
+Version: 1.6.1
 */
 
 import UIKit
@@ -790,13 +790,13 @@ public extension RVS_PlaceholderTextView {
     override func layoutSubviews() {
         super.layoutSubviews()
 
-        if !subviews.contains(placeholderLabel) {
-            guard let pointSize = font?.pointSize else { return }
-
+        if !subviews.contains(placeholderLabel),
+           let pointSize = font?.pointSize {
             addSubview(placeholderLabel)
             placeholderLabel.translatesAutoresizingMaskIntoConstraints = false
             placeholderLabel.topAnchor.constraint(equalTo: topAnchor, constant: pointSize / 2).isActive = true
             placeholderLabel.leftAnchor.constraint(equalTo: leftAnchor, constant: Self._leftInsetInDisplayUnits).isActive = true
+            placeholderLabel.widthAnchor.constraint(equalTo: widthAnchor, constant: -Self._leftInsetInDisplayUnits * 2).isActive = true
             placeholderLabel.font = useSystemFont ? .systemFont(ofSize: pointSize) : font
             placeholderLabel.textColor = .tertiaryLabel
             placeholderLabel.numberOfLines = 0

@@ -1,3 +1,6 @@
+*Version 1.6.1* **April 26, 2024**
+- Made sure that the label can not be wider than the text entry field.
+
 *Version 1.6.0* **April 26, 2024**
 - Made the placeholder label for the `RVS_PlaceholderTextView` publicly accessible, so it can be modified at runtime.
 - If the corner radius of a view is over 0, then we force clipsToBounds to be true.
