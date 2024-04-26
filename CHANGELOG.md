@@ -1,3 +1,7 @@
+*Version 1.6.0* **April 26, 2024**
+- Made the placeholder label for the `RVS_PlaceholderTextView` publicly accessible, so it can be modified at runtime.
+- If the corner radius of a view is over 0, then we force clipsToBounds to be true.
+
 *Version 1.5.4* **April 11, 2024**
 - Made the placeholder label in the `RVS_PlaceholderTextView` class multiline.
 

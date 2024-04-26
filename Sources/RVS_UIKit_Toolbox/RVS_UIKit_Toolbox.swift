@@ -19,7 +19,7 @@ CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFT
 
 The Great Rift Valley Software Company: https://riftvalleysoftware.com
  
-Version: 1.5.4
+Version: 1.6.0
 */
 
 import UIKit
@@ -263,6 +263,9 @@ public extension UIView {
         get { layer.cornerRadius }
         set {
             layer.cornerRadius = newValue
+            if 0 < newValue {
+                clipsToBounds = true
+            }
             setNeedsDisplay()
         }
     }
@@ -729,7 +732,7 @@ public class RVS_PlaceholderTextView: UITextView {
     /**
      This is a placeholder text label for the text view (which doesn't naturally have one).
      */
-    private let _placeholderLabel = UILabel()
+    public let placeholderLabel = UILabel()
     
     /* ################################################################## */
     /**
@@ -737,7 +740,7 @@ public class RVS_PlaceholderTextView: UITextView {
      */
     @IBInspectable public var placeholder: String = "" {
         didSet {
-            _placeholderLabel.removeFromSuperview()
+            placeholderLabel.removeFromSuperview()
             setNeedsLayout()
         }
     }
@@ -748,7 +751,7 @@ public class RVS_PlaceholderTextView: UITextView {
      */
     @IBInspectable public var useSystemFont: Bool = true {
         didSet {
-            _placeholderLabel.removeFromSuperview()
+            placeholderLabel.removeFromSuperview()
             setNeedsLayout()
         }
     }
@@ -772,7 +775,7 @@ public extension RVS_PlaceholderTextView {
      - parameter: Ignored (the notification).
      */
     @objc private func _textViewChanged(_: Notification) {
-        _placeholderLabel.isHidden = !(text ?? "").isEmpty
+        placeholderLabel.isHidden = !(text ?? "").isEmpty
     }
 }
 
@@ -787,19 +790,19 @@ public extension RVS_PlaceholderTextView {
     override func layoutSubviews() {
         super.layoutSubviews()
 
-        if !subviews.contains(_placeholderLabel) {
+        if !subviews.contains(placeholderLabel) {
             guard let pointSize = font?.pointSize else { return }
 
-            addSubview(_placeholderLabel)
-            _placeholderLabel.translatesAutoresizingMaskIntoConstraints = false
-            _placeholderLabel.topAnchor.constraint(equalTo: topAnchor, constant: pointSize / 2).isActive = true
-            _placeholderLabel.leftAnchor.constraint(equalTo: leftAnchor, constant: Self._leftInsetInDisplayUnits).isActive = true
-            _placeholderLabel.font = useSystemFont ? .systemFont(ofSize: pointSize) : font
-            _placeholderLabel.textColor = .tertiaryLabel
-            _placeholderLabel.numberOfLines = 0
-            _placeholderLabel.text = placeholder
-            _placeholderLabel.sizeToFit()
-            _placeholderLabel.isHidden = !(text ?? "").isEmpty
+            addSubview(placeholderLabel)
+            placeholderLabel.translatesAutoresizingMaskIntoConstraints = false
+            placeholderLabel.topAnchor.constraint(equalTo: topAnchor, constant: pointSize / 2).isActive = true
+            placeholderLabel.leftAnchor.constraint(equalTo: leftAnchor, constant: Self._leftInsetInDisplayUnits).isActive = true
+            placeholderLabel.font = useSystemFont ? .systemFont(ofSize: pointSize) : font
+            placeholderLabel.textColor = .tertiaryLabel
+            placeholderLabel.numberOfLines = 0
+            placeholderLabel.text = placeholder
+            placeholderLabel.sizeToFit()
+            placeholderLabel.isHidden = !(text ?? "").isEmpty
             // We detect changes, by observing for them.
             NotificationCenter.default.addObserver(self, selector: #selector(_textViewChanged(_:)), name: UITextView.textDidChangeNotification, object: self)
         }
