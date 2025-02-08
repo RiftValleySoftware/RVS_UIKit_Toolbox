@@ -1,3 +1,6 @@
+*Version 1.6.3* **February 8, 2024**
+- I also had to mask out a bunch of UIKit stuff.
+
 *Version 1.6.2* **February 8, 2024**
 - Mask out Core Haptics.
 
