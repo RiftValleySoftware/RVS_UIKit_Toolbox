@@ -1,3 +1,6 @@
+*Version 1.6.2* **February 8, 2024**
+- Mask out Core Haptics.
+
 *Version 1.6.1* **April 26, 2024**
 - Made sure that the label can not be wider than the text entry field.
 

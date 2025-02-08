@@ -19,12 +19,14 @@ CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFT
 
 The Great Rift Valley Software Company: https://riftvalleysoftware.com
  
-Version: 1.6.1
+Version: 1.6.2
 */
 
 import UIKit
 import LocalAuthentication
-import CoreHaptics
+#if canImport(CoreHaptics)
+    import CoreHaptics
+#endif
 
 /* ###################################################################################################################################### */
 // MARK: - UITabBarController Extension -
@@ -199,12 +201,14 @@ public extension UIViewController {
      */
     var isDarkMode: Bool { .dark == traitCollection.userInterfaceStyle }
 
-    /* ################################################################## */
-    /**
-     Returns true, if haptics are available.
-     */
-    var hapticsAreAvailable: Bool { CHHapticEngine.capabilitiesForHardware().supportsHaptics }
-    
+    #if canImport(CoreHaptics)
+        /* ############################################################## */
+        /**
+         Returns true, if haptics are available.
+         */
+        var hapticsAreAvailable: Bool { CHHapticEngine.capabilitiesForHardware().supportsHaptics }
+    #endif
+
     // MARK: Device Instance Computed Properties
     /* ################################################################## */
     /**
