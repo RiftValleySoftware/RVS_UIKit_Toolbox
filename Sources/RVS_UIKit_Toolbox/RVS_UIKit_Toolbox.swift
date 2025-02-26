@@ -19,7 +19,7 @@ CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFT
 
 The Great Rift Valley Software Company: https://riftvalleysoftware.com
  
-Version: 1.7.0
+Version: 1.7.1
 */
 
 import UIKit
@@ -818,7 +818,7 @@ public extension UIColor {
 /* ###################################################################################################################################### */
 // MARK: - Bundle Extension -
 /* ###################################################################################################################################### */
-extension Bundle {
+public extension Bundle {
     /* ################################################################## */
     /**
      [This comes straight from here](https://stackoverflow.com/a/51241158/879365)

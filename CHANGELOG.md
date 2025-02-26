@@ -1,3 +1,6 @@
+*Version 1.7.1* **February 26, 2024**
+- Oops. Forgot to make it public.
+
 *Version 1.7.0* **February 26, 2024**
 - This adds a Bundle extension for fetching the app icon.
 
