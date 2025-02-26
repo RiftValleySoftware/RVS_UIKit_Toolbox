@@ -19,7 +19,7 @@ CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFT
 
 The Great Rift Valley Software Company: https://riftvalleysoftware.com
  
-Version: 1.6.3
+Version: 1.7.0
 */
 
 import UIKit
@@ -812,5 +812,25 @@ public extension UIColor {
                            alpha: CGFloat(a1 + (a2 - a1) * samplePoint)
             )
         }
+    }
+}
+
+/* ###################################################################################################################################### */
+// MARK: - Bundle Extension -
+/* ###################################################################################################################################### */
+extension Bundle {
+    /* ################################################################## */
+    /**
+     [This comes straight from here](https://stackoverflow.com/a/51241158/879365)
+     
+     This returns the highest-res version of the app icon, as an image. Nil, if unavailable.
+     */
+    var appIcon: UIImage? {
+        guard let icons = infoDictionary?["CFBundleIcons"] as? [String: Any],
+           let primaryIcon = icons["CFBundlePrimaryIcon"] as? [String: Any],
+           let iconFiles = primaryIcon["CFBundleIconFiles"] as? [String],
+           let lastIcon = iconFiles.last else { return nil }
+        
+        return UIImage(named: lastIcon)
     }
 }

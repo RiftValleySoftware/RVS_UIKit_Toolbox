@@ -28,9 +28,11 @@
     </header>
     <div class="content-wrapper">
       <p id="breadcrumbs">
-        <a href="../index.html">RVS_UIKit_Toolbox Reference</a>
+        <a href="../index.html">RVS_UIKit_Toolbox</a>
         <img id="carat" src="../img/carat.png" alt=""/>
-        UIView Extension Reference
+        <a href="../Extensions.html">Extensions</a>
+        <img id="carat" src="../img/carat.png" alt=""/>
+        UIKit.UIView Extension Reference
       </p>
     </div>
     <div class="content-wrapper">
@@ -118,6 +120,7 @@ It has a few &ldquo;informational&rdquo; computed properties, and some other sim
                         <div class="language">
                           <p class="aside-title">Swift</p>
                           <pre class="highlight swift"><code><span class="kd">@IBInspectable</span>
+<span class="kd">@MainActor</span>
 <span class="k">var</span> <span class="nv">cornerRadius</span><span class="p">:</span> <span class="kt">CGFloat</span> <span class="p">{</span> <span class="k">get</span> <span class="k">set</span> <span class="p">}</span></code></pre>
 
                         </div>
@@ -147,6 +150,7 @@ This allows us to specify a border for the view. It is width, in display units.<
                         <div class="language">
                           <p class="aside-title">Swift</p>
                           <pre class="highlight swift"><code><span class="kd">@IBInspectable</span>
+<span class="kd">@MainActor</span>
 <span class="k">var</span> <span class="nv">borderWidth</span><span class="p">:</span> <span class="kt">CGFloat</span> <span class="p">{</span> <span class="k">get</span> <span class="k">set</span> <span class="p">}</span></code></pre>
 
                         </div>
@@ -176,6 +180,7 @@ This allows us to assign a color to any border that is of a width greater than 0
                         <div class="language">
                           <p class="aside-title">Swift</p>
                           <pre class="highlight swift"><code><span class="kd">@IBInspectable</span>
+<span class="kd">@MainActor</span>
 <span class="k">var</span> <span class="nv">borderColor</span><span class="p">:</span> <span class="kt">UIColor</span><span class="p">?</span> <span class="p">{</span> <span class="k">get</span> <span class="k">set</span> <span class="p">}</span></code></pre>
 
                         </div>
@@ -216,7 +221,8 @@ This allows us to assign a color to any border that is of a width greater than 0
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">currentFirstResponder</span><span class="p">:</span> <span class="kt">UIResponder</span><span class="p">?</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">@MainActor</span>
+<span class="k">var</span> <span class="nv">currentFirstResponder</span><span class="p">:</span> <span class="kt">UIResponder</span><span class="p">?</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
 
                         </div>
                       </div>
@@ -243,7 +249,8 @@ This allows us to assign a color to any border that is of a width greater than 0
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">resignAllFirstResponders</span><span class="p">()</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">@MainActor</span>
+<span class="kd">func</span> <span class="nf">resignAllFirstResponders</span><span class="p">()</span></code></pre>
 
                         </div>
                       </div>
@@ -284,6 +291,7 @@ This allows us to assign a color to any border that is of a width greater than 0
                         <div class="language">
                           <p class="aside-title">Swift</p>
                           <pre class="highlight swift"><code><span class="kd">@discardableResult</span>
+<span class="kd">@MainActor</span>
 <span class="kd">func</span> <span class="nf">addContainedView</span><span class="p">(</span><span class="n">_</span> <span class="nv">inSubView</span><span class="p">:</span> <span class="kt">UIView</span><span class="p">,</span> <span class="n">underThis</span> <span class="nv">inUpperConstraint</span><span class="p">:</span> <span class="kt">NSLayoutYAxisAnchor</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">,</span> <span class="n">andGiveMeABottomHook</span> <span class="nv">inBottomLoose</span><span class="p">:</span> <span class="kt">Bool</span> <span class="o">=</span> <span class="kc">false</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">NSLayoutYAxisAnchor</span><span class="p">?</span></code></pre>
 
                         </div>
@@ -360,7 +368,8 @@ This allows us to assign a color to any border that is of a width greater than 0
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">autoLayoutAspectConstraint</span><span class="p">(</span><span class="n">aspectRatio</span> <span class="nv">inAspect</span><span class="p">:</span> <span class="kt">CGFloat</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">NSLayoutConstraint</span><span class="p">?</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">@MainActor</span>
+<span class="kd">func</span> <span class="nf">autoLayoutAspectConstraint</span><span class="p">(</span><span class="n">aspectRatio</span> <span class="nv">inAspect</span><span class="p">:</span> <span class="kt">CGFloat</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">NSLayoutConstraint</span><span class="p">?</span></code></pre>
 
                         </div>
                       </div>
@@ -396,7 +405,7 @@ This allows us to assign a color to any border that is of a width greater than 0
         </section>
         <section id="footer">
           <p><a class="link" href="https://riftvalleysoftware.com" target="_blank" rel="external noopener">©2022 The Great Rift Valley Software Company</a></p>
-          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external noopener">jazzy ♪♫ v0.14.4</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external noopener">Realm</a> project.</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external noopener">jazzy ♪♫ v0.15.1</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external noopener">Realm</a> project.</p>
         </section>
       </article>
     </div>

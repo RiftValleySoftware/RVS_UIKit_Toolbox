@@ -1,3 +1,6 @@
+*Version 1.7.0* **February 26, 2024**
+- This adds a Bundle extension for fetching the app icon.
+
 *Version 1.6.3* **February 8, 2024**
 - I also had to mask out a bunch of UIKit stuff.
 
