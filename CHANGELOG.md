@@ -1,3 +1,7 @@
+*Version 1.7.2* **February 8, 2026**
+- Updated the tools.
+- Fixed a minor documentation issue. No API or functional changes.
+
 *Version 1.7.1* **February 26, 2024**
 - Oops. Forgot to make it public.
 

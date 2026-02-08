@@ -1,5 +1,7 @@
 # ``RVS_UIKit_Toolbox``
 
+![](icon.png)
+
 A set of basic UIKit tools, for Swift iOS app development.
 
 ## Overview

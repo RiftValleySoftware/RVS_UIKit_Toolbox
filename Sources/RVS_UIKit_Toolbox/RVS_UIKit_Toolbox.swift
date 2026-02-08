@@ -19,7 +19,7 @@ CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFT
 
 The Great Rift Valley Software Company: https://riftvalleysoftware.com
  
-Version: 1.7.1
+Version: 1.7.2
 */
 
 import UIKit
@@ -42,9 +42,9 @@ public extension UITabBarController {
      This allows us to set specific colors for the normal, selected, and background attributes of the tab bar.
      All parameters are optional. If not provided, default values for the current theme are used.
      - parameters:
-        - normal: The color to use for an unselected, enabled tab item.
-        - selected: The color to use for a selected tab item.
-        - background: The background color to use for the bar.
+        - inNormalColor: The color to use for an unselected, enabled tab item.
+        - inSelectedColor: The color to use for a selected tab item.
+        - inBackgroundColor: The background color to use for the bar.
      */
     func setColorsTo(normal inNormalColor: UIColor? = nil,
                      selected inSelectedColor: UIColor? = nil,
@@ -335,11 +335,11 @@ public extension UIView {
     /**
      This allows us to add a subview, and set it up with auto-layout constraints to fill the superview.
      
-     - parameter inSubview: The subview we want to add.
-     - parameter underThis: If supplied, this is a Y-axis anchor to use as the attachment of the top anchor.
-                            Default is nil (can be omitted, which will simply attach to the top of the container).
-     - parameter andGiveMeABottomHook: If this is true, then the bottom anchor of the subview will not be attached to anything, and will simply be returned.
-                                       Default is false, which means that the bottom anchor will simply be attached to the bottom of the view.
+     - parameter inSubView: The subview we want to add.
+     - parameter inUpperConstraint: If supplied, this is a Y-axis anchor to use as the attachment of the top anchor.
+                                    Default is nil (can be omitted, which will simply attach to the top of the container).
+     - parameter inBottomLoose: If this is true, then the bottom anchor of the subview will not be attached to anything, and will simply be returned.
+                                Default is false, which means that the bottom anchor will simply be attached to the bottom of the view.
      - returns: The bottom hook, if requested. Can be ignored.
      */
     @discardableResult
@@ -367,7 +367,7 @@ public extension UIView {
     /* ################################################################## */
     /**
      This creates a constraint, locking the view to a given aspect ratio.
-     - parameter aspectRatio: The aspect ratio. It is W/H, so numbers less than 1.0 are wider than tall, and numbers greater than 1.0 are taller than wide.
+     - parameter inAspect: The aspect ratio. It is W/H, so numbers less than 1.0 are wider than tall, and numbers greater than 1.0 are taller than wide.
      - returns: An inactive constraint, locking this view to the given aspect ratio.
      */
     func autoLayoutAspectConstraint(aspectRatio inAspect: CGFloat) -> NSLayoutConstraint? {
@@ -489,8 +489,8 @@ public extension UIImage {
     /**
      This convenience initializer allows us to create a solid rectangular image, of just one color.
      
-     - parameter color: The color to use as a fill.
-     - parameter size: The size of the image. This is optional. If not provided, the image will be 1-pixel square.
+     - parameter inColor: The color to use as a fill.
+     - parameter inSize: The size of the image. This is optional. If not provided, the image will be 1-pixel square.
      - returns: A new instance (or nil) of an image filled with the color.
      */
     convenience init?(color inColor: UIColor, size inSize: CGSize = CGSize(width: 1, height: 1)) {
@@ -515,7 +515,7 @@ public extension UIImage {
     /**
      This is a "cascading" image fetcher. It first, ses if there is an asset with the name given, then, it looks in the SFSymbols, finally, returning the SFSymbols.nosign, if none found.
      
-     - parameter name: The name of the resource.
+     - parameter inName: The name of the resource.
      
      - returns: A new image. May be nil, if none found.
      */
@@ -542,7 +542,7 @@ public extension UIImage {
      
      **NOTE:** This is unlikely to be highly performant!
      
-     - parameter at: The point in the image to sample (NOTE: Must be within image bounds, or nil is returned).
+     - parameter inPoint: The point in the image to sample (NOTE: Must be within image bounds, or nil is returned).
      - returns: A UIColor (or nil).
      */
     func getRGBColorOfThePixel(at inPoint: CGPoint) -> UIColor? {
@@ -606,7 +606,7 @@ public extension UIImage {
     /**
      This allows an image to be resized, given a maximum dimension, and a scale will be determined to meet that dimension.
      
-     - parameter toScaleFactor: The scale of the resulting image, as a multiplier of the current size.
+     - parameter inScaleFactor: The scale of the resulting image, as a multiplier of the current size.
      
      - returns: A new image, with the given scale. May be nil, if there was an error.
      */
@@ -617,8 +617,8 @@ public extension UIImage {
      This allows an image to be resized, given both a width and a height, or just one of the dimensions.
      
      - parameters:
-         - toNewWidth: The width (in pixels) of the desired image. If not provided, a scale will be determined from the toNewHeight parameter.
-         - toNewHeight: The height (in pixels) of the desired image. If not provided, a scale will be determined from the toNewWidth parameter.
+         - inNewWidth: The width (in pixels) of the desired image. If not provided, a scale will be determined from the toNewHeight parameter.
+         - inNewHeight: The height (in pixels) of the desired image. If not provided, a scale will be determined from the toNewWidth parameter.
      
      - returns: A new image, with the given dimensions. May be nil, if no width or height was supplied, or if there was an error.
      */
@@ -656,7 +656,7 @@ public extension UIColor {
     /* ################################################################## */
     /**
      [This comes fairly directly from this Hacking With Swift tutorial](https://www.hackingwithswift.com/example-code/uicolor/how-to-convert-a-hex-color-to-a-uicolor)
-     - parameter hex: The hex number, as a String "#RRGGBB[AA]"
+     - parameter inHexNumber: The hex number, as a String "#RRGGBB[AA]"
      - returns: The color, from the hex string.
      */
     convenience init?(hex inHexNumber: String) {
@@ -776,9 +776,9 @@ public extension UIColor {
      This will return an intermediate color, between this color, and another one.
      
      [This was inspired by this SO answer](https://stackoverflow.com/a/46729248/879365)
-     - parameter otherColor: The other end of the color spectrum we are testing.
-     - parameter samplePoint: Optional (default is 50%). The distance betweeen 0 (this color), and 1 (otherColor).
-     - parameter isHSL: Optional (default is true). If true, then the intermediate color is determined via HSL. If false, we use RGB.
+     - parameter inColor: The other end of the color spectrum we are testing.
+     - parameter inSamplePoint: Optional (default is 50%). The distance betweeen 0 (this color), and 1 (otherColor).
+     - parameter inIsHSL: Optional (default is true). If true, then the intermediate color is determined via HSL. If false, we use RGB.
      - returns: the intermediate color.
      */
     func intermediateColor(otherColor inColor: UIColor, samplePoint inSamplePoint: CGFloat = 0.5, isHSL inIsHSL: Bool = true) -> UIColor {
