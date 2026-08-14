@@ -1,3 +1,7 @@
+*Version 1.7.3* **August 14, 2026**
+
+- Increased the contrast on the placeholder, in the RVS_PlaceholderTextView class.
+
 *Version 1.7.2* **February 8, 2026**
 - Updated the tools.
 - Fixed a minor documentation issue. No API or functional changes.

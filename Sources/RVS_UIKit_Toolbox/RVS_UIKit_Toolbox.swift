@@ -19,7 +19,7 @@ CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFT
 
 The Great Rift Valley Software Company: https://riftvalleysoftware.com
  
-Version: 1.7.2
+Version: 1.7.3
 */
 
 import UIKit
@@ -464,7 +464,7 @@ public extension RVS_PlaceholderTextView {
             placeholderLabel.leftAnchor.constraint(equalTo: leftAnchor, constant: Self._leftInsetInDisplayUnits).isActive = true
             placeholderLabel.widthAnchor.constraint(equalTo: widthAnchor, constant: -Self._leftInsetInDisplayUnits * 2).isActive = true
             placeholderLabel.font = useSystemFont ? .systemFont(ofSize: pointSize) : font
-            placeholderLabel.textColor = .tertiaryLabel
+            placeholderLabel.textColor = .secondaryLabel
             placeholderLabel.numberOfLines = 0
             placeholderLabel.text = placeholder
             placeholderLabel.sizeToFit()
